@@ -88,7 +88,6 @@ carousel_1.querySelector('.prev_1').onclick = function () {
 
     position_1 = Math.min(position_1, 0);
     list_1.style.marginLeft = position_1 + 'px'; //обращение к ul
-
 };
 
 //сдвиг в право
@@ -101,52 +100,52 @@ carousel_1.querySelector('.next_1').onclick = function () {
         -width_1 * (listElems_1.length - count_1)
     );
     list_1.style.marginLeft = position_1 + 'px'; //обращение у стилю тэга ul
-
 };
 //курусель отзывов малая
 /*******************************************************************************/
 let g = 1;
-for (let li of carousel_2.querySelectorAll('li')) {
-    li.style.position = 'relative';
-    li.insertAdjacentHTML(
-        'beforeend',
-        '<span style="position:absolute;left:0;top:0">${i}</span>'
-    );
-    g++;
+let carousel_2 = document.getElementById('carousel_2');
+if (carousel_2) {
+    for (let li of carousel_2.querySelectorAll('li')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML(
+            'beforeend',
+            '<span style="position:absolute;left:0;top:0">${i}</span>'
+        );
+        g++;
+    }
+
+    let width_2 = 255; //ишрина картинки
+    let count_2 = 1; //видимое количество картинок
+    let numberImg_2 = 9; //количество картинок
+    let numPoint_2 = 0; // текущаяя картинка
+
+    let list_2 = carousel_2.querySelector('ul');
+    let listElems_2 = carousel_2.querySelectorAll('li');
+
+    let position_2 = 0; //положение прокрутки
+
+    //сдвиг в лево
+    carousel_2.querySelector('.prev_2').onclick = function () {
+        position_2 += width_2 * count_2;
+        // if (position_1 > 0) position_2 = -1 * (width_2 * (numberImg_2 - count_2)); //строка возвращает на начало списка
+
+        position_2 = Math.min(position_2, 0);
+        list_2.style.marginLeft = position_2 + 'px'; //обращение к ul
+    };
+
+    //сдвиг в право
+    carousel_2.querySelector('.next_2').onclick = function () {
+        position_2 -= width_2 * count_2;
+        // if (position_2 <= -1 * (width_2 * numberImg_2)) position_2 = 0; // строка перемещает на конец списка
+
+        position_2 = Math.max(
+            position_2,
+            -width_2 * (listElems_2.length - count_2)
+        );
+        list_2.style.marginLeft = position_2 + 'px'; //обращение у стилю тэга ul
+    };
 }
-
-let width_2 = 255; //ишрина картинки
-let count_2 = 1; //видимое количество картинок
-let numberImg_2 = 9; //количество картинок
-let numPoint_2 = 0; // текущаяя картинка
-
-let list_2 = carousel_2.querySelector('ul');
-let listElems_2 = carousel_2.querySelectorAll('li');
-
-let position_2 = 0; //положение прокрутки
-
-//сдвиг в лево
-carousel_2.querySelector('.prev_2').onclick = function () {
-    position_2 += width_2 * count_2;
-    // if (position_1 > 0) position_2 = -1 * (width_2 * (numberImg_2 - count_2)); //строка возвращает на начало списка
-
-    position_2 = Math.min(position_2, 0);
-    list_2.style.marginLeft = position_2 + 'px'; //обращение к ul
-
-};
-
-//сдвиг в право
-carousel_2.querySelector('.next_2').onclick = function () {
-    position_2 -= width_2 * count_2;
-    // if (position_2 <= -1 * (width_2 * numberImg_2)) position_2 = 0; // строка перемещает на конец списка
-
-    position_2 = Math.max(
-        position_2,
-        -width_2 * (listElems_2.length - count_2)
-    );
-    list_2.style.marginLeft = position_2 + 'px'; //обращение у стилю тэга ul
-
-};
 
 class newError {
     constructor(object, classNameIn, classNameOut) {
@@ -178,10 +177,23 @@ class newError {
 
 // let error1 = new newError(object, classNameIn, classNameOut);
 
+$(document).ready(function () {
+    $('.client_phone').mask('+7(999)999-99-99');
+});
+
 class Mailing {
     constructor() {
-        this.name = 'antonio';
-        this.phone = '123456789';
+        this.name = '';
+        this.phone = '';
+        this.device = '';
+        this.defect = '';
+        this.brand = '';
+        this.description = '';
+        this.city = '';
+        this.reqType = '';
+        this.btnsRecall = document.querySelectorAll('.recall_btn');
+        this.btnsRepair = document.querySelectorAll('.repair_btn');
+        this.btnsCallmaster = document.querySelectorAll('.master_btn');
     }
 
     _getJson(url, data) {
@@ -197,14 +209,15 @@ class Mailing {
         });
     }
 
-    sendMailRepairRequest() {
+    sendMailRepairRequest(modal) {
         let sendData = {
             apiMethod: 'sendMailRepairRequest',
             postData: {
                 name: this.name,
                 phone: this.phone,
-                device: 'стиральная машина',
-                defect: 'не сливает воду',
+                device: this.device,
+                defect: this.defect,
+                city: this.city,
             },
         };
 
@@ -212,6 +225,7 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
+                    this.closeActiveModal(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -221,12 +235,15 @@ class Mailing {
             });
     }
 
-    sendMailPhoneRequest() {
+    sendMailMasterRequest(modal) {
         let sendData = {
-            apiMethod: 'sendMailPhoneRequest',
+            apiMethod: 'sendMailMasterRequest',
             postData: {
                 name: this.name,
                 phone: this.phone,
+                brand: this.brand,
+                desc: this.description,
+                city: this.city,
             },
         };
 
@@ -234,6 +251,31 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
+                    this.closeActiveModal(modal);
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    sendMailPhoneRequest(modal) {
+        let sendData = {
+            apiMethod: 'sendMailPhoneRequest',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                city: this.city,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    this.closeActiveModal(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -385,14 +427,7 @@ class Mailing {
             element.value = '';
         });
     }
-
-    showOK() {
-        let substrate = modal.parentElement;
-        substrate.classList.add('screen_off');
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
 }
 let mailing = new Mailing();
+
+mailing.init();
