@@ -1330,13 +1330,7 @@
     font-size: 16px;
     color: $text__main_color;
     outline: none;
-    transition: all 1s ease-in-out;
-}
-
-.input_err {
-    border: 1px red solid;
-    background-color: #f0c6c6;
-    transition: all 0.2s ease-in-out;
+    transition: all $anim_transition_err ease-in-out;
 }
 
 .button {
@@ -1468,12 +1462,13 @@
     width: 275px;
     height: 45px;
     border-radius: 20px;
-    border: none;
+    border: 1px transparent solid;
     background-color: $text__second_color;
     box-shadow: 5px 5px 15px -12px #000000 inset;
     font-size: 16px;
     color: $text__main_color;
     outline: none;
+    transition: all $anim_transition_err ease-in-out;
 }
 
 .before_1 {
@@ -1626,6 +1621,12 @@
         padding-top: 38px;
         margin-bottom: 14px;
     }
+}
+
+.input_err {
+    border: 1px red solid;
+    background-color: #f0c6c6;
+    transition: all 0.2s ease-in-out;
 }
 
 .about_margin {

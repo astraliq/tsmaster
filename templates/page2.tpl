@@ -173,42 +173,7 @@
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>
-                        <section class="form-search">
-                            <div class="container3">
-                                <div class="form-search__plate form-search_margin">
-                                    <div class="form-search__text ">
-                                        <div class="section__title section__title_black">узнайте стоимость и<br>оформите заявку на ремонт</div>
-                                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
-                                    </div>
-                                    <form class="form__items form-search_margin">
-                                        <div class="form__item">
-                                            <div class="before_1">
-                                                <select class="select input_margin" type="text">
-                                                    {% for technic,desc in content.jsonDb.defects %}
-                                                    <option class="form__option" value="">{{technic}}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                            <input class="input" type="text" placeholder="Ваше имя">
-                                        </div>
-                                        <div class="form__item">
-                                            <div class="before_2">
-                                                <select class="select input_margin" type="text">
-                                                    <option class="form__option" value=""></option>
-                                                </select>
-                                            </div>
-                                            <input class="input" type="text" placeholder="Номер телефона">
-                                        </div>
-                                        <div class="form__item">
-                                            <div class="before_3">
-                                                <input class="input input_margin" type="text" placeholder="от ____________ рублей ">
-                                            </div>
-                                            <button class="button">Отправить!</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </section>
+                        {% include 'repair_form.tpl' %}  
                         <section class="brand brand_margin">
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin">ремонт любых брендов</div>
@@ -292,19 +257,7 @@
                                 </p>
                             </div>
                         </section>
-                        <section class="form-question form-question_margin">
-                            <div class="container3">
-                                <div class="form-question__plate form-question__plate_margin">
-                                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
-                                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
-                                    <form class="form-question__form">
-                                        <input class="input" type="text" placeholder="Ваше имя">
-                                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
-                                        <button class="button">Перезвоните мне</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </section>
+                        {% include 'question_form.tpl' %} 
                         <!-- <section class="about about_margin">
                             <div class="container3">
                                 <div class="section__title section__title_margin">о компании</div>
@@ -327,10 +280,11 @@
         </main>
     </div>
     {% include 'footer.tpl' %}   
-    <script defer src="../www/js/jquery-3.4.1.js"></script> 
-    <script src="../www/js/script.js"></script>
-    <script src="../www/js/brend.js"></script>
-    <script src="../www/js/modal.js"></script>
+    <script defer src="js/jquery-3.4.1.js"></script> 
+    <script defer src="js/jquery.maskedinput.js"></script>
+    <script defer src="js/brend.js"></script>
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/script.js"></script>
     
 </body>
 

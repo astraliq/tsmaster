@@ -7,10 +7,7 @@ const transitionDelay = 500; // длина затемнения модальны
 let i = 1;
 for (let li of carousel.querySelectorAll('li')) {
     li.style.position = 'relative';
-    li.insertAdjacentHTML(
-        'beforeend',
-        '<span style="position:absolute;left:0;top:0">${i}</span>'
-    );
+    li.insertAdjacentHTML('beforeend', '<span style="position:absolute;left:0;top:0">${i}</span>');
     i++;
 }
 
@@ -66,10 +63,7 @@ function pointActive(num) {
 let j = 1;
 for (let li of carousel_1.querySelectorAll('li')) {
     li.style.position = 'relative';
-    li.insertAdjacentHTML(
-        'beforeend',
-        '<span style="position:absolute;left:0;top:0">${i}</span>'
-    );
+    li.insertAdjacentHTML('beforeend', '<span style="position:absolute;left:0;top:0">${i}</span>');
     j++;
 }
 
@@ -97,10 +91,7 @@ carousel_1.querySelector('.next_1').onclick = function () {
     position_1 -= width_1 * count_1;
     // if (position_1 <= -1 * (width_1 * numberImg_1)) position_1 = 0; // строка перемещает на конец списка
 
-    position_1 = Math.max(
-        position_1,
-        -width_1 * (listElems_1.length - count_1)
-    );
+    position_1 = Math.max(position_1, -width_1 * (listElems_1.length - count_1));
     list_1.style.marginLeft = position_1 + 'px'; //обращение у стилю тэга ul
 };
 //курусель отзывов малая
@@ -110,10 +101,7 @@ let carousel_2 = document.getElementById('carousel_2');
 if (carousel_2) {
     for (let li of carousel_2.querySelectorAll('li')) {
         li.style.position = 'relative';
-        li.insertAdjacentHTML(
-            'beforeend',
-            '<span style="position:absolute;left:0;top:0">${i}</span>'
-        );
+        li.insertAdjacentHTML('beforeend', '<span style="position:absolute;left:0;top:0">${i}</span>');
         g++;
     }
 
@@ -141,10 +129,7 @@ if (carousel_2) {
         position_2 -= width_2 * count_2;
         // if (position_2 <= -1 * (width_2 * numberImg_2)) position_2 = 0; // строка перемещает на конец списка
 
-        position_2 = Math.max(
-            position_2,
-            -width_2 * (listElems_2.length - count_2)
-        );
+        position_2 = Math.max(position_2, -width_2 * (listElems_2.length - count_2));
         list_2.style.marginLeft = position_2 + 'px'; //обращение у стилю тэга ul
     };
 }
@@ -227,7 +212,7 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeActiveModal(modal);
+                    this.clearInputs(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -303,29 +288,26 @@ class Mailing {
             });
         });
         this.btnsRepair.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                let parent = btn.parentElement;
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement.parentElement;
                 let nameBlock = parent.querySelector('.client_name');
                 let phoneBlock = parent.querySelector('.client_phone');
                 let deviceBlock = parent.querySelector('.device');
                 let defectBlock = parent.querySelector('.defect');
                 this.name = nameBlock.value;
                 this.phone = phoneBlock.value;
-                this.device = deviceBlock ? deviceBlock.value : '';
-                this.defect = defectBlock ? defectBlock.value : '';
-                let check = this._checkRepair(
-                    nameBlock,
-                    phoneBlock,
-                    deviceBlock,
-                    defectBlock
-                );
+                this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
+                this.defect = defectBlock ? defectBlock[defectBlock.selectedIndex].text : '';
+                let check = this._checkRepair(nameBlock, phoneBlock, defectBlock, deviceBlock);
                 if (check) {
                     this.sendMailRepairRequest(parent);
                 }
             });
         });
         this.btnsCallmaster.forEach((btn) => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
                 let parent = btn.parentElement;
                 let nameBlock = parent.querySelector('.client_name');
                 let phoneBlock = parent.querySelector('.client_phone');
@@ -334,15 +316,8 @@ class Mailing {
                 this.name = nameBlock.value;
                 this.phone = phoneBlock.value;
                 this.brand = brandBlock ? brandBlock.value : '';
-                this.description = descriptionBlock
-                    ? descriptionBlock.value
-                    : '';
-                let check = this._checkRepair(
-                    nameBlock,
-                    phoneBlock,
-                    brandBlock,
-                    descriptionBlock
-                );
+                this.description = descriptionBlock ? descriptionBlock.value : '';
+                let check = this._checkRepair(nameBlock, phoneBlock, brandBlock, descriptionBlock);
                 if (check) {
                     this.sendMailMasterRequest(parent);
                 }
@@ -394,15 +369,9 @@ class Mailing {
         };
         checkArr.name.check = name.value === '' ? false : true;
         checkArr.phone.check = phone.value.length !== 16 ? false : true;
-        checkArr.defect.check = defect.value === '' ? false : true;
-        checkArr.device.check = device.value === '' ? false : true;
-
-        if (
-            checkArr.name.check &&
-            checkArr.phone.check &&
-            checkArr.defect.check &&
-            checkArr.device.check
-        ) {
+        checkArr.defect.check = defect[defect.selectedIndex].text === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
             this._changeColorByCheck(checkArr);
             return true;
         }
@@ -437,17 +406,20 @@ class Mailing {
         });
     }
 
+    clearInputs(modal) {
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
     closeActiveModal(modal) {
         let substrate = modal.parentElement;
         substrate.classList.add('modal_off');
         setTimeout(function () {
             substrate.classList.add('screen_off');
         }, transitionDelay);
-
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
+        this.clearInputs(modal);
     }
 }
 let mailing = new Mailing();
