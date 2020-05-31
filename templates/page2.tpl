@@ -15,14 +15,7 @@
     <div class="container">
         <main class="main-blocks">
         <!-- modal window -->
-        <div class="substrate1 screen_off">
-            <div class="modal_cause screen_off">
-                <div class="cross1">&#10006;</div>
-                <!--<input class="input" type="text" placeholder="Ваше имя" maxlength="30">
-                <input class="input" type="text" placeholder="Номер телефона">
-                <button class="button" type="button">Вызвать мастера!</button>-->
-            </div>
-        </div>
+        {% include 'modal_substrate1.tpl' %}
             <section class="left-part">
             {% include 'service_menu2.tpl' %}                           
                 <div class="action action_margin">

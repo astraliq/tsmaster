@@ -59,7 +59,7 @@ class Mailing extends Model {
 
 
 		// несколько получателей
-		$to = 'client@mail.ru'; // список получателей через запятую
+		$to = 'astral457@mail.ru'; // список получателей через запятую
 
 		// тема письма
 		$subject = 'Заявка на ремонт';
@@ -102,7 +102,7 @@ class Mailing extends Model {
 		$message = $template->render($arrayContent);
 
 		// несколько получателей
-		$to = 'client@mail.ru'; // список получателей через запятую
+		$to = 'astral457@mail.ru'; // список получателей через запятую
 
 		// тема письма
 		$subject = 'Заявка на звонок';
