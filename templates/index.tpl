@@ -102,9 +102,9 @@
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input" type="text" placeholder="Номер телефона">
-                        <button class="button" type="button">Получить скидку!</button>
+                        <input class="input client_name" type="text" placeholder="Ваше имя">
+                        <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="+7(___)___-__-__">
+                        <button class="button recall_btn" type="button">Получить скидку!</button>
                     </form>
                 </div>
             </div>

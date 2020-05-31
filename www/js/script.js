@@ -413,6 +413,9 @@ class Mailing {
             let elemVal = checkArr[elem];
             if (!elemVal.check) {
                 elemVal.el.classList.add('input_err');
+                setTimeout(function () {
+                    elemVal.el.classList.remove('input_err');
+                }, 700);
             } else {
                 elemVal.el.classList.remove('input_err');
             }
