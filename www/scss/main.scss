@@ -688,6 +688,8 @@
     left: 0;
     background-color: rgba(3, 3, 3, 0.562);
     z-index: 15;
+    opacity: 1;
+    transition: all $anim_transition ease-in-out;
 }
 
 .modal_cause {
@@ -766,6 +768,11 @@
     font-size: 30px;
     cursor: pointer;
     z-index: 12;
+}
+
+.modal_off {
+    opacity: 0;
+    transition: all $anim_transition ease-in-out;
 }
 
 .screen_off {

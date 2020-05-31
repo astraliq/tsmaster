@@ -14,8 +14,8 @@
     {% include 'header.tpl' %}
     <main class="main-style">
          <!-- modal window -->
-         <div class="substrate1 screen_off">
-            <div class="modal_cause screen_off">
+         <div class="substrate1 screen_off modal_off">
+            <div class="modal_cause">
                 <div class="cross1">&#10006;</div>
                 <input class="input client_name" type="text" placeholder="Ваше имя" maxlength="30">
                 <input class="input client_phone" name="phone" type="tel" maxlength="16"
@@ -303,9 +303,9 @@
                     <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
                     <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
                     <form class="form-question__form">
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
-                        <button class="button">Перезвоните мне</button>
+                        <input class="input client_name" type="text" placeholder="Ваше имя">
+                        <input class="input input_margin-lr client_phone" name="phone" type="text" placeholder="+7(___)___-__-__">
+                        <button class="button recall_btn">Перезвоните мне</button>
                     </form>
                 </div>
             </div>

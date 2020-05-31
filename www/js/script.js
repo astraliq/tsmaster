@@ -1,5 +1,7 @@
 'use strict';
 
+const transitionDelay = 500; // длина затемнения модальных окон в милисекундах
+
 //Карусель верхнего модуля
 //помечаем код для удобства
 let i = 1;
@@ -287,7 +289,8 @@ class Mailing {
 
     init() {
         this.btnsRecall.forEach((btn) => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
                 let parent = btn.parentElement;
                 let nameBlock = parent.querySelector('.client_name');
                 let phoneBlock = parent.querySelector('.client_phone');
@@ -415,16 +418,32 @@ class Mailing {
                 elemVal.el.classList.add('input_err');
                 setTimeout(function () {
                     elemVal.el.classList.remove('input_err');
-                }, 700);
+                }, transitionDelay);
             } else {
                 elemVal.el.classList.remove('input_err');
             }
         }
     }
 
+    showModal(modal) {
+        let substrate = modal.parentElement;
+        substrate.classList.add('modal_off');
+        setTimeout(function () {
+            substrate.classList.add('screen_off');
+        }, transitionDelay);
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
     closeActiveModal(modal) {
         let substrate = modal.parentElement;
-        substrate.classList.add('screen_off');
+        substrate.classList.add('modal_off');
+        setTimeout(function () {
+            substrate.classList.add('screen_off');
+        }, transitionDelay);
+
         let inputs = modal.querySelectorAll('.input');
         inputs.forEach((element) => {
             element.value = '';
