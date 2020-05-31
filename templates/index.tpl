@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -17,10 +17,9 @@
          <div class="substrate1 screen_off">
             <div class="modal_cause screen_off">
                 <div class="cross1">&#10006;</div>
-                <input class="input client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                <input class="input client_phone" name="phone" type="tel" maxlength="16"
-                placeholder="+7(___)___-__-__">
-                <button class="button recall_btn" type="button">Вызвать мастера!</button>
+                <input class="input" type="text" placeholder="Ваше имя" maxlength="30">
+                <input class="input" type="text" placeholder="Номер телефона">
+                <button class="button" type="button">Вызвать мастера!</button>
             </div>
         </div>
         <section class="slider">
@@ -327,10 +326,9 @@
         </section>
     </main>
     {% include 'footer.tpl' %}  
-    <script defer src="js/jquery-3.4.1.js"></script> 
-    <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
-    <script defer src="js/script.js"></script>
+    <script defer src="../www/js/jquery-3.4.1.js"></script> 
+    <script defer src="../www/js/modal.js"></script>
+    <script defer src="../www/js/script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -130,8 +130,7 @@
     &__icon {
         color: $text__main_color;
     }
-    &__number {
-    }
+    /*&__number {}*/
     &__btn {
         margin: 0 10px 0 15px;
         padding: 0 0 0 0;
@@ -319,7 +318,8 @@
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    width: 100%;
+    width: 83%;
+    /*100*/
 }
 
 .slider {
@@ -352,20 +352,18 @@
     &__img {
         width: 100%;
     }
-    &__top {
-    }
+    /*&__top {}*/
     &__top_margin {
         margin-bottom: 60px;
     }
-    &__item {
-    }
+    /*&__item {}*/
 }
 
 .action {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form.png');
+    background-image: url("../img/action-form/action-form.png");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -449,6 +447,9 @@
 }
 
 .section-part__title {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
     color: $text__main_color;
     font-family: $font__second;
     font-size: 22px;
@@ -459,19 +460,19 @@
 
 .reviews-part__item {
     margin: 0 0 0 0;
-    padding: 10px;
+    // padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-content: center;
-    width: 250px;
+    width: 195px;
     height: 320px;
     border-radius: 5px;
     // margin: 0;
     // padding: 0;
     // width: 105.3%;
     // /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
-    //  display: block;
+    // display: block;
 }
 
 .invisible {
@@ -500,13 +501,16 @@
 
 .top-banner_margin {
     margin-bottom: 75px;
+    position: relative;
 }
 
 .form-question_margin {
     margin: 0 0 70px 0;
 }
 
-// Grig. cost-tablr \\
+
+/*// Grig. cost-tablr \\*/
+
 .cost-table_position {
     margin: 0 0 0 48px;
     padding: 0 0 0 0;
@@ -523,7 +527,7 @@
     display: grid;
     grid-template-columns: auto 200px;
     grid-template-rows: 50px;
-    // grid-template-rows: repeat(9, 50px);
+    /*grid-template-rows: repeat(9, 50px);*/
 }
 
 .cost-table_margin {
@@ -632,6 +636,7 @@
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -769,6 +774,7 @@
     display: none;
 }
 
+
 /*Карусель*/
 
 .carousel {
@@ -783,6 +789,20 @@
     box-sizing: border-box;
 }
 
+.carousel_2 {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel_br {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .carousel img {
     margin: 0;
     padding: 0;
@@ -791,7 +811,23 @@
     display: block;
 }
 
+.carousel_br img {
+    margin: 0;
+    padding: 0;
+    width: 87%;
+    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+    display: block;
+}
+
 .carousel_1 li div .reviews__item {
+    margin: 0;
+    padding: 0;
+    width: 105.3%;
+    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+    display: block;
+}
+
+.carousel_2 li div .reviews__item {
     margin: 0;
     padding: 0;
     width: 105.3%;
@@ -816,6 +852,38 @@
 }
 
 .arrow_1 {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 45%;
+    padding: 0;
+    background-color: $bgcolor_blue;
+    border-radius: 2px;
+    border: 1px solid $bgcolor_blue;
+    box-shadow: 3px 3px 5px #000;
+    font-size: 24px;
+    line-height: 24px;
+    color: $text__second_color;
+    display: block;
+}
+
+.arrow_2 {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -18%;
+    padding: 0;
+    background-color: $bgcolor_blue;
+    border-radius: 2px;
+    border: 1px solid $bgcolor_blue;
+    box-shadow: 3px 3px 5px #000;
+    font-size: 24px;
+    line-height: 24px;
+    color: $text__second_color;
+    display: block;
+}
+
+.arrow_br {
     width: 45px;
     height: 45px;
     position: absolute;
@@ -927,6 +995,14 @@
     outline: none;
 }
 
+.arrow_2:focus {
+    outline: none;
+}
+
+.arrow_br:focus {
+    outline: none;
+}
+
 .arrow:hover {
     background: #ccc;
     border: 1px solid #ccc;
@@ -934,6 +1010,18 @@
 }
 
 .arrow_1:hover {
+    background: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.arrow_2:hover {
+    background: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.arrow_br:hover {
     background: #ccc;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -947,12 +1035,30 @@
     box-shadow: none;
 }
 
+.arrow_2:active {
+    box-shadow: none;
+}
+
+.arrow_br:active {
+    box-shadow: none;
+}
+
 .prev {
     left: 3%;
     z-index: 10;
 }
 
 .prev_1 {
+    left: 0;
+    z-index: 10;
+}
+
+.prev_2 {
+    left: 0;
+    z-index: 10;
+}
+
+.prev_br {
     left: 0;
     z-index: 10;
 }
@@ -967,12 +1073,34 @@
     z-index: 10;
 }
 
+.next_2 {
+    right: 0;
+    z-index: 10;
+}
+
+.next_br {
+    right: 0;
+    z-index: 10;
+}
+
 .gallery {
     width: 100%;
     overflow: hidden;
 }
 
 .gallery_1 {
+    width: 81.6%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery_2 {
+    width: 81.6%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery_br {
     width: 81.6%;
     margin: 0 auto;
     overflow: hidden;
@@ -998,6 +1126,26 @@
     font-size: 0;
 }
 
+.gallery_2 ul {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 1000ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    font-size: 0;
+}
+
+.gallery_br ul {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 1000ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    font-size: 0;
+}
+
 .gallery li {
     display: inline-block;
     margin-right: 0.751%;
@@ -1007,6 +1155,17 @@
     display: inline-block;
     margin-right: 0.6%;
 }
+
+.gallery_2 li {
+    display: inline-block;
+    margin-right: 0.6%;
+}
+
+.gallery_br li {
+    display: inline-block;
+    margin-right: 0.6%;
+}
+
 
 /*карусель*/
 
@@ -1129,7 +1288,7 @@
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1162,17 +1321,12 @@
     height: 45px;
     padding: 0 10px 0 10px;
     border-radius: 10px;
-    border: 1px transparent solid;
+    border: none;
     background-color: $text__second_color;
     box-shadow: 5px 5px 15px -12px #000000 inset;
     font-size: 16px;
     color: $text__main_color;
     outline: none;
-}
-
-.input_err {
-    border: 1px red solid;
-    background-color: rgb(251, 202, 210);
 }
 
 .button {
@@ -1275,8 +1429,8 @@
     }
 }
 
-.form-search__items {
-}
+
+/*.form-search__items {}*/
 
 .form__items {
     padding: 0 0 0 0;
@@ -1316,7 +1470,7 @@
 .before_1 {
     position: relative;
     &::before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1331,7 +1485,7 @@
 .before_2 {
     position: relative;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1346,7 +1500,7 @@
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1561,7 +1715,7 @@
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -1580,7 +1734,7 @@
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
@@ -1618,3 +1772,6 @@
 .planb_b {
     font-weight: 700;
 }
+
+
+/*примечание для проверки версии - 4*/
