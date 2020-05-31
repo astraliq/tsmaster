@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -14,6 +14,15 @@
     {% include 'header.tpl' %}
     <div class="container">
         <main class="main-blocks">
+        <!-- modal window -->
+        <div class="substrate1 screen_off">
+            <div class="modal_cause screen_off">
+                <div class="cross1">&#10006;</div>
+                <!--<input class="input" type="text" placeholder="Ваше имя" maxlength="30">
+                <input class="input" type="text" placeholder="Номер телефона">
+                <button class="button" type="button">Вызвать мастера!</button>-->
+            </div>
+        </div>
             <section class="left-part">
             {% include 'service_menu2.tpl' %}                           
                 <div class="action action_margin">
@@ -25,13 +34,26 @@
                 </div>
                 <div class="reviews-part">
                     <div class="reviews-part__top reviews-part__top_margin">
-                        <button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>
+                        <!--<button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>-->
                         <div class="section-part__title">отзывы</div>
-                        <button class="arrow_part next_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_right.png"></button>
+                        <!--<button class="arrow_part next_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_right.png"></button>-->
                     </div>
-                    <div id="carousel_1 " class="carousel_1">
-                        <div class="gallery_1-part">
-                            <ul class="images_1">
+                    <!-- обманка для JS-->
+                    <div id="carousel" class="carousel screen_off">
+                        <div id="points" class="prev next"></div>
+                        <div id="carousel_1" class="carousel_1">
+                        <div class="prev_1 next_1"></div>
+                        <div class="button-reviews"></div>
+                        <div class="substrate2"></div>
+                        <div class="cross2"></div>
+                        <div class="modal_rewiew"></div>
+                        </div>
+                    </div>
+                    <!-- карусель малая -->
+                    <div id="carousel_2" class="carousel_2">
+                        <button class="arrow_2 prev_2"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                        <div class="gallery_2">
+                            <ul class="images_2">
                                 <li>
                                     <div class="reviews-part__item">
                                         <div class="reviews__item-name">Анастасия Миронова</div>
@@ -100,7 +122,8 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                        <button class="arrow_2 next_2"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
+                    </!---->
                 </div>
             </section>
             <section class="right-part">
@@ -108,6 +131,10 @@
                     <div class="main-style">
                         <section class="top-banner_margin">
                             <img class="top-banner__img" src="../img/top-banner/top-banner.jpg" width="100%" height="auto" alt="Ремонт стиральных машин">
+                            <div class="cause">
+                                <div class="cause_btn">Вызвать мастера!</div>
+                                <div class="cause_btn_block">&#10004;</div>
+                            </div>
                         </section>
                         <section class="advantage advantage_margin">
                             <div class="container3">
@@ -185,7 +212,7 @@
                         <section class="brand brand_margin">
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin">ремонт любых брендов</div>
-                                <div class="brand-items">
+                                <!--<div class="brand-items">
                                     <div class="brand-arrow">
                                         <button class="brand-btn"><</button>
                                     </div>
@@ -201,7 +228,27 @@
                                     <div class="brand-arrow">
                                         <button class="brand-btn">></button>
                                     </div>
-
+                                </div>-->
+                                    <!-- Карусель брендов -->
+                                <div class="brand-items">
+                                    <div id="carousel_br" class="carousel_br">
+                                        <button class="arrow_br prev_br"><</button>
+                                        <div class="gallery_br">                                            
+                                            <ul class="image_br">
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                            </ul>                                            
+                                        </div>
+                                        <button class="arrow_br next_br">></button>
+                                    </div>
+                                    <!-- Карусель брендов -->
                                 </div>
                             </div>
                         </section>
@@ -280,10 +327,11 @@
         </main>
     </div>
     {% include 'footer.tpl' %}   
-    <script defer src="js/jquery-3.4.1.js"></script> 
-    <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
-    <script defer src="js/script.js"></script>
+    <script defer src="../www/js/jquery-3.4.1.js"></script> 
+    <script src="../www/js/script.js"></script>
+    <script src="../www/js/brend.js"></script>
+    <script src="../www/js/modal.js"></script>
+    
 </body>
 
 </html>

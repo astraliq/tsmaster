@@ -88,7 +88,7 @@ carousel_1.querySelector('.prev_1').onclick = function () {
 
     position_1 = Math.min(position_1, 0);
     list_1.style.marginLeft = position_1 + 'px'; //обращение к ul
-    console.log(position_1);
+
 };
 
 //сдвиг в право
@@ -101,26 +101,57 @@ carousel_1.querySelector('.next_1').onclick = function () {
         -width_1 * (listElems_1.length - count_1)
     );
     list_1.style.marginLeft = position_1 + 'px'; //обращение у стилю тэга ul
-    console.log(position_1);
+
+};
+//курусель отзывов малая
+/*******************************************************************************/
+let g = 1;
+for (let li of carousel_2.querySelectorAll('li')) {
+    li.style.position = 'relative';
+    li.insertAdjacentHTML(
+        'beforeend',
+        '<span style="position:absolute;left:0;top:0">${i}</span>'
+    );
+    g++;
+}
+
+let width_2 = 255; //ишрина картинки
+let count_2 = 1; //видимое количество картинок
+let numberImg_2 = 9; //количество картинок
+let numPoint_2 = 0; // текущаяя картинка
+
+let list_2 = carousel_2.querySelector('ul');
+let listElems_2 = carousel_2.querySelectorAll('li');
+
+let position_2 = 0; //положение прокрутки
+
+//сдвиг в лево
+carousel_2.querySelector('.prev_2').onclick = function () {
+    position_2 += width_2 * count_2;
+    // if (position_1 > 0) position_2 = -1 * (width_2 * (numberImg_2 - count_2)); //строка возвращает на начало списка
+
+    position_2 = Math.min(position_2, 0);
+    list_2.style.marginLeft = position_2 + 'px'; //обращение к ul
+
 };
 
-$(document).ready(function () {
-    $('.client_phone').mask('+7(999)999-99-99');
-});
+//сдвиг в право
+carousel_2.querySelector('.next_2').onclick = function () {
+    position_2 -= width_2 * count_2;
+    // if (position_2 <= -1 * (width_2 * numberImg_2)) position_2 = 0; // строка перемещает на конец списка
+
+    position_2 = Math.max(
+        position_2,
+        -width_2 * (listElems_2.length - count_2)
+    );
+    list_2.style.marginLeft = position_2 + 'px'; //обращение у стилю тэга ul
+
+};
 
 class Mailing {
     constructor() {
-        this.name = '';
-        this.phone = '';
-        this.device = '';
-        this.defect = '';
-        this.brand = '';
-        this.description = '';
-        this.city = '';
-        this.reqType = '';
-        this.btnsRecall = document.querySelectorAll('.recall_btn');
-        this.btnsRepair = document.querySelectorAll('.repair_btn');
-        this.btnsCallmaster = document.querySelectorAll('.master_btn');
+        this.name = 'antonio';
+        this.phone = '123456789';
     }
 
     _getJson(url, data) {
@@ -136,15 +167,14 @@ class Mailing {
         });
     }
 
-    sendMailRepairRequest(modal) {
+    sendMailRepairRequest() {
         let sendData = {
             apiMethod: 'sendMailRepairRequest',
             postData: {
                 name: this.name,
                 phone: this.phone,
-                device: this.device,
-                defect: this.defect,
-                city: this.city,
+                device: 'стиральная машина',
+                defect: 'не сливает воду',
             },
         };
 
@@ -152,7 +182,6 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeActiveModal(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -162,39 +191,12 @@ class Mailing {
             });
     }
 
-    sendMailMasterRequest(modal) {
-        let sendData = {
-            apiMethod: 'sendMailMasterRequest',
-            postData: {
-                name: this.name,
-                phone: this.phone,
-                brand: this.brand,
-                desc: this.description,
-                city: this.city,
-            },
-        };
-
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    console.log('mail send!');
-                    this.closeActiveModal(modal);
-                } else {
-                    console.log('ERROR_SENDING');
-                }
-            })
-            .catch((error) => {
-                console.log('fetch error');
-            });
-    }
-
-    sendMailPhoneRequest(modal) {
+    sendMailPhoneRequest() {
         let sendData = {
             apiMethod: 'sendMailPhoneRequest',
             postData: {
                 name: this.name,
                 phone: this.phone,
-                city: this.city,
             },
         };
 
@@ -202,7 +204,6 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeActiveModal(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -211,150 +212,5 @@ class Mailing {
                 console.log('fetch error');
             });
     }
-
-    init() {
-        this.btnsRecall.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                let check = this._checkRecall(nameBlock, phoneBlock);
-                if (check) {
-                    this.sendMailPhoneRequest(parent);
-                }
-            });
-        });
-        this.btnsRepair.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                let deviceBlock = parent.querySelector('.device');
-                let defectBlock = parent.querySelector('.defect');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                this.device = deviceBlock ? deviceBlock.value : '';
-                this.defect = defectBlock ? defectBlock.value : '';
-                let check = this._checkRepair(
-                    nameBlock,
-                    phoneBlock,
-                    deviceBlock,
-                    defectBlock
-                );
-                if (check) {
-                    this.sendMailRepairRequest(parent);
-                }
-            });
-        });
-        this.btnsCallmaster.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                let brandBlock = parent.querySelector('.brand');
-                let descriptionBlock = parent.querySelector('.description');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                this.brand = brandBlock ? brandBlock.value : '';
-                this.description = descriptionBlock
-                    ? descriptionBlock.value
-                    : '';
-                let check = this._checkRepair(
-                    nameBlock,
-                    phoneBlock,
-                    brandBlock,
-                    descriptionBlock
-                );
-                if (check) {
-                    this.sendMailMasterRequest(parent);
-                }
-            });
-        });
-    }
-
-    _checkRecall(name, phone) {
-        let checkArr = {
-            name: {
-                check: false,
-                el: name,
-            },
-            phone: {
-                check: false,
-                el: phone,
-            },
-        };
-        checkArr.name.check = name.value === '' ? false : true;
-        checkArr.phone.check = phone.value.length !== 16 ? false : true;
-        if (checkArr.name.check && checkArr.phone.check) {
-            this._changeColorByCheck(checkArr);
-            return true;
-        }
-
-        this._changeColorByCheck(checkArr);
-
-        return false;
-    }
-
-    _checkRepair(name, phone, defect, device) {
-        let checkArr = {
-            name: {
-                check: false,
-                el: name,
-            },
-            phone: {
-                check: false,
-                el: phone,
-            },
-            defect: {
-                check: false,
-                el: defect,
-            },
-            device: {
-                check: false,
-                el: device,
-            },
-        };
-        checkArr.name.check = name.value === '' ? false : true;
-        checkArr.phone.check = phone.value.length !== 16 ? false : true;
-        checkArr.defect.check = defect.value === '' ? false : true;
-        checkArr.device.check = device.value === '' ? false : true;
-
-        if (
-            checkArr.name.check &&
-            checkArr.phone.check &&
-            checkArr.defect.check &&
-            checkArr.device.check
-        ) {
-            this._changeColorByCheck(checkArr);
-            return true;
-        }
-        this._changeColorByCheck(checkArr);
-
-        return false;
-    }
-
-    _changeColorByCheck(checkArr) {
-        for (let elem in checkArr) {
-            let elemVal = checkArr[elem];
-            if (!elemVal.check) {
-                elemVal.el.classList.add('input_err');
-            } else {
-                elemVal.el.classList.remove('input_err');
-            }
-        }
-    }
-
-    closeActiveModal(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('screen_off');
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
 }
 let mailing = new Mailing();
-
-mailing.init();
