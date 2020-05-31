@@ -1,0 +1,79 @@
+<footer class="footer footer_padding">
+  <div class="container">
+    <div class="footer__items">
+      <div class="footer__item">
+        <div class="logo-name">
+          <a name="contacts"></a>
+          <div class="logo__title">
+            <a class="logo__link" href="/">{{ content.siteName | raw }}</a>
+          </div>
+          <p class="logo__subtitle section__subtitle_white">
+            ремонт&nbsp;бытовой&nbsp;техники&nbsp;в&nbsp;Екатеринбурге
+          </p>
+        </div>
+        <div class="footer__desc">
+          Описание.......................................
+          .........................................................
+          .........................................................
+          .........................................................
+          .........................................................
+        </div>
+      </div>
+      <div class="footer__item">
+        <p class="footer__title text_margin_1">Ремонт</p>
+        <ul class="footer__list">
+          {% for menu,link in content.jsonDb.service_menu %} {% if menu !=
+          'главная' %}
+          <li class="footer__menu_item text_margin_1">
+            <a
+              class="footer__menu_link text_uppercase text_grey"
+              href="{{ link }}"
+              >{{ menu | raw }}</a
+            >
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+      <div class="footer__item">
+        <ul class="footer__list">
+          {% for menu,link in content.jsonDb.main_menu %}
+          <li class="footer__menu_item text_margin_2">
+            <a class="footer__menu_link text_grey" href="{{ link }}">{{
+              menu | raw
+            }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer__item">
+        <div class="footer-city">
+          <ul class="footer__list">
+            <li class="footer__menu_item text_margin_3">
+              <a class="footer__menu_link text_white" href="#">Город</a>
+            </li>
+            <li class="footer__menu_item text_margin_3">
+              <a class="footer__menu_link text_white" href="#">Телефон</a>
+            </li>
+            <li class="footer__menu_item text_margin_3">
+              <a class="footer__menu_link text_white" href="#">График работы</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<section class="plan-b-style">
+  <div class="dev-planb">
+    Разработано в&nbsp;
+    <a href="http://plan-b.studio" style="text-decoration: none;">
+      <div class="plan-b">
+        <span class="planb_p">p</span><span class="planb_l">l</span>
+        <span class="planb_a">a</span><span class="planb_n">n</span>&nbsp;<span
+          class="planb_b"
+          >b</span
+        >
+      </div>
+    </a>
+  </div>
+</section>

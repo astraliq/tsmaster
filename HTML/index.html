@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="scss/main.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <title>ТехСервис Мастер</title>
+</head>
+
+<body>
+    <div class="top-line"></div>
+    <header class="header-style">
+        <div class="container">
+            <nav class="menu__company">
+                <ul class="menu__items">
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#about">О компании</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#advantage">Преимущества</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#services">Услуги</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#terms">Условия</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#action">Акции</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#reviews">Отзывы</a>
+                    </li>
+                    <li class="menu__item menu__item_margin">
+                        <a class="menu__link" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logo-text-tel logo-text-tel_margin">
+                <div class="logo-name">
+                    <div class="logo__title">
+                        <a class="logo__link" href="/"> ТехСервис Мастер
+                        </a>
+                    </div>
+                    <p class="logo__subtitle">ремонт бытовой техники в Екатеринбурге</p>
+                </div>
+                <div class="tel">
+                    <div class="tel__icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-cellphone-iphone" width="30" height="35" viewBox="0 0 24 24"><path d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" /></svg></div>
+                    <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                    <button class="tel__btn">Заказать звонок</button>
+                </div>
+            </div>
+            <div class="service__menu">
+                <ul class="service__items">
+                    <li class="service__item">
+                        <a class="service__link" href="#">Главная</a>
+                    </li>
+                    <hr class="service__hr" noshade color="#1b1b1b">
+                    <li class="service__item">
+                        <a class="service__link" href="#">Стиральная машина</a>
+                    </li>
+                    <hr class="service__hr" noshade color="#1b1b1b">
+                    <li class="service__item">
+                        <a class="service__link" href="#">Посудомоечная машина</a>
+                    </li>
+                    <hr class="service__hr" noshade color="#1b1b1b">
+                    <li class="service__item">
+                        <a class="service__link" href="#">Холодильник</a>
+                    </li>
+                    <hr class="service__hr" noshade color="#1b1b1b">
+                    <li class="service__item">
+                        <a class="service__link" href="#">духовой шкаф</a>
+                    </li>
+                    <hr class="service__hr" noshade color="#1b1b1b">
+                    <li class="service__item">
+                        <a class="service__link" href="#">варочная панель</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bullet__items bullet__items_margin">
+                <div class="bullet__item">
+                    <img class="bullet__img" src="img/bullets/01.jpg" alt="Работаем ежедневно">
+                    <div class="bullet__text">Работаем ежедневно</div>
+                </div>
+                <div class="bullet__item">
+                    <img class="bullet__img" src="img/bullets/02.jpg" alt="бесплатный выезд">
+                    <div class="bullet__text">бесплатный выезд</div>
+                </div>
+                <div class="bullet__item">
+                    <img class="bullet__img" src="img/bullets/03.jpg" alt="бесплатная диагностика">
+                    <div class="bullet__text">бесплатная диагностика</div>
+                </div>
+                <div class="bullet__item">
+                    <img class="bullet__img" src="img/bullets/04.jpg" alt="гарантия на наши услуги">
+                    <div class="bullet__text">гарантия<br>на наши услуги</div>
+                </div>
+            </div>
+        </div>
+        <div class="substrate screen_off">
+            <div class="modal_phone">
+                <div class="cross">&#10006;</div>
+            </div>
+        </div>
+    </header>
+    <main class="main-style">
+        <div class="substrate1 screen_off">
+            <div class="modal_cause">
+                <div class="cross1">&#10006;</div>
+            </div>
+        </div>
+        <section class="slider">
+            <div class="container">
+                <div id="points" class="slider__points slider__points_margin">
+                    <a data-point="0" class="slider__point slider__point_active"></a>
+                    <a data-point="1" class="slider__point"></a>
+                    <a data-point="2" class="slider__point"></a>
+                    <a data-point="3" class="slider__point"></a>
+                    <a data-point="4" class="slider__point"></a>
+                </div>
+                <div class="slider__top slider__top_margin">
+                    <!-- <div class="slider__item">
+                        <img class="slider__img" src="img/top-slider/top-slider_01.jpg" alt="">
+                    </div> -->
+                    <div class="slider__item">
+                        <div id="carousel" class="carousel">
+                            <button class="arrow prev">&lt;</button>
+                            <div class="cause">
+                                <div class="cause_btn">Вызвать мастера!</div>
+                                <div class="cause_btn_block">&#10004;</div>
+                            </div>
+                            <div class="gallery">
+                                <ul class="images">
+                                    <li><img src="./img/top-slider/top-slider_01.jpg"></li>
+                                    <li><img src="./img/top-slider/top-slider_02.jpg"></li>
+                                    <li><img src="./img/top-slider/top-slider_03.jpg"></li>
+                                    <li><img src="./img/top-slider/top-slider_04.jpg"></li>
+                                    <li><img src="./img/top-slider/top-slider_05.jpg"></li>
+                                </ul>
+                            </div>
+                            <button class="arrow next">&gt;</button>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+
+                    </div>
+                    <div class="slider__item">
+
+                    </div>
+                    <div class="slider__item">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="advantage advantage_margin">
+            <div class="container2">
+                <div class="section__title section__title_black section__title_margin"><a name="advantage">наши преимущества</a></div>
+                <div class="advantage__bullets">
+                    <div class="advantage__bullets-left">
+                        <div class="bullets__item bullets_margin">
+                            <p class="bullets__text bullets__text_right">Работаем ежедневно</p>
+                            <img class="bullets__img" src="img/advantage/advantage_01.png" alt="Работаем ежедневно">
+                        </div>
+                        <div class="bullets__item">
+                            <p class="bullets__text bullets__text_right">бесплатный выезд</p>
+                            <img class="bullets__img" src="img/advantage/advantage_02.png" alt="бесплатный выезд">
+                        </div>
+                    </div>
+                    <img class="advantage__img" src="img/advantage/advantage-foto.jpg">
+                    <div class="advantage__bullets-right">
+                        <div class="bullets__item bullets_margin">
+                            <img class="bullets__img" src="img/advantage/advantage_03.png" alt="бесплатная диагностика">
+                            <p class="bullets__text bullets__text_left">бесплатная диагностика</p>
+
+                        </div>
+                        <div class="bullets__item">
+                            <img class="bullets__img" src="img/advantage/advantage_04.png" alt="гарантия на наши услуги">
+                            <p class="bullets__text bullets__text_left">гарантия на наши услуги</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="form-plate form-plate_margin">
+            <div class="container">
+                <div class="form-plate__request">&nbsp;
+                    <form class="form-plate__form" action="#">
+                        <div class="section__title section__title_white">оставьте заявку</div>
+                        <input class="input" type="text" placeholder="Ваше имя">
+                        <input class="input" type="text" placeholder="Номер телефона">
+                        <button class="button" type="button">Получить скидку!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="services-style">
+            <div class="container2">
+                <div class="section__title section__title_margin">
+                    <a name="services">все услуги<br>наших мастеров</a>
+                </div>
+                <div class="services-items services-items_margin">
+                    <div class="services-item">
+                        <img class="services__img_margin" src="img/services/services_01.jpg" alt="Ремонт стиральных машин">
+                        <button class="services__btn">Узнать подробнее</button>
+                    </div>
+                    <div class="services-item">
+                        <img class="services__img_margin" src="img/services/services_02.jpg" alt="Ремонт посудомоечных машин">
+                        <button class="services__btn">Узнать подробнее</button>
+                    </div>
+                    <div class="services-item">
+                        <img class="services__img_margin" src="img/services/services_03.jpg" alt="Ремонт холодильников">
+                        <button class="services__btn">Узнать подробнее</button>
+                    </div>
+                    <div class="services-item">
+                        <img class="services__img_margin" src="img/services/services_04.jpg" alt="Ремонт духовых шкафов">
+                        <button class="services__btn">Узнать подробнее</button>
+                    </div>
+                    <div class="services-item">
+                        <img class="services__img_margin" src="img/services/services_05.jpg" alt="Ремонт варочных поверхностей">
+                        <button class="services__btn">Узнать подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="terms terms_margin">
+            <div class="container2">
+                <div class="section__title section__title_black section__title_margin"><a name="terms">условия обслуживания</a></div>
+                <p class="section__text">
+                    Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
+                    она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.</p>
+                <p class="section__text">Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой,
+                    случается, что она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
+                </p>
+            </div>
+        </section>
+        <section class="form-search">
+            <div class="container2">
+                <div class="form-search__plate form-search_margin">
+                    <div class="form-search__text">
+                        <div class="section__title section__title_black"><a name="action">узнайте стоимость и<br>оформите заявку на ремонт</a></div>
+                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
+                    </div>
+                    <form class="form__items form-search_margin">
+                        <div class="form__item">
+                            <div class="before_1">
+                                <select class="select input_margin" type="text">
+                                    <option class="form__option" value=""></option>
+                                </select>
+                            </div>
+                            <input class="input" type="text" placeholder="Ваше имя">
+                        </div>
+                        <div class="form__item">
+                            <div class="before_2"><select class="select input_margin" type="text">
+                                    <option class="form__option" value=""></option>
+                                </select></div>
+                            <input class="input" type="text" placeholder="Номер телефона">
+                        </div>
+                        <div class="form__item">
+                            <div class="before_3">
+                                <input class="input input_margin" type="text" placeholder="от ____________ рублей">
+                            </div>
+                            <button class="button">Отправить!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Отзывы -->
+        <section class="reviews">
+            <div class="container2">
+                <div class="section__title section__title_margin section__title_black"><a name="reviews">отзывы</a></div>
+                <!-- <div class="reviews__slider">
+                    <a class="reviews-arrow__link" href="#">
+                        <div class="reviews__arrow">
+                            <img class="reviews__arrow_img" src="img/reviews/reviews_left.png">
+                        </div>
+                    </a>
+                    <div class="reviews__item">
+                        <div class="reviews__item-name">Анастасия Миронова</div>
+                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__item-name">Игорь Максимов</div>
+                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__item-name">Матвей Буравин</div>
+                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
+                    </div>
+                    <a class="reviews-arrow__link" href="#">
+                        <div class="reviews__arrow">
+                            <img class="reviews__arrow_img" src="img/reviews/reviews_right.png">
+                        </div>
+                    </a>
+                </div> -->
+                <div class="reviews__slider">
+                    <div id="carousel_1" class="carousel_1">
+                        <button class="arrow_1 prev_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                        <div class="gallery_1">
+                            <ul class="images_1">
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Анастасия Миронова</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Игорь Максимов</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Матвей Буравин</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Анастасия Миронова</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Игорь Максимов</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Матвей Буравин</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Анастасия Миронова</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Игорь Максимов</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reviews__item">
+                                        <div class="reviews__item-name">Матвей Буравин</div>
+                                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                        <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="arrow_1 next_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
+                    </div>
+                </div>
+                <div class="button__reviews_margin">
+                    <button class="button-reviews">Оставить отзыв</button>
+                </div>
+        </section>
+        <section class="form-question">
+            <div class="container2">
+                <div class="form-question__plate form-question__plate_margin">
+                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
+                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
+                    <form class="form-question__form">
+                        <input class="input" type="text" placeholder="Ваше имя">
+                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
+                        <button class="button">Перезвоните мне</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="about about_margin">
+            <div class="container2">
+                <div class="section__title section__title_margin"><a name="about">о компании</a></div>
+                <div class="about__text">
+                    <p class="section__text">
+                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
+                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
+                    </p>
+                    <p class="section__text">
+                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
+                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer class="footer footer_padding">
+            <div class="container">
+                <div class="footer__items">
+                    <div class="footer__item">
+                        <div class="logo-name">
+                            <a name="contacts"></a>
+                            <div class="logo__title">
+                                <a class="logo__link" href="/"> ТехСервис&nbsp;Мастер
+                                </a>
+                            </div>
+                            <p class="logo__subtitle section__subtitle_white">ремонт&nbsp;бытовой&nbsp;техники&nbsp;в&nbsp;Екатеринбурге</p>
+                        </div>
+                        <div class="footer__desc">Описание....................................... ......................................................... ......................................................... ......................................................... .........................................................
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <p class="footer__title text_margin_1">Ремонт</p>
+                        <ul class="footer__list">
+                            <li class="footer__menu_item text_margin_1">
+                                <a class="footer__menu_link text_uppercase text_grey" href="#">Стиральная машина</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_1">
+                                <a class="footer__menu_link text_uppercase text_grey" href="#">Посудомоечная машина</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_1">
+                                <a class="footer__menu_link text_uppercase text_grey" href="#">Холодильник</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_1">
+                                <a class="footer__menu_link text_uppercase text_grey" href="#">духовой шкаф</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_1">
+                                <a class="footer__menu_link text_uppercase text_grey" href="#">варочная панель</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__item">
+                        <ul class="footer__list">
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">О компании</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Преимущества</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Услуги</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Условия</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Акции</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Контакты</a>
+                            </li>
+                            <li class="footer__menu_item text_margin_2">
+                                <a class="footer__menu_link text_grey" href="#">Отзывы</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer-city">
+                            <ul class="footer__list">
+                                <li class="footer__menu_item text_margin_3">
+                                    <a class="footer__menu_link text_white" href="#">Город</a>
+                                </li>
+                                <li class="footer__menu_item text_margin_3">
+                                    <a class="footer__menu_link text_white" href="#">Телефон</a>
+                                </li>
+                                <li class="footer__menu_item text_margin_3">
+                                    <a class="footer__menu_link text_white" href="#">График работы</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <section class="plan-b-style">
+            <div class="dev-planb">Разработано в&nbsp;
+                <a href="http://plan-b.studio" style="text-decoration: none;">
+                    <div class="plan-b">
+                        <span class="planb_p">p</span><span class="planb_l">l</span><span class="planb_a">a</span><span class="planb_n">n</span>&nbsp;<span class="planb_b">b</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script src="./js/modal.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

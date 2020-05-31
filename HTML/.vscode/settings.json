@@ -1,0 +1,8 @@
+{
+    "git.autoRepositoryDetection": false,
+    "git.inputValidation": "off",
+    "git.openDiffOnClick": false,
+    "git.promptToSaveFilesBeforeCommit": "never",
+    "git.pullTags": false,
+    "git.showCommitInput": false
+}
