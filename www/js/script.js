@@ -108,6 +108,36 @@ $(document).ready(function () {
     $('.client_phone').mask('+7(999)999-99-99');
 });
 
+class newError {
+    constructor(object, classNameIn, classNameOut) {
+        this.object = object;
+        this.classNameIn = classNameIn;
+        this.classNameOut = classNameOut;
+        this.to1;
+        this.to2;
+    }
+
+    showError() {
+        clearTimeout(this.to1);
+        // clearTimeout(this.to2);
+        this.hideError();
+        this.to1 = setTimeout(function () {
+            object.classList.add(classNameIn);
+            object.classList.remove(classNameOut);
+            // this.to2 = setTimeout(function () {
+            //     $('.end_stub_container').remove();
+            // }, 1000);
+        }, 3500);
+    }
+
+    hideError() {
+        object.classList.remove(classNameIn);
+        object.classList.add(classNameOut);
+    }
+}
+
+// let error1 = new newError(object, classNameIn, classNameOut);
+
 class Mailing {
     constructor() {
         this.name = '';
@@ -347,6 +377,15 @@ class Mailing {
     }
 
     closeActiveModal(modal) {
+        let substrate = modal.parentElement;
+        substrate.classList.add('screen_off');
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
+    showOK() {
         let substrate = modal.parentElement;
         substrate.classList.add('screen_off');
         let inputs = modal.querySelectorAll('.input');
