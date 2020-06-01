@@ -141,7 +141,8 @@ textarea {
     &__icon {
         color: $text__main_color;
     }
-    &__number {}
+    &__number {
+    }
     &__link {
         margin: 0 0 0 0;
         padding: 0 0 0 0;
@@ -363,11 +364,13 @@ textarea {
     &__img {
         width: 100%;
     }
-    &__top {}
+    &__top {
+    }
     &__top_margin {
         margin-bottom: 60px;
     }
-    &__item {}
+    &__item {
+    }
 }
 
 .action {
@@ -642,7 +645,6 @@ textarea {
     }
 }
 
-
 /*РјРѕРґР°Р»СЊРЅС‹Рµ РѕРєРЅР°*/
 
 .darkback-phone,
@@ -763,7 +765,6 @@ textarea {
 .screen_off {
     display: none;
 }
-
 
 /*РљР°СЂСѓСЃРµР»СЊ*/
 
@@ -1018,7 +1019,6 @@ textarea {
     display: inline-block;
     margin-right: 0.6%;
 }
-
 
 /*РєР°СЂСѓСЃРµР»СЊ*/
 
@@ -1294,7 +1294,8 @@ textarea {
     }
 }
 
-.form-search__items {}
+.form-search__items {
+}
 
 .form__items {
     padding: 0 0 0 0;
