@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -14,7 +14,30 @@
     {% include 'header.tpl' %}
     <main class="main-style">
          <!-- modal window -->
-         {% include 'modal_substrate1.tpl' %}
+                 <div class="darkback-master screen_off">
+            <div class="modal-window modal-master screen_off">
+                <div class="close-master">&#10006;</div>
+                <div class="modal-content" id="master">
+                    <div class="section__title section__title_black section__title_margin">
+                        Вызвать мастера
+                    </div>
+                    <input class="input input_margin" type="text" placeholder="Ваше имя" maxlength="30">
+                    <input class="input input_margin" type="text" placeholder="Номер телефона">
+                    <textarea class="text-block input_margin" rows="4" cols="29" placeholder="Какая у вас поломка?"></textarea>
+                    <select class="select input_margin" type="text">
+                        <option class="form__option" value="">стиральная машина</option>
+                        <option class="form__option" value="">посудомоечная машина</option>
+                    </select>
+                    <button class="button button-master section__title_margin" type="button">Вызвать мастера</button>
+                    <div class="modal-text modal-text_margin">
+                        <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                        <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                    </div>
+                    <div>Или позвоните нам</div>
+                    <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                </div>
+            </div>
+        </div>
         <section class="slider">
             <div class="container">
             <!-- обманка -->
@@ -99,9 +122,9 @@
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
-                        <input class="input client_name" type="text" placeholder="Ваше имя">
-                        <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="+7(___)___-__-__">
-                        <button class="button recall_btn" type="button">Получить скидку!</button>
+                        <input class="input" type="text" placeholder="Ваше имя">
+                        <input class="input" type="text" placeholder="Номер телефона">
+                        <button class="button" type="button">Получить скидку!</button>
                     </form>
                 </div>
             </div>
@@ -146,7 +169,40 @@
                 </p>
             </div>
         </section>
-        {% include 'repair_form.tpl' %}  
+        <section class="form-search">
+            <div class="container2">
+                <div class="form-search__plate form-search_margin">
+                    <div class="form-search__text">
+                        <div class="section__title section__title_black"><a name="action">узнайте стоимость и<br>оформите заявку на ремонт</a></div>
+                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
+                    </div>
+                    <form class="form__items form-search_margin">
+                        <div class="form__item">
+                            <div class="before_1">
+                                <select class="select input_margin" type="text">
+                                    {% for technic,desc in content.jsonDb.defects %}
+                                        <option class="form__option" value="">{{technic}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <input class="input" type="text" placeholder="Ваше имя">
+                        </div>
+                        <div class="form__item">
+                            <div class="before_2"><select class="select input_margin" type="text">
+                                    <option class="form__option" value=""></option>
+                                </select></div>
+                            <input class="input" type="text" placeholder="Номер телефона">
+                        </div>
+                        <div class="form__item">
+                            <div class="before_3">
+                                <input class="input input_margin" type="text" placeholder="от ____________ рублей">
+                            </div>
+                            <button class="button">Отправить!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
         <!-- Отзывы -->
         <section class="reviews">
             <div class="container2">
@@ -254,14 +310,38 @@
                 <div class="button__reviews_margin">
                     <button class="button-reviews">Оставить отзыв</button>
                 </div>
-                <!-- modal window -->
-                <div class="substrate2 screen_off">
-                    <div class="modal_rewiew screen_off">
-                        <div class="cross2">&#10006;</div>
+                <!-- modal window оставить отзыв-->
+                <div class="darkback-review screen_off">
+                    <div class="modal-window modal-review screen_off">
+                        <div class="close-review">&#10006;</div>
+                        <div class="modal-content" id="review">
+                            <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
+                            <input class="input input_margin" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
+                            <input class="input input_margin" type="text" placeholder="Номер телефона">
+                            <input class="input input_margin" type="text" placeholder="Ваша оценка (от 1 до 5)">
+                            <textarea class="text-block input_margin" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
+                            <button class="button button-review section__title_margin" type="button">Отправить</button>
+                            <div class="modal-text modal-text_margin">
+                                <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                                <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                        </section>
+        <section class="form-question">
+            <div class="container2">
+                <div class="form-question__plate form-question__plate_margin">
+                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
+                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
+                    <form class="form-question__form">
+                        <input class="input" type="text" placeholder="Ваше имя">
+                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
+                        <button class="button">Перезвоните мне</button>
+                    </form>
+                </div>
+            </div>
         </section>
-        {% include 'question_form.tpl' %}  
         <section class="about about_margin">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>
@@ -280,8 +360,7 @@
     </main>
     {% include 'footer.tpl' %}  
     <script defer src="js/jquery-3.4.1.js"></script> 
-    <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
+    <script defer src="./js/modal.js"></script>
     <script defer src="js/script.js"></script>
 </body>
 

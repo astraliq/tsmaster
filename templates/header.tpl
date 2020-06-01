@@ -49,9 +49,29 @@
             </div>
         </div>
         <!-- modal window -->
-        <div class="substrate screen_off">
-            <div class="modal_phone screen_off">
-                <div class="cross">&#10006;</div>
+        <div class="darkback-phone screen_off">
+            <div class="modal-window modal-phone screen_off">
+                <div class="close-phone">&#10006;</div>
+                <div class="modal-content" id="phone">
+                    <div class="section__title section__title_black section__title_margin">Заказать звонок</div>
+                    <input class="input input_margin" type="text" placeholder="Ваше имя" maxlength="30">
+                    <input class="input input_margin" type="text" placeholder="Номер телефона">
+                    <button class="button button-phone section__title_margin" type="button">Заказать звонок</button>
+                    <div class="modal-text modal-text_margin">
+                        <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                        <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                    </div>
+                    <div>Или позвоните нам</div>
+                    <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                </div>
+            </div>
+            <div class="reaction-phone screen_off">
+                <div class="section__title section__title_black section__title_margin">
+                    Ваша заявка<br> принята
+                </div>
+                <div class="reaction-text">
+                    В течении 10–ти минут наш менеджер свяжется с вами.<br> Спасибо.
+                </div>
             </div>
         </div>
     </header>
