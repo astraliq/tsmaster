@@ -78,7 +78,6 @@ class ModalWindow {
         let renderDiv = document.getElementById(check);
         let str;
 
-
         if (check == 'phone') {
             str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
                    <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
