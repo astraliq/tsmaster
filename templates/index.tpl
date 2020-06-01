@@ -14,7 +14,7 @@
     {% include 'header.tpl' %}
     <main class="main-style">
          <!-- modal window -->
-                 <div class="darkback-master screen_off">
+        <div class="darkback-master screen_off">
             <div class="modal-window modal-master screen_off">
                 <div class="close-master">&#10006;</div>
                 <div class="modal-content" id="master">
