@@ -438,4 +438,4 @@ class Mailing {
 }
 let mailing = new Mailing();
 
-mailing.init();
+// mailing.init();
