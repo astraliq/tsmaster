@@ -17,12 +17,17 @@
          {% include 'modal_substrate1.tpl' %}
         <section class="slider">
             <div class="container">
+            <!-- обманка -->
+            <div id="carousel_2" class="carousel_2 screen_off">
+                <div class="prev_2 next_2"></div>
+            </div>
+            <!-- обманка -->
                 <div id="points" class="slider__points slider__points_margin">
-                    <a class="slider__point slider__point_active"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
+                    <a data-point="0" class="slider__point slider__point_active"></a>
+                    <a data-point="1" class="slider__point"></a>
+                    <a data-point="2" class="slider__point"></a>
+                    <a data-point="3" class="slider__point"></a>
+                    <a data-point="4" class="slider__point"></a>
                 </div>
                 <div class="slider__top slider__top_margin">
                     <!-- <div class="slider__item">
