@@ -255,15 +255,15 @@
                     <button class="btn-review">Оставить отзыв</button>
                 </div>
                 <!-- modal window оставить отзыв-->
-                <div class="darkback-review screen_off">
+                <div class="darkback-review screen_off modal_off">
                     <div class="modal-window modal-review screen_off">
                         <div class="close-review">&#10006;</div>
                         <div class="modal-content" id="review">
                             <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
                             <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
-                            <input class="input input_margin" type="text" placeholder="Номер телефона">
-                            <input class="input input_margin" type="text" placeholder="Ваша оценка (от 1 до 5)">
-                            <textarea class="text-block input_margin" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
+                            <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                            <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
+                            <textarea class="text-block input_margin review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
                             <button class="button button-review section__title_margin" type="button">Отправить</button>
                             <div class="modal-text modal-text_margin">
                                 <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
@@ -272,20 +272,8 @@
                         </div>
                     </div>
                 </div>
-                        </section>
-        <section class="form-question">
-            <div class="container2">
-                <div class="form-question__plate form-question__plate_margin">
-                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
-                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
-                    <form class="form-question__form">
-                    <input class="input input_margin-lr client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                    <input class="input input_margin-lr client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
-                    <button class="button button-phone input_margin-l">Перезвоните мне</button>
-                    </form>
-                </div>
-            </div>
         </section>
+        {% include 'question_form.tpl' %} 
         <section class="about about_margin">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>

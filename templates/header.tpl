@@ -49,7 +49,7 @@
             </div>
         </div>
         <!-- modal window -->
-        <div class="darkback-phone screen_off">
+        <div class="darkback-phone screen_off modal_off">
             <div class="modal-window modal-phone screen_off">
                 <div class="close-phone">&#10006;</div>
                 <div class="modal-content" id="phone">

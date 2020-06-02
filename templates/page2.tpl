@@ -125,8 +125,8 @@
                         <section class="top-banner_margin">
                             <img class="top-banner__img" src="../img/top-banner/top-banner.jpg" width="100%" height="auto" alt="Ремонт стиральных машин">
                             <div class="cause">
-                                <div class="cause_btn">Вызвать мастера!</div>
-                                <div class="cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                         </section>
                         <section class="advantage advantage_margin">
@@ -187,7 +187,7 @@
                                         <button class="brand-btn">></button>
                                     </div>
                                 </div>-->
-                                    <!-- Карусель брендов -->
+                                <!-- Карусель брендов -->
                                 <div class="brand-items">
                                     <div id="carousel_br" class="carousel_br">
                                         <button class="arrow_br prev_br"><</button>

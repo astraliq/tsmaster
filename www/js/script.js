@@ -185,11 +185,14 @@ class Mailing {
         this.defect = '';
         this.brand = '';
         this.description = '';
+        this.rate = '';
+        this.review = '';
         this.city = '';
         this.reqType = '';
         this.btnsRecall = document.querySelectorAll('.button-phone');
         this.btnsRepair = document.querySelectorAll('.button-repair');
         this.btnsCallmaster = document.querySelectorAll('.button-master');
+        this.btnsReview = document.querySelectorAll('.button-review');
 
         this.dB_Class = '';
         this.mT_Class = '';
@@ -275,6 +278,24 @@ class Mailing {
                 }
             });
         });
+        this.btnsReview.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                let rateBlock = parent.querySelector('.rate');
+                let reviewBlock = parent.querySelector('.review');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                this.rate = rateBlock ? rateBlock.value : '';
+                this.review = reviewBlock ? reviewBlock.value : '';
+                let check = this._checkReview(nameBlock, phoneBlock, rateBlock, reviewBlock);
+                if (check) {
+                    this.sendMailReview(parent);
+                }
+            });
+        });
     }
 
     firstCheck(check) {
@@ -318,7 +339,9 @@ class Mailing {
         this.btnClass = document.querySelector(`.${btnA}`);
         this.dB_Class.classList.remove('screen_off');
         this.mT_Class.classList.remove('screen_off');
-
+        setTimeout(() => {
+            this.dB_Class.classList.remove('modal_off');
+        }, 10);
         // document.addEventListener('mouseup', (e) => {
         //     if (mType != e.target && e.currentTarget.parentNode != mType) {
         //         dB_Class.classList.add('screen_off');
@@ -364,8 +387,11 @@ class Mailing {
     closeModal(dBack, mType) {
         let dB_Class = document.querySelector(`.${dBack}`);
         let mT_Class = document.querySelector(`.${mType}`);
-        dB_Class.classList.add('screen_off');
-        mT_Class.classList.add('screen_off');
+        dB_Class.classList.add('modal_off');
+        setTimeout(function () {
+            dB_Class.classList.add('screen_off');
+            mT_Class.classList.add('screen_off');
+        }, 500);
     }
 
     clearInputs(modal) {
@@ -455,6 +481,36 @@ class Mailing {
             postData: {
                 name: this.name,
                 phone: this.phone,
+                city: this.city,
+            },
+        };
+        console.log(modal);
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    if (modal.classList.contains('form-question__form')) {
+                        this.clearInputs(modal);
+                    } else {
+                        this.closeActiveModal(modal);
+                    }
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    sendMailReview(modal) {
+        let sendData = {
+            apiMethod: 'sendMailReview',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                rate: this.rate,
+                review: this.review,
                 city: this.city,
             },
         };
@@ -584,6 +640,38 @@ class Mailing {
         checkArr.defect.check = defect.value === '' ? false : true;
         checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
         if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
+    _checkReview(name, phone, rate, review) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            rate: {
+                check: false,
+                el: rate,
+            },
+            review: {
+                check: false,
+                el: review,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.rate.check = rate.value === '' ? false : true;
+        checkArr.review.check = review.value === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.rate.check && checkArr.review.check) {
             this._changeColorByCheck(checkArr);
             return true;
         }

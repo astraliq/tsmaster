@@ -15,6 +15,12 @@ textarea {
   line-height: 1.15;
 }
 
+.top-line {
+  width: 100%;
+  height: 76px;
+  background-color: #0076d5;
+}
+
 .header-style {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -28,7 +34,7 @@ textarea {
 
 .container2 {
   max-width: 1140px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -490,12 +496,11 @@ textarea {
 
 .reviews-part__item {
   margin: 0 0 0 0;
-  padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 250px;
+  width: 195px;
   height: 320px;
   border-radius: 5px;
 }
@@ -676,6 +681,8 @@ textarea {
   left: 0;
   background-color: rgba(3, 3, 3, 0.562);
   z-index: 15;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
 .modal-window {
@@ -785,11 +792,16 @@ textarea {
   cursor: pointer;
 }
 
+.modal_off {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
 .screen_off {
   display: none;
 }
 
-/*РљР°СЂСѓСЃРµР»СЊ*/
+/*Карусель*/
 .carousel {
   position: relative;
   width: 100%;
@@ -802,11 +814,33 @@ textarea {
   box-sizing: border-box;
 }
 
+.carousel_2 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel_br {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .carousel img {
   margin: 0;
   padding: 0;
   width: 105.3%;
-  /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
+  /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+  display: block;
+}
+
+.carousel_br img {
+  margin: 0;
+  padding: 0;
+  width: 87%;
+  /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
   display: block;
 }
 
@@ -814,7 +848,15 @@ textarea {
   margin: 0;
   padding: 0;
   width: 105.3%;
-  /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
+  /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+  display: block;
+}
+
+.carousel_2 li div .reviews__item {
+  margin: 0;
+  padding: 0;
+  width: 105.3%;
+  /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
   display: block;
 }
 
@@ -1402,6 +1444,10 @@ textarea {
 
 .input_margin-lr {
   margin: 0 20px;
+}
+
+.input_margin-lr10 {
+  margin: 0 10px;
 }
 
 .input_margin-l {
