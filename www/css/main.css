@@ -884,30 +884,7 @@ textarea {
   z-index: 10;
 }
 
-.cause:hover .btn-master,
-.cause:hover .btn-master-block {
-  background: #ffc123;
-  cursor: pointer;
-  color: #000;
-  border: 5px solid #fff;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.cause:focus {
-  outline: none;
-}
-
-.cause:active {
-  box-shadow: none;
-}
-
-.cause:active .btn-master,
-.cause:active .btn-master-block {
-  box-shadow: none;
-}
-
-.btn-master {
+.cause_btn {
   width: 350px;
   height: 70px;
   position: absolute;
@@ -925,7 +902,7 @@ textarea {
   z-index: 10;
 }
 
-.btn-master-block {
+.cause_btn_block {
   width: 70px;
   height: 70px;
   position: absolute;
@@ -941,6 +918,40 @@ textarea {
   padding: 15px;
   display: block;
   z-index: 10;
+}
+
+.cause:focus {
+  outline: none;
+}
+
+.cause:hover .cause_btn {
+  background: #ffc123;
+  cursor: pointer;
+  color: #000;
+  border: 5px solid #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cause:hover .cause_btn_block {
+  background: #ffc123;
+  cursor: pointer;
+  color: #000;
+  border: 5px solid #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cause:active .cause_btn {
+  box-shadow: none;
+}
+
+.cause:active .cause_btn_block {
+  box-shadow: none;
+}
+
+.cause:active {
+  box-shadow: none;
 }
 
 .arrow:focus {

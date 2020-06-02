@@ -860,30 +860,9 @@ textarea {
     text-align: center;
     display: block;
     z-index: 10;
-    &:hover {
-        .btn-master,
-        .btn-master-block {
-            background: $btn_color;
-            cursor: pointer;
-            color: $text__main_color;
-            border: 5px solid $text__second_color;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-    }
-    &:focus {
-        outline: none;
-    }
-    &:active {
-        box-shadow: none;
-        .btn-master,
-        .btn-master-block {
-            box-shadow: none;
-        }
-    }
 }
 
-.btn-master {
+.cause_btn {
     width: 350px;
     height: 70px;
     position: absolute;
@@ -901,7 +880,7 @@ textarea {
     z-index: 10;
 }
 
-.btn-master-block {
+.cause_btn_block {
     width: 70px;
     height: 70px;
     position: absolute;
@@ -919,34 +898,40 @@ textarea {
     z-index: 10;
 }
 
-// .cause:focus {
-//     outline: none;
-// }
-// .cause:hover .cause_btn {
-//     background: $btn_color;
-//     cursor: pointer;
-//     color: $text__main_color;
-//     border: 5px solid $text__second_color;
-//     padding: 10px;
-//     box-sizing: border-box;
-// }
-// .cause:hover .cause_btn_block {
-//     background: $btn_color;
-//     cursor: pointer;
-//     color: $text__main_color;
-//     border: 5px solid $text__second_color;
-//     padding: 10px;
-//     box-sizing: border-box;
-// }
-// .cause:active .cause_btn {
-//     box-shadow: none;
-// }
-// .cause:active .cause_btn_block {
-//     box-shadow: none;
-// }
-// .cause:active {
-//     box-shadow: none;
-// }
+.cause:focus {
+    outline: none;
+}
+
+.cause:hover .cause_btn {
+    background: $btn_color;
+    cursor: pointer;
+    color: $text__main_color;
+    border: 5px solid $text__second_color;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.cause:hover .cause_btn_block {
+    background: $btn_color;
+    cursor: pointer;
+    color: $text__main_color;
+    border: 5px solid $text__second_color;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.cause:active .cause_btn {
+    box-shadow: none;
+}
+
+.cause:active .cause_btn_block {
+    box-shadow: none;
+}
+
+.cause:active {
+    box-shadow: none;
+}
+
 .arrow:focus {
     outline: none;
 }
