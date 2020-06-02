@@ -401,15 +401,6 @@ class Mailing {
         });
     }
 
-    closeActiveModal(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('modal_off');
-        setTimeout(function () {
-            substrate.classList.add('screen_off');
-        }, transitionDelay);
-        this.clearInputs(modal);
-    }
-
     _getJson(url, data) {
         return $.post({
             url: url,
