@@ -13,13 +13,6 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0;
-}
-
-.top-line {
-  width: 100%;
-  height: 76px;
-  background-color: #0076d5;
 }
 
 .header-style {
@@ -182,25 +175,6 @@ textarea {
   text-decoration: none;
   cursor: pointer;
   opacity: 0.7;
-}
-
-.btn-phone {
-  margin: 0 10px 0 15px;
-  padding: 0 0 0 0;
-  width: 150px;
-  height: 40px;
-  background-color: #0076d5;
-  border-radius: 30px;
-  outline: none;
-  cursor: pointer;
-  color: #fff;
-  font-family: "PT Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.btn-phone:hover {
-  opacity: 0.8;
 }
 
 .service__menu {
@@ -366,6 +340,11 @@ textarea {
   width: 100%;
 }
 
+.slider {
+  /*&__top {}*/
+  /*&__item {}*/
+}
+
 .slider__points {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -498,6 +477,9 @@ textarea {
 }
 
 .section-part__title {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
   color: #000;
   font-family: "Arial";
   font-size: 22px;
@@ -533,7 +515,7 @@ textarea {
   padding: 0;
   list-style: none;
   transition: margin-left 1000ms;
-  /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
+  /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
   font-size: 0;
 }
 
@@ -544,6 +526,7 @@ textarea {
 
 .top-banner_margin {
   margin-bottom: 75px;
+  position: relative;
 }
 
 .form-question_margin {
@@ -678,7 +661,7 @@ textarea {
   outline: none;
 }
 
-/*РјРѕРґР°Р»СЊРЅС‹Рµ РѕРєРЅР°*/
+/*модальные окна*/
 .darkback-phone,
 .darkback-master,
 .darkback-review {

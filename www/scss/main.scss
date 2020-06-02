@@ -13,13 +13,6 @@ textarea {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
-    margin: 0;
-}
-
-.top-line {
-    width: 100%;
-    height: 76px;
-    background-color: $bgcolor_blue;
 }
 
 .header-style {
@@ -173,24 +166,6 @@ textarea {
             cursor: pointer;
             opacity: 0.7;
         }
-    }
-}
-
-.btn-phone {
-    margin: 0 10px 0 15px;
-    padding: 0 0 0 0;
-    width: 150px;
-    height: 40px;
-    background-color: $bgcolor_blue;
-    border-radius: 30px;
-    outline: none;
-    cursor: pointer;
-    color: $text__second_color;
-    font-family: $font__first;
-    font-size: 15px;
-    font-weight: 400;
-    &:hover {
-        opacity: 0.8;
     }
 }
 
@@ -380,13 +355,11 @@ textarea {
     &__img {
         width: 100%;
     }
-    &__top {
-    }
+    /*&__top {}*/
     &__top_margin {
         margin-bottom: 60px;
     }
-    &__item {
-    }
+    /*&__item {}*/
 }
 
 .action {
@@ -477,6 +450,9 @@ textarea {
 }
 
 .section-part__title {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
     color: $text__main_color;
     font-family: $font__second;
     font-size: 22px;
@@ -498,7 +474,7 @@ textarea {
     // margin: 0;
     // padding: 0;
     // width: 105.3%;
-    // /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
+    // /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
     //  display: block;
 }
 
@@ -517,7 +493,7 @@ textarea {
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
     font-size: 0;
 }
 
@@ -528,6 +504,7 @@ textarea {
 
 .top-banner_margin {
     margin-bottom: 75px;
+    position: relative;
 }
 
 .form-question_margin {
@@ -661,7 +638,7 @@ textarea {
     }
 }
 
-/*РјРѕРґР°Р»СЊРЅС‹Рµ РѕРєРЅР°*/
+/*модальные окна*/
 
 .darkback-phone,
 .darkback-master,
