@@ -276,7 +276,6 @@
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/brend.js"></script>
-    <script defer src="js/modal.js"></script>
     <script defer src="js/script.js"></script>
     
 </body>

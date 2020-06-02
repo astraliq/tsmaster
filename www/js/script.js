@@ -177,8 +177,23 @@ $(document).ready(function () {
     $('.client_phone').mask('+7(999)999-99-99');
 });
 
+document.querySelector('.btn-phone').onclick = function (e) {
+    e.preventDefault();
+    mailing.firstCheck('phone');
+};
+
+document.querySelector('.btn-master').onclick = function (e) {
+    e.preventDefault();
+    mailing.firstCheck('master');
+};
+
+document.querySelector('.btn-review').onclick = function (e) {
+    e.preventDefault();
+    mailing.firstCheck('review');
+};
+
 class Mailing {
-    constructor() {
+    constructor(checkType) {
         this.name = '';
         this.phone = '';
         this.device = '';
@@ -190,6 +205,93 @@ class Mailing {
         this.btnsRecall = document.querySelectorAll('.recall_btn');
         this.btnsRepair = document.querySelectorAll('.repair_btn');
         this.btnsCallmaster = document.querySelectorAll('.master_btn');
+
+        this.checkType = checkType;
+    }
+
+    firstCheck(check) {
+        let darkBack;
+        let modalType;
+        let closeCross;
+        let btnAction;
+
+        if (check == 'phone') {
+            darkBack = 'darkback-phone';
+            modalType = 'modal-phone';
+            closeCross = 'close-phone';
+            btnAction = 'button-phone';
+        } else if (check == 'master') {
+            darkBack = 'darkback-master';
+            modalType = 'modal-master';
+            closeCross = 'close-master';
+            btnAction = 'button-master';
+        } else if (check == 'review') {
+            darkBack = 'darkback-review';
+            modalType = 'modal-review';
+            closeCross = 'close-review';
+            btnAction = 'button-review';
+        }
+
+        this.renderModal(darkBack, modalType, closeCross, btnAction, check);
+    }
+
+    renderModal(dBack, mType, cCross, btnA, check) {
+        let dB_Class = document.querySelector(`.${dBack}`);
+        let mT_Class = document.querySelector(`.${mType}`);
+        let cC_Class = document.querySelector(`.${cCross}`);
+        let btnClass = document.querySelector(`.${btnA}`);
+        dB_Class.classList.remove('screen_off');
+        mT_Class.classList.remove('screen_off');
+
+        btnClass.onclick = function (e) {
+            e.preventDefault();
+            mailing.renderAction(dBack, mType, cCross, check);
+        };
+
+        cC_Class.onclick = function (e) {
+            e.preventDefault();
+            mailing.closeModal(dBack, mType);
+        };
+
+        // document.addEventListener('mouseup', (e) => {
+        //     if (mType != e.target && e.currentTarget.parentNode != mType) {
+        //         dB_Class.classList.add('screen_off');
+        //     }
+        // });
+    }
+    renderAction(dBack, mType, cCross, check) {
+        let mw_class = document.querySelector(`.${mType}`);
+        mw_class.classList.add('modal-after-button');
+
+        console.log(mw_class);
+
+        let renderDiv = document.getElementById(check);
+        let str;
+
+        if (check == 'phone') {
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+                   <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
+        } else if (check == 'master') {
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+            <div class="after-button__text">Наш мастер свяжется с вами в ближайшее время и поможет устранить неисправность.</div>`;
+        } else {
+            str = `<div class="after-button__title_review modal-text_margin">Мы получили ваш отзыв.</div>
+            <div class="after-button__text_review">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
+        }
+        //  = `<div>${check}</div>`;
+        renderDiv.innerHTML = str;
+
+        document.querySelector(`.${cCross}`).onclick = function (e) {
+            e.preventDefault();
+            mailing.closeModal(dBack, mType);
+        };
+    }
+
+    closeModal(dBack, mType) {
+        let dB_Class = document.querySelector(`.${dBack}`);
+        let mT_Class = document.querySelector(`.${mType}`);
+        dB_Class.classList.add('screen_off');
+        mT_Class.classList.add('screen_off');
     }
 
     _getJson(url, data) {
@@ -403,7 +505,7 @@ class Mailing {
         }
     }
 
-    showModal(modal) {
+    shomailing(modal) {
         let substrate = modal.parentElement;
         substrate.classList.add('modal_off');
         setTimeout(function () {

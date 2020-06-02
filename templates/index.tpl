@@ -37,8 +37,8 @@
                         <div id="carousel" class="carousel">
                             <button class="arrow prev"><</button>
                             <div class="cause">
-                                <div class="cause_btn">Вызвать мастера!</div>
-                                <div class="cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                             <div class="gallery">
                                 <ul class="images">
@@ -285,7 +285,7 @@
                     </div>
                 </div>
                 <div class="button__reviews_margin">
-                    <button class="button-reviews">Оставить отзыв</button>
+                    <button class="btn-review">Оставить отзыв</button>
                 </div>
                 <!-- modal window оставить отзыв-->
                 <div class="darkback-review screen_off">
@@ -338,8 +338,6 @@
     {% include 'footer.tpl' %}  
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/brend.js"></script>
-    <script defer src="js/modal.js"></script>
     <script defer src="js/script.js"></script>
 </body>
 
