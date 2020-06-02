@@ -5,10 +5,10 @@
             <div class="section__title section__title_black section__title_margin">
                 Вызвать мастера
             </div>
-            <input class="input input_margin" type="text" placeholder="Ваше имя" maxlength="30" />
-            <input class="input input_margin" type="text" placeholder="Номер телефона" />
-            <textarea class="text-block input_margin" rows="4" cols="29" placeholder="Какая у вас поломка?"></textarea>
-            <select class="select input_margin" type="text">
+            <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30" />
+            <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона" />
+            <textarea class="text-block input_margin defect" rows="4" cols="29" placeholder="Какая у вас поломка?"></textarea>
+            <select class="select input_margin device" type="text">
                 <option class="form__option" value="">стиральная машина</option>
                 <option class="form__option" value="">посудомоечная машина</option>
             </select>

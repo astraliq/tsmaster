@@ -54,8 +54,8 @@
                 <div class="close-phone">&#10006;</div>
                 <div class="modal-content" id="phone">
                     <div class="section__title section__title_black section__title_margin">Заказать звонок</div>
-                    <input class="input input_margin" type="text" placeholder="Ваше имя" maxlength="30">
-                    <input class="input input_margin" type="text" placeholder="Номер телефона">
+                    <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                    <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
                     <button class="button button-phone section__title_margin" type="button">Заказать звонок</button>
                     <div class="modal-text modal-text_margin">
                         <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>

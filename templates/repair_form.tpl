@@ -27,13 +27,13 @@
                             <option class="form__option" value="">Не сливает воду</option>
                         </select>
                     </div>
-                    <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="+7(___)___-__-__" />
+                    <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="Номер телефона" />
                 </div>
                 <div class="form__item">
                     <div class="before_3">
                         <input class="input input_margin" disabled type="text" placeholder="от ______ рублей" />
                     </div>
-                    <button class="button repair_btn">Отправить!</button>
+                    <button class="button button-repair">Отправить!</button>
                 </div>
             </form>
         </div>

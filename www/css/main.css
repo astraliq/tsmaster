@@ -705,6 +705,7 @@ textarea {
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-height: 700px;
 }
 
 .modal-after-button {
@@ -1182,12 +1183,13 @@ textarea {
   height: 45px;
   padding: 0 10px 0 10px;
   border-radius: 10px;
-  border: none;
+  border: 1px transparent solid;
   background-color: #fff;
   box-shadow: 5px 5px 15px -12px #000000 inset;
   font-size: 16px;
   color: #000;
   outline: none;
+  transition: all 1s ease-in-out;
 }
 
 .button {
@@ -1211,12 +1213,17 @@ textarea {
   margin: 0 0 0 0;
   padding: 10px;
   border-radius: 10px;
-  border: none;
+  border: 1px transparent solid;
   background-color: #fff;
   box-shadow: 5px 5px 15px -12px #000000 inset;
   font-size: 16px;
   color: #000;
   outline: none;
+  max-width: 270px;
+  min-width: 270px;
+  max-height: 90px;
+  min-height: 90px;
+  transition: all 1s ease-in-out;
 }
 
 .services-items {
@@ -1331,13 +1338,14 @@ textarea {
   padding: 5px;
   width: 275px;
   height: 45px;
-  border-radius: 10px;
-  border: none;
+  border-radius: 20px;
+  border: 1px transparent solid;
   background-color: #fff;
   box-shadow: 5px 5px 15px -12px #000000 inset;
   font-size: 16px;
   color: #000;
   outline: none;
+  transition: all 1s ease-in-out;
 }
 
 .before_1 {
@@ -1389,11 +1397,15 @@ textarea {
 }
 
 .input_margin {
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 .input_margin-lr {
   margin: 0 20px;
+}
+
+.input_margin-l {
+  margin: 0 0 0 20px;
 }
 
 .reviews-arrow__link:hover {
@@ -1497,6 +1509,12 @@ textarea {
 .form-question__plate_margin {
   padding-top: 38px;
   margin-bottom: 14px;
+}
+
+.input_err {
+  border: 1px red solid;
+  background-color: #f0c6c6;
+  transition: all 0.2s ease-in-out;
 }
 
 .about_margin {

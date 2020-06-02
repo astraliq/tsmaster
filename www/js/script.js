@@ -177,21 +177,6 @@ $(document).ready(function () {
     $('.client_phone').mask('+7(999)999-99-99');
 });
 
-document.querySelector('.btn-phone').onclick = function (e) {
-    e.preventDefault();
-    mailing.firstCheck('phone');
-};
-
-document.querySelector('.btn-master').onclick = function (e) {
-    e.preventDefault();
-    mailing.firstCheck('master');
-};
-
-document.querySelector('.btn-review').onclick = function (e) {
-    e.preventDefault();
-    mailing.firstCheck('review');
-};
-
 class Mailing {
     constructor(checkType) {
         this.name = '';
@@ -202,11 +187,94 @@ class Mailing {
         this.description = '';
         this.city = '';
         this.reqType = '';
-        this.btnsRecall = document.querySelectorAll('.recall_btn');
-        this.btnsRepair = document.querySelectorAll('.repair_btn');
-        this.btnsCallmaster = document.querySelectorAll('.master_btn');
+        this.btnsRecall = document.querySelectorAll('.button-phone');
+        this.btnsRepair = document.querySelectorAll('.button-repair');
+        this.btnsCallmaster = document.querySelectorAll('.button-master');
+
+        this.dB_Class = '';
+        this.mT_Class = '';
+        this.cC_Class = '';
+        this.btnClass = '';
 
         this.checkType = checkType;
+    }
+
+    init() {
+        let btnPhone = document.querySelector('.btn-phone');
+        let btnMaster = document.querySelector('.btn-master');
+        let btnReview = document.querySelector('.btn-review');
+
+        if (btnPhone) {
+            btnPhone.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('phone');
+            };
+        }
+
+        if (btnMaster) {
+            btnMaster.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('master');
+            };
+        }
+
+        if (btnReview) {
+            btnReview.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('review');
+            };
+        }
+
+        this.btnsRecall.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                let check = this._checkRecall(nameBlock, phoneBlock);
+                if (check) {
+                    this.sendMailPhoneRequest(parent);
+                }
+            });
+        });
+        this.btnsRepair.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                let deviceBlock = parent.querySelector('.device');
+                let defectBlock = parent.querySelector('.defect');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
+                this.defect = defectBlock ? defectBlock[defectBlock.selectedIndex].text : '';
+                let check = this._checkRepair(nameBlock, phoneBlock, defectBlock, deviceBlock);
+                if (check) {
+                    this.sendMailRepairRequest(parent);
+                }
+            });
+        });
+        this.btnsCallmaster.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                let defectBlock = parent.querySelector('.defect');
+                let deviceBlock = parent.querySelector('.device');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
+                this.defect = defectBlock ? defectBlock.value : '';
+                let check = this._checkMaster(nameBlock, phoneBlock, defectBlock, deviceBlock);
+                if (check) {
+                    this.sendMailMasterRequest(parent);
+                }
+            });
+        });
     }
 
     firstCheck(check) {
@@ -233,25 +301,23 @@ class Mailing {
         }
 
         this.renderModal(darkBack, modalType, closeCross, btnAction, check);
+        this._addEvents(darkBack, modalType, closeCross, btnAction, check);
+    }
+
+    _addEvents(dBack, mType, cCross, btnA, check) {
+        this.cC_Class.onclick = (e) => {
+            e.preventDefault();
+            this.closeModal(dBack, mType);
+        };
     }
 
     renderModal(dBack, mType, cCross, btnA, check) {
-        let dB_Class = document.querySelector(`.${dBack}`);
-        let mT_Class = document.querySelector(`.${mType}`);
-        let cC_Class = document.querySelector(`.${cCross}`);
-        let btnClass = document.querySelector(`.${btnA}`);
-        dB_Class.classList.remove('screen_off');
-        mT_Class.classList.remove('screen_off');
-
-        btnClass.onclick = function (e) {
-            e.preventDefault();
-            mailing.renderAction(dBack, mType, cCross, check);
-        };
-
-        cC_Class.onclick = function (e) {
-            e.preventDefault();
-            mailing.closeModal(dBack, mType);
-        };
+        this.dB_Class = document.querySelector(`.${dBack}`);
+        this.mT_Class = document.querySelector(`.${mType}`);
+        this.cC_Class = document.querySelector(`.${cCross}`);
+        this.btnClass = document.querySelector(`.${btnA}`);
+        this.dB_Class.classList.remove('screen_off');
+        this.mT_Class.classList.remove('screen_off');
 
         // document.addEventListener('mouseup', (e) => {
         //     if (mType != e.target && e.currentTarget.parentNode != mType) {
@@ -259,7 +325,20 @@ class Mailing {
         //     }
         // });
     }
-    renderAction(dBack, mType, cCross, check) {
+
+    showMailing(modal) {
+        let substrate = modal.parentElement;
+        substrate.classList.add('modal_off');
+        setTimeout(function () {
+            substrate.classList.add('screen_off');
+        }, transitionDelay);
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
+    renderOk(dBack, mType, cCross, check) {
         let mw_class = document.querySelector(`.${mType}`);
         mw_class.classList.add('modal-after-button');
 
@@ -280,11 +359,6 @@ class Mailing {
         }
         //  = `<div>${check}</div>`;
         renderDiv.innerHTML = str;
-
-        document.querySelector(`.${cCross}`).onclick = function (e) {
-            e.preventDefault();
-            mailing.closeModal(dBack, mType);
-        };
     }
 
     closeModal(dBack, mType) {
@@ -292,6 +366,22 @@ class Mailing {
         let mT_Class = document.querySelector(`.${mType}`);
         dB_Class.classList.add('screen_off');
         mT_Class.classList.add('screen_off');
+    }
+
+    clearInputs(modal) {
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
+    closeActiveModal(modal) {
+        let substrate = modal.parentElement;
+        substrate.classList.add('modal_off');
+        setTimeout(function () {
+            substrate.classList.add('screen_off');
+        }, transitionDelay);
+        this.clearInputs(modal);
     }
 
     _getJson(url, data) {
@@ -383,59 +473,6 @@ class Mailing {
             });
     }
 
-    init() {
-        this.btnsRecall.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                let check = this._checkRecall(nameBlock, phoneBlock);
-                if (check) {
-                    this.sendMailPhoneRequest(parent);
-                }
-            });
-        });
-        this.btnsRepair.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let parent = btn.parentElement.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                let deviceBlock = parent.querySelector('.device');
-                let defectBlock = parent.querySelector('.defect');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
-                this.defect = defectBlock ? defectBlock[defectBlock.selectedIndex].text : '';
-                let check = this._checkRepair(nameBlock, phoneBlock, defectBlock, deviceBlock);
-                if (check) {
-                    this.sendMailRepairRequest(parent);
-                }
-            });
-        });
-        this.btnsCallmaster.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                let brandBlock = parent.querySelector('.brand');
-                let descriptionBlock = parent.querySelector('.description');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                this.brand = brandBlock ? brandBlock.value : '';
-                this.description = descriptionBlock ? descriptionBlock.value : '';
-                let check = this._checkRepair(nameBlock, phoneBlock, brandBlock, descriptionBlock);
-                if (check) {
-                    this.sendMailMasterRequest(parent);
-                }
-            });
-        });
-    }
-
     _checkRecall(name, phone) {
         let checkArr = {
             name: {
@@ -491,6 +528,70 @@ class Mailing {
         return false;
     }
 
+    _checkRepair(name, phone, defect, device) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            defect: {
+                check: false,
+                el: defect,
+            },
+            device: {
+                check: false,
+                el: device,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.defect.check = defect[defect.selectedIndex].text === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
+    _checkMaster(name, phone, defect, device) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            defect: {
+                check: false,
+                el: defect,
+            },
+            device: {
+                check: false,
+                el: device,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.defect.check = defect.value === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
     _changeColorByCheck(checkArr) {
         for (let elem in checkArr) {
             let elemVal = checkArr[elem];
@@ -504,35 +605,7 @@ class Mailing {
             }
         }
     }
-
-    shomailing(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('modal_off');
-        setTimeout(function () {
-            substrate.classList.add('screen_off');
-        }, transitionDelay);
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
-
-    clearInputs(modal) {
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
-
-    closeActiveModal(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('modal_off');
-        setTimeout(function () {
-            substrate.classList.add('screen_off');
-        }, transitionDelay);
-        this.clearInputs(modal);
-    }
 }
 let mailing = new Mailing();
 
-// mailing.init();
+mailing.init();

@@ -99,9 +99,9 @@
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input" type="text" placeholder="Номер телефона">
-                        <button class="button" type="button">Получить скидку!</button>
+                        <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
                     </form>
                 </div>
             </div>
@@ -146,40 +146,7 @@
                 </p>
             </div>
         </section>
-        <section class="form-search">
-            <div class="container2">
-                <div class="form-search__plate form-search_margin">
-                    <div class="form-search__text">
-                        <div class="section__title section__title_black"><a name="action">узнайте стоимость и<br>оформите заявку на ремонт</a></div>
-                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
-                    </div>
-                    <form class="form__items form-search_margin">
-                        <div class="form__item">
-                            <div class="before_1">
-                                <select class="select input_margin" type="text">
-                                    {% for technic,desc in content.jsonDb.defects %}
-                                        <option class="form__option" value="">{{technic}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <input class="input" type="text" placeholder="Ваше имя">
-                        </div>
-                        <div class="form__item">
-                            <div class="before_2"><select class="select input_margin" type="text">
-                                    <option class="form__option" value=""></option>
-                                </select></div>
-                            <input class="input" type="text" placeholder="Номер телефона">
-                        </div>
-                        <div class="form__item">
-                            <div class="before_3">
-                                <input class="input input_margin" type="text" placeholder="от ____________ рублей">
-                            </div>
-                            <button class="button">Отправить!</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+        {% include 'repair_form.tpl' %}  
         <!-- Отзывы -->
         <section class="reviews">
             <div class="container2">
@@ -293,7 +260,7 @@
                         <div class="close-review">&#10006;</div>
                         <div class="modal-content" id="review">
                             <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
-                            <input class="input input_margin" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
+                            <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
                             <input class="input input_margin" type="text" placeholder="Номер телефона">
                             <input class="input input_margin" type="text" placeholder="Ваша оценка (от 1 до 5)">
                             <textarea class="text-block input_margin" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
@@ -312,9 +279,9 @@
                     <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
                     <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
                     <form class="form-question__form">
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
-                        <button class="button">Перезвоните мне</button>
+                    <input class="input input_margin-lr client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                    <input class="input input_margin-lr client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                    <button class="button button-phone input_margin-l">Перезвоните мне</button>
                     </form>
                 </div>
             </div>
