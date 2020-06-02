@@ -49,7 +49,7 @@
             </div>
         </div>
         <!-- modal window -->
-        <div class="darkback-phone screen_off modal_off">
+        <div class="darkback darkback-phone screen_off modal_off">
             <div class="modal-window modal-phone screen_off">
                 <div class="close-phone">&#10006;</div>
                 <div class="modal-content" id="phone">
@@ -65,6 +65,5 @@
                     <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
                 </div>
             </div>
-            {% include 'confirm_mailing_block.tpl' %} 
         </div>
     </header>

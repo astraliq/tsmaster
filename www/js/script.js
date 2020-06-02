@@ -361,15 +361,9 @@ class Mailing {
         });
     }
 
-    renderOk(dBack, mType, cCross, check) {
-        let mw_class = document.querySelector(`.${mType}`);
-        mw_class.classList.add('modal-after-button');
-
-        console.log(mw_class);
-
-        let renderDiv = document.getElementById(check);
+    renderOk(check) {
         let str;
-
+        let renderDiv = document.getElementById('confirm-mailing');
         if (check == 'phone') {
             str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
                    <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
@@ -380,8 +374,18 @@ class Mailing {
             str = `<div class="after-button__title_review modal-text_margin">Мы получили ваш отзыв.</div>
             <div class="after-button__text_review">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
         }
-        //  = `<div>${check}</div>`;
-        renderDiv.innerHTML = str;
+        renderDiv.querySelector('.modal-window').innerHTML = str;
+        renderDiv.classList.remove('screen_off');
+        setTimeout(function () {
+            renderDiv.classList.remove('modal_off');
+        }, 10);
+        setTimeout(function () {
+            renderDiv.classList.add('modal_off');
+            setTimeout(function () {
+                renderDiv.classList.add('screen_off');
+                renderDiv.classList.remove('modal_off');
+            }, 2500);
+        }, 2500);
     }
 
     closeModal(dBack, mType) {
@@ -431,6 +435,7 @@ class Mailing {
                 if (data.result === 'OK') {
                     console.log('mail send!');
                     this.clearInputs(modal);
+                    this.renderOk('repair');
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -446,8 +451,8 @@ class Mailing {
             postData: {
                 name: this.name,
                 phone: this.phone,
-                brand: this.brand,
-                desc: this.description,
+                device: this.device,
+                defect: this.defect,
                 city: this.city,
             },
         };
@@ -456,10 +461,13 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeActiveModal(modal);
+                    this.closeModal('darkback', 'modal-window');
+                    this.renderOk('master');
+                    this.clearInputs(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }
+                this.clearInputs(modal);
             })
             .catch((error) => {
                 console.log('fetch error');
@@ -475,7 +483,6 @@ class Mailing {
                 city: this.city,
             },
         };
-        console.log(modal);
         this._getJson(`/index.php`, sendData)
             .then((data) => {
                 if (data.result === 'OK') {
@@ -483,8 +490,10 @@ class Mailing {
                     if (modal.classList.contains('form-question__form')) {
                         this.clearInputs(modal);
                     } else {
-                        this.closeActiveModal(modal);
+                        this.closeModal('darkback', 'modal-window');
+                        this.clearInputs(modal);
                     }
+                    this.renderOk('phone');
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -510,7 +519,9 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeActiveModal(modal);
+                    this.closeModal('darkback', 'modal-window');
+                    this.renderOk('review');
+                    this.clearInputs(modal);
                 } else {
                     console.log('ERROR_SENDING');
                 }

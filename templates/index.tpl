@@ -15,6 +15,7 @@
     <main class="main-style">
         <!-- modal window -->
         {% include 'modal_substrate1.tpl' %}
+        {% include 'confirm_mailing_block.tpl' %} 
         <section class="slider">
             <div class="container">
             <!-- обманка -->
@@ -255,7 +256,7 @@
                     <button class="btn-review">Оставить отзыв</button>
                 </div>
                 <!-- modal window оставить отзыв-->
-                <div class="darkback-review screen_off modal_off">
+                <div class="darkback darkback-review screen_off modal_off">
                     <div class="modal-window modal-review screen_off">
                         <div class="close-review">&#10006;</div>
                         <div class="modal-content" id="review">
