@@ -1,4 +1,8 @@
 <header class="header-style">
+    <!-- стрелка перехода на верх -->
+    <div id="anchor-arrow" class="anchor-arrow"></div>
+    <a href="#anchor-arrow" class="anchor-btn scroll_to">&#8679;</a>
+    <!-- стрелка перехода на верх -->
         <div class="container">
             <nav class="menu__company">
                 <ul class="menu__items">
