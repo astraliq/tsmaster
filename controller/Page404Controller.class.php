@@ -23,6 +23,7 @@ class Page404Controller extends Controller {
             'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
         ];
+
         return $arrayContent;
 	}
 

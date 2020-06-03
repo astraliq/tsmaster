@@ -16,6 +16,8 @@
         <h2>Страница не найдена.</h2>
 
         {% include 'footer.tpl' %}
-        <script src="../js/script.js"></script>
+        <script defer src="js/jquery-3.4.1.js"></script>
+        <script defer src="js/jquery.maskedinput.js"></script>
+        <script defer src="js/script.js"></script>
     </body>
 </html>
