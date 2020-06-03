@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -277,6 +277,18 @@
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("a.anchor-btn").click(function () {
+                elementClick = jQuery(this).attr("href")
+                destination = jQuery(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+                return false;
+            });
+        });
+    </script>
     
 </body>
 
