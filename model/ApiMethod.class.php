@@ -194,7 +194,7 @@ class ApiMethod {
 		$device = $_POST['postData']['device'] ?? null;
 		$defect = $_POST['postData']['defect'] ?? null;
 		$city = $_POST['postData']['city'] ?? null;
-		$reqType = 'заявка на звонок';
+		$reqType = 'заявка на выезд мастера';
 
 		if (!preg_match($this->regExpPhone, $phone)) {
 			$data['error_phone'] = true;
@@ -205,7 +205,7 @@ class ApiMethod {
 			$this->error('Не указаны имя или телефон');
 		}
 
-		$result = $this->mailing->sendMailPhoneRequest($name, $phone, $reqType, $device, $defect, $city);
+		$result = $this->mailing->sendMailRepairRequest($name, $phone, $reqType, $device, $defect, $city);
 
 		if ($result) {
 			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
@@ -222,7 +222,7 @@ class ApiMethod {
 		$rate = $_POST['postData']['rate'] ?? null;
 		$review = $_POST['postData']['review'] ?? null;
 		$city = $_POST['postData']['city'] ?? null;
-		$reqType = 'отзыв';
+		$reqType = 'новый отзыв';
 
 		if (!preg_match($this->regExpPhone, $phone)) {
 			$data['error_phone'] = true;
@@ -233,7 +233,11 @@ class ApiMethod {
 			$this->error('Не указаны имя или телефон');
 		}
 
-		$result = $this->mailing->sendMailPhoneRequest($name, $phone, $reqType, $device, $defect, $city);
+		if (!$review) {
+			$this->error('Отзыв не может быть пустым');
+		}
+
+		$result = $this->mailing->sendMailReview($name, $phone, $reqType, $rate, $review, $city);
 
 		if ($result) {
 			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
