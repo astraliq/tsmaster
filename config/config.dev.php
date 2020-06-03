@@ -14,6 +14,24 @@ $config['path_cache'] = $config['path_root'] . '/../cache';
 $config['path_libs'] = $config['path_root'] . '/../lib';
 $config['path_templates'] = $config['path_root'] . '/../templates';
 $config['path_logs'] = $config['path_root'] . '/../logs';
-// $config['sitename'] = 'ТехСервис Мастер';
+
+
+$config['sitename'] = 'ТехСервис&nbsp;Мастер';
+$config['main_menu'] = [
+      'О&nbsp;компании' => '/',
+      'Преимущества' => '/',
+      'Условия' => '/',
+      'Акции' => '/',
+      'Отзывы' => '/',
+      'Контакты' => '/',
+  ];
+$config['service_menu'] = [
+      'главная' => '/',
+      'стиральная&nbsp;машина' => '/washing_machine',
+      'посудомоечная&nbsp;машина' => '/dishwasher',
+      'холодильник' => '/refrigerator',
+      'духовой&nbsp;шкаф' => '/oven',
+      'варочная&nbsp;панель' => '/hob',
+  ];
 
 

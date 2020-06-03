@@ -4,6 +4,7 @@ class IndexController extends Controller {
     public $mainTitle;
     public $pageId;
     public $jsonDb;
+    public $cities;
     public $json;
     public $pageName = 'ТехСервис Мастер';
 
@@ -11,7 +12,6 @@ class IndexController extends Controller {
         parent::__construct();
         $this->json = new JsonFileParse();
         $this->jsonDb = $this->json->getArrayFromFile();
-        $this->mainTitle = $this->jsonDb['site_name'];
     } 
 
 	public function index($data) {
@@ -25,6 +25,8 @@ class IndexController extends Controller {
         // exit;
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
+            'main_menu' => $this->mainMenu,
+            'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
         ];
@@ -69,9 +71,9 @@ class IndexController extends Controller {
 //         exit;
 
         $arrayContent = [
-            'defectTable' => $defectTable,
             'jsonDb' => $this->jsonDb,
-            'defects' => $defects,
+            'main_menu' => $this->mainMenu,
+            'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
         ];

@@ -1,25 +1,26 @@
 <?php
 class Page404Controller extends Controller {
     public $title = '';
-    public $mainTitle;
     public $pageId;
     public $jsonDb;
     public $json;
-    public $pageName = 'ТехСервис Мастер';
+    public $pageName = '404';
 
     public function __construct() {
         parent::__construct();
         $this->json = new JsonFileParse();
         $this->jsonDb = $this->json->getArrayFromFile();
-        $this->mainTitle = $this->jsonDb['site_name'];
     } 
 
 	public function index($data) {
+        $this->pageId = 1;
         $this->view = '404';
         
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
-            'pageId' => 1,
+            'main_menu' => $this->mainMenu,
+            'service_menu' => $this->serviceMenu,
+            'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
         ];
         return $arrayContent;
