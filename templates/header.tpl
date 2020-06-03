@@ -19,7 +19,7 @@
                 <div class="tel">
                     <div class="tel__icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-cellphone-iphone" width="30" height="35" viewBox="0 0 24 24"><path d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" /></svg></div>
                     <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
-                    <button class="tel__btn">Заказать звонок</button>
+                    <button class="btn-phone tel__btn">Заказать звонок</button>
                 </div>
             </div>
         {% if content.pageId == 1 %}           
@@ -49,9 +49,21 @@
             </div>
         </div>
         <!-- modal window -->
-        <div class="substrate screen_off">
-            <div class="modal_phone screen_off">
-                <div class="cross">&#10006;</div>
+        <div class="darkback darkback-phone screen_off modal_off">
+            <div class="modal-window modal-phone screen_off">
+                <div class="close-phone">&#10006;</div>
+                <div class="modal-content" id="phone">
+                    <div class="section__title section__title_black section__title_margin">Заказать звонок</div>
+                    <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                    <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                    <button class="button button-phone section__title_margin" type="button">Заказать звонок</button>
+                    <div class="modal-text modal-text_margin">
+                        <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                        <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                    </div>
+                    <div>Или позвоните нам</div>
+                    <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                </div>
             </div>
         </div>
     </header>

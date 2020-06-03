@@ -183,110 +183,56 @@ $(document).ready(function () {
 });
 
 class Mailing {
-    constructor() {
+    constructor(checkType) {
         this.name = '';
         this.phone = '';
         this.device = '';
         this.defect = '';
         this.brand = '';
         this.description = '';
+        this.rate = '';
+        this.review = '';
         this.city = '';
         this.reqType = '';
-        this.btnsRecall = document.querySelectorAll('.recall_btn');
-        this.btnsRepair = document.querySelectorAll('.repair_btn');
-        this.btnsCallmaster = document.querySelectorAll('.master_btn');
-    }
+        this.btnsRecall = document.querySelectorAll('.button-phone');
+        this.btnsRepair = document.querySelectorAll('.button-repair');
+        this.btnsCallmaster = document.querySelectorAll('.button-master');
+        this.btnsReview = document.querySelectorAll('.button-review');
 
-    _getJson(url, data) {
-        return $.post({
-            url: url,
-            data: data,
-            success: function (data) {
-                //data приходят те данные, который прислал на сервер
-                if (data.result !== 'OK') {
-                    console.log('ERROR_SEND_DATA');
-                }
-            },
-        });
-    }
+        this.dB_Class = '';
+        this.mT_Class = '';
+        this.cC_Class = '';
+        this.btnClass = '';
 
-    sendMailRepairRequest(modal) {
-        let sendData = {
-            apiMethod: 'sendMailRepairRequest',
-            postData: {
-                name: this.name,
-                phone: this.phone,
-                device: this.device,
-                defect: this.defect,
-                city: this.city,
-            },
-        };
-
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    console.log('mail send!');
-                    this.clearInputs(modal);
-                } else {
-                    console.log('ERROR_SENDING');
-                }
-            })
-            .catch((error) => {
-                console.log('fetch error');
-            });
-    }
-
-    sendMailMasterRequest(modal) {
-        let sendData = {
-            apiMethod: 'sendMailMasterRequest',
-            postData: {
-                name: this.name,
-                phone: this.phone,
-                brand: this.brand,
-                desc: this.description,
-                city: this.city,
-            },
-        };
-
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    console.log('mail send!');
-                    this.closeActiveModal(modal);
-                } else {
-                    console.log('ERROR_SENDING');
-                }
-            })
-            .catch((error) => {
-                console.log('fetch error');
-            });
-    }
-
-    sendMailPhoneRequest(modal) {
-        let sendData = {
-            apiMethod: 'sendMailPhoneRequest',
-            postData: {
-                name: this.name,
-                phone: this.phone,
-                city: this.city,
-            },
-        };
-
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    console.log('mail send!');
-                    this.closeActiveModal(modal);
-                } else {
-                    console.log('ERROR_SENDING');
-                }
-            })
-            .catch((error) => {
-                console.log('fetch error');
-            });
+        this.checkType = checkType;
     }
 
     init() {
+        let btnPhone = document.querySelector('.btn-phone');
+        let btnMaster = document.querySelector('.btn-master');
+        let btnReview = document.querySelector('.btn-review');
+
+        if (btnPhone) {
+            btnPhone.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('phone');
+            };
+        }
+
+        if (btnMaster) {
+            btnMaster.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('master');
+            };
+        }
+
+        if (btnReview) {
+            btnReview.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('review');
+            };
+        }
+
         this.btnsRecall.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -325,18 +271,269 @@ class Mailing {
                 let parent = btn.parentElement;
                 let nameBlock = parent.querySelector('.client_name');
                 let phoneBlock = parent.querySelector('.client_phone');
-                let brandBlock = parent.querySelector('.brand');
-                let descriptionBlock = parent.querySelector('.description');
+                let defectBlock = parent.querySelector('.defect');
+                let deviceBlock = parent.querySelector('.device');
                 this.name = nameBlock.value;
                 this.phone = phoneBlock.value;
-                this.brand = brandBlock ? brandBlock.value : '';
-                this.description = descriptionBlock ? descriptionBlock.value : '';
-                let check = this._checkRepair(nameBlock, phoneBlock, brandBlock, descriptionBlock);
+                this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
+                this.defect = defectBlock ? defectBlock.value : '';
+                let check = this._checkMaster(nameBlock, phoneBlock, defectBlock, deviceBlock);
                 if (check) {
                     this.sendMailMasterRequest(parent);
                 }
             });
         });
+        this.btnsReview.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                let rateBlock = parent.querySelector('.rate');
+                let reviewBlock = parent.querySelector('.review');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                this.rate = rateBlock ? rateBlock.value : '';
+                this.review = reviewBlock ? reviewBlock.value : '';
+                let check = this._checkReview(nameBlock, phoneBlock, rateBlock, reviewBlock);
+                if (check) {
+                    this.sendMailReview(parent);
+                }
+            });
+        });
+    }
+
+    firstCheck(check) {
+        let darkBack;
+        let modalType;
+        let closeCross;
+        let btnAction;
+
+        if (check == 'phone') {
+            darkBack = 'darkback-phone';
+            modalType = 'modal-phone';
+            closeCross = 'close-phone';
+            btnAction = 'button-phone';
+        } else if (check == 'master') {
+            darkBack = 'darkback-master';
+            modalType = 'modal-master';
+            closeCross = 'close-master';
+            btnAction = 'button-master';
+        } else if (check == 'review') {
+            darkBack = 'darkback-review';
+            modalType = 'modal-review';
+            closeCross = 'close-review';
+            btnAction = 'button-review';
+        }
+
+        this.renderModal(darkBack, modalType, closeCross, btnAction, check);
+        this._addEvents(darkBack, modalType, closeCross, btnAction, check);
+    }
+
+    _addEvents(dBack, mType, cCross, btnA, check) {
+        this.cC_Class.onclick = (e) => {
+            e.preventDefault();
+            this.closeModal(dBack, mType);
+        };
+    }
+
+    renderModal(dBack, mType, cCross, btnA, check) {
+        this.dB_Class = document.querySelector(`.${dBack}`);
+        this.mT_Class = document.querySelector(`.${mType}`);
+        this.cC_Class = document.querySelector(`.${cCross}`);
+        this.btnClass = document.querySelector(`.${btnA}`);
+        this.dB_Class.classList.remove('screen_off');
+        this.mT_Class.classList.remove('screen_off');
+        setTimeout(() => {
+            this.dB_Class.classList.remove('modal_off');
+        }, 10);
+        // document.addEventListener('mouseup', (e) => {
+        //     if (mType != e.target && e.currentTarget.parentNode != mType) {
+        //         dB_Class.classList.add('screen_off');
+        //     }
+        // });
+    }
+
+    showMailing(modal) {
+        let substrate = modal.parentElement;
+        substrate.classList.add('modal_off');
+        setTimeout(function () {
+            substrate.classList.add('screen_off');
+        }, transitionDelay);
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
+    renderOk(check) {
+        let str;
+        let renderDiv = document.getElementById('confirm-mailing');
+        if (check == 'phone') {
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+                   <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
+        } else if (check == 'master') {
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+            <div class="after-button__text">Наш мастер свяжется с вами в ближайшее время и поможет устранить неисправность.</div>`;
+        } else {
+            str = `<div class="after-button__title_review modal-text_margin">Мы получили ваш отзыв.</div>
+            <div class="after-button__text_review">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
+        }
+        renderDiv.querySelector('.modal-window').innerHTML = str;
+        renderDiv.classList.remove('screen_off');
+        setTimeout(function () {
+            renderDiv.classList.remove('modal_off');
+        }, 10);
+        setTimeout(function () {
+            renderDiv.classList.add('modal_off');
+            setTimeout(function () {
+                renderDiv.classList.add('screen_off');
+                renderDiv.classList.remove('modal_off');
+            }, 2500);
+        }, 2500);
+    }
+
+    closeModal(dBack, mType) {
+        let dB_Class = document.querySelector(`.${dBack}`);
+        let mT_Class = document.querySelector(`.${mType}`);
+        dB_Class.classList.add('modal_off');
+        setTimeout(function () {
+            dB_Class.classList.add('screen_off');
+            mT_Class.classList.add('screen_off');
+        }, 500);
+    }
+
+    clearInputs(modal) {
+        let inputs = modal.querySelectorAll('.input');
+        inputs.forEach((element) => {
+            element.value = '';
+        });
+    }
+
+    _getJson(url, data) {
+        return $.post({
+            url: url,
+            data: data,
+            success: function (data) {
+                //data приходят те данные, который прислал на сервер
+                if (data.result !== 'OK') {
+                    console.log('ERROR_SEND_DATA');
+                }
+            },
+        });
+    }
+
+    sendMailRepairRequest(modal) {
+        let sendData = {
+            apiMethod: 'sendMailRepairRequest',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                device: this.device,
+                defect: this.defect,
+                city: this.city,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    this.clearInputs(modal);
+                    this.renderOk('repair');
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    sendMailMasterRequest(modal) {
+        let sendData = {
+            apiMethod: 'sendMailMasterRequest',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                device: this.device,
+                defect: this.defect,
+                city: this.city,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    this.closeModal('darkback', 'modal-window');
+                    this.renderOk('master');
+                    this.clearInputs(modal);
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+                this.clearInputs(modal);
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    sendMailPhoneRequest(modal) {
+        let sendData = {
+            apiMethod: 'sendMailPhoneRequest',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                city: this.city,
+            },
+        };
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    if (modal.classList.contains('form-question__form')) {
+                        this.clearInputs(modal);
+                    } else {
+                        this.closeModal('darkback', 'modal-window');
+                        this.clearInputs(modal);
+                    }
+                    this.renderOk('phone');
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    sendMailReview(modal) {
+        let sendData = {
+            apiMethod: 'sendMailReview',
+            postData: {
+                name: this.name,
+                phone: this.phone,
+                rate: this.rate,
+                review: this.review,
+                city: this.city,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('mail send!');
+                    this.closeModal('darkback', 'modal-window');
+                    this.renderOk('review');
+                    this.clearInputs(modal);
+                } else {
+                    console.log('ERROR_SENDING');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
     }
 
     _checkRecall(name, phone) {
@@ -394,6 +591,102 @@ class Mailing {
         return false;
     }
 
+    _checkRepair(name, phone, defect, device) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            defect: {
+                check: false,
+                el: defect,
+            },
+            device: {
+                check: false,
+                el: device,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.defect.check = defect[defect.selectedIndex].text === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
+    _checkMaster(name, phone, defect, device) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            defect: {
+                check: false,
+                el: defect,
+            },
+            device: {
+                check: false,
+                el: device,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.defect.check = defect.value === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
+    _checkReview(name, phone, rate, review) {
+        let checkArr = {
+            name: {
+                check: false,
+                el: name,
+            },
+            phone: {
+                check: false,
+                el: phone,
+            },
+            rate: {
+                check: false,
+                el: rate,
+            },
+            review: {
+                check: false,
+                el: review,
+            },
+        };
+        checkArr.name.check = name.value === '' ? false : true;
+        checkArr.phone.check = phone.value.length !== 16 ? false : true;
+        checkArr.rate.check = rate.value === '' ? false : true;
+        checkArr.review.check = review.value === '' ? false : true;
+        if (checkArr.name.check && checkArr.phone.check && checkArr.rate.check && checkArr.review.check) {
+            this._changeColorByCheck(checkArr);
+            return true;
+        }
+        this._changeColorByCheck(checkArr);
+
+        return false;
+    }
+
     _changeColorByCheck(checkArr) {
         for (let elem in checkArr) {
             let elemVal = checkArr[elem];
@@ -407,35 +700,7 @@ class Mailing {
             }
         }
     }
-
-    showModal(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('modal_off');
-        setTimeout(function () {
-            substrate.classList.add('screen_off');
-        }, transitionDelay);
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
-
-    clearInputs(modal) {
-        let inputs = modal.querySelectorAll('.input');
-        inputs.forEach((element) => {
-            element.value = '';
-        });
-    }
-
-    closeActiveModal(modal) {
-        let substrate = modal.parentElement;
-        substrate.classList.add('modal_off');
-        setTimeout(function () {
-            substrate.classList.add('screen_off');
-        }, transitionDelay);
-        this.clearInputs(modal);
-    }
 }
 let mailing = new Mailing();
 
-// mailing.init();
+mailing.init();

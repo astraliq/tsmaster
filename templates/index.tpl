@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -13,8 +13,9 @@
     <div class="top-line"></div>
     {% include 'header.tpl' %}
     <main class="main-style">
-         <!-- modal window -->
-         {% include 'modal_substrate1.tpl' %}
+        <!-- modal window -->
+        {% include 'modal_substrate1.tpl' %}
+        {% include 'confirm_mailing_block.tpl' %} 
         <section class="slider">
             <div class="container">
             <!-- обманка -->
@@ -37,8 +38,8 @@
                         <div id="carousel" class="carousel">
                             <button class="arrow prev"><</button>
                             <div class="cause">
-                                <div class="cause_btn">Вызвать мастера!</div>
-                                <div class="cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                             <div class="gallery">
                                 <ul class="images">
@@ -99,9 +100,9 @@
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
-                        <input class="input client_name" type="text" placeholder="Ваше имя">
-                        <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="+7(___)___-__-__">
-                        <button class="button recall_btn" type="button">Получить скидку!</button>
+                        <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
                     </form>
                 </div>
             </div>
@@ -252,16 +253,28 @@
                     </div>
                 </div>
                 <div class="button__reviews_margin">
-                    <button class="button-reviews">Оставить отзыв</button>
+                    <button class="btn-review">Оставить отзыв</button>
                 </div>
-                <!-- modal window -->
-                <div class="substrate2 screen_off">
-                    <div class="modal_rewiew screen_off">
-                        <div class="cross2">&#10006;</div>
+                <!-- modal window оставить отзыв-->
+                <div class="darkback darkback-review screen_off modal_off">
+                    <div class="modal-window modal-review screen_off">
+                        <div class="close-review">&#10006;</div>
+                        <div class="modal-content" id="review">
+                            <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
+                            <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
+                            <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                            <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
+                            <textarea class="text-block input_margin review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
+                            <button class="button button-review section__title_margin" type="button">Отправить</button>
+                            <div class="modal-text modal-text_margin">
+                                <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                                <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </section>
-        {% include 'question_form.tpl' %}  
+        {% include 'question_form.tpl' %} 
         <section class="about about_margin">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>
@@ -281,7 +294,6 @@
     {% include 'footer.tpl' %}  
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
     <script defer src="js/script.js"></script>
 </body>
 

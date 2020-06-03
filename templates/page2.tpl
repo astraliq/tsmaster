@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
     <title>{{ content.siteName|raw }}</title>
 </head>
@@ -125,8 +125,8 @@
                         <section class="top-banner_margin">
                             <img class="top-banner__img" src="../img/top-banner/top-banner.jpg" width="100%" height="auto" alt="Ремонт стиральных машин">
                             <div class="cause">
-                                <div class="cause_btn">Вызвать мастера!</div>
-                                <div class="cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                         </section>
                         <section class="advantage advantage_margin">
@@ -187,7 +187,7 @@
                                         <button class="brand-btn">></button>
                                     </div>
                                 </div>-->
-                                    <!-- Карусель брендов -->
+                                <!-- Карусель брендов -->
                                 <div class="brand-items">
                                     <div id="carousel_br" class="carousel_br">
                                         <button class="arrow_br prev_br"><</button>
@@ -275,8 +275,7 @@
     {% include 'footer.tpl' %}   
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/brend.js"></script>
-    <script defer src="js/modal.js"></script>
+    <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
     
 </body>

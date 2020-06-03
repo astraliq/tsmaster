@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
 .top-line {
   width: 100%;
   height: 76px;
@@ -24,7 +34,7 @@
 
 .container2 {
   max-width: 1140px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -334,7 +344,6 @@
   padding: 0 0 0 0;
   box-sizing: border-box;
   width: 83%;
-  /*100*/
 }
 
 .slider {
@@ -529,7 +538,6 @@
   margin: 0 0 70px 0;
 }
 
-/*// Grig. cost-tablr \\*/
 .cost-table_position {
   margin: 0 0 0 48px;
   padding: 0 0 0 0;
@@ -546,7 +554,6 @@
   display: grid;
   grid-template-columns: auto 200px;
   grid-template-rows: 50px;
-  /*grid-template-rows: repeat(9, 50px);*/
 }
 
 .cost-table_margin {
@@ -660,45 +667,10 @@
 }
 
 /*модальные окна*/
-.substrate {
-  position: absolute;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(3, 3, 3, 0.562);
-  z-index: 11;
-}
-
-.modal_phone {
-  position: absolute;
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  top: 20%;
-  right: 10%;
-  border: 1px solid #000;
-  background-color: #d5ecff;
-  z-index: 12;
-}
-
-.cross {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  top: -50px;
-  right: -50px;
-  border: 1px solid #2c2c2c;
-  background-color: #d5ecff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 12;
-}
-
-.substrate1 {
+.darkback,
+.darkback-phone,
+.darkback-master,
+.darkback-review {
   position: absolute;
   position: fixed;
   display: flex;
@@ -714,23 +686,43 @@
   transition: all 0.5s ease-in-out;
 }
 
-.modal_cause {
-  position: relative;
+.modal-window {
+  position: fixed;
   width: 400px;
-  height: 250px;
-  padding: 25px 0 25px 0;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 1px solid #000;
-  border-radius: 20px;
+  height: 570px;
+  top: 100px;
+  right: 500px;
+  border: 5px solid #fff;
   background-color: #d5ecff;
   z-index: 12;
+  border-radius: 20px;
 }
 
-.cross1 {
+.modal-phone {
+  height: 400px;
+}
+
+.modal-review {
+  height: 640px;
+  top: 50px;
+}
+
+.modal-content {
+  margin: 0 0 0 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 700px;
+}
+
+.modal-after-button {
+  height: 250px;
+}
+
+.close-phone,
+.close-master,
+.close-review {
   position: absolute;
   box-sizing: border-box;
   width: 45px;
@@ -747,47 +739,58 @@
   line-height: 37px;
 }
 
-.cross1:hover {
+.close-phone:hover,
+.close-master:hover,
+.close-review:hover {
   border: 5px white solid;
   background-color: #ffc123;
 }
 
-.substrate2 {
-  position: absolute;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(3, 3, 3, 0.562);
-  z-index: 11;
+.reaction-text {
+  font-size: 18px;
 }
 
-.modal_rewiew {
-  position: absolute;
-  position: fixed;
-  width: 400px;
-  height: 700px;
-  top: 20%;
-  right: 45%;
-  border: 1px solid #000;
-  background-color: #d5ecff;
-  z-index: 12;
+.after-button__title {
+  font-size: 36px;
+  font-weight: 400;
+  font-family: "PT Sans", sans-serif;
 }
 
-.cross2 {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  top: -50px;
-  right: -50px;
-  border: 1px solid #2c2c2c;
-  background-color: #d5ecff;
-  border-radius: 50%;
-  text-align: center;
+.after-button__title_review {
   font-size: 30px;
+}
+
+.after-button__text {
+  font-size: 26px;
+  font-weight: 400;
+  font-family: "PT Sans", sans-serif;
+}
+
+.after-button__text_review {
+  font-size: 22px;
+}
+
+.modal-text {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: "PT Sans", sans-serif;
+  color: #000;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.modal-text_margin {
+  margin-bottom: 20px;
+}
+
+.modal-link {
+  color: #000;
+}
+
+.modal-link:hover {
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  z-index: 12;
 }
 
 .modal_off {
@@ -1341,7 +1344,6 @@
 }
 
 .input {
-  padding: 5px;
   width: 270px;
   height: 45px;
   padding: 0 10px 0 10px;
@@ -1370,6 +1372,23 @@
 .button:hover {
   background-color: #e0a101;
   cursor: pointer;
+}
+
+.text-block {
+  margin: 0 0 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px transparent solid;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px -12px #000000 inset;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+  max-width: 270px;
+  min-width: 270px;
+  max-height: 90px;
+  min-height: 90px;
+  transition: all 1s ease-in-out;
 }
 
 .services-items {
@@ -1500,7 +1519,7 @@
 }
 
 .before_1::before {
-  content: 'Вид техники';
+  content: "Вид техники";
   position: absolute;
   top: -25px;
   left: 80px;
@@ -1516,7 +1535,7 @@
 }
 
 .before_2::before {
-  content: 'Вид неисправности';
+  content: "Вид неисправности";
   position: absolute;
   top: -25px;
   left: 56px;
@@ -1532,7 +1551,7 @@
 }
 
 .before_3::before {
-  content: 'Стоимость услуги составит';
+  content: "Стоимость услуги составит";
   position: absolute;
   top: -25px;
   left: 17px;
@@ -1544,11 +1563,19 @@
 }
 
 .input_margin {
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 .input_margin-lr {
   margin: 0 20px;
+}
+
+.input_margin-lr10 {
+  margin: 0 10px;
+}
+
+.input_margin-l {
+  margin: 0 0 0 20px;
 }
 
 .reviews-arrow__link:hover {
@@ -1613,7 +1640,7 @@
   line-height: 20px;
 }
 
-.button-reviews {
+.btn-review {
   width: 220px;
   height: 45px;
   background-color: #0076d5;
@@ -1626,7 +1653,7 @@
   outline: none;
 }
 
-.button-reviews:hover {
+.btn-review:hover {
   cursor: pointer;
   opacity: 0.8;
 }
@@ -1761,7 +1788,7 @@
 
 .dev-planb {
   padding: 0 15px 0 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 11px;
   color: white;
   display: flex;
@@ -1780,7 +1807,7 @@
   justify-content: flex-end;
   opacity: 0.5;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
 
@@ -1818,5 +1845,3 @@
 .planb_b {
   font-weight: 700;
 }
-
-/*примечание для проверки версии - 4*/

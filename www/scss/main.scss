@@ -1,8 +1,18 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
 }
 
 .top-line {
@@ -24,7 +34,7 @@
 
 .container2 {
     max-width: $container2__width;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -319,7 +329,6 @@
     padding: 0 0 0 0;
     box-sizing: border-box;
     width: 83%;
-    /*100*/
 }
 
 .slider {
@@ -363,7 +372,7 @@
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form.png');
+    background-image: url("../img/action-form/action-form.png");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -508,8 +517,7 @@
     margin: 0 0 70px 0;
 }
 
-/*// Grig. cost-tablr \\*/
-
+// Grig. cost-tablr \\
 .cost-table_position {
     margin: 0 0 0 48px;
     padding: 0 0 0 0;
@@ -526,7 +534,7 @@
     display: grid;
     grid-template-columns: auto 200px;
     grid-template-rows: 50px;
-    /*grid-template-rows: repeat(9, 50px);*/
+    // grid-template-rows: repeat(9, 50px);
 }
 
 .cost-table_margin {
@@ -636,47 +644,13 @@
     }
 }
 
+
 /*модальные окна*/
 
-.substrate {
-    position: absolute;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(3, 3, 3, 0.562);
-    z-index: 11;
-}
-
-.modal_phone {
-    position: absolute;
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    top: 20%;
-    right: 10%;
-    border: 1px solid #000;
-    background-color: $bg-form__plate_color;
-    z-index: 12;
-}
-
-.cross {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: -50px;
-    right: -50px;
-    border: 1px solid $bg-menu__plate_color;
-    background-color: $bg-form__plate_color;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 12;
-}
-
-.substrate1 {
+.darkback,
+.darkback-phone,
+.darkback-master,
+.darkback-review {
     position: absolute;
     position: fixed;
     display: flex;
@@ -692,26 +666,43 @@
     transition: all $anim_transition ease-in-out;
 }
 
-.modal_cause {
-    position: relative;
+.modal-window {
+    position: fixed;
     width: 400px;
-    height: 250px;
-    padding: 25px 0 25px 0;
-    // margin: 0 auto;
-    // right: 0;
-    // left: 0;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    border: 1px solid #000;
-    border-radius: 20px;
+    height: 570px;
+    top: 100px;
+    right: 500px;
+    border: 5px solid $text__second_color;
     background-color: $bg-form__plate_color;
     z-index: 12;
+    border-radius: 20px;
 }
 
-.cross1 {
+.modal-phone {
+    height: 400px;
+}
+
+.modal-review {
+    height: 640px;
+    top: 50px;
+}
+
+.modal-content {
+    margin: 0 0 0 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-height: 700px;
+}
+
+.modal-after-button {
+    height: 250px;
+}
+
+.close-phone,
+.close-master,
+.close-review {
     position: absolute;
     box-sizing: border-box;
     width: 45px;
@@ -732,42 +723,47 @@
     }
 }
 
-.substrate2 {
-    position: absolute;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(3, 3, 3, 0.562);
-    z-index: 11;
+.reaction-text {
+    font-size: 18px;
 }
 
-.modal_rewiew {
-    position: absolute;
-    position: fixed;
-    width: 400px;
-    height: 700px;
-    top: 20%;
-    right: 45%;
-    border: 1px solid #000;
-    background-color: $bg-form__plate_color;
-    z-index: 12;
+.after-button__title {
+    font-size: 36px;
+    font-weight: 400;
+    font-family: $font__first;
+    &_review {
+        font-size: 30px;
+    }
 }
 
-.cross2 {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: -50px;
-    right: -50px;
-    border: 1px solid $bg-menu__plate_color;
-    background-color: $bg-form__plate_color;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 12;
+.after-button__text {
+    font-size: 26px;
+    font-weight: 400;
+    font-family: $font__first;
+    &_review {
+        font-size: 22px;
+    }
+}
+
+.modal-text {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: $font__first;
+    color: $text__main_color;
+    font-size: 11px;
+    font-weight: 400;
+    &_margin {
+        margin-bottom: 20px;
+    }
+}
+
+.modal-link {
+    color: $text__main_color;
+    &:hover {
+        color: $text__main_color;
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 .modal_off {
@@ -778,6 +774,7 @@
 .screen_off {
     display: none;
 }
+
 
 /*Карусель*/
 
@@ -1170,6 +1167,7 @@
     margin-right: 0.6%;
 }
 
+
 /*карусель*/
 
 .advantage_margin {
@@ -1291,7 +1289,7 @@
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1319,7 +1317,7 @@
 }
 
 .input {
-    padding: 5px;
+    // padding: 5px;
     width: 270px;
     height: 45px;
     padding: 0 10px 0 10px;
@@ -1347,6 +1345,23 @@
         background-color: $btn_hover_color;
         cursor: pointer;
     }
+}
+
+.text-block {
+    margin: 0 0 0 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px transparent solid;
+    background-color: $text__second_color;
+    box-shadow: 5px 5px 15px -12px #000000 inset;
+    font-size: 16px;
+    color: $text__main_color;
+    outline: none;
+    max-width: 270px;
+    min-width: 270px;
+    max-height: 90px;
+    min-height: 90px;
+    transition: all $anim_transition_err ease-in-out;
 }
 
 .services-items {
@@ -1474,7 +1489,7 @@
 .before_1 {
     position: relative;
     &::before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1489,7 +1504,7 @@
 .before_2 {
     position: relative;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1504,7 +1519,7 @@
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1517,11 +1532,19 @@
 }
 
 .input_margin {
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 .input_margin-lr {
     margin: 0 20px;
+}
+
+.input_margin-lr10 {
+    margin: 0 10px;
+}
+
+.input_margin-l {
+    margin: 0 0 0 20px;
 }
 
 .reviews-arrow__link {
@@ -1584,7 +1607,7 @@
     }
 }
 
-.button-reviews {
+.btn-review {
     width: 220px;
     height: 45px;
     background-color: $bgcolor_blue;
@@ -1725,7 +1748,7 @@
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -1744,7 +1767,7 @@
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
@@ -1782,5 +1805,3 @@
 .planb_b {
     font-weight: 700;
 }
-
-/*примечание для проверки версии - 4*/
