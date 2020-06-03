@@ -84,7 +84,6 @@ class Mailing extends Model {
     		return $result;
 	}
 
-
 	public function sendMailReview($name, $phone, $reqType, $rate, $review, $city = null) {
 		$loader = new \Twig\Loader\FilesystemLoader('../mail_templates');
 		$twig = new \Twig\Environment($loader);

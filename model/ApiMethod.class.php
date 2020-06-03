@@ -22,6 +22,7 @@ class ApiMethod {
 	public $method;
 	public $requests;
 	public $mailing;
+	public $reviews;
 	public $regExpPhone = '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/';
 
     public function __construct($method) {
@@ -29,6 +30,7 @@ class ApiMethod {
         $this->dataBase = SQL::getInstance();
         $this->requests = new Requests();
         $this->mailing = new Mailing();
+        $this->reviews = new Reviews();
     }
 
 	//Функция вывода ошибки
@@ -180,7 +182,7 @@ class ApiMethod {
 		$result = $this->mailing->sendMailPhoneRequest($name, $phone, $reqType, $device, $defect, $city);
 
 		if ($result) {
-			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
+			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect, $city);
 			$data['result'] = "OK";
 			$this->success($data);
 		} else {
@@ -208,7 +210,7 @@ class ApiMethod {
 		$result = $this->mailing->sendMailRepairRequest($name, $phone, $reqType, $device, $defect, $city);
 
 		if ($result) {
-			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
+			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect, $city);
 			$data['result'] = "OK";
 			$this->success($data);
 		} else {
@@ -240,7 +242,7 @@ class ApiMethod {
 		$result = $this->mailing->sendMailReview($name, $phone, $reqType, $rate, $review, $city);
 
 		if ($result) {
-			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
+			$this->reviews->addReview($name, $phone, $rate, $review, $city);
 			$data['result'] = "OK";
 			$this->success($data);
 		} else {
