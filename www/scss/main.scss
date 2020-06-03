@@ -1,4 +1,4 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -328,7 +328,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    width: 100%;
+    width: 83%;
 }
 
 .slider {
@@ -372,7 +372,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form.png');
+    background-image: url("../img/action-form/action-form.png");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -644,7 +644,9 @@ textarea {
     }
 }
 
+
 /*модальные окна*/
+
 .darkback,
 .darkback-phone,
 .darkback-master,
@@ -773,6 +775,7 @@ textarea {
     display: none;
 }
 
+
 /*Карусель*/
 
 .carousel {
@@ -850,6 +853,38 @@ textarea {
 }
 
 .arrow_1 {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 45%;
+    padding: 0;
+    background-color: $bgcolor_blue;
+    border-radius: 2px;
+    border: 1px solid $bgcolor_blue;
+    box-shadow: 3px 3px 5px #000;
+    font-size: 24px;
+    line-height: 24px;
+    color: $text__second_color;
+    display: block;
+}
+
+.arrow_2 {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -18%;
+    padding: 0;
+    background-color: $bgcolor_blue;
+    border-radius: 2px;
+    border: 1px solid $bgcolor_blue;
+    box-shadow: 3px 3px 5px #000;
+    font-size: 24px;
+    line-height: 24px;
+    color: $text__second_color;
+    display: block;
+}
+
+.arrow_br {
     width: 45px;
     height: 45px;
     position: absolute;
@@ -961,6 +996,14 @@ textarea {
     outline: none;
 }
 
+.arrow_2:focus {
+    outline: none;
+}
+
+.arrow_br:focus {
+    outline: none;
+}
+
 .arrow:hover {
     background: #ccc;
     border: 1px solid #ccc;
@@ -968,6 +1011,18 @@ textarea {
 }
 
 .arrow_1:hover {
+    background: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.arrow_2:hover {
+    background: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.arrow_br:hover {
     background: #ccc;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -981,6 +1036,14 @@ textarea {
     box-shadow: none;
 }
 
+.arrow_2:active {
+    box-shadow: none;
+}
+
+.arrow_br:active {
+    box-shadow: none;
+}
+
 .prev {
     left: 3%;
     z-index: 10;
@@ -991,12 +1054,32 @@ textarea {
     z-index: 10;
 }
 
+.prev_2 {
+    left: 0;
+    z-index: 10;
+}
+
+.prev_br {
+    left: 0;
+    z-index: 10;
+}
+
 .next {
     right: 3%;
     z-index: 10;
 }
 
 .next_1 {
+    right: 0;
+    z-index: 10;
+}
+
+.next_2 {
+    right: 0;
+    z-index: 10;
+}
+
+.next_br {
     right: 0;
     z-index: 10;
 }
@@ -1012,13 +1095,25 @@ textarea {
     overflow: hidden;
 }
 
+.gallery_2 {
+    width: 81.6%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery_br {
+    width: 81.6%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .gallery ul {
     width: 9999px;
     margin: 0;
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
     font-size: 0;
 }
 
@@ -1028,7 +1123,27 @@ textarea {
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    font-size: 0;
+}
+
+.gallery_2 ul {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 1000ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    font-size: 0;
+}
+
+.gallery_br ul {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 1000ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
     font-size: 0;
 }
 
@@ -1042,7 +1157,18 @@ textarea {
     margin-right: 0.6%;
 }
 
-/*РєР°СЂСѓСЃРµР»СЊ*/
+.gallery_2 li {
+    display: inline-block;
+    margin-right: 0.6%;
+}
+
+.gallery_br li {
+    display: inline-block;
+    margin-right: 0.6%;
+}
+
+
+/*карусель*/
 
 .advantage_margin {
     margin-bottom: 86px;
@@ -1163,7 +1289,7 @@ textarea {
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1322,8 +1448,7 @@ textarea {
     }
 }
 
-.form-search__items {
-}
+.form-search__items {}
 
 .form__items {
     padding: 0 0 0 0;
@@ -1364,7 +1489,7 @@ textarea {
 .before_1 {
     position: relative;
     &::before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1379,7 +1504,7 @@ textarea {
 .before_2 {
     position: relative;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1394,7 +1519,7 @@ textarea {
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1623,7 +1748,7 @@ textarea {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -1642,7 +1767,7 @@ textarea {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
