@@ -11,7 +11,7 @@ $config['path_public'] = $config['path_root'] . '/../www';
 $config['path_model'] = $config['path_root'] . '/../model';
 $config['path_controller'] = $config['path_root'] . '/../controller';
 $config['path_cache'] = $config['path_root'] . '/../cache';
-$config['path_libs'] = $config['path_root'] . '/../lib';
+$config['path_libs'] = $config['path_root'] . '/../libs';
 $config['path_templates'] = $config['path_root'] . '/../templates';
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
