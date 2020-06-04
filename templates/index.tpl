@@ -101,7 +101,7 @@
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
                         <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                        <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
                         <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
                     </form>
                 </div>
@@ -262,7 +262,7 @@
                         <div class="modal-content" id="review">
                             <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
                             <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
-                            <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                            <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
                             <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
                             <textarea class="text-block input_margin review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
                             <button class="button button-review section__title_margin" type="button">Отправить</button>

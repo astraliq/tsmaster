@@ -6,23 +6,21 @@ class IndexController extends Controller {
     public $jsonDb;
     public $cities;
     public $json;
+    public $defects;
+    public $repairTypes;
     public $pageName = 'ТехСервис Мастер';
 
     public function __construct() {
         parent::__construct();
         $this->json = new JsonFileParse();
+        $this->defects = new Defects();
+        $this->repairTypes = new RepairTypes();
         $this->jsonDb = $this->json->getArrayFromFile();
     } 
 
 	public function index($data) {
         $this->pageId = 1;
 
-        // $catTitle = 'Число';
-        // $randomData = $this->randomType->getRandomData($catTitle);
-        // echo '<pre>'; 
-        // print_r($this->jsonDb['site_name']);
-        // echo '</pre>';
-        // exit;
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
             'main_menu' => $this->mainMenu,
@@ -48,37 +46,66 @@ class IndexController extends Controller {
     }
 
     public function washing_machine($data) {
-        $defects = $this->jsonDb['defects']['стиральная машина'];
-        $defectTable = 1;
-        // echo '<pre>'; 
-        // print_r($data);
-        // echo '</pre>';
-        // exit;
+        $this->view = 'page2';
+        $this->pageId = 2;
+        $defects = $this->defects->getByDeviceId(1);
+        $otherBrandSectionTitle = 'любых';
 
         switch ($data['id']) {
             case 'ne_slivaet_vodu':
-                $defectTable = 2;
-                $defects = $this->jsonDb['defects']['стиральная машина']['Не сливает воду*180*/washing_machine/ne_slivaet_vodu'];
-                $this->pageId = 2;
-                $this->view = 'page2';
+                $repTypes = $this->repairTypes->getByDeviceDefectId(1,1);
+                $defectTableId = 2;
                 break;
             
             default:
-                $this->pageId = 2;
-                $this->view = 'page2';
+                $repTypes = [];
+                $defectTableId = 1;
                 break;
         }
-// echo '<pre>'; 
-//         print_r($defects);
-//         echo '</pre>';
-//         exit;
 
         $arrayContent = [
+            'siteName' => $this->mainTitle,
             'jsonDb' => $this->jsonDb,
             'main_menu' => $this->mainMenu,
             'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
+            'defectTableId' => $defectTableId,
+            'defects' => $defects,
+            'repTypes' => $repTypes,
+            'otherBrandSectionTitle' => $otherBrandSectionTitle,
+        ];
+        
+        return $arrayContent;
+    }
+    
+    public function dishwasher($data) {
+        $this->view = 'page2';
+        $this->pageId = 2;
+        $defects = $this->defects->getByDeviceId(1);
+        $otherBrandSectionTitle = 'любых';
+
+        switch ($data['id']) {
+            case 'ne_slivaet_vodu':
+                $repTypes = $this->repairTypes->getByDeviceDefectId(1,1);
+                $defectTableId = 2;
+                break;
+            
+            default:
+                $repTypes = [];
+                $defectTableId = 1;
+                break;
+        }
+
+        $arrayContent = [
             'siteName' => $this->mainTitle,
+            'jsonDb' => $this->jsonDb,
+            'main_menu' => $this->mainMenu,
+            'service_menu' => $this->serviceMenu,
+            'pageId' => $this->pageId,
+            'defectTableId' => $defectTableId,
+            'defects' => $defects,
+            'repTypes' => $repTypes,
+            'otherBrandSectionTitle' => $otherBrandSectionTitle,
         ];
         
         return $arrayContent;

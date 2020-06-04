@@ -160,16 +160,16 @@
                             </div>
                         </section>
                         <section class="cost-table">
-                            {% if content.defectTable == 1 %}           
+                            {% if content.defectTableId == 1 %}           
                                 {% include 'defect_table1.tpl' %}
-                            {% elseif content.defectTable == 2 %}                      
+                            {% elseif content.defectTableId == 2 %}                      
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>
                         {% include 'repair_form.tpl' %}  
                         <section class="brand brand_margin">
                             <div class="container3">
-                                <div class="section__title section__title_black section__title_margin">ремонт любых брендов</div>
+                                <div class="section__title section__title_black section__title_margin">ремонт {{content.otherBrandSectionTitle}} брендов</div>
                                 <!--<div class="brand-items">
                                     <div class="brand-arrow">
                                         <button class="brand-btn"><</button>

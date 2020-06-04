@@ -21,7 +21,8 @@ if (carousel) {
 
     let list = carousel.querySelector('ul');
     let listElems = carousel.querySelectorAll('li');
-    let point = points.querySelectorAll('a');
+
+    let point = document.getElementById('points').querySelectorAll('a');
 
     var position = 0; //положение прокрутки
 
@@ -60,15 +61,14 @@ if (carousel) {
         if (numPoint > 4) numPoint = 0;
         pointActive(numPoint);
     };
-}
-
-//Делаем зависимость точек
-//подстветка точек
-function pointActive(num) {
-    point.forEach((elem) => {
-        elem.classList.remove('slider__point_active');
-    });
-    point[num].classList.add('slider__point_active');
+    //Делаем зависимость точек
+    //подстветка точек
+    function pointActive(num) {
+        point.forEach((elem) => {
+            elem.classList.remove('slider__point_active');
+        });
+        point[num].classList.add('slider__point_active');
+    }
 }
 
 //курусель отзывов
