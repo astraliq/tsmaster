@@ -6,7 +6,7 @@
             <div class="cell-title">стоимость</div>
             {% for defect in content.defects %}
             <div class="cell-name">
-                <a class="cell-name__link" href="{{ content.mainLink~defect.link }}">{{ defect.title }}</a>
+                <a class="cell-name__link" href="{{ content.mainLink ~ defect.link }}">{{ defect.title }}</a>
             </div>
             <div class="cell-price">{{ defect.price }} ₽</div>
             {% endfor %}

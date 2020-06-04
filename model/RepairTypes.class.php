@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 class RepairTypes extends Model {
-	public $repairTypesTable = 'works';
+	public $worksTable = 'works';
 	public $defectsTable = 'defects';
 	public $deviceTable = 'devices';
 	public $work2def2devTable = 'work2defect2device';
@@ -15,11 +15,11 @@ class RepairTypes extends Model {
 		$whereObject = [
 			'id' => $id
 		];
-		return $this->dataBase->uniSelect($this->repairTypesTable, $whereObject);
+		return $this->dataBase->uniSelect($this->worksTable, $whereObject);
 	}
 
 	public function getByDeviceDefectId($deviceId, $defectId) {
-		$sql = "SELECT rpt.`title`, rpt.`price` FROM `$this->repairTypesTable` as rpt LEFT JOIN `$this->work2def2devTable` as wdd ON rpt.`id` = wdd.`work_id` WHERE wdd.`device_id` = $deviceId AND wdd.`defect_id` = $defectId";
+		$sql = "SELECT works.`title`, works.`price` FROM `$this->worksTable` as works LEFT JOIN `$this->work2def2devTable` as wdd ON works.`id` = wdd.work_id WHERE wdd.device_id = $deviceId AND wdd.defect_id = $defectId";
 		return $this->dataBase->getRows($sql, null);
 	}
 
@@ -33,7 +33,7 @@ class RepairTypes extends Model {
 			'title' => $name,
 			'price' => $phone,
 		];
-		return $this->dataBase->uniInsert($this->repairTypesTable, $object);
+		return $this->dataBase->uniInsert($this->worksTable, $object);
 	}
 
 	public function update($id, $name, $comment) {
@@ -44,14 +44,14 @@ class RepairTypes extends Model {
 		$whereObject = [
 			'id' => $id
 		];
-		return $this->dataBase->uniUpdate($this->repairTypesTable, $object, $whereObject);
+		return $this->dataBase->uniUpdate($this->worksTable, $object, $whereObject);
 	}
 
 	public function deleteById($id) {
 		$whereObject = [
 			'id' => $id
 		];
-		return $this->dataBase->uniDelete($this->repairTypesTable, $whereObject);
+		return $this->dataBase->uniDelete($this->worksTable, $whereObject);
 	}
 }
 ?>

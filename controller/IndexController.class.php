@@ -55,7 +55,7 @@ class IndexController extends Controller {
 
         switch ($data['id']) {
             case 'ne_slivaet_vodu':
-                $repTypes = $this->repairTypes->getByDeviceDefectId(1,1);
+                $repTypes = $this->repairTypes->getByDeviceDefectId(1,4);
                 $defectTableId = 2;
                 
                 break;
@@ -67,7 +67,7 @@ class IndexController extends Controller {
                 break;
         }
         // echo '<pre>';
-        // print_r( $defects);
+        // print_r( $repTypes);
         // echo '</pre>';
         // exit();
 
