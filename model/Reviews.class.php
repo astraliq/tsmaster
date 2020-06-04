@@ -1,16 +1,14 @@
 <?php
 declare(strict_types=1);
-class ReviewsModel extends Model {
-	public $reviewsTable = 'reviews';
-	public $reviewsFromVue = '<reviews ref="reviews"></reviews>';
+class Reviews extends Model {
+	public $reviewsTable = 'feedbacks';
 
 	public function __construct() {
 		parent::__construct();
     }
 
-	public function getLastReviews($quantityOfReviews) {
-		$sql = "SELECT * FROM `$this->reviewsTable` ORDER BY `date` DESC LIMIT $quantityOfReviews";
-		// var_dump($this->dataBase->getRows($sql, null));
+	public function getLastReviews($quantityOfLastReviews) {
+		$sql = "SELECT * FROM `$this->reviewsTable` ORDER BY `date` DESC LIMIT $quantityOfLastReviews";
 		return $this->dataBase->getRows($sql, null);
 	}
 
@@ -21,13 +19,14 @@ class ReviewsModel extends Model {
 		return $this->dataBase->uniSelect($this->reviewsTable, $whereObject);
 	}
 
-	public function createReview($name, $comment, $rate) {
+	public function addReview($name, $phone, $rate, $review, $city) {
 		$object = [
 			'name' => $name,
-			'comment' => $comment,
-			'rate' => $rate
+			'phone' => $phone,
+			'rate' => $rate,
+			'review' => $review,
+			'city' => $city
 		];
-		// $sql = "INSERT INTO `reviews`(`name`, `comment`, `rate`) VALUES ('$name', '$comment', '$rate')";
 		return $this->dataBase->uniInsert($this->reviewsTable, $object);
 	}
 
@@ -39,7 +38,6 @@ class ReviewsModel extends Model {
 		$whereObject = [
 			'id' => $id
 		];
-		// $sql = "UPDATE `reviews` SET `name`='$name',`comment`='$comment' WHERE `id` = $id";
 		return $this->dataBase->uniUpdate($this->reviewsTable, $object, $whereObject);
 	}
 
@@ -47,7 +45,6 @@ class ReviewsModel extends Model {
 		$whereObject = [
 			'id' => $id
 		];
-		// $sql = "DELETE FROM `reviews` WHERE `id` = $id";
 		return $this->dataBase->uniDelete($this->reviewsTable, $whereObject);
 	}
 }

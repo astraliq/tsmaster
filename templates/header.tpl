@@ -6,7 +6,7 @@
         <div class="container">
             <nav class="menu__company">
                 <ul class="menu__items">
-                    {% for menu,link in content.jsonDb.main_menu %}
+                    {% for menu,link in content.main_menu %}
                     <li class="menu__item menu__item_margin">
                         <a class="menu__link" href="{{link}}">{{menu|raw}}</a>
                     </li>
