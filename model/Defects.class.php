@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 class Defects extends Model {
-	public $defectsTable = 'faults';
+	public $defectsTable = 'defects';
+	public $deviceTable = 'devices';
+	public $defect2deviceTable = 'defect2device';
 
 	public function __construct() {
 		parent::__construct();
@@ -16,10 +18,8 @@ class Defects extends Model {
 	}
 
 	public function getByDeviceId($deviceId) {
-		$whereObject = [
-			'device_id' => $deviceId
-		];
-		return $this->dataBase->uniSelect($this->defectsTable, $whereObject);
+		$sql = "SELECT def.`title`, def.`price`, def.`link` FROM `$this->defectsTable` as def LEFT JOIN `$this->defect2deviceTable` as dd ON def.`id` = dd.defect_id WHERE dd.device_id = $deviceId";
+		return $this->dataBase->getRows($sql, null);
 	}
 
 	public function getByBrand($brand) {

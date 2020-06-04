@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
 class RepairTypes extends Model {
-	public $repairTypesTable = 'repair_types';
-	public $defectsTable = 'faults';
+	public $repairTypesTable = 'works';
+	public $defectsTable = 'defects';
+	public $deviceTable = 'devices';
+	public $work2def2devTable = 'work2defect2device';
 
 	public function __construct() {
 		parent::__construct();
@@ -17,15 +19,12 @@ class RepairTypes extends Model {
 	}
 
 	public function getByDeviceDefectId($deviceId, $defectId) {
-		$whereObject = [
-			'fault_id' => $defectId,
-			'device_id' => $deviceId
-		];
-		return $this->dataBase->uniSelect($this->repairTypesTable, $whereObject);
+		$sql = "SELECT rpt.`title`, rpt.`price` FROM `$this->repairTypesTable` as rpt LEFT JOIN `$this->work2def2devTable` as wdd ON rpt.`id` = wdd.`work_id` WHERE wdd.`device_id` = $deviceId AND wdd.`defect_id` = $defectId";
+		return $this->dataBase->getRows($sql, null);
 	}
 
 	public function getByDefectTitle($defectTitle) {
-		$sql = "SELECT f.`id`, title_ru, description_ru, year, cat.`category_title` as `main_category`, cntr.`country_title` as `country`, f.`main_img`, f.`actors`, f.`genres`, duration, f.`rating`  FROM `$this->filmsTable` as f LEFT JOIN `$this->categories` as cat ON f.`main_category_id` = cat.id LEFT JOIN `$this->countries` as cntr ON f.`country_id` = cntr.id WHERE `year` IN ($allYears)" . $filterCountry . $filterCategory . $exclude;
+		$sql = "";
 		return $this->dataBase->getRows($sql, null);
 	}
 

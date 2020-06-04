@@ -50,18 +50,26 @@ class IndexController extends Controller {
         $this->pageId = 2;
         $defects = $this->defects->getByDeviceId(1);
         $otherBrandSectionTitle = 'любых';
+        $mainLink = '/washing_machine';
+        $banner = 'img/defect_banners/defect_washing_machine.jpg';
 
         switch ($data['id']) {
             case 'ne_slivaet_vodu':
                 $repTypes = $this->repairTypes->getByDeviceDefectId(1,1);
                 $defectTableId = 2;
+                
                 break;
             
             default:
                 $repTypes = [];
                 $defectTableId = 1;
+                $banner = 'img/repair_banners/repair_washing_machine.jpg';
                 break;
         }
+        // echo '<pre>';
+        // print_r( $defects);
+        // echo '</pre>';
+        // exit();
 
         $arrayContent = [
             'siteName' => $this->mainTitle,
@@ -73,6 +81,8 @@ class IndexController extends Controller {
             'defects' => $defects,
             'repTypes' => $repTypes,
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
+            'banner' => $banner,
+            'mainLink' => $mainLink,
         ];
         
         return $arrayContent;
