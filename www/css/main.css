@@ -1210,8 +1210,7 @@ textarea {
   color: #fff;
   border-radius: 50%;
   z-index: 15;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*стрелка якорь переход на верх*/
@@ -1541,7 +1540,7 @@ textarea {
 }
 
 .before_1::before {
-  content: "Вид техники";
+  content: 'Вид техники';
   position: absolute;
   top: -25px;
   left: 80px;
@@ -1557,7 +1556,7 @@ textarea {
 }
 
 .before_2::before {
-  content: "Вид неисправности";
+  content: 'Вид неисправности';
   position: absolute;
   top: -25px;
   left: 56px;
@@ -1573,7 +1572,7 @@ textarea {
 }
 
 .before_3::before {
-  content: "Стоимость услуги составит";
+  content: 'Стоимость услуги составит';
   position: absolute;
   top: -25px;
   left: 17px;
@@ -1800,6 +1799,55 @@ textarea {
   margin-bottom: 8px;
 }
 
+.error404-block {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 40px 0;
+}
+
+.error404-text {
+  width: 400px;
+}
+
+.error404-h3 {
+  margin: 0 0 -20px 0;
+  padding: 0 0 0 0;
+  font-size: 20px;
+  color: #f7a900;
+  font-family: "PT Sans", sans-serif;
+}
+
+.error404-h1 {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-size: 100px;
+  font-weight: 700;
+  color: #0076d5;
+}
+
+.error404__text {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 0;
+  font-family: "PT Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: #000;
+}
+
+.error404__text:last-child {
+  margin-top: 100px;
+}
+
+.error404__form {
+  border: 5px solid #fff;
+  background-color: #d5ecff;
+  border-radius: 20px;
+}
+
+.error404_tel {
+  font-size: 35px;
+}
+
 .plan-b-style {
   width: 100%;
   height: 7vh;
@@ -1810,7 +1858,7 @@ textarea {
 
 .dev-planb {
   padding: 0 15px 0 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   color: white;
   display: flex;
@@ -1829,7 +1877,7 @@ textarea {
   justify-content: flex-end;
   opacity: 0.5;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
 

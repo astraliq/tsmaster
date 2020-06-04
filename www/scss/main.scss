@@ -1,4 +1,4 @@
-@import "_param";
+@import '_param';
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -372,7 +372,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url("../img/action-form/action-form.png");
+    background-image: url('../img/action-form/action-form.png');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -644,7 +644,6 @@ textarea {
     }
 }
 
-
 /*модальные окна*/
 
 .darkback,
@@ -774,7 +773,6 @@ textarea {
 .screen_off {
     display: none;
 }
-
 
 /*Карусель*/
 
@@ -1167,9 +1165,7 @@ textarea {
     margin-right: 0.6%;
 }
 
-
 /*карусель*/
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1191,7 +1187,6 @@ textarea {
     z-index: 15;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1314,7 +1309,7 @@ textarea {
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url("../img/form-plate/form-plate_bg.jpg");
+        background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1514,7 +1509,7 @@ textarea {
 .before_1 {
     position: relative;
     &::before {
-        content: "Вид техники";
+        content: 'Вид техники';
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1529,7 +1524,7 @@ textarea {
 .before_2 {
     position: relative;
     &::before {
-        content: "Вид неисправности";
+        content: 'Вид неисправности';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1544,7 +1539,7 @@ textarea {
 .before_3 {
     position: relative;
     &::before {
-        content: "Стоимость услуги составит";
+        content: 'Стоимость услуги составит';
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1762,6 +1757,50 @@ textarea {
     margin-bottom: 8px;
 }
 
+.error404 {
+    &-block {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 0 40px 0;
+    }
+    &-text {
+        width: 400px;
+    }
+    &-h3 {
+        margin: 0 0 -20px 0;
+        padding: 0 0 0 0;
+        font-size: 20px;
+        color: $logo__text_color;
+        font-family: $font__first;
+    }
+    &-h1 {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        font-size: 100px;
+        font-weight: 700;
+        color: $bgcolor_blue;
+    }
+    &__text {
+        margin: 0 0 10px 0;
+        padding: 0 0 0 0;
+        font-family: $font__first;
+        font-size: 25px;
+        font-weight: 400;
+        color: $text__main_color;
+        &:last-child {
+            margin-top: 100px;
+        }
+    }
+    &__form {
+        border: 5px solid $text__second_color;
+        background-color: $bg-form__plate_color;
+        border-radius: 20px;
+    }
+    &_tel {
+        font-size: 35px;
+    }
+}
+
 //=========== plan b studio ===============\\
 .plan-b-style {
     width: 100%;
@@ -1773,7 +1812,7 @@ textarea {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -1792,7 +1831,7 @@ textarea {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
