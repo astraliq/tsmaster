@@ -372,14 +372,14 @@ class Mailing {
         let str;
         let renderDiv = document.getElementById('confirm-mailing');
         if (check == 'phone') {
-            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
-                   <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
+            str = `<div class="modal-content_align"><div class="after-button__title modal-text_margin">Ваша заявка принята</div>
+                   <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div></div>`;
         } else if (check == 'master') {
-            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
-            <div class="after-button__text">Наш мастер свяжется с вами в ближайшее время и поможет устранить неисправность.</div>`;
+            str = `<div class="modal-content_align"><div class="after-button__title modal-text_margin">Ваша заявка принята<div>
+            <div class="after-button__text">Наш мастер свяжется с вами в ближайшее время и поможет устранить неисправность.</div></div>`;
         } else {
-            str = `<div class="after-button__title_review modal-text_margin">Мы получили ваш отзыв.</div>
-            <div class="after-button__text_review">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
+            str = `<div class="modal-content_align"><div class="after-button__title modal-text_margin">Мы получили ваш отзыв</div>
+            <div class="after-button__text">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div></div>`;
         }
         renderDiv.querySelector('.modal-window').innerHTML = str;
         renderDiv.classList.remove('screen_off');

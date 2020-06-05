@@ -736,13 +736,19 @@ textarea {
   top: 50px;
 }
 
-.modal-content {
+.modal-content,
+.modal-content_align {
   margin: 0 0 0 0;
   padding: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   max-height: 700px;
+}
+
+.modal-content_align,
+.modal-content_align_align {
+  align-items: flex-start;
 }
 
 .modal-after-button {
@@ -780,23 +786,20 @@ textarea {
 }
 
 .after-button__title {
-  font-size: 36px;
-  font-weight: 400;
-  font-family: "PT Sans", sans-serif;
-}
-
-.after-button__title_review {
-  font-size: 30px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: "Arial";
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 25px;
 }
 
 .after-button__text {
-  font-size: 26px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-size: 20px;
   font-weight: 400;
-  font-family: "PT Sans", sans-serif;
-}
-
-.after-button__text_review {
-  font-size: 22px;
+  font-family: "Arial";
 }
 
 .modal-text {
