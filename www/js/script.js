@@ -37,7 +37,7 @@ if (carousel) {
     });
 
     //сдвиг в лево Размеры зависят от картинок в верстке
-    carousel.querySelector('.prev').onclick = function () {
+    carousel.querySelector('.prev').onclick = function() {
         position += width * count;
         if (position > 0) position = -1 * (width * (numberImg - count)); //строка возвращает на начало списка
 
@@ -50,7 +50,7 @@ if (carousel) {
     };
 
     //сдвиг в право Размеры зависят от картинок в верстке
-    carousel.querySelector('.next').onclick = function () {
+    carousel.querySelector('.next').onclick = function() {
         position -= width * count;
         if (position <= -1 * (width * numberImg)) position = 0; // строка перемещает на конец списка
 
@@ -93,7 +93,7 @@ if (carousel_1) {
     let position_1 = 0; //положение прокрутки
 
     //сдвиг в лево
-    carousel_1.querySelector('.prev_1').onclick = function () {
+    carousel_1.querySelector('.prev_1').onclick = function() {
         position_1 += width_1 * count_1;
         // if (position_1 > 0) position_1 = -1 * (width_1 * (numberImg_1 - count_1)); //строка возвращает на начало списка
 
@@ -102,7 +102,7 @@ if (carousel_1) {
     };
 
     //сдвиг в право
-    carousel_1.querySelector('.next_1').onclick = function () {
+    carousel_1.querySelector('.next_1').onclick = function() {
         position_1 -= width_1 * count_1;
         // if (position_1 <= -1 * (width_1 * numberImg_1)) position_1 = 0; // строка перемещает на конец списка
 
@@ -132,7 +132,7 @@ if (carousel_2) {
     let position_2 = 0; //положение прокрутки
 
     //сдвиг в лево
-    carousel_2.querySelector('.prev_2').onclick = function () {
+    carousel_2.querySelector('.prev_2').onclick = function() {
         position_2 += width_2 * count_2;
         // if (position_1 > 0) position_2 = -1 * (width_2 * (numberImg_2 - count_2)); //строка возвращает на начало списка
 
@@ -141,7 +141,7 @@ if (carousel_2) {
     };
 
     //сдвиг в право
-    carousel_2.querySelector('.next_2').onclick = function () {
+    carousel_2.querySelector('.next_2').onclick = function() {
         position_2 -= width_2 * count_2;
         // if (position_2 <= -1 * (width_2 * numberImg_2)) position_2 = 0; // строка перемещает на конец списка
 
@@ -163,7 +163,7 @@ class newError {
         clearTimeout(this.to1);
         // clearTimeout(this.to2);
         this.hideError();
-        this.to1 = setTimeout(function () {
+        this.to1 = setTimeout(function() {
             object.classList.add(classNameIn);
             object.classList.remove(classNameOut);
             // this.to2 = setTimeout(function () {
@@ -180,7 +180,7 @@ class newError {
 
 // let error1 = new newError(object, classNameIn, classNameOut);
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.client_phone').mask('+7(999)999-99-99');
 });
 
@@ -359,7 +359,7 @@ class Mailing {
     showMailing(modal) {
         let substrate = modal.parentElement;
         substrate.classList.add('modal_off');
-        setTimeout(function () {
+        setTimeout(function() {
             substrate.classList.add('screen_off');
         }, transitionDelay);
         let inputs = modal.querySelectorAll('.input');
@@ -372,23 +372,23 @@ class Mailing {
         let str;
         let renderDiv = document.getElementById('confirm-mailing');
         if (check == 'phone') {
-            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята</div>
                    <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div>`;
         } else if (check == 'master') {
-            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята.</div>
+            str = `<div class="after-button__title modal-text_margin">Ваша заявка принята</div>
             <div class="after-button__text">Наш мастер свяжется с вами в ближайшее время и поможет устранить неисправность.</div>`;
         } else {
-            str = `<div class="after-button__title_review modal-text_margin">Мы получили ваш отзыв.</div>
-            <div class="after-button__text_review">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
+            str = `<div class="after-button__title modal-text_margin">Мы получили ваш отзыв</div>
+            <div class="after-button__text">В некоторых случаях, наш менеджер может связаться с вами для уточнения деталей.<br><br>Спасибо.</div>`;
         }
         renderDiv.querySelector('.modal-window').innerHTML = str;
         renderDiv.classList.remove('screen_off');
-        setTimeout(function () {
+        setTimeout(function() {
             renderDiv.classList.remove('modal_off');
         }, 10);
-        setTimeout(function () {
+        setTimeout(function() {
             renderDiv.classList.add('modal_off');
-            setTimeout(function () {
+            setTimeout(function() {
                 renderDiv.classList.add('screen_off');
                 renderDiv.classList.remove('modal_off');
             }, 2500);
@@ -399,7 +399,7 @@ class Mailing {
         let dB_Class = document.querySelector(`.${dBack}`);
         let mT_Class = document.querySelector(`.${mType}`);
         dB_Class.classList.add('modal_off');
-        setTimeout(function () {
+        setTimeout(function() {
             dB_Class.classList.add('screen_off');
             mT_Class.classList.add('screen_off');
         }, 500);
@@ -416,7 +416,7 @@ class Mailing {
         return $.post({
             url: url,
             data: data,
-            success: function (data) {
+            success: function(data) {
                 //data приходят те данные, который прислал на сервер
                 if (data.result !== 'OK') {
                     console.log('ERROR_SEND_DATA');
@@ -694,7 +694,7 @@ class Mailing {
             let elemVal = checkArr[elem];
             if (!elemVal.check) {
                 elemVal.el.classList.add('input_err');
-                setTimeout(function () {
+                setTimeout(function() {
                     elemVal.el.classList.remove('input_err');
                 }, transitionDelay);
             } else {
