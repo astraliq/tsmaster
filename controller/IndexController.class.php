@@ -52,18 +52,16 @@ class IndexController extends Controller {
         $defects = $this->defects->getByDeviceId($deviceId);
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/washing_machine';
-        
-        $repData = [];
         $defectTableId = 1;
         $pageTitle = 'ремонт стиральных машин';
         $banner = 'img/repair_banners/repair_washing_machine.jpg';
 
 
         if ($data['id']) {
-            $repTypes = $this->repairTypes->getByLink('/' . $data['id']);
             $defectTableId = 2;
-            $pageTitle = $repTypes['title'];
             $banner = 'img/defect_banners/defect_washing_machine.jpg';
+            $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
+            $pageTitle = $repTypes[0]['pageTitle'];
         }
         
         // echo '<pre>';

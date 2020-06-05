@@ -24,7 +24,7 @@ class RepairTypes extends Model {
 	}
 
 	public function getByDeviceLink($deviceId, $link) {
-		$sql = "SELECT works.`title`, works.`price` FROM `$this->worksTable` as works LEFT JOIN `$this->work2def2devTable` as wdd ON works.`id` = wdd.work_id WHERE wdd.device_id = $deviceId AND wdd.link = $link";
+		$sql = "SELECT works.`title`, works.`price`, wdd.`defect_link`, def.title as pageTitle FROM `$this->worksTable` as works LEFT JOIN `$this->work2def2devTable` as wdd ON works.`id` = wdd.work_id LEFT JOIN `$this->defectsTable` as def ON wdd.defect_link = def.link WHERE wdd.device_id = $deviceId AND wdd.defect_link = '$link'";
 		return $this->dataBase->getRows($sql, null);
 	}
 
