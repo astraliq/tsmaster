@@ -8,6 +8,8 @@ class IndexController extends Controller {
     public $json;
     public $defects;
     public $repairTypes;
+    public $cityId;
+    public $cityInf;
     public $pageName = 'ТехСервис Мастер';
 
     public function __construct() {
@@ -16,6 +18,8 @@ class IndexController extends Controller {
         $this->defects = new Defects();
         $this->repairTypes = new RepairTypes();
         $this->jsonDb = $this->json->getArrayFromFile();
+        $this->cityId = $_SESSION['cityId'];
+        $this->cityInf = $_SESSION['cityInf'];
     } 
 
 	public function index($data) {
@@ -27,6 +31,8 @@ class IndexController extends Controller {
             'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
+            'cityId' => $this->cityId,
+            'cityInf' => $this->cityInf,
         ];
         return $arrayContent;
 	}
@@ -41,6 +47,8 @@ class IndexController extends Controller {
             'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'siteName' => $this->mainTitle,
+            'cityId' => $this->cityId,
+            'cityInf' => $this->cityInf,
         ];
         return $arrayContent;
     }
@@ -82,11 +90,12 @@ class IndexController extends Controller {
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
             'banner' => $banner,
             'mainLink' => $mainLink,
+            'cityId' => $this->cityId,
+            'cityInf' => $this->cityInf,
         ];
         
         return $arrayContent;
     }
-    
 
     public function dishwasher($data) {
         $this->view = 'page2';
@@ -95,23 +104,18 @@ class IndexController extends Controller {
         $defects = $this->defects->getByDeviceId($deviceId);
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/dishwasher';
-        $banner = 'img/defect_banners/defect_washing_machine.jpg'; // ЗАМЕНИТЬ!
+        $defectTableId = 1;
+        $pageTitle = 'ремонт посудомоечных машин';
+        $banner = 'img/repair_banners/repair_dishwasher.jpg';
 
-        switch ($data['id']) {
-            case 'ne_slivaet_vodu':
-                $repTypes = $this->repairTypes->getByDeviceDefectId($deviceId,4);
-                $defectTableId = 2;
-                $pageTitle = 'не сливает воду';
-                break;
-            
-            default:
-                $repTypes = [];
-                $defectTableId = 1;
-                $pageTitle = 'ремонт посудомоечных машин';
-                $banner = 'img/repair_banners/repair_dishwasher.jpg';
-                break;
+
+        if ($data['id']) {
+            $defectTableId = 2;
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
+            $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
+            $pageTitle = $repTypes[0]['pageTitle'];
         }
-
+        
         $arrayContent = [
             'siteName' => $this->mainTitle,
             'jsonDb' => $this->jsonDb,
@@ -125,10 +129,15 @@ class IndexController extends Controller {
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
             'banner' => $banner,
             'mainLink' => $mainLink,
+            'cityId' => $this->cityId,
+            'cityInf' => $this->cityInf,
         ];
         
         return $arrayContent;
     }
+    
+
+    
 
 	
 }
