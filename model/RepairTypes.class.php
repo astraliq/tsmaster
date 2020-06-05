@@ -23,6 +23,11 @@ class RepairTypes extends Model {
 		return $this->dataBase->getRows($sql, null);
 	}
 
+	public function getByDeviceLink($deviceId, $link) {
+		$sql = "SELECT works.`title`, works.`price` FROM `$this->worksTable` as works LEFT JOIN `$this->work2def2devTable` as wdd ON works.`id` = wdd.work_id WHERE wdd.device_id = $deviceId AND wdd.link = $link";
+		return $this->dataBase->getRows($sql, null);
+	}
+
 	public function getByDefectTitle($defectTitle) {
 		$sql = "";
 		return $this->dataBase->getRows($sql, null);

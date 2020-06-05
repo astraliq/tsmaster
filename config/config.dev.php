@@ -18,12 +18,13 @@ $config['path_logs'] = $config['path_root'] . '/../logs';
 
 $config['sitename'] = 'ТехСервис&nbsp;Мастер';
 $config['main_menu'] = [
-      'О&nbsp;компании' => '/',
-      'Преимущества' => '/',
-      'Условия' => '/',
-      'Акции' => '/',
-      'Отзывы' => '/',
-      'Контакты' => '/',
+      'О&nbsp;компании' => '#about',
+      'Преимущества' => '#advantage',
+      'Услуги' => '#services',
+      'Условия' => '#terms',
+      'Акции' => '#action',
+      'Отзывы' => '#reviews',
+      'Контакты' => '#contacts',
   ];
 $config['service_menu'] = [
       'главная' => '/',

@@ -123,7 +123,10 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
-                            <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="Ремонт стиральных машин">
+                            {% if content.defectTableId == 2 %}           
+                                <h2 class="banner_title">{{content.pageTitle}}</h2>
+                            {% endif %} 
+                            <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn">Вызвать мастера!</div>
                                 <div class="btn-master-block cause_btn_block">&#10004;</div>

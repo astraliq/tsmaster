@@ -48,24 +48,24 @@ class IndexController extends Controller {
     public function washing_machine($data) {
         $this->view = 'page2';
         $this->pageId = 2;
-        $defects = $this->defects->getByDeviceId(1);
+        $deviceId = 1;
+        $defects = $this->defects->getByDeviceId($deviceId);
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/washing_machine';
-        $banner = 'img/defect_banners/defect_washing_machine.jpg';
+        
+        $repData = [];
+        $defectTableId = 1;
+        $pageTitle = 'ремонт стиральных машин';
+        $banner = 'img/repair_banners/repair_washing_machine.jpg';
 
-        switch ($data['id']) {
-            case 'ne_slivaet_vodu':
-                $repTypes = $this->repairTypes->getByDeviceDefectId(1,4);
-                $defectTableId = 2;
-                
-                break;
-            
-            default:
-                $repTypes = [];
-                $defectTableId = 1;
-                $banner = 'img/repair_banners/repair_washing_machine.jpg';
-                break;
+
+        if ($data['id']) {
+            $repTypes = $this->repairTypes->getByLink('/' . $data['id']);
+            $defectTableId = 2;
+            $pageTitle = $repTypes['title'];
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';
         }
+        
         // echo '<pre>';
         // print_r( $repTypes);
         // echo '</pre>';
@@ -78,6 +78,7 @@ class IndexController extends Controller {
             'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'defectTableId' => $defectTableId,
+            'pageTitle' => $pageTitle,
             'defects' => $defects,
             'repTypes' => $repTypes,
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
@@ -88,21 +89,28 @@ class IndexController extends Controller {
         return $arrayContent;
     }
     
+
     public function dishwasher($data) {
         $this->view = 'page2';
         $this->pageId = 2;
-        $defects = $this->defects->getByDeviceId(1);
+        $deviceId = 2;
+        $defects = $this->defects->getByDeviceId($deviceId);
         $otherBrandSectionTitle = 'любых';
+        $mainLink = '/dishwasher';
+        $banner = 'img/defect_banners/defect_washing_machine.jpg'; // ЗАМЕНИТЬ!
 
         switch ($data['id']) {
             case 'ne_slivaet_vodu':
-                $repTypes = $this->repairTypes->getByDeviceDefectId(1,1);
+                $repTypes = $this->repairTypes->getByDeviceDefectId($deviceId,4);
                 $defectTableId = 2;
+                $pageTitle = 'не сливает воду';
                 break;
             
             default:
                 $repTypes = [];
                 $defectTableId = 1;
+                $pageTitle = 'ремонт посудомоечных машин';
+                $banner = 'img/repair_banners/repair_dishwasher.jpg';
                 break;
         }
 
@@ -113,13 +121,17 @@ class IndexController extends Controller {
             'service_menu' => $this->serviceMenu,
             'pageId' => $this->pageId,
             'defectTableId' => $defectTableId,
+            'pageTitle' => $pageTitle,
             'defects' => $defects,
             'repTypes' => $repTypes,
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
+            'banner' => $banner,
+            'mainLink' => $mainLink,
         ];
         
         return $arrayContent;
     }
+
 	
 }
 ?>

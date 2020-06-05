@@ -513,6 +513,19 @@ textarea {
     position: relative;
 }
 
+.banner_title {
+    position: absolute;
+    font-size: 33px;
+    text-transform: uppercase;
+    top: 62px;
+    left: 48px;
+    font-family: $font__first;
+    text-align: center;
+    width: 360px;
+    height: 104px;
+    line-height: 104px;
+}
+
 .form-question_margin {
     margin: 0 0 70px 0;
 }
@@ -1529,7 +1542,6 @@ textarea {
         margin-bottom: 65px;
     }
 }
-
 
 /*.form-search__items {}*/
 
