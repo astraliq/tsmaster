@@ -371,6 +371,9 @@ class Mailing {
     renderOk(check) {
         let str;
         let renderDiv = document.getElementById('confirm-mailing');
+        let mw_class = document.querySelector(`.${this.mType}`);
+        mw_class.classList.add('modal-after-button');
+
         if (check == 'phone') {
             str = `<div class="modal-content_align"><div class="after-button__title modal-text_margin">Ваша заявка принята</div>
                    <div class="after-button__text">Наш менеджер свяжется с вами в ближайшее время.</div></div>`;
