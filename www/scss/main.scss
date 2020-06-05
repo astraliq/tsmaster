@@ -657,7 +657,6 @@ textarea {
     }
 }
 
-
 /*модальные окна*/
 
 .darkback,
@@ -716,17 +715,13 @@ textarea {
     top: 50px;
 }
 
-.modal-content,
-.modal-content_align {
+.modal-content {
     margin: 0 0 0 0;
     padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     max-height: 700px;
-    &_align {
-        align-items: flex-start;
-    }
 }
 
 .modal-after-button {
@@ -761,20 +756,21 @@ textarea {
 }
 
 .after-button__title {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    font-family: $font__second;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 25px;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: $font__first;
+    &_review {
+        font-size: 30px;
+    }
 }
 
 .after-button__text {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 400;
-    font-family: $font__second;
+    font-family: $font__first;
+    &_review {
+        font-size: 22px;
+    }
 }
 
 .modal-text {
@@ -852,7 +848,6 @@ textarea {
 .screen_off {
     display: none;
 }
-
 
 /*Карусель*/
 
@@ -1245,9 +1240,7 @@ textarea {
     margin-right: 0.6%;
 }
 
-
 /*карусель*/
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1269,7 +1262,6 @@ textarea {
     z-index: 15;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1550,7 +1542,6 @@ textarea {
         margin-bottom: 65px;
     }
 }
-
 
 /*.form-search__items {}*/
 
