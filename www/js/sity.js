@@ -11,13 +11,15 @@ class Sity {
         this.darkBack = document.querySelector('.darkback_sities');
         this.modalBlockSities = document.querySelector('.modal_block-sities');
         this.result = true;
+        this.informationSity = 0;
+        this.informationBlock = document.querySelector('.inf_data');
     }
 
     async _readData(url) {
         let response = await fetch(url);
         this.data = await response.json();
         console.log(this.data);
-        this.showBlockSities(this.data);
+        if (this.result == 'true') this.showBlockSities(this.data);
     }
 
     showBlockSities(data) {
@@ -55,12 +57,27 @@ class Sity {
         });
     }
 
+    checkInformation() {
+        this.informationSity = this.informationBlock.dataset.city_id;
+        this.numberSity = this.informationSity;
+        this.result = this.informationBlock.dataset.sity_inf;
+        console.log(this.informationSity + ' ' + this.result);
+
+        if (this.result == 'true') {
+            this._readData(this.urlSity);
+        } else {
+            this._readData(this.urlSity);
+            this.closeModalSities();
+        }
+    }
+
     closeModalSities() {
         this.darkBack.classList.add('modal_off');
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
 
-        this.showSity(this.data);
+        setTimeout(() => this.showSity(this.data), 100);
+
         this.result = false;
     }
 
@@ -73,15 +90,55 @@ class Sity {
 
         this.nameSity.innerHTML = town;
         this.phoneSity.innerHTML = data[number].phone;
+
+        this.setCityId(this.numberSity, this.result);
+    }
+
+    _getJson(url, data) {
+        return $.post({
+            url: url,
+            data: data,
+            success: function (data) {
+                //data приходят те данные, который прислал на сервер
+                if (data.result !== 'OK') {
+                    console.log('ERROR_SEND_DATA');
+                }
+            },
+        });
+    }
+
+    setCityId(id, inf) {
+        let sendData = {
+            apiMethod: 'setCityId',
+            postData: {
+                cityId: id,
+                cityInf: inf
+            },
+        };
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    // что делать в случае успешного выполнения
+                    console.log('ALL_OK');
+                } else {
+                    // что делать в случае неудачного выполнения
+                    console.log('ERROR #1');
+                }
+            })
+            .catch((error) => {
+                // что делать в случае ошибок прочих
+                console.log('ERROR #2');
+            });
     }
 
     init() {
+        this.checkInformation();
 
-        if (this.result) {
-            this._readData(this.urlSity);
-        } else {
-            this.closeModalSities();
-        }
+        // if (this.result) {
+        //     this._readData(this.urlSity);
+        // } else {
+        //     this.closeModalSities();
+        // }
     }
 }
 
