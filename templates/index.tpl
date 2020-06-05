@@ -13,24 +13,22 @@
     <div class="top-line"></div>
     {% include 'header.tpl' %}
     <main class="main-style">
-         <!-- modal window -->
-         <div class="substrate1 screen_off">
-            <div class="modal_cause screen_off">
-                <div class="cross1">&#10006;</div>
-                <input class="input client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                <input class="input client_phone" name="phone" type="tel" maxlength="16"
-                placeholder="+7(___)___-__-__">
-                <button class="button recall_btn" type="button">Вызвать мастера!</button>
-            </div>
-        </div>
+        <!-- modal window -->
+        {% include 'modal_substrate1.tpl' %}
+        {% include 'confirm_mailing_block.tpl' %} 
         <section class="slider">
             <div class="container">
+            <!-- обманка -->
+            <div id="carousel_2" class="carousel_2 screen_off">
+                <div class="prev_2 next_2"></div>
+            </div>
+            <!-- обманка -->
                 <div id="points" class="slider__points slider__points_margin">
-                    <a class="slider__point slider__point_active"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
-                    <a class="slider__point"></a>
+                    <a data-point="0" class="slider__point slider__point_active"></a>
+                    <a data-point="1" class="slider__point"></a>
+                    <a data-point="2" class="slider__point"></a>
+                    <a data-point="3" class="slider__point"></a>
+                    <a data-point="4" class="slider__point"></a>
                 </div>
                 <div class="slider__top slider__top_margin">
                     <!-- <div class="slider__item">
@@ -40,8 +38,8 @@
                         <div id="carousel" class="carousel">
                             <button class="arrow prev"><</button>
                             <div class="cause">
-                                <div class="cause_btn">Вызвать мастера!</div>
-                                <div class="cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                             <div class="gallery">
                                 <ul class="images">
@@ -102,9 +100,9 @@
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
                         <div class="section__title section__title_white">оставьте заявку</div>
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input" type="text" placeholder="Номер телефона">
-                        <button class="button" type="button">Получить скидку!</button>
+                        <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
                     </form>
                 </div>
             </div>
@@ -149,40 +147,7 @@
                 </p>
             </div>
         </section>
-        <section class="form-search">
-            <div class="container2">
-                <div class="form-search__plate form-search_margin">
-                    <div class="form-search__text">
-                        <div class="section__title section__title_black"><a name="action">узнайте стоимость и<br>оформите заявку на ремонт</a></div>
-                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
-                    </div>
-                    <form class="form__items form-search_margin">
-                        <div class="form__item">
-                            <div class="before_1">
-                                <select class="select input_margin" type="text">
-                                    {% for technic,desc in content.jsonDb.defects %}
-                                        <option class="form__option" value="">{{technic}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <input class="input" type="text" placeholder="Ваше имя">
-                        </div>
-                        <div class="form__item">
-                            <div class="before_2"><select class="select input_margin" type="text">
-                                    <option class="form__option" value=""></option>
-                                </select></div>
-                            <input class="input" type="text" placeholder="Номер телефона">
-                        </div>
-                        <div class="form__item">
-                            <div class="before_3">
-                                <input class="input input_margin" type="text" placeholder="от ____________ рублей">
-                            </div>
-                            <button class="button">Отправить!</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+        {% include 'repair_form.tpl' %}  
         <!-- Отзывы -->
         <section class="reviews">
             <div class="container2">
@@ -288,28 +253,28 @@
                     </div>
                 </div>
                 <div class="button__reviews_margin">
-                    <button class="button-reviews">Оставить отзыв</button>
+                    <button class="btn-review">Оставить отзыв</button>
                 </div>
-                <!-- modal window -->
-                <div class="substrate2 screen_off">
-                    <div class="modal_rewiew screen_off">
-                        <div class="cross2">&#10006;</div>
+                <!-- modal window оставить отзыв-->
+                <div class="darkback darkback-review screen_off modal_off">
+                    <div class="modal-window modal-review screen_off">
+                        <div class="close-review">&#10006;</div>
+                        <div class="modal-content" id="review">
+                            <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
+                            <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
+                            <input class="input input_margin client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона">
+                            <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
+                            <textarea class="text-block input_margin review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
+                            <button class="button button-review section__title_margin" type="button">Отправить</button>
+                            <div class="modal-text modal-text_margin">
+                                <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                                <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </section>
-        <section class="form-question">
-            <div class="container2">
-                <div class="form-question__plate form-question__plate_margin">
-                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
-                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
-                    <form class="form-question__form">
-                        <input class="input" type="text" placeholder="Ваше имя">
-                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
-                        <button class="button">Перезвоните мне</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+        {% include 'question_form.tpl' %} 
         <section class="about about_margin">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>
@@ -329,8 +294,21 @@
     {% include 'footer.tpl' %}  
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
-    <script defer src="js/script.js"></script>
+    <script defer src="js/script.js"></script> 
+    <script defer src="js/sity.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("a.scroll_to").click(function () {
+                elementClick = jQuery(this).attr("href")
+                destination = jQuery(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+                return false;
+            });
+        });
+    </script>
+
 </body>
 
 </html>

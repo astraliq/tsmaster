@@ -14,6 +14,8 @@
     {% include 'header.tpl' %}
     <div class="container">
         <main class="main-blocks">
+        <!-- modal window -->
+        {% include 'modal_substrate1.tpl' %}
             <section class="left-part">
             {% include 'service_menu2.tpl' %}                           
                 <div class="action action_margin">
@@ -25,13 +27,26 @@
                 </div>
                 <div class="reviews-part">
                     <div class="reviews-part__top reviews-part__top_margin">
-                        <button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>
+                        <!--<button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>-->
                         <div class="section-part__title">отзывы</div>
-                        <button class="arrow_part next_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_right.png"></button>
+                        <!--<button class="arrow_part next_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_right.png"></button>-->
                     </div>
-                    <div id="carousel_1 " class="carousel_1">
-                        <div class="gallery_1-part">
-                            <ul class="images_1">
+                    <!-- обманка для JS-->
+                    <div id="carousel" class="carousel screen_off">
+                        <div id="points" class="prev next"></div>
+                        <div id="carousel_1" class="carousel_1">
+                        <div class="prev_1 next_1"></div>
+                        <div class="button-reviews"></div>
+                        <div class="substrate2"></div>
+                        <div class="cross2"></div>
+                        <div class="modal_rewiew"></div>
+                        </div>
+                    </div>
+                    <!-- карусель малая -->
+                    <div id="carousel_2" class="carousel_2">
+                        <button class="arrow_2 prev_2"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                        <div class="gallery_2">
+                            <ul class="images_2">
                                 <li>
                                     <div class="reviews-part__item">
                                         <div class="reviews__item-name">Анастасия Миронова</div>
@@ -100,7 +115,8 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                        <button class="arrow_2 next_2"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
+                    </!---->
                 </div>
             </section>
             <section class="right-part">
@@ -108,6 +124,10 @@
                     <div class="main-style">
                         <section class="top-banner_margin">
                             <img class="top-banner__img" src="../img/top-banner/top-banner.jpg" width="100%" height="auto" alt="Ремонт стиральных машин">
+                            <div class="cause">
+                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block">&#10004;</div>
+                            </div>
                         </section>
                         <section class="advantage advantage_margin">
                             <div class="container3">
@@ -146,46 +166,11 @@
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>
-                        <section class="form-search">
-                            <div class="container3">
-                                <div class="form-search__plate form-search_margin">
-                                    <div class="form-search__text ">
-                                        <div class="section__title section__title_black">узнайте стоимость и<br>оформите заявку на ремонт</div>
-                                        <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
-                                    </div>
-                                    <form class="form__items form-search_margin">
-                                        <div class="form__item">
-                                            <div class="before_1">
-                                                <select class="select input_margin" type="text">
-                                                    {% for technic,desc in content.jsonDb.defects %}
-                                                    <option class="form__option" value="">{{technic}}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                            <input class="input" type="text" placeholder="Ваше имя">
-                                        </div>
-                                        <div class="form__item">
-                                            <div class="before_2">
-                                                <select class="select input_margin" type="text">
-                                                    <option class="form__option" value=""></option>
-                                                </select>
-                                            </div>
-                                            <input class="input" type="text" placeholder="Номер телефона">
-                                        </div>
-                                        <div class="form__item">
-                                            <div class="before_3">
-                                                <input class="input input_margin" type="text" placeholder="от ____________ рублей ">
-                                            </div>
-                                            <button class="button">Отправить!</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </section>
+                        {% include 'repair_form.tpl' %}  
                         <section class="brand brand_margin">
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin">ремонт любых брендов</div>
-                                <div class="brand-items">
+                                <!--<div class="brand-items">
                                     <div class="brand-arrow">
                                         <button class="brand-btn"><</button>
                                     </div>
@@ -201,7 +186,27 @@
                                     <div class="brand-arrow">
                                         <button class="brand-btn">></button>
                                     </div>
-
+                                </div>-->
+                                <!-- Карусель брендов -->
+                                <div class="brand-items">
+                                    <div id="carousel_br" class="carousel_br">
+                                        <button class="arrow_br prev_br"><</button>
+                                        <div class="gallery_br">                                            
+                                            <ul class="image_br">
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
+                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
+                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
+                                            </ul>                                            
+                                        </div>
+                                        <button class="arrow_br next_br">></button>
+                                    </div>
+                                    <!-- Карусель брендов -->
                                 </div>
                             </div>
                         </section>
@@ -245,19 +250,7 @@
                                 </p>
                             </div>
                         </section>
-                        <section class="form-question form-question_margin">
-                            <div class="container3">
-                                <div class="form-question__plate form-question__plate_margin">
-                                    <div class="section__title section__title_white">если у вас возникли вопросы,<br>то напишите нам и мы подскажем</div>
-                                    <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
-                                    <form class="form-question__form">
-                                        <input class="input" type="text" placeholder="Ваше имя">
-                                        <input class="input input_margin-lr" type="text" placeholder="Номер телефона">
-                                        <button class="button">Перезвоните мне</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </section>
+                        {% include 'question_form.tpl' %} 
                         <!-- <section class="about about_margin">
                             <div class="container3">
                                 <div class="section__title section__title_margin">о компании</div>
@@ -282,8 +275,22 @@
     {% include 'footer.tpl' %}   
     <script defer src="js/jquery-3.4.1.js"></script> 
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/modal.js"></script>
+    <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
+    <script defer src="js/sity.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("a.anchor-btn").click(function () {
+                elementClick = jQuery(this).attr("href")
+                destination = jQuery(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+                return false;
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

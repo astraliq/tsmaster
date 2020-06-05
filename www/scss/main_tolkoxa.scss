@@ -1,4 +1,4 @@
-@import "_param";
+@import '_param';
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -13,6 +13,7 @@ textarea {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
+    margin: 0;
 }
 
 .top-line {
@@ -34,7 +35,7 @@ textarea {
 
 .container2 {
     max-width: $container2__width;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -140,24 +141,7 @@ textarea {
     &__icon {
         color: $text__main_color;
     }
-    /*&__number {}*/
-    &__btn {
-        margin: 0 10px 0 15px;
-        padding: 0 0 0 0;
-        width: 150px;
-        height: 40px;
-        background-color: $bgcolor_blue;
-        border-radius: 30px;
-        outline: none;
-        cursor: pointer;
-        color: $text__second_color;
-        font-family: $font__first;
-        font-size: 15px;
-        font-weight: 400;
-        &:hover {
-            opacity: 0.8;
-        }
-    }
+    &__number {}
     &__link {
         margin: 0 0 0 0;
         padding: 0 0 0 0;
@@ -172,6 +156,24 @@ textarea {
             cursor: pointer;
             opacity: 0.7;
         }
+    }
+}
+
+.btn-phone {
+    margin: 0 10px 0 15px;
+    padding: 0 0 0 0;
+    width: 150px;
+    height: 40px;
+    background-color: $bgcolor_blue;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    color: $text__second_color;
+    font-family: $font__first;
+    font-size: 15px;
+    font-weight: 400;
+    &:hover {
+        opacity: 0.8;
     }
 }
 
@@ -328,7 +330,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    width: 83%;
+    width: 100%;
 }
 
 .slider {
@@ -361,18 +363,18 @@ textarea {
     &__img {
         width: 100%;
     }
-    /*&__top {}*/
+    &__top {}
     &__top_margin {
         margin-bottom: 60px;
     }
-    /*&__item {}*/
+    &__item {}
 }
 
 .action {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url("../img/action-form/action-form.png");
+    background-image: url('../img/action-form/action-form.png');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -456,9 +458,6 @@ textarea {
 }
 
 .section-part__title {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
     color: $text__main_color;
     font-family: $font__second;
     font-size: 22px;
@@ -469,19 +468,19 @@ textarea {
 
 .reviews-part__item {
     margin: 0 0 0 0;
-    // padding: 10px;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-content: center;
-    width: 195px;
+    width: 250px;
     height: 320px;
     border-radius: 5px;
     // margin: 0;
     // padding: 0;
     // width: 105.3%;
-    // /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
-    // display: block;
+    // /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
+    //  display: block;
 }
 
 .invisible {
@@ -499,7 +498,7 @@ textarea {
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
     font-size: 0;
 }
 
@@ -510,7 +509,6 @@ textarea {
 
 .top-banner_margin {
     margin-bottom: 75px;
-    position: relative;
 }
 
 .form-question_margin {
@@ -645,9 +643,8 @@ textarea {
 }
 
 
-/*модальные окна*/
+/*РјРѕРґР°Р»СЊРЅС‹Рµ РѕРєРЅР°*/
 
-.darkback,
 .darkback-phone,
 .darkback-master,
 .darkback-review {
@@ -662,23 +659,9 @@ textarea {
     left: 0;
     background-color: rgba(3, 3, 3, 0.562);
     z-index: 15;
-    opacity: 1;
-    transition: all $anim_transition ease-in-out;
 }
 
 .modal-window {
-    position: fixed;
-    width: 400px;
-    height: 570px;
-    top: 100px;
-    right: 500px;
-    border: 5px solid $text__second_color;
-    background-color: $bg-form__plate_color;
-    z-index: 12;
-    border-radius: 20px;
-}
-
-.modal-window-sities {
     position: fixed;
     width: 400px;
     height: 570px;
@@ -694,10 +677,6 @@ textarea {
     height: 400px;
 }
 
-.modal-sities {
-    height: 400px;
-}
-
 .modal-review {
     height: 640px;
     top: 50px;
@@ -709,7 +688,6 @@ textarea {
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-height: 700px;
 }
 
 .modal-after-button {
@@ -773,13 +751,6 @@ textarea {
     }
 }
 
-.content_sity {
-    font-family: $font__first;
-    color: $text__main_color;
-    font-size: 36px;
-    font-weight: 400;
-}
-
 .modal-link {
     color: $text__main_color;
     &:hover {
@@ -789,56 +760,12 @@ textarea {
     }
 }
 
-.modal_sity_block {
-    width: 100%;
-    margin: 10px 0 0 0;
-}
-
-.modal_sity_block_content {
-    width: 100%;
-    margin: 30px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.modal_sity_block_content button {
-    width: 70%;
-    height: 50px;
-    font-family: $font__first;
-    font-size: 30px;
-    font-weight: 400;
-    border-radius: 25px;
-    background-color: $bgcolor_blue;
-    color: $text__second_color;
-    outline: inherit;
-}
-
-.modal_sity_block_content button:hover {
-    cursor: pointer;
-    background-color: $btn_hover_color;
-    color: $text__main_color;
-}
-
-.modal_sity_block_content button:active {
-    cursor: pointer;
-    background-color: $logo__text_color;
-    color: $text__main_color;
-}
-
-.modal_off {
-    opacity: 0;
-    transition: all $anim_transition ease-in-out;
-}
-
 .screen_off {
     display: none;
 }
 
 
-/*Карусель*/
+/*РљР°СЂСѓСЃРµР»СЊ*/
 
 .carousel {
     position: relative;
@@ -852,33 +779,11 @@ textarea {
     box-sizing: border-box;
 }
 
-.carousel_2 {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.carousel_br {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .carousel img {
     margin: 0;
     padding: 0;
     width: 105.3%;
-    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
-    display: block;
-}
-
-.carousel_br img {
-    margin: 0;
-    padding: 0;
-    width: 87%;
-    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+    /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
     display: block;
 }
 
@@ -886,15 +791,7 @@ textarea {
     margin: 0;
     padding: 0;
     width: 105.3%;
-    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
-    display: block;
-}
-
-.carousel_2 li div .reviews__item {
-    margin: 0;
-    padding: 0;
-    width: 105.3%;
-    /*делаем этот элемент блочным, что бы убрать лишнее пространство вокргу картинок */
+    /*РґРµР»Р°РµРј СЌС‚РѕС‚ СЌР»РµРјРµРЅС‚ Р±Р»РѕС‡РЅС‹Рј, С‡С‚Рѕ Р±С‹ СѓР±СЂР°С‚СЊ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РІРѕРєСЂРіСѓ РєР°СЂС‚РёРЅРѕРє */
     display: block;
 }
 
@@ -930,38 +827,6 @@ textarea {
     display: block;
 }
 
-.arrow_2 {
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    top: -18%;
-    padding: 0;
-    background-color: $bgcolor_blue;
-    border-radius: 2px;
-    border: 1px solid $bgcolor_blue;
-    box-shadow: 3px 3px 5px #000;
-    font-size: 24px;
-    line-height: 24px;
-    color: $text__second_color;
-    display: block;
-}
-
-.arrow_br {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    top: 45%;
-    padding: 0;
-    background-color: $bgcolor_blue;
-    border-radius: 2px;
-    border: 1px solid $bgcolor_blue;
-    box-shadow: 3px 3px 5px #000;
-    font-size: 24px;
-    line-height: 24px;
-    color: $text__second_color;
-    display: block;
-}
-
 .cause {
     width: 350px;
     height: 70px;
@@ -978,9 +843,30 @@ textarea {
     text-align: center;
     display: block;
     z-index: 10;
+    &:hover {
+        .btn-master,
+        .btn-master-block {
+            background: $btn_color;
+            cursor: pointer;
+            color: $text__main_color;
+            border: 5px solid $text__second_color;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        box-shadow: none;
+        .btn-master,
+        .btn-master-block {
+            box-shadow: none;
+        }
+    }
 }
 
-.cause_btn {
+.btn-master {
     width: 350px;
     height: 70px;
     position: absolute;
@@ -998,7 +884,7 @@ textarea {
     z-index: 10;
 }
 
-.cause_btn_block {
+.btn-master-block {
     width: 70px;
     height: 70px;
     position: absolute;
@@ -1016,53 +902,39 @@ textarea {
     z-index: 10;
 }
 
-.cause:focus {
-    outline: none;
-}
-
-.cause:hover .cause_btn {
-    background: $btn_color;
-    cursor: pointer;
-    color: $text__main_color;
-    border: 5px solid $text__second_color;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.cause:hover .cause_btn_block {
-    background: $btn_color;
-    cursor: pointer;
-    color: $text__main_color;
-    border: 5px solid $text__second_color;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.cause:active .cause_btn {
-    box-shadow: none;
-}
-
-.cause:active .cause_btn_block {
-    box-shadow: none;
-}
-
-.cause:active {
-    box-shadow: none;
-}
-
+// .cause:focus {
+//     outline: none;
+// }
+// .cause:hover .cause_btn {
+//     background: $btn_color;
+//     cursor: pointer;
+//     color: $text__main_color;
+//     border: 5px solid $text__second_color;
+//     padding: 10px;
+//     box-sizing: border-box;
+// }
+// .cause:hover .cause_btn_block {
+//     background: $btn_color;
+//     cursor: pointer;
+//     color: $text__main_color;
+//     border: 5px solid $text__second_color;
+//     padding: 10px;
+//     box-sizing: border-box;
+// }
+// .cause:active .cause_btn {
+//     box-shadow: none;
+// }
+// .cause:active .cause_btn_block {
+//     box-shadow: none;
+// }
+// .cause:active {
+//     box-shadow: none;
+// }
 .arrow:focus {
     outline: none;
 }
 
 .arrow_1:focus {
-    outline: none;
-}
-
-.arrow_2:focus {
-    outline: none;
-}
-
-.arrow_br:focus {
     outline: none;
 }
 
@@ -1078,31 +950,11 @@ textarea {
     cursor: pointer;
 }
 
-.arrow_2:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-.arrow_br:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
 .arrow:active {
     box-shadow: none;
 }
 
 .arrow_1:active {
-    box-shadow: none;
-}
-
-.arrow_2:active {
-    box-shadow: none;
-}
-
-.arrow_br:active {
     box-shadow: none;
 }
 
@@ -1116,32 +968,12 @@ textarea {
     z-index: 10;
 }
 
-.prev_2 {
-    left: 0;
-    z-index: 10;
-}
-
-.prev_br {
-    left: 0;
-    z-index: 10;
-}
-
 .next {
     right: 3%;
     z-index: 10;
 }
 
 .next_1 {
-    right: 0;
-    z-index: 10;
-}
-
-.next_2 {
-    right: 0;
-    z-index: 10;
-}
-
-.next_br {
     right: 0;
     z-index: 10;
 }
@@ -1157,25 +989,13 @@ textarea {
     overflow: hidden;
 }
 
-.gallery_2 {
-    width: 81.6%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.gallery_br {
-    width: 81.6%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
 .gallery ul {
     width: 9999px;
     margin: 0;
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
     font-size: 0;
 }
 
@@ -1185,27 +1005,7 @@ textarea {
     padding: 0;
     list-style: none;
     transition: margin-left 1000ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
-    font-size: 0;
-}
-
-.gallery_2 ul {
-    width: 9999px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    transition: margin-left 1000ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
-    font-size: 0;
-}
-
-.gallery_br ul {
-    width: 9999px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    transition: margin-left 1000ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* СѓРґР°Р»СЏРµРј РїСѓСЃС‚РѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ СЌР»РµРјРµРЅС‚Р°РјРё li, Сѓ РєРѕС‚РѕСЂС‹С… СѓСЃС‚Р°РЅРѕРІР»РµРЅ inline-block */
     font-size: 0;
 }
 
@@ -1219,43 +1019,8 @@ textarea {
     margin-right: 0.6%;
 }
 
-.gallery_2 li {
-    display: inline-block;
-    margin-right: 0.6%;
-}
 
-.gallery_br li {
-    display: inline-block;
-    margin-right: 0.6%;
-}
-
-
-/*карусель*/
-
-
-/*стрелка якорь переход на верх*/
-
-.anchor-btn {
-    position: absolute;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    top: 90%;
-    left: 2%;
-    background-color: $btn_color;
-    border: 2px solid $btn_color;
-    text-decoration: none;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
-    z-index: 15;
-    box-sizing: border-box;
-}
-
-
-/*стрелка якорь переход на верх*/
+/*РєР°СЂСѓСЃРµР»СЊ*/
 
 .advantage_margin {
     margin-bottom: 86px;
@@ -1376,7 +1141,7 @@ textarea {
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url("../img/form-plate/form-plate_bg.jpg");
+        background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1409,13 +1174,12 @@ textarea {
     height: 45px;
     padding: 0 10px 0 10px;
     border-radius: 10px;
-    border: 1px transparent solid;
+    border: none;
     background-color: $text__second_color;
     box-shadow: 5px 5px 15px -12px #000000 inset;
     font-size: 16px;
     color: $text__main_color;
     outline: none;
-    transition: all $anim_transition_err ease-in-out;
 }
 
 .button {
@@ -1438,17 +1202,12 @@ textarea {
     margin: 0 0 0 0;
     padding: 10px;
     border-radius: 10px;
-    border: 1px transparent solid;
+    border: none;
     background-color: $text__second_color;
     box-shadow: 5px 5px 15px -12px #000000 inset;
     font-size: 16px;
     color: $text__main_color;
     outline: none;
-    max-width: 270px;
-    min-width: 270px;
-    max-height: 90px;
-    min-height: 90px;
-    transition: all $anim_transition_err ease-in-out;
 }
 
 .services-items {
@@ -1535,8 +1294,7 @@ textarea {
     }
 }
 
-
-/*.form-search__items {}*/
+.form-search__items {}
 
 .form__items {
     padding: 0 0 0 0;
@@ -1564,20 +1322,19 @@ textarea {
     padding: 5px;
     width: 275px;
     height: 45px;
-    border-radius: 20px;
-    border: 1px transparent solid;
+    border-radius: 10px;
+    border: none;
     background-color: $text__second_color;
     box-shadow: 5px 5px 15px -12px #000000 inset;
     font-size: 16px;
     color: $text__main_color;
     outline: none;
-    transition: all $anim_transition_err ease-in-out;
 }
 
 .before_1 {
     position: relative;
     &::before {
-        content: "Вид техники";
+        content: 'Вид техники';
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1592,7 +1349,7 @@ textarea {
 .before_2 {
     position: relative;
     &::before {
-        content: "Вид неисправности";
+        content: 'Вид неисправности';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1607,7 +1364,7 @@ textarea {
 .before_3 {
     position: relative;
     &::before {
-        content: "Стоимость услуги составит";
+        content: 'Стоимость услуги составит';
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1620,19 +1377,11 @@ textarea {
 }
 
 .input_margin {
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
 }
 
 .input_margin-lr {
     margin: 0 20px;
-}
-
-.input_margin-lr10 {
-    margin: 0 10px;
-}
-
-.input_margin-l {
-    margin: 0 0 0 20px;
 }
 
 .reviews-arrow__link {
@@ -1734,12 +1483,6 @@ textarea {
     }
 }
 
-.input_err {
-    border: 1px red solid;
-    background-color: #f0c6c6;
-    transition: all 0.2s ease-in-out;
-}
-
 .about_margin {
     margin-bottom: 64px;
 }
@@ -1836,7 +1579,7 @@ textarea {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -1855,7 +1598,7 @@ textarea {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
