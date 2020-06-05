@@ -716,13 +716,17 @@ textarea {
     top: 50px;
 }
 
-.modal-content {
+.modal-content,
+.modal-content_align {
     margin: 0 0 0 0;
     padding: 20px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     max-height: 700px;
+    &_align {
+        align-items: flex-start;
+    }
 }
 
 .modal-after-button {
