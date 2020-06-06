@@ -20,9 +20,9 @@
             {% include 'service_menu2.tpl' %}                           
                 <div class="action action_margin">
                     <form class="action-form" action="#">
-                        <input class="input input_margin-8" type="text" placeholder="Ваше имя">
-                        <input class="input input_margin-20" type="text" placeholder="Номер телефона">
-                        <button class="button button_margin">Получить скидку</button>
+                        <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin-20 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone button_margin" type="button">Получить скидку</button>
                     </form>
                 </div>
                 <div class="reviews-part">

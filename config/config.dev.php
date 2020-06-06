@@ -15,7 +15,6 @@ $config['path_libs'] = $config['path_root'] . '/../libs';
 $config['path_templates'] = $config['path_root'] . '/../templates';
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
-
 $config['sitename'] = 'ТехСервис&nbsp;Мастер';
 $config['main_menu'] = [
       'О&nbsp;компании' => '#about',
