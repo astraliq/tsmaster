@@ -220,7 +220,7 @@
                                 </div>
                                 <div class="services-items services-items_margin">
                                     {% for menu,data in content.serviceItems %}
-                                    {% if content.pageTitle != menu %}           
+                                    {% if content.serviceTitle != menu %}           
                                     <div class="services-item">
                                         <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}">
                                         <a class="services__btn" href="{{data.link}}">Узнать подробнее</a>
