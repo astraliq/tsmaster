@@ -1505,6 +1505,10 @@ textarea {
     font-weight: 400;
     line-height: 20px;
     outline: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
     &:hover {
         cursor: pointer;
         opacity: 0.8;
