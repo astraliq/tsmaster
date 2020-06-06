@@ -113,26 +113,12 @@
                     <a name="services">все услуги<br>наших мастеров</a>
                 </div>
                 <div class="services-items services-items_margin">
+                    {% for data in content.serviceItems %}
                     <div class="services-item">
-                        <img class="services__img_margin" src="img/services/services_01.jpg" alt="Ремонт стиральных машин">
-                        <button class="services__btn">Узнать подробнее</button>
+                        <img class="services__img_margin" src="{{data.img}}" alt="">
+                        <a class="services__btn" href="{{data.link}}">Узнать подробнее</a>
                     </div>
-                    <div class="services-item">
-                        <img class="services__img_margin" src="img/services/services_02.jpg" alt="Ремонт посудомоечных машин">
-                        <button class="services__btn">Узнать подробнее</button>
-                    </div>
-                    <div class="services-item">
-                        <img class="services__img_margin" src="img/services/services_03.jpg" alt="Ремонт холодильников">
-                        <button class="services__btn">Узнать подробнее</button>
-                    </div>
-                    <div class="services-item">
-                        <img class="services__img_margin" src="img/services/services_04.jpg" alt="Ремонт духовых шкафов">
-                        <button class="services__btn">Узнать подробнее</button>
-                    </div>
-                    <div class="services-item">
-                        <img class="services__img_margin" src="img/services/services_05.jpg" alt="Ремонт варочных поверхностей">
-                        <button class="services__btn">Узнать подробнее</button>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

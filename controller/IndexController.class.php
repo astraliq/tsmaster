@@ -33,6 +33,7 @@ class IndexController extends Controller {
             'siteName' => $this->mainTitle,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         return $arrayContent;
 	}
@@ -49,6 +50,7 @@ class IndexController extends Controller {
             'siteName' => $this->mainTitle,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         return $arrayContent;
     }
@@ -74,7 +76,7 @@ class IndexController extends Controller {
         }
         
         // echo '<pre>';
-        // print_r( $repTypes);
+        // print_r( $this->serviceItems);
         // echo '</pre>';
         // exit();
 
@@ -94,6 +96,7 @@ class IndexController extends Controller {
             'mainLink' => $mainLink,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         
         return $arrayContent;
@@ -135,6 +138,7 @@ class IndexController extends Controller {
             'mainLink' => $mainLink,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         
         return $arrayContent;
@@ -176,6 +180,7 @@ class IndexController extends Controller {
             'mainLink' => $mainLink,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         
         return $arrayContent;
@@ -217,6 +222,7 @@ class IndexController extends Controller {
             'mainLink' => $mainLink,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         
         return $arrayContent;
@@ -258,6 +264,7 @@ class IndexController extends Controller {
             'mainLink' => $mainLink,
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
+            'serviceItems' => $this->serviceItems,
         ];
         
         return $arrayContent;

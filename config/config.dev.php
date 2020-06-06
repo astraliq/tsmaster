@@ -34,5 +34,27 @@ $config['service_menu'] = [
       'духовой&nbsp;шкаф' => '/oven',
       'варочная&nbsp;панель' => '/hob',
   ];
+$config['services_items'] = [
+      'ремонт стиральных машин' => [
+        'link' => '/washing_machine',
+        'img' => '../img/services/services_01.jpg'
+    ],
+      'ремонт посудомоечных машин' => [
+        'link' => '/dishwasher',
+        'img' => '../img/services/services_02.jpg'
+    ],
+      'ремонт холодильников' => [
+        'link' => '/refrigerator',
+        'img' => '../img/services/services_03.jpg'
+    ],
+      'ремонт духовых шкафов' => [
+        'link' => '/oven',
+        'img' => '../img/services/services_04.jpg'
+    ],
+      'ремонт варочных панелей' => [
+        'link' => '/hob',
+        'img' => '../img/services/services_05.jpg'
+    ],
+  ];
 
 
