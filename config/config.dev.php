@@ -15,15 +15,15 @@ $config['path_libs'] = $config['path_root'] . '/../libs';
 $config['path_templates'] = $config['path_root'] . '/../templates';
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
-
 $config['sitename'] = 'ТехСервис&nbsp;Мастер';
 $config['main_menu'] = [
-      'О&nbsp;компании' => '/',
-      'Преимущества' => '/',
-      'Условия' => '/',
-      'Акции' => '/',
-      'Отзывы' => '/',
-      'Контакты' => '/',
+      'О&nbsp;компании' => '#about',
+      'Преимущества' => '#advantage',
+      'Услуги' => '#services',
+      'Условия' => '#terms',
+      'Акции' => '#action',
+      'Отзывы' => '#reviews',
+      'Контакты' => '#contacts',
   ];
 $config['service_menu'] = [
       'главная' => '/',
@@ -32,6 +32,28 @@ $config['service_menu'] = [
       'холодильник' => '/refrigerator',
       'духовой&nbsp;шкаф' => '/oven',
       'варочная&nbsp;панель' => '/hob',
+  ];
+$config['services_items'] = [
+      'ремонт стиральных машин' => [
+        'link' => '/washing_machine',
+        'img' => '../img/services/services_01.jpg'
+    ],
+      'ремонт посудомоечных машин' => [
+        'link' => '/dishwasher',
+        'img' => '../img/services/services_02.jpg'
+    ],
+      'ремонт холодильников' => [
+        'link' => '/refrigerator',
+        'img' => '../img/services/services_03.jpg'
+    ],
+      'ремонт духовых шкафов' => [
+        'link' => '/oven',
+        'img' => '../img/services/services_04.jpg'
+    ],
+      'ремонт варочных панелей' => [
+        'link' => '/hob',
+        'img' => '../img/services/services_05.jpg'
+    ],
   ];
 
 

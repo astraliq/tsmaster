@@ -27,7 +27,7 @@
                             <option class="form__option" value="">Не сливает воду</option>
                         </select>
                     </div>
-                    <input class="input client_phone" name="phone" type="tel" maxlength="16" placeholder="Номер телефона" />
+                    <input class="input client_phone" name="phone" type="text" maxlength="16" placeholder="Номер телефона" />
                 </div>
                 <div class="form__item">
                     <div class="before_3">

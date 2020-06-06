@@ -20,9 +20,9 @@
             {% include 'service_menu2.tpl' %}                           
                 <div class="action action_margin">
                     <form class="action-form" action="#">
-                        <input class="input input_margin-8" type="text" placeholder="Ваше имя">
-                        <input class="input input_margin-20" type="text" placeholder="Номер телефона">
-                        <button class="button button_margin">Получить скидку</button>
+                        <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin-20 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone button_margin" type="button">Получить скидку</button>
                     </form>
                 </div>
                 <div class="reviews-part">
@@ -123,7 +123,10 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
-                            <img class="top-banner__img" src="../img/top-banner/top-banner.jpg" width="100%" height="auto" alt="Ремонт стиральных машин">
+                            {% if content.defectTableId == 2 %}           
+                                <h2 class="banner_title">{{content.pageTitle}}</h2>
+                            {% endif %} 
+                            <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn">Вызвать мастера!</div>
                                 <div class="btn-master-block cause_btn_block">&#10004;</div>
@@ -160,16 +163,16 @@
                             </div>
                         </section>
                         <section class="cost-table">
-                            {% if content.defectTable == 1 %}           
+                            {% if content.defectTableId == 1 %}           
                                 {% include 'defect_table1.tpl' %}
-                            {% elseif content.defectTable == 2 %}                      
+                            {% elseif content.defectTableId == 2 %}                      
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>
                         {% include 'repair_form.tpl' %}  
                         <section class="brand brand_margin">
                             <div class="container3">
-                                <div class="section__title section__title_black section__title_margin">ремонт любых брендов</div>
+                                <div class="section__title section__title_black section__title_margin">ремонт {{content.otherBrandSectionTitle}} брендов</div>
                                 <!--<div class="brand-items">
                                     <div class="brand-arrow">
                                         <button class="brand-btn"><</button>
@@ -216,26 +219,14 @@
                                     другие услуги<br>наших мастеров
                                 </div>
                                 <div class="services-items services-items_margin">
-                                    <div class="invisible">
-                                        <img class="services__img_margin" src="../img/services/services_01.jpg" alt="Ремонт стиральных машин">
-                                        <button class="services__btn">Узнать подробнее</button>
-                                    </div>
+                                    {% for menu,data in content.serviceItems %}
+                                    {% if content.pageTitle != menu %}           
                                     <div class="services-item">
-                                        <img class="services__img_margin" src="../img/services/services_02.jpg" alt="Ремонт посудомоечных машин ">
-                                        <button class="services__btn">Узнать подробнее</button>
+                                        <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}">
+                                        <a class="services__btn" href="{{data.link}}">Узнать подробнее</a>
                                     </div>
-                                    <div class="services-item">
-                                        <img class="services__img_margin" src="../img/services/services_03.jpg" alt="Ремонт холодильников">
-                                        <button class="services__btn">Узнать подробнее</button>
-                                    </div>
-                                    <div class="services-item">
-                                        <img class="services__img_margin" src="../img/services/services_04.jpg" alt="Ремонт духовых шкафов ">
-                                        <button class="services__btn">Узнать подробнее</button>
-                                    </div>
-                                    <div class="services-item">
-                                        <img class="services__img_margin" src="../img/services/services_05.jpg" alt="Ремонт варочных поверхностей">
-                                        <button class="services__btn">Узнать подробнее</button>
-                                    </div>
+                                    {% endif %} 
+                                    {% endfor %}
                                 </div>
                             </div>
                         </section>

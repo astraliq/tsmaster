@@ -513,6 +513,19 @@ textarea {
     position: relative;
 }
 
+.banner_title {
+    position: absolute;
+    font-size: 33px;
+    text-transform: uppercase;
+    top: 62px;
+    left: 48px;
+    font-family: $font__first;
+    text-align: center;
+    width: 360px;
+    height: 104px;
+    line-height: 104px;
+}
+
 .form-question_margin {
     margin: 0 0 70px 0;
 }
@@ -677,7 +690,23 @@ textarea {
     border-radius: 20px;
 }
 
+.modal-window-sities {
+    position: fixed;
+    width: 400px;
+    height: 570px;
+    top: 100px;
+    right: 500px;
+    border: 5px solid $text__second_color;
+    background-color: $bg-form__plate_color;
+    z-index: 12;
+    border-radius: 20px;
+}
+
 .modal-phone {
+    height: 400px;
+}
+
+.modal-sities {
     height: 400px;
 }
 
@@ -686,13 +715,17 @@ textarea {
     top: 50px;
 }
 
-.modal-content {
+.modal-content,
+.modal-content_align {
     margin: 0 0 0 0;
     padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     max-height: 700px;
+    &_align {
+        align-items: flex-start;
+    }
 }
 
 .modal-after-button {
@@ -727,21 +760,20 @@ textarea {
 }
 
 .after-button__title {
-    font-size: 36px;
-    font-weight: 400;
-    font-family: $font__first;
-    &_review {
-        font-size: 30px;
-    }
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: $font__second;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 25px;
 }
 
 .after-button__text {
-    font-size: 26px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-size: 20px;
     font-weight: 400;
-    font-family: $font__first;
-    &_review {
-        font-size: 22px;
-    }
+    font-family: $font__second;
 }
 
 .modal-text {
@@ -756,6 +788,13 @@ textarea {
     }
 }
 
+.content_sity {
+    font-family: $font__first;
+    color: $text__main_color;
+    font-size: 36px;
+    font-weight: 400;
+}
+
 .modal-link {
     color: $text__main_color;
     &:hover {
@@ -763,6 +802,45 @@ textarea {
         text-decoration: none;
         cursor: pointer;
     }
+}
+
+.modal_sity_block {
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+.modal_sity_block_content {
+    width: 100%;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal_sity_block_content button {
+    width: 70%;
+    height: 50px;
+    font-family: $font__first;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 25px;
+    background-color: $bgcolor_blue;
+    color: $text__second_color;
+    outline: inherit;
+}
+
+.modal_sity_block_content button:hover {
+    cursor: pointer;
+    background-color: $btn_hover_color;
+    color: $text__main_color;
+}
+
+.modal_sity_block_content button:active {
+    cursor: pointer;
+    background-color: $logo__text_color;
+    color: $text__main_color;
 }
 
 .modal_off {
