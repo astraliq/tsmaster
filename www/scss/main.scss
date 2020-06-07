@@ -853,6 +853,22 @@ textarea {
     color: $text__main_color;
 }
 
+.city__city {
+    cursor: pointer;
+}
+
+.city__city:hover {
+    color: $bgcolor_blue;
+}
+
+.city__city-footer {
+    cursor: pointer;
+}
+
+.city__city-footer:hover {
+    color: $bgcolor_blue;
+}
+
 .modal_off {
     opacity: 0;
     transition: all $anim_transition ease-in-out;

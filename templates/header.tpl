@@ -5,8 +5,8 @@
     <!-- стрелка перехода на верх -->
         <div class="container">
         <!-- модальное окно выбора города -->
-        <div class="darkback darkback_sities"><!--screen_off modal_off-->
-            <div class="modal-window-sities modal-sities modal_block-sities"><!-- screen_off -->                
+        <div class="darkback darkback_sities screen_off modal_off"><!--screen_off modal_off-->
+            <div class="modal-window-sities modal-sities modal_block-sities screen_off"><!-- screen_off -->                
                 <div class="modal-content">
                     <span class="modal_city content_city">Ваш город?</span>
                     <div class="modal_city_block"></div>

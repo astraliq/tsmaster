@@ -5,6 +5,7 @@ class City {
         this.data = [];
         this.urlCity = '../js/cities.json';
         this.nameCity = document.querySelector('.city__city');
+        this.nameCityFooter = document.querySelector('.city__city-footer');
         this.phoneCity = document.querySelector('.city__phone');
         this.block = document.querySelector('.modal_city_block');
         this.numberCity = 0; //город по умолчанию
@@ -52,7 +53,7 @@ class City {
             elem.addEventListener('click', (event) => {
                 console.log(event.srcElement.dataset.town);
                 this.numberCity = event.srcElement.dataset.town;
-                this.closeModalSities();
+                this.closeModalCities();
             });
         });
     }
@@ -67,11 +68,31 @@ class City {
             this._readData(this.urlCity);
         } else {
             this._readData(this.urlCity);
-            this.closeModalSities();
+            this.closeModalCities();
         }
     }
+    runChangeCity() {
+        this.nameCity.addEventListener('click', () => {
+            this._changeCity();
+        });
+        this.nameCityFooter.addEventListener('click', () => {
+            this._changeCity();
+        });
+    }
+    _changeCity() {
+        this.result = 1;
+        this.onModalCities();
+        this.showBlockSities(this.data);
+        console.log('=====' + this.result);
+    }
 
-    closeModalSities() {
+    onModalCities() {
+        this.darkBack.classList.remove('modal_off');
+        this.darkBack.classList.remove('screen_off');
+        this.modalBlockSities.classList.remove('screen_off');
+    }
+
+    closeModalCities() {
         this.darkBack.classList.add('modal_off');
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
@@ -89,6 +110,7 @@ class City {
         data[number].town == 'Тюмен' ? town = town + 'и' : town = town + 'е';
 
         this.nameCity.innerHTML = town;
+        this.nameCityFooter.innerHTML = town;
         this.phoneCity.innerHTML = data[number].phone;
 
         this.setCityId(this.numberCity, this.result);
@@ -133,12 +155,19 @@ class City {
     }
 
     init() {
-        this.checkInformation();
+        if (this.result == 0) {
+            this.checkInformation()
+        } else {
+            this.onModalCities();
+            this.checkInformation()
+        }
+
+        this.runChangeCity();
 
         // if (this.result) {
         //     this._readData(this.urlCity);
         // } else {
-        //     this.closeModalSities();
+        //     this.closeModalCities();
         // }
     }
 }

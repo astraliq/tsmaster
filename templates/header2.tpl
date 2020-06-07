@@ -18,7 +18,7 @@
         <div class="logo__title">
           <a class="logo__link" href="/"> ТехСервис Мастер </a>
         </div>
-        <p class="logo__subtitle">ремонт бытовой техники в <span class="city_city"></span></p>
+        <p class="logo__subtitle">ремонт бытовой техники в <span class="city__city"></span></p>
       </div>
       <div class="tel">
         <div class="tel__icon">
