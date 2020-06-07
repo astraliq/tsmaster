@@ -789,7 +789,7 @@ textarea {
     }
 }
 
-.content_sity {
+.content_city {
     font-family: $font__first;
     color: $text__main_color;
     font-size: 36px;
@@ -805,12 +805,12 @@ textarea {
     }
 }
 
-.modal_sity_block {
+.modal_city_block {
     width: 100%;
     margin: 10px 0 0 0;
 }
 
-.modal_sity_block_content {
+.modal_city_block_content {
     width: 100%;
     margin: 30px 0 0 0;
     display: flex;
@@ -820,7 +820,7 @@ textarea {
     align-items: center;
 }
 
-.modal_sity_block_content button {
+.modal_city_block_content button {
     width: 70%;
     height: 50px;
     font-family: $font__first;
@@ -832,13 +832,13 @@ textarea {
     outline: inherit;
 }
 
-.modal_sity_block_content button:hover {
+.modal_city_block_content button:hover {
     cursor: pointer;
     background-color: $btn_hover_color;
     color: $text__main_color;
 }
 
-.modal_sity_block_content button:active {
+.modal_city_block_content button:active {
     cursor: pointer;
     background-color: $logo__text_color;
     color: $text__main_color;
@@ -1245,7 +1245,9 @@ textarea {
     margin-right: 0.6%;
 }
 
+
 /*карусель*/
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1267,6 +1269,7 @@ textarea {
     z-index: 15;
     box-sizing: border-box;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1551,6 +1554,7 @@ textarea {
         margin-bottom: 65px;
     }
 }
+
 
 /*.form-search__items {}*/
 

@@ -268,7 +268,7 @@
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
-    <script defer src="js/sity.js"></script>
+    <script defer src="js/city.js"></script>
 
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script>
