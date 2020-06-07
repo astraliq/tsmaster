@@ -1,4 +1,6 @@
-'use strict';
+'use strict'
+
+const transitionDelay = 500; // длина затемнения модальных окон в милисекундах
 
 const transitionDelay = 500; // длина затемнения модальных окон в милисекундах
 

@@ -5,7 +5,11 @@
             <div class="section__subtitle section__subtitle_white subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</div>
             <form class="form-question__form">
                 <input class="input input_margin-lr10 client_name" type="text" placeholder="Ваше имя" maxlength="30" />
+<<<<<<< HEAD
                 <input class="input input_margin-lr10 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона" />
+=======
+                <input class="input input_margin-lr10 client_phone" type="tel" name="phone" maxlength="16" placeholder="Номер телефона" />
+>>>>>>> pr/9
                 <button class="button button-phone input_margin-l">Перезвоните мне</button>
             </form>
         </div>

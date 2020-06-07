@@ -1622,7 +1622,7 @@ textarea {
 }
 
 .before_1::before {
-  content: 'Вид техники';
+  content: "Вид техники";
   position: absolute;
   top: -25px;
   left: 80px;
@@ -1638,7 +1638,7 @@ textarea {
 }
 
 .before_2::before {
-  content: 'Вид неисправности';
+  content: "Вид неисправности";
   position: absolute;
   top: -25px;
   left: 56px;
@@ -1654,7 +1654,7 @@ textarea {
 }
 
 .before_3::before {
-  content: 'Стоимость услуги составит';
+  content: "Стоимость услуги составит";
   position: absolute;
   top: -25px;
   left: 17px;
@@ -1940,7 +1940,7 @@ textarea {
 
 .dev-planb {
   padding: 0 15px 0 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 11px;
   color: white;
   display: flex;
@@ -1959,7 +1959,7 @@ textarea {
   justify-content: flex-end;
   opacity: 0.5;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
 

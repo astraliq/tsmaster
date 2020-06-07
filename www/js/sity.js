@@ -11,13 +11,22 @@ class Sity {
         this.darkBack = document.querySelector('.darkback_sities');
         this.modalBlockSities = document.querySelector('.modal_block-sities');
         this.result = true;
+<<<<<<< HEAD
+=======
+        this.informationSity = 0;
+        this.informationBlock = document.querySelector('.inf_data');
+>>>>>>> pr/9
     }
 
     async _readData(url) {
         let response = await fetch(url);
         this.data = await response.json();
         console.log(this.data);
+<<<<<<< HEAD
         this.showBlockSities(this.data);
+=======
+        if (this.result == 'true') this.showBlockSities(this.data);
+>>>>>>> pr/9
     }
 
     showBlockSities(data) {
@@ -55,12 +64,34 @@ class Sity {
         });
     }
 
+<<<<<<< HEAD
+=======
+    checkInformation() {
+        this.informationSity = this.informationBlock.dataset.city_id;
+        this.numberSity = this.informationSity;
+        this.result = this.informationBlock.dataset.sity_inf;
+        console.log(this.informationSity + ' ' + this.result);
+
+        if (this.result == 'true') {
+            this._readData(this.urlSity);
+        } else {
+            this._readData(this.urlSity);
+            this.closeModalSities();
+        }
+    }
+
+>>>>>>> pr/9
     closeModalSities() {
         this.darkBack.classList.add('modal_off');
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
 
+<<<<<<< HEAD
         this.showSity(this.data);
+=======
+        setTimeout(() => this.showSity(this.data), 100);
+
+>>>>>>> pr/9
         this.result = false;
     }
 
@@ -73,6 +104,7 @@ class Sity {
 
         this.nameSity.innerHTML = town;
         this.phoneSity.innerHTML = data[number].phone;
+<<<<<<< HEAD
     }
 
     init() {
@@ -82,6 +114,57 @@ class Sity {
         } else {
             this.closeModalSities();
         }
+=======
+
+        this.setCityId(this.numberSity, this.result);
+    }
+
+    _getJson(url, data) {
+        return $.post({
+            url: url,
+            data: data,
+            success: function (data) {
+                //data приходят те данные, который прислал на сервер
+                if (data.result !== 'OK') {
+                    console.log('ERROR_SEND_DATA');
+                }
+            },
+        });
+    }
+
+    setCityId(id, inf) {
+        let sendData = {
+            apiMethod: 'setCityId',
+            postData: {
+                cityId: id,
+                cityInf: inf
+            },
+        };
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    // что делать в случае успешного выполнения
+                    console.log('ALL_OK');
+                } else {
+                    // что делать в случае неудачного выполнения
+                    console.log('ERROR #1');
+                }
+            })
+            .catch((error) => {
+                // что делать в случае ошибок прочих
+                console.log('ERROR #2');
+            });
+    }
+
+    init() {
+        this.checkInformation();
+
+        // if (this.result) {
+        //     this._readData(this.urlSity);
+        // } else {
+        //     this.closeModalSities();
+        // }
+>>>>>>> pr/9
     }
 }
 
