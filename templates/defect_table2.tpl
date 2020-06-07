@@ -10,7 +10,7 @@
             <div class="cell-name">
                 <a class="cell-name__link" href="{{ repType.link }}">{{ repType.title }}</a>
             </div>
-            <div class="cell-price">{{ repType.price }} ₽</div>
+            <div class="cell-price">{{ repType.price }} {% if repType.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             {% endfor %}
         </div>
     </div>

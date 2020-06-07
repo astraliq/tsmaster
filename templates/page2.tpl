@@ -123,9 +123,12 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
+                            <div class="banner_title_block">
                             {% if content.defectTableId == 2 %}           
-                                <h2 class="banner_title">{{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2">{{content.pageTitle}}</h2>
                             {% endif %} 
+                            </div>
+                            <div class="banner_title_block" style="opacity: 0"></div>
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn">Вызвать мастера!</div>
@@ -220,7 +223,7 @@
                                 </div>
                                 <div class="services-items services-items_margin">
                                     {% for menu,data in content.serviceItems %}
-                                    {% if content.pageTitle != menu %}           
+                                    {% if content.serviceTitle != menu %}           
                                     <div class="services-item">
                                         <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}">
                                         <a class="services__btn" href="{{data.link}}">Узнать подробнее</a>
@@ -268,7 +271,7 @@
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
-
+    <script defer src="js/city.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script>
         jQuery(document).ready(function() {

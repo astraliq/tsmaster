@@ -194,7 +194,7 @@ class Mailing {
         this.description = '';
         this.rate = '';
         this.review = '';
-        this.city = document.querySelector('.city__city').innerText;
+        this.city = '';
         this.reqType = '';
         this.btnsRecall = document.querySelectorAll('.button-phone');
         this.btnsRepair = document.querySelectorAll('.button-repair');
@@ -244,7 +244,6 @@ class Mailing {
                 this.name = nameBlock.value;
                 this.phone = phoneBlock.value;
                 let check = this._checkRecall(nameBlock, phoneBlock);
-                this.city = document.querySelector('.city__city').innerText;
                 if (check) {
                     this.sendMailPhoneRequest(parent);
                 }
@@ -263,7 +262,6 @@ class Mailing {
                 this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
                 this.defect = defectBlock ? defectBlock[defectBlock.selectedIndex].text : '';
                 let check = this._checkRepair(nameBlock, phoneBlock, defectBlock, deviceBlock);
-                this.city = document.querySelector('.city__city').innerText;
                 if (check) {
                     this.sendMailRepairRequest(parent);
                 }
@@ -281,7 +279,6 @@ class Mailing {
                 this.phone = phoneBlock.value;
                 this.device = deviceBlock ? deviceBlock[deviceBlock.selectedIndex].text : '';
                 this.defect = defectBlock ? defectBlock.value : '';
-                this.city = document.querySelector('.city__city').innerText;
                 let check = this._checkMaster(nameBlock, phoneBlock, defectBlock, deviceBlock);
                 if (check) {
                     this.sendMailMasterRequest(parent);
@@ -300,7 +297,6 @@ class Mailing {
                 this.phone = phoneBlock.value;
                 this.rate = rateBlock ? rateBlock.value : '';
                 this.review = reviewBlock ? reviewBlock.value : '';
-                this.city = document.querySelector('.city__city').innerText;
                 let check = this._checkReview(nameBlock, phoneBlock, rateBlock, reviewBlock);
                 if (check) {
                     this.sendMailReview(parent);
@@ -472,7 +468,7 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeModal('darkback-master', 'modal-master');
+                    this.closeModal('darkback', 'modal-window');
                     this.renderOk('master');
                     this.clearInputs(modal);
                 } else {
@@ -501,7 +497,7 @@ class Mailing {
                     if (modal.classList.contains('form-question__form')) {
                         this.clearInputs(modal);
                     } else {
-                        this.closeModal('darkback-phone', 'modal-phone');
+                        this.closeModal('darkback', 'modal-window');
                         this.clearInputs(modal);
                     }
                     this.renderOk('phone');
@@ -530,7 +526,7 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeModal('darkback-review', 'modal-review');
+                    this.closeModal('darkback', 'modal-window');
                     this.renderOk('review');
                     this.clearInputs(modal);
                 } else {
@@ -710,102 +706,3 @@ class Mailing {
 let mailing = new Mailing();
 
 mailing.init();
-
-class DefectPrices {
-    constructor(checkType) {
-        this.deviceSelect = document.getElementById('device_select');
-        this.deviceId = this.deviceSelect[this.deviceSelect.selectedIndex].dataset.id;
-        this.defectSelect = document.getElementById('defect_select');
-        this.defects = [];
-        this.defectId;
-        this.defectPrice;
-        this.priceInput = document.getElementById('defect_price');
-        this.brand = '';
-        this.reqType = '';
-    }
-
-    init() {
-        this.deviceSelect.addEventListener('click', async (e) => {
-            this.deviceId = this.deviceSelect[this.deviceSelect.selectedIndex].dataset.id;
-            if (this.deviceId !== '' && !!this.deviceId) {
-                let defects = await this.getDefects(this.deviceId);
-                let options = '<option class="form__option" value=""></option>';
-                defects.forEach((defect) => {
-                    options += `<option class="form__option" value="" data-id="${defect.id}">${defect.title}</option>`;
-                });
-                this.defectSelect.innerHTML = options;
-            } else {
-            }
-        });
-
-        this.defectSelect.addEventListener('click', async (e) => {
-            this.deviceId = this.deviceSelect[this.deviceSelect.selectedIndex].dataset.id;
-            this.defectId = this.defectSelect[this.defectSelect.selectedIndex].dataset.id;
-            if (this.deviceId !== '' && !!this.deviceId && this.defectId !== '' && !!this.defectId) {
-                this.setDefectPrice(this.deviceId, this.defectId);
-            } else {
-            }
-        });
-    }
-
-    _getJson(url, data) {
-        return $.post({
-            url: url,
-            data: data,
-            success: function (data) {
-                //data приходят те данные, который прислал на сервер
-                if (data.result !== 'OK') {
-                    console.log('ERROR_SEND_DATA');
-                }
-            },
-        });
-    }
-
-    async getDefects(deviceId) {
-        let sendData = {
-            apiMethod: 'getDefects',
-            postData: {
-                deviceId: deviceId,
-            },
-        };
-
-        let promise = new Promise((resolve, reject) => {
-            resolve(this._getJson(`/index.php`, sendData));
-        });
-
-        await promise.then((data) => {
-            if (data.result === 'OK') {
-                this.defects = data.defects;
-            } else {
-                console.log('ERROR_GET');
-            }
-        });
-        return this.defects;
-    }
-
-    setDefectPrice(deviceId, defectId) {
-        let sendData = {
-            apiMethod: 'getDefectPrice',
-            postData: {
-                deviceId: deviceId,
-                defectId: defectId,
-            },
-        };
-
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    this.defectPrice = data.price.price;
-                    this.priceInput.value = `от ${this.defectPrice} рублей`;
-                } else {
-                    console.log('ERROR_GET');
-                }
-            })
-            .catch((error) => {
-                console.log('fetch error - ' + error);
-            });
-    }
-}
-let prices = new DefectPrices();
-
-prices.init();

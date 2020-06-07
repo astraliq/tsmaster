@@ -7,6 +7,7 @@ class IndexController extends Controller {
     public $cities;
     public $json;
     public $defects;
+    public $devices;
     public $repairTypes;
     public $cityId;
     public $cityInf;
@@ -16,14 +17,42 @@ class IndexController extends Controller {
         parent::__construct();
         $this->json = new JsonFileParse();
         $this->defects = new Defects();
+        $this->devices = new Devices();
         $this->repairTypes = new RepairTypes();
         $this->jsonDb = $this->json->getArrayFromFile();
-        $this->cityId = $_SESSION['cityId'];
-        $this->cityInf = $_SESSION['cityInf'];
+        $this->cityId = isset($_SESSION['cityId']) ? $_SESSION['cityId'] : 0;
+        $this->cityInf = isset($_SESSION['cityInf']) ? $_SESSION['cityInf'] : 1;
     } 
+
+    // public function addBd($data) {
+    //     $deviceId = 1;
+    //     $defectArr = [];
+    //     $workArr = [];
+    //     $priceArr = [];
+
+    //     for ($i=0; $i < count($workArr); $i++) { 
+    //         $defect = $this->defects->getByTitle($defectArr[$i]);
+    //         $defectId = $defect['id'];
+    //         $defectLink = $defect['link'];
+    //         $workId = $this->repairTypes->getByTitle($workArr[$i])['id'];
+    //         echo '<br>';
+    //         echo $defectId;
+    //         echo $defectLink;
+    //         echo $workId;
+
+    //         $this->repairTypes->addDeviceDefectWorksPrice($deviceId, $defectId, $defectLink, $workId, $priceArr[$i]);
+    //     }
+        
+    //     exit();
+	// }
 
 	public function index($data) {
         $this->pageId = 1;
+
+        // echo '<pre>';
+        // print_r( $this->devices->getAllDevices());
+        // echo '</pre>';
+        // exit();
 
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
@@ -34,6 +63,7 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'devices' => $this->devices->getAllDevices(),
         ];
         return $arrayContent;
 	}
@@ -51,6 +81,7 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'devices' => $this->devices->getAllDevices(),
         ];
         return $arrayContent;
     }
@@ -64,6 +95,7 @@ class IndexController extends Controller {
         $mainLink = '/washing_machine'; // заменять ссылку
         $defectTableId = 1;
         $pageTitle = 'ремонт стиральных машин'; // заменять на название
+        $serviceTitle = $pageTitle;
         $pageTitle2 = 'стиральной машины'; // заменять на название
         $banner = 'img/repair_banners/repair_washing_machine.jpg';     // заменять баннер
 
@@ -74,11 +106,6 @@ class IndexController extends Controller {
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             $pageTitle = $repTypes[0]['pageTitle'];
         }
-        
-        // echo '<pre>';
-        // print_r( $this->serviceItems);
-        // echo '</pre>';
-        // exit();
 
         $arrayContent = [
             'siteName' => $this->mainTitle,
@@ -97,6 +124,8 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -111,6 +140,7 @@ class IndexController extends Controller {
         $mainLink = '/dishwasher'; // заменять ссылку
         $defectTableId = 1;
         $pageTitle = 'ремонт посудомоечных машин'; // заменять на название
+        $serviceTitle = $pageTitle;
         $pageTitle2 = 'посудомоечной машины'; // заменять на название
         $banner = 'img/repair_banners/repair_dishwasher.jpg';     // заменять баннер
 
@@ -139,6 +169,8 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -153,6 +185,7 @@ class IndexController extends Controller {
         $mainLink = '/refrigerator'; // заменять ссылку
         $defectTableId = 1;
         $pageTitle = 'ремонт холодильников'; // заменять на название
+        $serviceTitle = $pageTitle;
         $pageTitle2 = 'холодильника'; // заменять на название
         $banner = 'img/repair_banners/repair_refrigerator.jpg';     // заменять баннер
 
@@ -181,6 +214,8 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -195,6 +230,7 @@ class IndexController extends Controller {
         $mainLink = '/oven'; // заменять ссылку
         $defectTableId = 1;
         $pageTitle = 'ремонт духовых шкафов'; // заменять на название
+        $serviceTitle = $pageTitle;
         $pageTitle2 = 'духового шкафа'; // заменять на название
         $banner = 'img/repair_banners/repair_oven.jpg';     // заменять баннер
 
@@ -223,6 +259,8 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -237,6 +275,7 @@ class IndexController extends Controller {
         $mainLink = '/hob'; // заменять ссылку
         $defectTableId = 1;
         $pageTitle = 'ремонт варочных панелей'; // заменять на название
+        $serviceTitle = $pageTitle;
         $pageTitle2 = 'варочной панели'; // заменять на название
         $banner = 'img/repair_banners/repair_hob.jpg';     // заменять баннер
 
@@ -265,6 +304,8 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;

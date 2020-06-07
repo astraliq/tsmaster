@@ -534,17 +534,26 @@ textarea {
   position: relative;
 }
 
-.banner_title {
+.banner_title_block {
   position: absolute;
-  font-size: 33px;
-  text-transform: uppercase;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   top: 62px;
   left: 48px;
-  font-family: "PT Sans", sans-serif;
-  text-align: center;
   width: 360px;
   height: 104px;
-  line-height: 104px;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_title-h2 {
+  font-size: 33px;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+  line-height: 33px;
 }
 
 .form-question_margin {
@@ -815,7 +824,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-.content_sity {
+.content_city {
   font-family: "PT Sans", sans-serif;
   color: #000;
   font-size: 36px;
@@ -832,12 +841,12 @@ textarea {
   cursor: pointer;
 }
 
-.modal_sity_block {
+.modal_city_block {
   width: 100%;
   margin: 10px 0 0 0;
 }
 
-.modal_sity_block_content {
+.modal_city_block_content {
   width: 100%;
   margin: 30px 0 0 0;
   display: flex;
@@ -847,7 +856,7 @@ textarea {
   align-items: center;
 }
 
-.modal_sity_block_content button {
+.modal_city_block_content button {
   width: 70%;
   height: 50px;
   font-family: "PT Sans", sans-serif;
@@ -859,16 +868,32 @@ textarea {
   outline: inherit;
 }
 
-.modal_sity_block_content button:hover {
+.modal_city_block_content button:hover {
   cursor: pointer;
   background-color: #e0a101;
   color: #000;
 }
 
-.modal_sity_block_content button:active {
+.modal_city_block_content button:active {
   cursor: pointer;
   background-color: #f7a900;
   color: #000;
+}
+
+.city__city {
+  cursor: pointer;
+}
+
+.city__city:hover {
+  color: #0076d5;
+}
+
+.city__city-footer {
+  cursor: pointer;
+}
+
+.city__city-footer:hover {
+  color: #0076d5;
 }
 
 .modal_off {
@@ -1528,6 +1553,10 @@ textarea {
   font-weight: 400;
   line-height: 20px;
   outline: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .services__btn:hover {
@@ -1601,9 +1630,9 @@ textarea {
 .select {
   margin: 0 0 0 0;
   padding: 5px;
-  width: 275px;
+  width: 270px;
   height: 45px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px transparent solid;
   background-color: #fff;
   box-shadow: 5px 5px 15px -12px #000000 inset;

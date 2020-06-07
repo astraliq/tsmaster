@@ -8,7 +8,7 @@
                         <a class="logo__link" href="/">{{ content.siteName | raw }}</a>
                     </div>
                     <p class="logo__subtitle section__subtitle_white">
-                        ремонт&nbsp;бытовой&nbsp;техники&nbsp;в&nbsp;Екатеринбурге
+                        ремонт&nbsp;бытовой&nbsp;техники&nbsp;в&nbsp;<span class="city__city-footer"></span>
                     </p>
                 </div>
                 <div class="footer__desc">
@@ -53,6 +53,9 @@
             </div>
         </div>
     </div>
+  </div>
+  <!-- информационный блок -->
+  <div class="inf_data screen_off" data-city_id="{{content.cityId}}" data-city_inf="{{content.cityInf}}"></div>
 </footer>
 <section class="plan-b-style">
     <div class="dev-planb">
