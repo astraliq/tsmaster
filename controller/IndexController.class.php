@@ -18,8 +18,8 @@ class IndexController extends Controller {
         $this->defects = new Defects();
         $this->repairTypes = new RepairTypes();
         $this->jsonDb = $this->json->getArrayFromFile();
-        $this->cityId = $_SESSION['cityId'];
-        $this->cityInf = $_SESSION['cityInf'];
+        $this->cityId = $_SESSION['cityId'] ? $_SESSION['cityId'] : 0;
+        $this->cityInf = $_SESSION['cityInf'] ? $_SESSION['cityInf'] : true;
     } 
 
 	public function index($data) {
