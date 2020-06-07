@@ -251,12 +251,8 @@ class ApiMethod {
 	}
 
 	public function setCityId() {
-		$cityId = $_POST['postData']['city_id'] ?? '';
-		$cityInf = $_POST['postData']['city_inf'] ?? '';
-
-		if (!$name || !$phone) {
-			$this->error('Не передан один из параметров');
-		}
+		$cityId = $_POST['postData']['cityId'] ?? '';
+		$cityInf = $_POST['postData']['cityInf'] ?? '';
 
 		if (true) {
 			$_SESSION['cityId'] = $cityId;

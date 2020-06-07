@@ -269,7 +269,6 @@
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
     <script defer src="js/city.js"></script>
-
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script>
         jQuery(document).ready(function() {
