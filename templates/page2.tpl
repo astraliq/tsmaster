@@ -123,9 +123,12 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
+                            <div class="banner_title_block">
                             {% if content.defectTableId == 2 %}           
-                                <h2 class="banner_title">{{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2">{{content.pageTitle}}</h2>
                             {% endif %} 
+                            </div>
+                            <div class="banner_title_block" style="opacity: 0"></div>
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn">Вызвать мастера!</div>

@@ -22,6 +22,13 @@ class Defects extends Model {
 		return $this->dataBase->getRows($sql, null);
 	}
 
+	public function getByTitle($title) {
+		$whereObject = [
+			'title' => $title
+		];
+		return $this->dataBase->uniSelect($this->defectsTable, $whereObject);
+	}
+
 	public function getByBrand($brand) {
 		$whereObject = [
 			'brand' => $brand

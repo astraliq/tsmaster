@@ -7,6 +7,7 @@ class IndexController extends Controller {
     public $cities;
     public $json;
     public $defects;
+    public $devices;
     public $repairTypes;
     public $cityId;
     public $cityInf;
@@ -16,14 +17,42 @@ class IndexController extends Controller {
         parent::__construct();
         $this->json = new JsonFileParse();
         $this->defects = new Defects();
+        $this->devices = new Devices();
         $this->repairTypes = new RepairTypes();
         $this->jsonDb = $this->json->getArrayFromFile();
         $this->cityId = isset($_SESSION['cityId']) ? $_SESSION['cityId'] : 0;
         $this->cityInf = isset($_SESSION['cityInf']) ? $_SESSION['cityInf'] : 1;
     } 
 
+    // public function addBd($data) {
+    //     $deviceId = 1;
+    //     $defectArr = [];
+    //     $workArr = [];
+    //     $priceArr = [];
+
+    //     for ($i=0; $i < count($workArr); $i++) { 
+    //         $defect = $this->defects->getByTitle($defectArr[$i]);
+    //         $defectId = $defect['id'];
+    //         $defectLink = $defect['link'];
+    //         $workId = $this->repairTypes->getByTitle($workArr[$i])['id'];
+    //         echo '<br>';
+    //         echo $defectId;
+    //         echo $defectLink;
+    //         echo $workId;
+
+    //         $this->repairTypes->addDeviceDefectWorksPrice($deviceId, $defectId, $defectLink, $workId, $priceArr[$i]);
+    //     }
+        
+    //     exit();
+	// }
+
 	public function index($data) {
         $this->pageId = 1;
+
+        // echo '<pre>';
+        // print_r( $this->devices->getAllDevices());
+        // echo '</pre>';
+        // exit();
 
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
@@ -34,6 +63,7 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'devices' => $this->devices->getAllDevices(),
         ];
         return $arrayContent;
 	}
@@ -51,6 +81,7 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'devices' => $this->devices->getAllDevices(),
         ];
         return $arrayContent;
     }
@@ -75,13 +106,6 @@ class IndexController extends Controller {
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             $pageTitle = $repTypes[0]['pageTitle'];
         }
-        
-        // echo '<pre>';
-        // print_r( $this->cityId);
-        // echo '<br>';
-        // print_r( $this->cityInf);
-        // echo '</pre>';
-        // exit();
 
         $arrayContent = [
             'siteName' => $this->mainTitle,
@@ -101,6 +125,7 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -145,6 +170,7 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -189,6 +215,7 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -233,6 +260,7 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;
@@ -277,6 +305,7 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
+            'devices' => $this->devices->getAllDevices(),
         ];
         
         return $arrayContent;

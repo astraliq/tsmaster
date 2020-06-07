@@ -18,6 +18,13 @@ class RepairTypes extends Model {
 		return $this->dataBase->uniSelect($this->worksTable, $whereObject);
 	}
 
+	public function getByTitle($title) {
+		$whereObject = [
+			'title' => $title
+		];
+		return $this->dataBase->uniSelect($this->worksTable, $whereObject);
+	}
+
 	public function getByDeviceDefectId($deviceId, $defectId) {
 		$sql = "SELECT works.`title`, works.`price` FROM `$this->worksTable` as works LEFT JOIN `$this->work2def2devTable` as wdd ON works.`id` = wdd.work_id WHERE wdd.device_id = $deviceId AND wdd.defect_id = $defectId";
 		return $this->dataBase->getRows($sql, null);
@@ -33,12 +40,22 @@ class RepairTypes extends Model {
 		return $this->dataBase->getRows($sql, null);
 	}
 
-	public function addOne($title, $price) {
+	public function addOne($title) {
 		$object = [
-			'title' => $name,
-			'price' => $phone,
+			'title' => $title,
 		];
 		return $this->dataBase->uniInsert($this->worksTable, $object);
+	}
+
+	public function addDeviceDefectWorksPrice($deviceId, $defectId, $defectLink, $workId, $price) {
+		$object = [
+			'device_id' => $deviceId,
+			'defect_id' => $defectId,
+			'defect_link' => $defectLink,
+			'work_id' => $workId,
+			'price' => $price,
+		];
+		return $this->dataBase->uniInsert($this->work2def2devTable, $object);
 	}
 
 	public function update($id, $name, $comment) {

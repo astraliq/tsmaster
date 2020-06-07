@@ -706,3 +706,98 @@ class Mailing {
 let mailing = new Mailing();
 
 mailing.init();
+
+class DefectPrices {
+    constructor(checkType) {
+        this.defect = '';
+        this.brand = '';
+        this.reqType = '';
+    }
+
+    init() {
+        let btnPhone = document.querySelector('.btn-phone');
+        let btnMaster = document.querySelector('.btn-master');
+        let btnReview = document.querySelector('.btn-review');
+
+        if (btnPhone) {
+            btnPhone.onclick = (e) => {
+                e.preventDefault();
+                this.firstCheck('phone');
+            };
+        }
+
+        this.btnsRecall.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let parent = btn.parentElement;
+                let nameBlock = parent.querySelector('.client_name');
+                let phoneBlock = parent.querySelector('.client_phone');
+                this.name = nameBlock.value;
+                this.phone = phoneBlock.value;
+                let check = this._checkRecall(nameBlock, phoneBlock);
+                if (check) {
+                    this.sendMailPhoneRequest(parent);
+                }
+            });
+        });
+    }
+
+    _getJson(url, data) {
+        return $.post({
+            url: url,
+            data: data,
+            success: function (data) {
+                //data приходят те данные, который прислал на сервер
+                if (data.result !== 'OK') {
+                    console.log('ERROR_SEND_DATA');
+                }
+            },
+        });
+    }
+
+    getDefects(device) {
+        let sendData = {
+            apiMethod: 'getDefects',
+            postData: {
+                device: device,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('GET');
+                } else {
+                    console.log('ERROR_GET');
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+
+    getDefectPrice(device,defect) {
+        let sendData = {
+            apiMethod: 'getDefectPrice',
+            postData: {
+                device: device,
+                defect: defect,
+            },
+        };
+
+        this._getJson(`/index.php`, sendData)
+            .then((data) => {
+                if (data.result === 'OK') {
+                    console.log('GET');
+                } else {
+                    console.log('ERROR_GET);
+                }
+            })
+            .catch((error) => {
+                console.log('fetch error');
+            });
+    }
+}
+let prices = new DefectPrices();
+
+prices.init();
