@@ -55,7 +55,7 @@
     </div>
   </div>
   <!-- информационный блок -->
-  <div class="inf_data screen_off" data-city_id="0" data-sity_inf="false"></div>
+  <div class="inf_data screen_off" data-city_id="{{content.cityId}}" data-sity_inf="{{content.cityInf}}"></div>
 </footer>
 <section class="plan-b-style">
     <div class="dev-planb">
