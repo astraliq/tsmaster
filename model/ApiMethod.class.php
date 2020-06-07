@@ -16,7 +16,8 @@
  * Если до этого были ошибки на php заголовок задать не получится
  *
  */
-class ApiMethod {
+class ApiMethod
+{
 
 	public $dataBase;
 	public $method;
@@ -25,16 +26,18 @@ class ApiMethod {
 	public $reviews;
 	public $regExpPhone = '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/';
 
-    public function __construct($method) {
-        $this->method = $method;
-        $this->dataBase = SQL::getInstance();
-        $this->requests = new Requests();
-        $this->mailing = new Mailing();
-        $this->reviews = new Reviews();
-    }
+	public function __construct($method)
+	{
+		$this->method = $method;
+		$this->dataBase = SQL::getInstance();
+		$this->requests = new Requests();
+		$this->mailing = new Mailing();
+		$this->reviews = new Reviews();
+	}
 
 	//Функция вывода ошибки
-	private static function error($error_text, $code = 404) {
+	private static function error($error_text, $code = 404)
+	{
 		http_response_code($code);
 		echo json_encode([
 			'error' => true,
@@ -42,18 +45,18 @@ class ApiMethod {
 			'data' => null
 		], JSON_UNESCAPED_UNICODE);
 		exit();
-
 	}
 
 	//Функция успешного ответа
-	private static function success($data = true) {
+	private static function success($data = true)
+	{
 		header('Content-Type: application/json; charset=utf-8');
 		echo json_encode($data, JSON_UNESCAPED_UNICODE);
 		exit();
-
 	}
 
-	public function login() {
+	public function login()
+	{
 		//Получаем логин и пароль из postData
 		$login = $_POST['postData']['login'] ?? '';
 		$password = $_POST['postData']['password'] ?? '';
@@ -80,7 +83,7 @@ class ApiMethod {
 		if ($user) {
 			$_SESSION['user'] = $user;
 			$data['result'] = 'OK';
-			$data['referrer'] = $_SESSION['referrer']; 
+			$data['referrer'] = $_SESSION['referrer'];
 			if (!$this->cartModel->getUserCart($_SESSION['user']['id']) && !empty($_COOKIE['cart'])) {
 				if ($this->cartModel->insertCookieInCart($_COOKIE['cart'], $_SESSION['user']['id'])) {
 					$this->success($data);
@@ -92,7 +95,8 @@ class ApiMethod {
 		}
 	}
 
-	public function reg() {
+	public function reg()
+	{
 		//Получаем логин и пароль из postData
 		$login = $_POST['postData']['login'] ?? '';
 		$password = $_POST['postData']['password'] ?? '';
@@ -129,7 +133,8 @@ class ApiMethod {
 		}
 	}
 
-	public function sendMailRepairRequest() {
+	public function sendMailRepairRequest()
+	{
 		$name = $_POST['postData']['name'] ?? '';
 		$phone = $_POST['postData']['phone'] ?? '';
 		$device = $_POST['postData']['device'] ?? '';
@@ -162,7 +167,8 @@ class ApiMethod {
 		}
 	}
 
-	public function sendMailPhoneRequest() {
+	public function sendMailPhoneRequest()
+	{
 		$name = $_POST['postData']['name'] ?? '';
 		$phone = $_POST['postData']['phone'] ?? '';
 		$device = $_POST['postData']['device'] ?? null;
@@ -190,7 +196,8 @@ class ApiMethod {
 		}
 	}
 
-	public function sendMailMasterRequest() {
+	public function sendMailMasterRequest()
+	{
 		$name = $_POST['postData']['name'] ?? '';
 		$phone = $_POST['postData']['phone'] ?? '';
 		$device = $_POST['postData']['device'] ?? null;
@@ -218,7 +225,8 @@ class ApiMethod {
 		}
 	}
 
-	public function sendMailReview() {
+	public function sendMailReview()
+	{
 		$name = $_POST['postData']['name'] ?? '';
 		$phone = $_POST['postData']['phone'] ?? '';
 		$rate = $_POST['postData']['rate'] ?? null;
@@ -250,11 +258,12 @@ class ApiMethod {
 		}
 	}
 
-	public function setCityId() {
-		$cityId = $_POST['postData']['city_id'] ?? '';
-		$cityInf = $_POST['postData']['city_inf'] ?? '';
+	public function setCityId()
+	{
+		$cityId = $_POST['postData']['cityId'] ?? '';
+		$cityInf = $_POST['postData']['cityInf'] ?? '';
 
-		if (!$name || !$phone) {
+		if (!$cityId || !$cityId) {
 			$this->error('Не передан один из параметров');
 		}
 
@@ -267,7 +276,4 @@ class ApiMethod {
 			$this->error('Странная ошибка ^^', 200);
 		}
 	}
-
 };
-
-?>

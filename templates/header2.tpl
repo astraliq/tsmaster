@@ -18,7 +18,7 @@
         <div class="logo__title">
           <a class="logo__link" href="/"> ТехСервис Мастер </a>
         </div>
-        <p class="logo__subtitle">ремонт бытовой техники в <span class="sity_sity"></span></p>
+        <p class="logo__subtitle">ремонт бытовой техники в <span class="city_city"></span></p>
       </div>
       <div class="tel">
         <div class="tel__icon">
@@ -37,7 +37,7 @@
           </svg>
         </div>
         <div class="tel__number">
-          <a class="tel__link" href="tel:+73432435451"><span class="sity__phone"></span></a>
+          <a class="tel__link" href="tel:+73432435451"><span class="city__phone"></span></a>
         </div>
         <button class="tel__btn">Заказать звонок</button>
       </div>
