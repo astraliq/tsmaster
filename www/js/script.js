@@ -391,8 +391,8 @@ class Mailing {
             setTimeout(function () {
                 renderDiv.classList.add('screen_off');
                 renderDiv.classList.remove('modal_off');
-            }, 2500);
-        }, 2500);
+            }, 4000);
+        }, 4000);
     }
 
     closeModal(dBack, mType) {
@@ -526,7 +526,7 @@ class Mailing {
             .then((data) => {
                 if (data.result === 'OK') {
                     console.log('mail send!');
-                    this.closeModal('darkback', 'modal-window');
+                    this.closeModal('darkback-review', 'modal-review');
                     this.renderOk('review');
                     this.clearInputs(modal);
                 } else {
