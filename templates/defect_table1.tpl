@@ -8,7 +8,7 @@
             <div class="cell-name">
                 <a class="cell-name__link" href="{{ content.mainLink ~ defect.link }}">{{ defect.title }}</a>
             </div>
-            <div class="cell-price">{{ defect.price }} ₽</div>
+            <div class="cell-price">{{ defect.price }} {% if defect.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             {% endfor %}
         </div>
     </div>

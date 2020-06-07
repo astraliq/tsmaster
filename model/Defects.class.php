@@ -18,7 +18,7 @@ class Defects extends Model {
 	}
 
 	public function getByDeviceId($deviceId) {
-		$sql = "SELECT def.`title`, def.`price`, def.`link` FROM `$this->defectsTable` as def LEFT JOIN `$this->defect2deviceTable` as dd ON def.`id` = dd.defect_id WHERE dd.device_id = $deviceId";
+		$sql = "SELECT def.`title`, dd.`price`, def.`link` FROM `$this->defectsTable` as def LEFT JOIN `$this->defect2deviceTable` as dd ON def.`id` = dd.defect_id WHERE dd.device_id = $deviceId";
 		return $this->dataBase->getRows($sql, null);
 	}
 
