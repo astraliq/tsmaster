@@ -726,20 +726,20 @@ class DefectPrices {
             };
         }
 
-        this.btnsRecall.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let parent = btn.parentElement;
-                let nameBlock = parent.querySelector('.client_name');
-                let phoneBlock = parent.querySelector('.client_phone');
-                this.name = nameBlock.value;
-                this.phone = phoneBlock.value;
-                let check = this._checkRecall(nameBlock, phoneBlock);
-                if (check) {
-                    this.sendMailPhoneRequest(parent);
-                }
-            });
-        });
+        // this.defect.forEach((btn) => {
+        //     btn.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         let parent = btn.parentElement;
+        //         let nameBlock = parent.querySelector('.client_name');
+        //         let phoneBlock = parent.querySelector('.client_phone');
+        //         this.name = nameBlock.value;
+        //         this.phone = phoneBlock.value;
+        //         let check = this._checkRecall(nameBlock, phoneBlock);
+        //         if (check) {
+        //             this.sendMailPhoneRequest(parent);
+        //         }
+        //     });
+        // });
     }
 
     _getJson(url, data) {
@@ -776,7 +776,7 @@ class DefectPrices {
             });
     }
 
-    getDefectPrice(device,defect) {
+    getDefectPrice(device, defect) {
         let sendData = {
             apiMethod: 'getDefectPrice',
             postData: {
@@ -790,7 +790,7 @@ class DefectPrices {
                 if (data.result === 'OK') {
                     console.log('GET');
                 } else {
-                    console.log('ERROR_GET);
+                    console.log('ERROR_GET');
                 }
             })
             .catch((error) => {

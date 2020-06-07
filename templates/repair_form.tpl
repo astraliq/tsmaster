@@ -13,7 +13,7 @@
                         <select class="select input_margin device" type="text" id="device_select">
                             <option class="form__option" value=""></option>
                             {% for device in content.devices %}
-                            <option class="form__option" value="">{{ device.title }}</option>
+                            <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title }}</option>
                             {% endfor %}
                         </select>
                     </div>
