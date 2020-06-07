@@ -11,22 +11,15 @@ class Sity {
         this.darkBack = document.querySelector('.darkback_sities');
         this.modalBlockSities = document.querySelector('.modal_block-sities');
         this.result = true;
-<<<<<<< HEAD
-=======
         this.informationSity = 0;
         this.informationBlock = document.querySelector('.inf_data');
->>>>>>> pr/9
     }
 
     async _readData(url) {
         let response = await fetch(url);
         this.data = await response.json();
         console.log(this.data);
-<<<<<<< HEAD
-        this.showBlockSities(this.data);
-=======
         if (this.result == 'true') this.showBlockSities(this.data);
->>>>>>> pr/9
     }
 
     showBlockSities(data) {
@@ -64,8 +57,6 @@ class Sity {
         });
     }
 
-<<<<<<< HEAD
-=======
     checkInformation() {
         this.informationSity = this.informationBlock.dataset.city_id;
         this.numberSity = this.informationSity;
@@ -80,18 +71,13 @@ class Sity {
         }
     }
 
->>>>>>> pr/9
     closeModalSities() {
         this.darkBack.classList.add('modal_off');
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
 
-<<<<<<< HEAD
-        this.showSity(this.data);
-=======
         setTimeout(() => this.showSity(this.data), 100);
 
->>>>>>> pr/9
         this.result = false;
     }
 
@@ -104,17 +90,6 @@ class Sity {
 
         this.nameSity.innerHTML = town;
         this.phoneSity.innerHTML = data[number].phone;
-<<<<<<< HEAD
-    }
-
-    init() {
-
-        if (this.result) {
-            this._readData(this.urlSity);
-        } else {
-            this.closeModalSities();
-        }
-=======
 
         this.setCityId(this.numberSity, this.result);
     }
@@ -164,7 +139,6 @@ class Sity {
         // } else {
         //     this.closeModalSities();
         // }
->>>>>>> pr/9
     }
 }
 
