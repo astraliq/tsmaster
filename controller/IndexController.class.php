@@ -77,7 +77,8 @@ class IndexController extends Controller {
         }
         
         // echo '<pre>';
-        // print_r( $this->serviceItems);
+        // print_r( $this->cityId);
+        // print_r( $this->cityInf);
         // echo '</pre>';
         // exit();
 
