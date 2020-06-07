@@ -43,11 +43,11 @@
                             </div>
                             <div class="gallery">
                                 <ul class="images">
-                                    <li><img src="./img/top-slider/top-slider_01.jpg"></li>
-                                    <li><img src="./img/top-slider/top-slider_02.jpg"></li>
-                                    <li><img src="./img/top-slider/top-slider_03.jpg"></li>
-                                    <li><img src="./img/top-slider/top-slider_04.jpg"></li>
-                                    <li><img src="./img/top-slider/top-slider_05.jpg"></li>
+                                    <li><img src="./img/top-slider/banner_washing_machine.jpg"></li>
+                                    <li><img src="./img/top-slider/banner_dishwasher.jpg"></li>
+                                    <li><img src="./img/top-slider/banner_fridge.jpg"></li>
+                                    <li><img src="./img/top-slider/banner_oven.jpg"></li>
+                                    <li><img src="./img/top-slider/banner_cooking_surface.jpg"></li>
                                 </ul>
                             </div>
                             <button class="arrow next">></button>
