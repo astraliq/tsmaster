@@ -23,8 +23,6 @@
                     <div class="before_2">
                         <select class="select input_margin defect" type="text" id="defect_select">
                             <option class="form__option" value=""></option>
-                            <option class="form__option" value="">Не стирает</option>
-                            <option class="form__option" value="">Не сливает воду</option>
                         </select>
                     </div>
                     <input class="input client_phone" name="phone" type="text" maxlength="16" placeholder="Номер телефона" />

@@ -18,7 +18,7 @@ class Defects extends Model {
 	}
 
 	public function getByDeviceId($deviceId) {
-		$sql = "SELECT def.`title`, dd.`price`, def.`link` FROM `$this->defectsTable` as def LEFT JOIN `$this->defect2deviceTable` as dd ON def.`id` = dd.defect_id WHERE dd.device_id = $deviceId";
+		$sql = "SELECT def.`id`, def.`title`, def.`link`, dd.`price` FROM `$this->defectsTable` as def LEFT JOIN `$this->defect2deviceTable` as dd ON def.`id` = dd.defect_id WHERE dd.device_id = $deviceId";
 		return $this->dataBase->getRows($sql, null);
 	}
 
@@ -27,6 +27,14 @@ class Defects extends Model {
 			'title' => $title
 		];
 		return $this->dataBase->uniSelect($this->defectsTable, $whereObject);
+	}
+
+	public function getDefectPriceByDevice($deviceId, $defectId) {
+		$whereObject = [
+			'device_id' => $deviceId,
+			'defect_id' => $defectId,
+		];
+		return $this->dataBase->uniSelect($this->defect2deviceTable, $whereObject);
 	}
 
 	public function getByBrand($brand) {

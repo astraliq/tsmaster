@@ -23,6 +23,9 @@ class ApiMethod {
 	public $requests;
 	public $mailing;
 	public $reviews;
+	public $defects;
+	public $devices;
+	public $repairTypes;
 	public $regExpPhone = '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/';
 
     public function __construct($method) {
@@ -30,7 +33,10 @@ class ApiMethod {
         $this->dataBase = SQL::getInstance();
         $this->requests = new Requests();
         $this->mailing = new Mailing();
-        $this->reviews = new Reviews();
+	  $this->reviews = new Reviews();
+	  $this->defects = new Defects();
+        $this->devices = new Devices();
+        $this->repairTypes = new RepairTypes();
     }
 
 	//Функция вывода ошибки
@@ -244,6 +250,35 @@ class ApiMethod {
 		if ($result) {
 			$this->reviews->addReview($name, $phone, $rate, $review, $city);
 			$data['result'] = "OK";
+			$this->success($data);
+		} else {
+			$this->error('Ошибка! Запрос не отправлен.', 200);
+		}
+	}
+
+	public function getDefects() {
+		$deviceId = $_POST['postData']['deviceId'] ?? '';
+
+		$defects = $this->defects->getByDeviceId($deviceId);
+
+		if ($defects) {
+			$data['result'] = "OK";
+			$data['defects'] = $defects;
+			$this->success($data);
+		} else {
+			$this->error('Ошибка! Запрос не отправлен.', 200);
+		}
+	}
+
+	public function getDefectPrice() {
+		$deviceId = $_POST['postData']['deviceId'] ?? '';
+		$defectId = $_POST['postData']['defectId'] ?? '';
+
+		$price = $this->defects->getDefectPriceByDevice($deviceId, $defectId);
+
+		if ($price) {
+			$data['result'] = "OK";
+			$data['price'] = $price;
 			$this->success($data);
 		} else {
 			$this->error('Ошибка! Запрос не отправлен.', 200);
