@@ -1376,7 +1376,7 @@ textarea {
 }
 
 .advantage__bullets-right {
-  margin: 0 0 0 0;
+  margin: 0 0 0 25px;
   padding: 0 0 0 0;
   display: flex;
   flex-direction: column;
