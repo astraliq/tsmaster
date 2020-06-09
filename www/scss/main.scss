@@ -667,6 +667,7 @@ textarea {
     }
 }
 
+
 /*модальные окна*/
 
 .darkback,
@@ -877,6 +878,7 @@ textarea {
 .screen_off {
     display: none;
 }
+
 
 /*Карусель*/
 
@@ -1269,7 +1271,9 @@ textarea {
     margin-right: 0.6%;
 }
 
+
 /*карусель*/
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1291,6 +1295,7 @@ textarea {
     z-index: 15;
     box-sizing: border-box;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1353,7 +1358,7 @@ textarea {
 }
 
 .advantage__bullets-right {
-    margin: 0 0 0 0;
+    margin: 0 0 0 25px;
     padding: 0 0 0 0;
     display: flex;
     flex-direction: column;
@@ -1575,6 +1580,7 @@ textarea {
         margin-bottom: 65px;
     }
 }
+
 
 /*.form-search__items {}*/
 

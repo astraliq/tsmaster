@@ -14,10 +14,10 @@
     {% include 'header.tpl' %}
     <div class="container">
         <main class="main-blocks">
-        <!-- modal window -->
-        {% include 'modal_substrate1.tpl' %}
+            <!-- modal window -->
+            {% include 'modal_substrate1.tpl' %}
             <section class="left-part">
-            {% include 'service_menu2.tpl' %}                           
+                {% include 'service_menu2.tpl' %}
                 <div class="action action_margin">
                     <form class="action-form" action="#">
                         <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
@@ -35,17 +35,18 @@
                     <div id="carousel" class="carousel screen_off">
                         <div id="points" class="prev next"></div>
                         <div id="carousel_1" class="carousel_1">
-                        <div class="prev_1 next_1"></div>
-                        <div class="button-reviews"></div>
-                        <div class="substrate2"></div>
-                        <div class="cross2"></div>
-                        <div class="modal_rewiew"></div>
+                            <div class="prev_1 next_1"></div>
+                            <div class="button-reviews"></div>
+                            <div class="substrate2"></div>
+                            <div class="cross2"></div>
+                            <div class="modal_rewiew"></div>
                         </div>
                     </div>
                     <!-- карусель малая -->
                     <div id="carousel_2" class="carousel_2">
                         <button class="arrow_2 prev_2"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
                         <div class="gallery_2">
+                            <a name="reviews"></a>
                             <ul class="images_2">
                                 <li>
                                     <div class="reviews-part__item">
@@ -116,8 +117,8 @@
                             </ul>
                         </div>
                         <button class="arrow_2 next_2"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
-                    </!---->
-                </div>
+                        </!---->
+                    </div>
             </section>
             <section class="right-part">
                 <div class="container3">
@@ -137,7 +138,8 @@
                         </section>
                         <section class="advantage advantage_margin">
                             <div class="container3">
-                                <div class="section__title section__title_black section__title_margin">Почему нам доверяют</div>
+                                <div class="section__title section__title_black section__title_margin">
+                                    <a name="advantage"></a>Почему нам доверяют</div>
                                 <div class="advantage__bullets">
                                     <div class="advantage__bullets-left">
                                         <div class="bullets__item bullets_margin">
@@ -172,7 +174,7 @@
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>
-                        {% include 'repair_form.tpl' %}  
+                        {% include 'repair_form.tpl' %}
                         <section class="brand brand_margin">
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin">ремонт {{content.otherBrandSectionTitle}} брендов</div>
@@ -197,18 +199,36 @@
                                 <div class="brand-items">
                                     <div id="carousel_br" class="carousel_br">
                                         <button class="arrow_br prev_br"><</button>
-                                        <div class="gallery_br">                                            
+                                        <div class="gallery_br">
                                             <ul class="image_br">
-                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
-                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
-                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
-                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
-                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
-                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
-                                                <li><a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a></li>
-                                                <li><a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a></li>
-                                                <li><a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a></li>
-                                            </ul>                                            
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
+                                                </li>
+                                            </ul>
                                         </div>
                                         <button class="arrow_br next_br">></button>
                                     </div>
@@ -219,7 +239,7 @@
                         <section class="services-style">
                             <div class="container3">
                                 <div class="section__title section__title_margin">
-                                    другие услуги<br>наших мастеров
+                                    <a name="services"></a>другие услуги<br>наших мастеров
                                 </div>
                                 <div class="services-items services-items_margin">
                                     {% for menu,data in content.serviceItems %}
@@ -235,7 +255,8 @@
                         </section>
                         <section class="terms terms_margin">
                             <div class="container3">
-                                <div class="section__title section__title_black section__title_margin">условия обслуживания</div>
+                                <div class="section__title section__title_black section__title_margin">
+                                    <a name="terms"></a>условия обслуживания</div>
                                 <p class="section__text">
                                     Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
                                     она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.</p>
@@ -244,10 +265,10 @@
                                 </p>
                             </div>
                         </section>
-                        {% include 'question_form.tpl' %} 
+                        {% include 'question_form.tpl' %}
                         <!-- <section class="about about_margin">
                             <div class="container3">
-                                <div class="section__title section__title_margin">о компании</div>
+                                <div class="section__title section__title_margin"><a name="about"></a>о компании</div>
                                 <div class="about__text">
                                     <p class="section__text">
                                         Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
@@ -282,8 +303,8 @@
                 return false;
             });
         });
-    </script>
-    
+        </script>
+
 </body>
 
 </html>
