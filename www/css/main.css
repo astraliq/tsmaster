@@ -1376,7 +1376,7 @@ textarea {
 }
 
 .advantage__bullets-right {
-  margin: 0 0 0 0;
+  margin: 0 0 0 25px;
   padding: 0 0 0 0;
   display: flex;
   flex-direction: column;
@@ -2021,4 +2021,16 @@ textarea {
 
 .planb_b {
   font-weight: 700;
+}
+
+.bg_violet {
+  background-color: #ee47fd;
+}
+
+.bg_orange {
+  background-color: #f86844;
+}
+
+.bg_green {
+  background-color: #4dd16a;
 }

@@ -38,7 +38,7 @@
                         <div id="carousel" class="carousel">
                             <button class="arrow prev"><</button>
                             <div class="cause">
-                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master cause_btn {{ content.bg_class }}">Вызвать мастера!</div>
                                 <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                             <div class="gallery">

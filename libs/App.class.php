@@ -45,6 +45,15 @@ class App {
 		//	echo ($controllerName)."<br>";
 			$methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
 		//	echo ($methodName)."<br>";
+			
+									// определяем страницу с брендом
+			$brand = explode("_",$_GET['action'])[0];
+			if (array_search($brand, Config::get('brands'))) {
+				$_GET['brand'] = $brand;
+				$methodName = explode($brand . "_", $_GET['action'])[1];
+			}
+									// ------------------------------
+
 
 			$controller = new $controllerName(); //создаем контролер класса с указанным именем
 		/*поиск контролера*/	

@@ -56,4 +56,22 @@ $config['services_items'] = [
     ],
   ];
 
+  $config['brands'] = [
+    'atlant',
+    'beko',
+    'braun',
+    'bosch', 'siemens',
+    'electrolux',
+    'gorenje',
+    'delonghi',
+    'haier',
+    'krups', 'moulinex', 'rowenta', 'tefal' ,
+    'midea',
+    'lg',
+    'panasonic',
+    'philips',
+    'samsung',
+    'whirlpool',
+    'xiaomi', 'mijia', 'bork', 'aeg', 'candy', 'gaggenau', 'indesit', 'kenwwod', 'korting', 'supra', 'kitfort', 'redmond', 'elenberg', 'rolsen', 'vitek', 'scarlett', 'sitronics',
+];
 
