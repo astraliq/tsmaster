@@ -9,9 +9,10 @@
             <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона" />
             <textarea class="text-block input_margin defect" rows="4" cols="29" placeholder="Какая у вас поломка?"></textarea>
             <select class="select input_margin device" type="text">
-                {% for device in content.devices %}
+                <option class="form__option" value="" data-id="">{{ content.pageTitle3 }}</option>
+                {% for device in content.devices %} {% if content.pageTitle3 != device.title %}
                 <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title }}</option>
-                {% endfor %}
+                {% endif %} {% endfor %}
             </select>
             <button class="button button-master section__title_margin" type="button">Вызвать мастера</button>
             <div class="modal-text modal-text_margin">

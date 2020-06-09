@@ -132,7 +132,7 @@
                             <div class="banner_title_block" style="opacity: 0"></div>
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
-                                <div class="btn-master cause_btn">Вызвать мастера!</div>
+                                <div class="btn-master cause_btn {{ content.bg_class }}">Вызвать мастера!</div>
                                 <div class="btn-master-block cause_btn_block">&#10004;</div>
                             </div>
                         </section>
