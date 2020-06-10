@@ -619,6 +619,7 @@ textarea {
   height: 50px;
   width: 100%;
   line-height: 50px;
+  color: #000;
 }
 
 .cell-name__link:active {

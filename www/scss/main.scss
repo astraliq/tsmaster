@@ -599,6 +599,7 @@ textarea {
         height: 50px;
         width: 100%;
         line-height: 50px;
+        color: $text__main_color;
         &:active {
             color: $text__main_color;
         }
