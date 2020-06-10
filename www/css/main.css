@@ -611,6 +611,35 @@ textarea {
   font-weight: 400;
   border-top: 1px solid black;
   border-right: 1px solid black;
+  cursor: pointer;
+}
+
+.cell-name__link {
+  text-decoration: none;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+}
+
+.cell-name__link:active {
+  color: #000;
+}
+
+.cell-name__link:visited {
+  color: #000;
+}
+
+.cell-name:hover {
+  background-color: #66a7c5;
+}
+
+.cell-name:hover .cell-name__link {
+  color: whitesmoke;
+}
+
+.cell-name:hover + .cell-price {
+  background-color: #66a7c5;
+  color: whitesmoke;
 }
 
 .cell-price {
