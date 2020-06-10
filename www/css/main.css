@@ -1379,7 +1379,7 @@ textarea {
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  z-index: 15;
+  z-index: 3;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;

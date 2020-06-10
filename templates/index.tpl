@@ -79,7 +79,7 @@
                             <img class="bullets__img" src="img/advantage/advantage_02.png" alt="бесплатный выезд">
                         </div>
                     </div>
-                    <div class="advantage__bullets-discount hide" style="opacity: 0; z-index: 100; height: 350px; width: 450px; left: 30%;"></div>
+                    <div class="advantage__bullets-discount hide" style="opacity: 0; z-index: 5; height: 350px; width: 450px; left: 30%;"></div>
                     <div class="advantage__bullets-discount">
                         <p class="advantage__bullets-discount_title">ремонт со скидкой</p>
                         <span class="advantage__bullets-discount_number">{{content.discount}}20%</span>

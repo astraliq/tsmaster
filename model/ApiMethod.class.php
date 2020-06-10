@@ -59,82 +59,6 @@ class ApiMethod {
 
 	}
 
-	public function login() {
-		//Получаем логин и пароль из postData
-		$login = $_POST['postData']['login'] ?? '';
-		$password = $_POST['postData']['password'] ?? '';
-
-		//Если нет логина или пароля вызываем ошибку
-		if (!$login || !$password) {
-			$this->error('Логин или пароль не введены');
-		}
-
-		//приводим пароль к тому же виду, как он хранится в базе
-		$password = SQL::cryptPassword($password, null);
-
-		$whereObj = [
-			'login' => $login,
-			'password' => $password
-		];
-
-		//пытаемся найти пользователя
-		$user = $this->dataBase->uniSelect($this->userModel->usersTable, $whereObj);
-		//Если пользователь найден, записываем информацию о пользователе в сессию,
-		//что бы к ней можно было обратиться с любой страницы
-		//Если пользователь не найден, возвращаем ошибку
-		// /index.php?path=user/createorder
-		if ($user) {
-			$_SESSION['user'] = $user;
-			$data['result'] = 'OK';
-			$data['referrer'] = $_SESSION['referrer']; 
-			if (!$this->cartModel->getUserCart($_SESSION['user']['id']) && !empty($_COOKIE['cart'])) {
-				if ($this->cartModel->insertCookieInCart($_COOKIE['cart'], $_SESSION['user']['id'])) {
-					$this->success($data);
-				}
-			}
-			$this->success($data);
-		} else {
-			$this->error('Неверный логин или пароль', 200);
-		}
-	}
-
-	public function reg() {
-		//Получаем логин и пароль из postData
-		$login = $_POST['postData']['login'] ?? '';
-		$password = $_POST['postData']['password'] ?? '';
-		$password_repeat = $_POST['postData']['password_repeat'] ?? '';
-		$name = $_POST['postData']['name'] ?? NULL;
-		$surname = $_POST['postData']['surname'] ?? NULL;
-		//Если нет логина или пароля вызываем ошибку
-
-		if (!$login || !$password) {
-			$this->error('Логин или пароль не введены');
-		}
-		if (!$password_repeat) {
-			$this->error('Повторите пароль');
-		}
-		if ($password != $password_repeat) {
-			$this->error('Пароли не совпадают');
-		}
-		if ($this->userModel->checkUser($login)) {
-			$this->error('Пользователь с данным логином уже зарегистрирован');
-		}
-
-		//генерируем запрос и пытаемся добавить пользователя в базу
-		$result = $this->userModel->regUser($login, $password, $name, $surname);
-
-		//Если пользователь найден, записываем информацию о пользователе в сессию,
-		//что бы к ней можно было обратиться с любой страницы
-		//Если пользователь не найден, возвращаем ошибку
-		if ($result) {
-			$_SESSION['user']['login'] = $login;
-			$data['result'] = "OK";
-			$this->success($data);
-		} else {
-			$this->error('Ошибка записи пользователя в БД', 200);
-		}
-	}
-
 	public function sendMailRepairRequest() {
 		$name = $_POST['postData']['name'] ?? '';
 		$phone = $_POST['postData']['phone'] ?? '';
@@ -160,7 +84,7 @@ class ApiMethod {
 		$result = $this->mailing->sendMailRepairRequest($name, $phone, $reqType, $device, $defect, $city);
 
 		if ($result) {
-			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect);
+			$this->requests->addRequestToDB($name, $phone, $reqType, $device, $defect, $city);
 			$data['result'] = "OK";
 			$this->success($data);
 		} else {
