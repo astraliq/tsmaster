@@ -7,14 +7,13 @@ class Requests extends Model {
 		parent::__construct();
     }
 
-	public function addRequestToDB($name, $phone, $reqType, $device = null, $defect = null, $description = null, $city = null) {
+	public function addRequestToDB($name, $phone, $reqType, $device = null, $defect = null, $city = null) {
 		$add = $this->dataBase->uniInsert($this->mailingTable, [
 			'name' => $name,
 			'phone_number' => $phone,
 			'request_type' => $reqType,
 			'device' => $device,
 			'defect' => $defect,
-			'description' => $description,
 			'city' => $city,
 		]);
     	return $add;

@@ -416,6 +416,13 @@ class Mailing {
         });
     }
 
+    clearSelect(modal) {
+        let selects = modal.querySelectorAll('.select');
+        selects.forEach((element) => {
+            element.value = '';
+        });
+    }
+
     _getJson(url, data) {
         return $.post({
             url: url,
@@ -430,6 +437,7 @@ class Mailing {
     }
 
     sendMailRepairRequest(modal) {
+        this.city = document.querySelector('.city__city').innerText;
         let sendData = {
             apiMethod: 'sendMailRepairRequest',
             postData: {
@@ -446,7 +454,8 @@ class Mailing {
                 if (data.result === 'OK') {
                     console.log('mail send!');
                     this.clearInputs(modal);
-                    this.renderOk('repair');
+                    this.clearSelect(modal);
+                    this.renderOk('phone');
                 } else {
                     console.log('ERROR_SENDING');
                 }
@@ -457,6 +466,7 @@ class Mailing {
     }
 
     sendMailMasterRequest(modal) {
+        this.city = document.querySelector('.city__city').innerText;
         let sendData = {
             apiMethod: 'sendMailMasterRequest',
             postData: {
@@ -486,6 +496,7 @@ class Mailing {
     }
 
     sendMailPhoneRequest(modal) {
+        this.city = document.querySelector('.city__city').innerText;
         let sendData = {
             apiMethod: 'sendMailPhoneRequest',
             postData: {
@@ -515,6 +526,8 @@ class Mailing {
     }
 
     sendMailReview(modal) {
+        this.city = document.querySelector('.city__city').innerText;
+
         let sendData = {
             apiMethod: 'sendMailReview',
             postData: {
