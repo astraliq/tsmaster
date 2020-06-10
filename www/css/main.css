@@ -1,4 +1,18 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'Oswald';
+  src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Oswald Bold';
+  src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
 * {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -1358,6 +1372,47 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.advantage__bullets-discount {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 15;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 185px;
+}
+
+.advantage__bullets-discount_title {
+  text-align: center;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.advantage__bullets-discount_number {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-family: "Oswald Bold";
+  text-transform: uppercase;
+  font-size: 90px;
+  color: whitesmoke;
+  line-height: 110px;
+  text-shadow: #1248bd 3px 3px 0;
+}
+
+.advantage__bullets-discount_duration {
+  text-align: center;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-size: 25px;
 }
 
 .advantage__bullets-left {

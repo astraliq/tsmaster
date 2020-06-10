@@ -1330,6 +1330,48 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    &-discount {
+        position: absolute;
+        margin: 0 auto;
+        width: 100%;
+        z-index: 15;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 185px;
+
+        &_title {
+            text-align: center;
+            font-family: $font__third;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        &_number {
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            font-family: $font__third_bold;
+            text-transform: uppercase;
+            font-size: 90px;
+            color: whitesmoke;
+            line-height: 110px;
+            text-shadow: #1248bd 3px 3px 0;
+        }
+
+        &_duration {
+            text-align: center;
+            font-family: $font__third;
+            text-transform: uppercase;
+            font-size: 25px;
+        }
+    }
 }
 
 .advantage__bullets-left {
