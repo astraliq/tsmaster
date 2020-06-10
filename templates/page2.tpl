@@ -151,7 +151,14 @@
                                             <img class="bullets__img" src="../img/advantage/advantage_02.png" alt="бесплатный выезд" width="100" height="100">
                                         </div>
                                     </div>
-                                    <img class="advantage__img" src="../img/advantage/advantage-foto.jpg" width="400" height="auto" alt="Наши примущества">
+                                    {% if content.defectTableId == 2 %}           
+                                    <!-- <img class="advantage__img" src="img/banners/banner-map-ekb.jpg" width="400" height="auto" alt="Наши примущества"> -->
+                                    <div class="map" style="width: 400px; height: 320px;">
+                                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acd56451feb85698ba9f2e9b3d73a50a79fcc1dac1546c1740543e3e8620723d3&amp;width=400&amp;height=320&amp;lang=ru_RU&amp;scroll=true"></script>
+                                    </div>
+                                    {% else %} 
+                                    <img class="advantage__img" src="img/banners/banner-info.jpg" width="400" height="auto" alt="Наши примущества">
+                                    {% endif %} 
                                     <div class="advantage__bullets-right">
                                         <div class="bullets__item bullets_margin">
                                             <img class="bullets__img" src="../img/advantage/advantage_03.png" alt="бесплатная диагностика" width="100" height="100">
