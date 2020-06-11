@@ -82,8 +82,8 @@
                     <div class="advantage__bullets-discount hide" style="opacity: 0; z-index: 5; height: 350px; width: 450px; left: 30%;"></div>
                     <div class="advantage__bullets-discount">
                         <p class="advantage__bullets-discount_title">ремонт со скидкой</p>
-                        <span class="advantage__bullets-discount_number">{{content.discount}}20%</span>
-                        <p class="advantage__bullets-discount_duration">до конца июня!</p>
+                        <span class="advantage__bullets-discount_number">{{content.jsonDb.skidka.размер}}</span>
+                        <p class="advantage__bullets-discount_duration">{{content.jsonDb.skidka.до}}</p>
                     </div>
                     <img class="advantage__img" src="img/banners/banner-skidka.jpg" width="424" height="341">
                     <div class="advantage__bullets-right">
