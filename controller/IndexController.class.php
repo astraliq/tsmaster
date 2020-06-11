@@ -137,7 +137,7 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
-            'bg_class' => '',
+            'bg_class' => 'bg_orange',
         ];
         
         return $arrayContent;
@@ -191,7 +191,7 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
-            'bg_class' => '',
+            'bg_class' => 'bg_orange',
         ];
         
         return $arrayContent;
@@ -245,7 +245,7 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
-            'bg_class' => 'bg_violet',
+            'bg_class' => '',
         ];
         
         return $arrayContent;
@@ -299,7 +299,7 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
-            'bg_class' => 'bg_orange',
+            'bg_class' => '',
         ];
         
         return $arrayContent;
@@ -353,7 +353,7 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
-            'bg_class' => 'bg_green',
+            'bg_class' => '',
         ];
         
         return $arrayContent;
