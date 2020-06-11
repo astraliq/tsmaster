@@ -172,6 +172,10 @@ class City {
     }
 }
 
-let city = new City;
-city.init();
+window.onload = function () {
+    let city = new City;
+    city.init();
+}
+
+
 

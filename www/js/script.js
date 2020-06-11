@@ -33,6 +33,8 @@ if (carousel) {
             position = -1 * width * pointData; //меняем позицию слайдера согласно точке
             list.style.marginLeft = position + 'px'; //обращение к стилю тэга ul
             pointActive(pointData);
+            numPoint = pointData;
+            changeColorButton(numPoint);
         });
     });
 
@@ -47,6 +49,7 @@ if (carousel) {
         numPoint--; //данные для точек
         if (numPoint < 0) numPoint = numberImg - 1;
         pointActive(numPoint);
+        changeColorButton(numPoint);
     };
 
     //сдвиг в право Размеры зависят от картинок в верстке
@@ -60,6 +63,7 @@ if (carousel) {
         numPoint++; //данные для точек
         if (numPoint > 4) numPoint = 0;
         pointActive(numPoint);
+        changeColorButton(numPoint);
     };
     //Делаем зависимость точек
     //подстветка точек
@@ -68,6 +72,24 @@ if (carousel) {
             elem.classList.remove('slider__point_active');
         });
         point[num].classList.add('slider__point_active');
+    }
+
+    //подмена стилей у кнопки вызова
+    function changeColorButton(numberImage) {
+        let buttonCall = document.querySelector('.btn-master');
+        let buttonDop = document.querySelector('.btn-master-block');
+
+        if (numberImage == 0 || numberImage == 1) {
+            buttonCall.classList.remove('color_btn_1');
+            buttonDop.classList.remove('color_btn_1');
+            buttonCall.classList.add('color_btn_2');
+            buttonDop.classList.add('color_btn_2');
+        } else {
+            buttonCall.classList.remove('color_btn_2');
+            buttonDop.classList.remove('color_btn_2');
+            buttonCall.classList.add('color_btn_1');
+            buttonDop.classList.add('color_btn_1');
+        }
     }
 }
 

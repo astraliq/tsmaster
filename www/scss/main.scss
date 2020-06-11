@@ -1,4 +1,4 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -372,7 +372,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form.png');
+    background-image: url("../img/action-form/action-form.png");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -594,7 +594,6 @@ textarea {
     border-top: 1px solid black;
     border-right: 1px solid black;
     cursor: pointer;
-
     &__link {
         text-decoration: none;
         height: 50px;
@@ -613,7 +612,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        & + .cell-price {
+        &+.cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -692,6 +691,7 @@ textarea {
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -904,6 +904,7 @@ textarea {
     display: none;
 }
 
+
 /*Карусель*/
 
 .carousel {
@@ -970,14 +971,19 @@ textarea {
     position: absolute;
     top: 45%;
     padding: 0;
-    background: #fff;
+    background: $text__menu_color;
     border-radius: 2px;
-    border: 1px solid #fff;
+    border: 1px solid $text__menu_color;
     box-shadow: 3px 3px 5px #000;
     font-size: 24px;
     line-height: 24px;
     color: #444;
     display: block;
+}
+
+button.arrow img {
+    width: 10px;
+    margin: 0 auto;
 }
 
 .arrow_1 {
@@ -1053,8 +1059,6 @@ textarea {
     top: 0;
     left: 0;
     font-family: $font__second;
-    background-color: $bgcolor_blue;
-    color: $text__second_color;
     border-radius: 15px;
     font-size: 34px;
     line-height: 34px;
@@ -1062,6 +1066,16 @@ textarea {
     padding: 15px;
     display: block;
     z-index: 10;
+}
+
+.color_btn_1 {
+    background-color: $bgcolor_blue;
+    color: $text__second_color;
+}
+
+.color_btn_2 {
+    background-color: $bg__stars_color;
+    color: $text__main_color;
 }
 
 .cause_btn_block {
@@ -1086,7 +1100,7 @@ textarea {
     outline: none;
 }
 
-.cause:hover .cause_btn {
+.cause:hover .color_btn_1 {
     background: $btn_color;
     cursor: pointer;
     color: $text__main_color;
@@ -1095,10 +1109,10 @@ textarea {
     box-sizing: border-box;
 }
 
-.cause:hover .cause_btn_block {
-    background: $btn_color;
+.cause:hover .color_btn_2 {
+    background: $logo__text_color;
     cursor: pointer;
-    color: $text__main_color;
+    color: $text__second_color;
     border: 5px solid $text__second_color;
     padding: 10px;
     box-sizing: border-box;
@@ -1295,7 +1309,9 @@ textarea {
     margin-right: 0.6%;
 }
 
+
 /*карусель*/
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1318,6 +1334,7 @@ textarea {
     box-sizing: border-box;
 }
 
+
 /*стрелка якорь переход на верх*/
 
 .advantage_margin {
@@ -1333,7 +1350,6 @@ textarea {
     align-items: center;
     position: relative;
     height: 320px;
-
     &-discount {
         position: absolute;
         margin: 0 auto;
@@ -1347,14 +1363,12 @@ textarea {
         flex-direction: column;
         justify-content: space-between;
         height: 185px;
-
         &_title {
             text-align: center;
             font-family: $font__third;
             text-transform: uppercase;
             font-size: 30px;
         }
-
         &_number {
             text-align: center;
             margin: 0 auto;
@@ -1366,7 +1380,6 @@ textarea {
             line-height: 110px;
             text-shadow: #1248bd 3px 3px 0;
         }
-
         &_duration {
             text-align: center;
             font-family: $font__third;
@@ -1482,7 +1495,7 @@ textarea {
     &__request {
         margin: 0 0 0 0;
         padding: 0 8% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
@@ -1645,6 +1658,7 @@ textarea {
     }
 }
 
+
 /*.form-search__items {}*/
 
 .form__items {
@@ -1686,7 +1700,7 @@ textarea {
 .before_1 {
     position: relative;
     &::before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 80px;
@@ -1701,7 +1715,7 @@ textarea {
 .before_2 {
     position: relative;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1716,7 +1730,7 @@ textarea {
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -1989,7 +2003,7 @@ textarea {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -2008,7 +2022,7 @@ textarea {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
