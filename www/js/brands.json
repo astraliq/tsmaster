@@ -1,0 +1,51 @@
+[{
+        "id": 0,
+        "brandName": "Atlant",
+        "imgBrand": "01_atlant.png"
+    },
+    {
+        "id": 1,
+        "brandName": "Beko",
+        "imgBrand": "02_beko.png"
+    },
+    {
+        "id": 2,
+        "brandName": "Braun",
+        "imgBrand": "03_braun.png"
+    },
+    {
+        "id": 3,
+        "brandName": "Bosch",
+        "imgBrand": "04_bosch.png"
+    },
+    {
+        "id": 4,
+        "brandName": "Siemens",
+        "imgBrand": "05_siemens.png"
+    },
+    {
+        "id": 5,
+        "brandName": "Electrolux",
+        "imgBrand": "06_electrolux.png"
+    },
+    {
+        "id": 6,
+        "brandName": "Gorenje",
+        "imgBrand": "07_gorenje.png"
+    },
+    {
+        "id": 7,
+        "brandName": "Delonghi",
+        "imgBrand": "08_delonghi.png"
+    },
+    {
+        "id": 8,
+        "brandName": "Haier",
+        "imgBrand": "09_haier.png"
+    },
+    {
+        "id": 9,
+        "brandName": "Krups",
+        "imgBrand": "10_krups.png"
+    }
+]

@@ -132,8 +132,8 @@
                             <div class="banner_title_block" style="opacity: 0"></div>
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
-                                <div class="btn-master cause_btn {{ content.bg_class }}">Вызвать мастера!</div>
-                                <div class="btn-master-block cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block color_btn_1">&#10004;</div>
                             </div>
                         </section>
                         <section class="advantage advantage_margin">
@@ -205,10 +205,10 @@
                                 <!-- Карусель брендов -->
                                 <div class="brand-items">
                                     <div id="carousel_br" class="carousel_br">
-                                        <button class="arrow_br prev_br"><</button>
+                                        <button class="arrow_br prev_br"><img src="img/reviews/reviews_left.png"></button>
                                         <div class="gallery_br">
                                             <ul class="image_br">
-                                                <li>
+                                                <!--<li>
                                                     <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
                                                 </li>
                                                 <li>
@@ -234,10 +234,10 @@
                                                 </li>
                                                 <li>
                                                     <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
-                                                </li>
+                                                </li>-->
                                             </ul>
                                         </div>
-                                        <button class="arrow_br next_br">></button>
+                                        <button class="arrow_br next_br"><img src="img/reviews/reviews_right.png"></button>
                                     </div>
                                     <!-- Карусель брендов -->
                                 </div>
