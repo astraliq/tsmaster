@@ -138,7 +138,7 @@
                         </section>
                         <section class="advantage advantage_margin">
                             <div class="container3">
-                                <div class="section__title section__title_black section__title_margin">
+                                <div class="section__title section__title_black section__title_margin section__title_padding">
                                     {% if content.defectTableId == 2 and content.cityId == 0 %} 
                                     <!-- екатеринбург --> 
                                     <a name="advantage"></a>выезд в любой район города екатеринбурга, арамиль, березовский, в. пышму</div>

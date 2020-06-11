@@ -1508,6 +1508,9 @@ button.arrow img {
 .section__title_margin {
   margin-bottom: 30px;
   font-size: 23px;
+}
+
+.section__title_padding {
   padding: 0 150px;
 }
 
