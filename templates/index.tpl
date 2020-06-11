@@ -36,10 +36,10 @@
                     </div> -->
                     <div class="slider__item">
                         <div id="carousel" class="carousel">
-                            <button class="arrow prev"><</button>
+                            <button class="arrow prev"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
                             <div class="cause">
-                                <div class="btn-master cause_btn {{ content.bg_class }}">Вызвать мастера!</div>
-                                <div class="btn-master-block cause_btn_block">&#10004;</div>
+                                <div class="btn-master cause_btn color_btn_2 {{ content.bg_class }}">Вызвать мастера!</div>
+                                <div class="btn-master-block cause_btn_block color_btn_2">&#10004;</div>
                             </div>
                             <div class="gallery">
                                 <ul class="images">
@@ -50,7 +50,7 @@
                                     <li><img src="./img/top-slider/banner_cooking_surface.jpg"></li>
                                 </ul>
                             </div>
-                            <button class="arrow next">></button>
+                            <button class="arrow next"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
                         </div>
                     </div>
                     <div class="slider__item">
