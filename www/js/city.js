@@ -62,7 +62,6 @@ class City {
         this.informationCity = this.informationBlock.dataset.city_id;
         this.numberCity = this.informationCity;
         this.result = this.informationBlock.dataset.city_inf;
-        console.log(this.informationCity + ' ' + this.result);
 
         if (this.result == 1) {
             this._readData(this.urlCity);
@@ -83,7 +82,6 @@ class City {
         this.result = 1;
         this.onModalCities();
         this.showBlockSities(this.data);
-        console.log('=====' + this.result);
     }
 
     onModalCities() {
@@ -104,7 +102,6 @@ class City {
 
     showCity(data) {
         let number = this.numberCity;
-        console.log(data[number].town + ' ' + data[number].adress + ' ' + data[number].phone);
 
         let town = data[number].town;
         data[number].town == 'Тюмен' ? town = town + 'и' : town = town + 'е';
@@ -114,7 +111,6 @@ class City {
         this.phoneCity.innerHTML = data[number].phone;
 
         this.setCityId(this.numberCity, this.result);
-        console.log(this.numberCity, this.result);
     }
 
     _getJson(url, data) {
