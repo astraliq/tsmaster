@@ -268,9 +268,10 @@
                             </div>
                         </section>
                         {% include 'question_form.tpl' %}
-                        <!-- <section class="about about_margin">
+                        <section class="about about_margin">
                             <div class="container3">
-                                <div class="section__title section__title_margin"><a name="about"></a>о компании</div>
+                                <div class="section__title section__title_margin">
+                                    <a name="about"></a>о компании</div>
                                 <div class="about__text">
                                     <p class="section__text">
                                         Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
@@ -282,7 +283,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </section> -->
+                        </section>
                     </div>
             </section>
             </div>
