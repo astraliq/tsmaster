@@ -124,17 +124,20 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
-                            {% if content.isBrand != 1 and content.defectTableId == 1 %}  
+                            {% if content.isBrand != 1 and content.defectTableId == 1 %} 
+                             <!--заголовок 2 страницы  -->
                             <div class="banner_title_block-1">       
                                 <h2 class="banner_title-h2-1 {{content.hStyle}}"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}</h2>
                             </div>
                             <div class="banner_title_block-1" style="opacity: 0"></div>
                             {% elseif content.isBrand == 1 and content.defectTableId == 1 %}
+                            <!--заголовок 2 страницы с брендом  -->
                             <div class="banner_title_block-1">   
                                 <h2 class="banner_title-h2-3"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% else %}
+                            <!--заголовок 3 страницы  -->
                             <div class="banner_title_block-2">   
                                 <h2 class="banner_title-h2-2">{{content.pageTitle}}</h2>
                             </div>
