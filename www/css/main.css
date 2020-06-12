@@ -548,6 +548,12 @@ textarea {
   position: relative;
 }
 
+.top-banner__brand {
+  position: relative;
+  background-color: white;
+}
+
+.banner_brand_block,
 .banner_title_block {
   position: absolute;
   display: -moz-flex;
@@ -569,6 +575,13 @@ textarea {
   font-weight: 300;
   text-align: center;
   line-height: 40px;
+}
+
+.banner_brand_block {
+  top: 120px;
+  left: 0px;
+  width: 150px;
+  height: 150px;
 }
 
 .form-question_margin {

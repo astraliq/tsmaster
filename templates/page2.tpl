@@ -129,6 +129,11 @@
                                 <h2 class="banner_title-h2">{{content.pageTitle}}</h2>
                             {% endif %} 
                             </div>
+                            {% if content.isBrand == 1 %} 
+                            <div class="banner_brand_block">
+                                <img class="top-banner__brand" src="img/brands/{{ attribute(content.brands, content.brand) }}" width="150" alt="{{content.brand}}" title="{{content.brand}}"> 
+                            </div>
+                            {% endif %} 
                             <div class="banner_title_block" style="opacity: 0"></div>
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">

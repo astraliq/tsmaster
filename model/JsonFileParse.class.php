@@ -9,8 +9,8 @@ class JsonFileParse extends Model {
 		parent::__construct();
     }
 
-	public function getArrayFromFile() {
-		$string = file_get_contents(Config::get('path_root') . '/../db.json');
+	public function getArrayFromFile($file) {
+		$string = file_get_contents(Config::get('path_root') . $file);
 		// $string = file_get_contents('../db.json');
 		if ($string === false) {
 		    echo 'Ошибка чтения файла'; 
@@ -18,13 +18,16 @@ class JsonFileParse extends Model {
 		}
 		
 		$json_a = json_decode($string, true);
+
 		// echo '<pre>'; 
-		// print_r($json_a);
+		// print_r(Config::get('path_root'));
 		// echo '</pre>';
 		// exit;
+		
 		if ($json_a === null) {
-		    echo 'Файл пустой или имеет синтаксические ошибки: не должно быть одинарных кавычек и не должно быть завершающей запятой (без последующего элемента)'; 
-		    exit;
+		//     echo 'Файл пустой или имеет синтаксические ошибки: не должно быть одинарных кавычек и не должно быть завершающей запятой (без последующего элемента)'; 
+			echo '//--';
+		//     exit;
 		}
 		// echo '<pre>'; 
 		// print_r($json_a);

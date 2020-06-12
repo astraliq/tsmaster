@@ -9,7 +9,7 @@ class Page404Controller extends Controller {
     public function __construct() {
         parent::__construct();
         $this->json = new JsonFileParse();
-        $this->jsonDb = $this->json->getArrayFromFile();
+        $this->jsonDb = $this->json->getArrayFromFile('/../db.json');
     } 
 
 	public function index($data) {

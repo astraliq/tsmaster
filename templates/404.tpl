@@ -34,8 +34,9 @@
                             <input class="input input_margin client_phone" type="text" placeholder="Номер телефона" />
                             <textarea class="text-block input_margin defect" rows="4" cols="29" placeholder="Какая у вас поломка?"></textarea>
                             <select class="select input_margin device" type="text">
-                                <option class="form__option" value="">стиральная машина</option>
-                                <option class="form__option" value="">посудомоечная машина</option>
+                                {% for device in content.devices %}
+                                <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title }}</option>
+                                {% endfor %}
                             </select>
                             <button class="button button-master section__title_margin" type="button">Вызвать мастера</button>
                             <div class="modal-text modal-text_margin">

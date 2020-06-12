@@ -20,7 +20,7 @@ class IndexController extends Controller {
         $this->defects = new Defects();
         $this->devices = new Devices();
         $this->repairTypes = new RepairTypes();
-        $this->jsonDb = $this->json->getArrayFromFile();
+        $this->jsonDb = $this->json->getArrayFromFile('/../db.json');
         $this->cityId = isset($_SESSION['cityId']) ? $_SESSION['cityId'] : 0;
         $this->cityInf = isset($_SESSION['cityInf']) ? $_SESSION['cityInf'] : 1;
     } 
@@ -51,7 +51,7 @@ class IndexController extends Controller {
         $this->pageId = 1;
 
         // echo '<pre>';
-        // print_r( $this->devices->getAllDevices());
+        // print_r( $data['brands']);
         // echo '</pre>';
         // exit();
 
@@ -84,6 +84,9 @@ class IndexController extends Controller {
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
             'devices' => $this->devices->getAllDevices(),
+            'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => '',
         ];
         return $arrayContent;
@@ -137,6 +140,8 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => 'bg_orange',
         ];
         
@@ -191,6 +196,8 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => 'bg_orange',
         ];
         
@@ -245,6 +252,8 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => '',
         ];
         
@@ -299,6 +308,8 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => '',
         ];
         
@@ -353,6 +364,8 @@ class IndexController extends Controller {
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
             'isBrand' => $this->isBrand,
+            'brands' => $data['brands'],
+            'brand' => $data['brand'],
             'bg_class' => '',
         ];
         
