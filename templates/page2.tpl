@@ -131,7 +131,7 @@
                             <div class="banner_title_block-1" style="opacity: 0"></div>
                             {% elseif content.isBrand == 1 and content.defectTableId == 1 %}
                             <div class="banner_title_block-1">   
-                                <h2 class="banner_title-h2-1 {{content.hStyle}}"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
+                                <h2 class="banner_title-h2-3"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% else %}

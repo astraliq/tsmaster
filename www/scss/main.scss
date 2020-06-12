@@ -541,7 +541,8 @@ textarea {
 }
 
 .banner_title-h2-1,
-.banner_title-h2-2 {
+.banner_title-h2-2,
+.banner_title-h2-3 {
     font-size: 32px;
     text-transform: uppercase;
     font-family: $font__third;
@@ -559,6 +560,14 @@ textarea {
 .banner_title-h2-2 {
     font-size: 30px;
     letter-spacing: -1px;
+}
+
+.banner_title-h2-3 {
+    font-size: 24px;
+    & span {
+        font-size: 29px;
+        margin: -10px 0 -10px 0;
+    }
 }
 
 .banner_brand_block {
