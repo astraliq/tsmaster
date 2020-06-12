@@ -199,6 +199,7 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => 'bg_orange',
+            'hStyle' => 'font_size28',
         ];
         
         return $arrayContent;

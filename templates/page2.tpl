@@ -124,17 +124,23 @@
                 <div class="container3">
                     <div class="main-style">
                         <section class="top-banner_margin">
-                            <div class="banner_title_block">
-                            {% if content.defectTableId == 2 %}           
-                                <h2 class="banner_title-h2">{{content.pageTitle}}</h2>
-                            {% endif %} 
+                            {% if content.isBrand != 1 and content.defectTableId == 1 %}  
+                            <div class="banner_title_block-1">       
+                                <h2 class="banner_title-h2-1 {{content.hStyle}}"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}</h2>
                             </div>
-                            {% if content.isBrand == 1 %} 
-                            <div class="banner_brand_block">
-                                <img class="top-banner__brand" src="img/brands/{{ attribute(content.brands, content.brand) }}" width="150" alt="{{content.brand}}" title="{{content.brand}}"> 
+                            <div class="banner_title_block-1" style="opacity: 0"></div>
+                            {% elseif content.isBrand == 1 and content.defectTableId == 1 %}
+                            <div class="banner_title_block-1">   
+                                <h2 class="banner_title-h2-1 {{content.hStyle}}"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
                             </div>
+                            <div class="banner_title_block-2" style="opacity: 0"></div>
+                            {% else %}
+                            <div class="banner_title_block-2">   
+                                <h2 class="banner_title-h2-2">{{content.pageTitle}}</h2>
+                            </div>
+                            <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% endif %} 
-                            <div class="banner_title_block" style="opacity: 0"></div>
+                            
                             <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>

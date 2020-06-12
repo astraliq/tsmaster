@@ -519,7 +519,8 @@ textarea {
 }
 
 .banner_brand_block,
-.banner_title_block {
+.banner_title_block-1,
+.banner_title_block-2 {
     position: absolute;
     display: -webkit-flex;
     display: -moz-flex;
@@ -534,13 +535,30 @@ textarea {
     align-items: center;
 }
 
-.banner_title-h2 {
-    font-size: 40px;
+.banner_title_block-1 {
+    top: 33px;
+    left: 81px;
+}
+
+.banner_title-h2-1,
+.banner_title-h2-2 {
+    font-size: 32px;
     text-transform: uppercase;
     font-family: $font__third;
     font-weight: 300;
     text-align: center;
     line-height: 40px;
+    letter-spacing: -2px;
+    & span {
+        display: block;
+        font-size: 38px;
+        margin: -5px 0 -5px 0;
+    }
+}
+
+.banner_title-h2-2 {
+    font-size: 30px;
+    letter-spacing: -1px;
 }
 
 .banner_brand_block {
@@ -2013,6 +2031,10 @@ button.arrow img {
     &_tel {
         font-size: 35px;
     }
+}
+
+.font_size28 {
+    font-size: 28px;
 }
 
 //=========== plan b studio ===============\\
