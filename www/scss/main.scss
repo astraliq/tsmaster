@@ -28,7 +28,7 @@ textarea {
 
 .container {
     max-width: $container__width;
-    width: 86%;
+    width: 1225px;
     margin: 0 auto;
 }
 
@@ -39,8 +39,8 @@ textarea {
 }
 
 .container3 {
-    max-width: 96%;
-    margin: 0 auto;
+    max-width: 98%;
+    margin: 0 0 0 auto;
 }
 
 .menu__company {
@@ -328,7 +328,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    width: 83%;
+    width: 942px;
 }
 
 .slider {
@@ -509,13 +509,18 @@ textarea {
 }
 
 .top-banner_margin {
-    margin-bottom: 75px;
+    margin: 0 0 75px auto;
     position: relative;
 }
 
 .top-banner__brand {
     position: relative;
     background-color: white;
+}
+
+.top-banner__img {
+    width: 100%;
+    height: auto;
 }
 
 .banner_brand_block,
@@ -527,17 +532,23 @@ textarea {
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    top: 62px;
-    left: 48px;
-    width: 360px;
-    height: 104px;
+    top: 59px;
+    left: 46px;
+    width: 340px;
+    height: 100px;
     justify-content: center;
     align-items: center;
 }
 
 .banner_title_block-1 {
-    top: 33px;
-    left: 81px;
+    top: 37px;
+    left: 99px;
+    width: 300px;
+    height: 88px;
+}
+
+.banner_title_block-2 {
+    padding: 0 20px;
 }
 
 .banner_title-h2-1,
@@ -558,8 +569,15 @@ textarea {
 }
 
 .banner_title-h2-2 {
-    font-size: 30px;
+    font-size: 27px;
     letter-spacing: -1px;
+    margin: 0;
+    line-height: 30px;
+    & span {
+        font-size: 32px;
+        margin: 0 0 5px 0;
+        letter-spacing: -3px;
+    }
 }
 
 .banner_title-h2-3 {
@@ -1545,12 +1563,12 @@ button.arrow img {
 .form-plate {
     &__request {
         margin: 0 0 0 0;
-        padding: 0 8% 0 0;
+        padding: 0 6% 0 0;
         background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
-        background-size: auto;
-        min-height: 351px;
+        background-size: contain;
+        min-height: 303px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -1560,13 +1578,16 @@ button.arrow img {
         padding: 0 0 0 0;
         box-sizing: border-box;
         background-color: $bgcolor_blue;
-        width: 485px;
-        height: 302px;
+        width: 455px;
+        height: 272px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         justify-content: space-evenly;
+    }
+    &__title {
+        margin: 25px auto;
     }
     &_margin {
         margin-bottom: 60px;

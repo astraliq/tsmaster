@@ -105,7 +105,7 @@
             <div class="container">
                 <div class="form-plate__request">&nbsp;
                     <form class="form-plate__form" action="#">
-                        <div class="section__title section__title_white">оставьте заявку</div>
+                        <div class="section__title section__title_white form-plate__title">оставьте заявку</div>
                         <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
                         <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
                         <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>

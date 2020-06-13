@@ -139,12 +139,12 @@
                             {% else %}
                             <!--заголовок 3 страницы  -->
                             <div class="banner_title_block-2">   
-                                <h2 class="banner_title-h2-2">{{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2-2"><span class="{{content.hStyle}}">{{content.pageTitle3}}</span> {{content.pageTitle}}</h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% endif %} 
                             
-                            <img class="top-banner__img" src="{{content.banner}}" width="100%" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
+                            <img class="top-banner__img" src="{{content.banner}}" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>
                                 <div class="btn-master-block cause_btn_block color_btn_1">&#10004;</div>
@@ -339,7 +339,7 @@
                 return false;
             });
         });
-        </script>
+    </script>
 
 </body>
 
