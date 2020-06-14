@@ -40,10 +40,10 @@
                 <div class="footer-city">
                     <ul class="footer__list">
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#">Город</a>
+                            <a class="footer__menu_link text_white" href="#"><span class="city__city-footer2"></span></a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#">Телефон</a>
+                            <a class="footer__menu_link text_white" href="#"><span class="city__city-footer-phone"></span></a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
                             <a class="footer__menu_link text_white" href="#">График работы</a>
