@@ -653,8 +653,8 @@ class Mailing {
         };
         checkArr.name.check = name.value === '' ? false : true;
         checkArr.phone.check = phone.value.length !== 16 ? false : true;
-        checkArr.defect.check = defect[defect.selectedIndex].text === '' ? false : true;
-        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        checkArr.defect.check = defect[defect.selectedIndex].disabled ? false : true;
+        checkArr.device.check = device[device.selectedIndex].disabled ? false : true;
         if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
             this._changeColorByCheck(checkArr);
             return true;
@@ -764,7 +764,7 @@ class DefectPrices {
             this.deviceId = this.deviceSelect[this.deviceSelect.selectedIndex].dataset.id;
             if (this.deviceId !== '' && !!this.deviceId) {
                 let defects = await this.getDefects(this.deviceId);
-                let options = '<option class="form__option" value=""></option>';
+                let options = '<option class="form__option" value="" selected disabled>Вид неисправности</option>';
                 defects.forEach((defect) => {
                     options += `<option class="form__option" value="" data-id="${defect.id}">${defect.title}</option>`;
                 });

@@ -1,4 +1,4 @@
-@import "_param";
+@import '_param';
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -372,7 +372,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url("../img/action-form/action-form.png");
+    background-image: url('../img/action-form/action-form.png');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -670,7 +670,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        &+.cell-price {
+        & + .cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -749,7 +749,6 @@ textarea {
         outline: none;
     }
 }
-
 
 /*модальные окна*/
 
@@ -961,7 +960,6 @@ textarea {
 .screen_off {
     display: none;
 }
-
 
 /*Карусель*/
 
@@ -1380,9 +1378,7 @@ button.arrow img {
     height: 100%;
 }
 
-
 /*карусель*/
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1404,7 +1400,6 @@ button.arrow img {
     z-index: 15;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1569,7 +1564,7 @@ button.arrow img {
     &__request {
         margin: 0 0 0 0;
         padding: 0 6% 0 0;
-        background-image: url("../img/form-plate/form-plate_bg.jpg");
+        background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1735,7 +1730,6 @@ button.arrow img {
     }
 }
 
-
 /*.form-search__items {}*/
 
 .form__items {
@@ -1767,7 +1761,7 @@ button.arrow img {
     appearance: none;
     outline: 0;
     box-shadow: 5px 5px 15px -12px #000000 inset;
-    border: 0!important;
+    border: 0 !important;
     background: $text__second_color;
     background-image: none;
     padding: 10px;
@@ -1779,6 +1773,7 @@ button.arrow img {
     width: 270px;
     height: 45px;
     border-radius: 10px;
+    transition: all $anim_transition_err ease-in-out;
 }
 
 .before_1 {
@@ -1819,7 +1814,7 @@ button.arrow img {
         background: $bgcolor_blue;
         cursor: pointer;
         pointer-events: none;
-        transition: .25s all ease;
+        transition: 0.25s all ease;
     }
 }
 
@@ -1831,7 +1826,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::before {
-        content: "Вид неисправности";
+        content: 'Вид неисправности';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1860,14 +1855,14 @@ button.arrow img {
         background: $bgcolor_blue;
         cursor: pointer;
         pointer-events: none;
-        transition: .25s all ease;
+        transition: 0.25s all ease;
     }
 }
 
 .before_3 {
     position: relative;
     &::before {
-        content: "Стоимость услуги составит";
+        content: 'Стоимость услуги составит';
         position: absolute;
         top: -25px;
         left: 17px;
@@ -2144,7 +2139,7 @@ button.arrow img {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -2163,7 +2158,7 @@ button.arrow img {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
