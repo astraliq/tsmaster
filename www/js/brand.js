@@ -23,16 +23,25 @@ class Brand {
         let removElem = arrUrl.splice(0, 1);
         let name = arrUrl.join('');
 
-        if (name == 'washing_machine' || name == 'dishwasher' || name == 'refrigerator' || name == 'oven' || name == 'hob') {
+        if (this.checkBrandRepeat(name)) {
             this.nameTechnic = name;
         } else {
             this.checkUrlTechnic(name);
         }
-
         console.log(this.nameTechnic);
     }
 
-    //проверяем URL на выбранный бренд
+    checkBrandRepeat(nameTech) {
+        let checkWord = nameTech.slice(0, 3);
+        console.log(checkWord);
+        if (checkWord == 'was' || checkWord == 'dis' || checkWord == 'ref' || checkWord == 'ove' || checkWord == 'hob') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //убираем повторный бренд в URL
     checkUrlTechnic(nameUrl) {
         let numberElement = nameUrl.indexOf('_');
         let arrRemove = [...nameUrl];

@@ -6,7 +6,9 @@ class City {
         this.urlCity = '../js/cities.json';
         this.nameCity = document.querySelector('.city__city');
         this.nameCityFooter = document.querySelector('.city__city-footer');
+        this.nameCityFooter2 = document.querySelector('.city__city-footer2');
         this.phoneCity = document.querySelector('.city__phone');
+        this.phoneCityFooter = document.querySelector('.city__city-footer-phone');
         this.block = document.querySelector('.modal_city_block');
         this.numberCity = 0; //город по умолчанию
         this.darkBack = document.querySelector('.darkback_sities');
@@ -77,6 +79,9 @@ class City {
         this.nameCityFooter.addEventListener('click', () => {
             this._changeCity();
         });
+        this.nameCityFooter2.addEventListener('click', () => {
+            this._changeCity();
+        });
     }
     _changeCity() {
         this.result = 1;
@@ -104,11 +109,13 @@ class City {
         let number = this.numberCity;
 
         let town = data[number].town;
+        data[number].town == 'Тюмен' ? this.nameCityFooter2.innerHTML = (town + 'ь') : this.nameCityFooter2.innerHTML = town;
         data[number].town == 'Тюмен' ? town = town + 'и' : town = town + 'е';
 
         this.nameCity.innerHTML = town;
         this.nameCityFooter.innerHTML = town;
         this.phoneCity.innerHTML = data[number].phone;
+        this.phoneCityFooter.innerHTML = data[number].phone;
 
         this.setCityId(this.numberCity, this.result);
     }
