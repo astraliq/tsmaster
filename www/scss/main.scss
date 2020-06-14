@@ -987,13 +987,12 @@ textarea {
         background: $bgcolor_blue;
         cursor: pointer;
         pointer-events: none;
-        transition: .25s all ease;
+        transition: 0.25s all ease;
     }
     &:hover::after {
         background-color: #339ef5;
     }
 }
-
 
 /*Карусель*/
 
