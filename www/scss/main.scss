@@ -944,6 +944,39 @@ textarea {
     display: none;
 }
 
+.modal-select {
+    position: relative;
+    width: 270px;
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    transition: all $anim_transition_err ease-in-out;
+    &::after {
+        content: '\2572\2571';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 10px 10px 0;
+        background-color: $bgcolor_blue;
+        width: 29px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 8px;
+        font-weight: 800;
+        border-radius: 0 10px 10px 0;
+        color: $text__second_color;
+        background: $bgcolor_blue;
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
+    }
+    &:hover::after {
+        background-color: #339ef5;
+    }
+}
+
 
 /*Карусель*/
 
@@ -1767,7 +1800,6 @@ button.arrow img {
     border-radius: 10px;
     outline: none;
     transition: all $anim_transition_err ease-in-out;
-    // overflow: hidden;
     &:before {
         content: 'Вид техники';
         position: absolute;
@@ -1799,6 +1831,9 @@ button.arrow img {
         cursor: pointer;
         pointer-events: none;
         transition: .25s all ease;
+    }
+    &:hover::after {
+        background-color: #339ef5;
     }
 }
 
@@ -1840,6 +1875,9 @@ button.arrow img {
         cursor: pointer;
         pointer-events: none;
         transition: .25s all ease;
+    }
+    &:hover::after {
+        background-color: #339ef5;
     }
 }
 

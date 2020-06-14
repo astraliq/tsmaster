@@ -808,6 +808,36 @@ textarea {
 .screen_off {
   display: none; }
 
+.modal-select {
+  position: relative;
+  width: 270px;
+  height: 45px;
+  border-radius: 10px;
+  outline: none;
+  transition: all 1s ease-in-out; }
+  .modal-select::after {
+    content: '\2572\2571';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    background-color: #0076d5;
+    width: 29px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 8px;
+    font-weight: 800;
+    border-radius: 0 10px 10px 0;
+    color: #fff;
+    background: #0076d5;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease; }
+  .modal-select:hover::after {
+    background-color: #339ef5; }
+
 /*Карусель*/
 .carousel {
   position: relative;
@@ -1536,6 +1566,8 @@ button.arrow img {
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease; }
+  .before_1:hover::after {
+    background-color: #339ef5; }
 
 .before_2 {
   position: relative;
@@ -1574,6 +1606,8 @@ button.arrow img {
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease; }
+  .before_2:hover::after {
+    background-color: #339ef5; }
 
 .before_3 {
   position: relative; }
