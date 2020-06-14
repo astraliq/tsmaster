@@ -40,13 +40,13 @@
                 <div class="footer-city">
                     <ul class="footer__list">
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#"><span class="city__city-footer2"></span></a>
+                            <a class="footer__menu_link text_white"><span class="city__city-footer2"></span></a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#"><span class="city__city-footer-phone"></span></a>
+                            <a class="footer__menu_link text_white"><span class="city__city-footer-phone"></span></a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#">График работы</a>
+                            <a class="footer__menu_link text_white">График работы</a>
                         </li>
                     </ul>
                 </div>
