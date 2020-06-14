@@ -9,8 +9,9 @@
             </div>
             <form class="form__items form-search_margin">
                 <div class="form__item">
-                    <div class="before_1">
-                        <select class="select input_margin device" type="text" id="device_select">
+                    <div class="before_1 input_margin">
+                        <select class="select device" type="text" id="device_select">
+                            <option class="form__option" value="" selected disabled>Выберете вид техники</option>
                             <option class="form__option" value=""></option>
                             {% for device in content.devices %}
                             <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title }}</option>
@@ -20,8 +21,9 @@
                     <input class="input client_name" type="text" placeholder="Ваше имя" />
                 </div>
                 <div class="form__item">
-                    <div class="before_2">
-                        <select class="select input_margin defect" type="text" id="defect_select">
+                    <div class="before_2 input_margin">
+                        <select class="select defect" type="text" id="defect_select">
+                            <option class="form__option" value="" selected disabled>Вид неисправности</option>
                             <option class="form__option" value=""></option>
                         </select>
                     </div>
