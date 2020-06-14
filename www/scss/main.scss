@@ -652,7 +652,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        & + .cell-price {
+        &+.cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -731,6 +731,7 @@ textarea {
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -942,6 +943,7 @@ textarea {
 .screen_off {
     display: none;
 }
+
 
 /*Карусель*/
 
@@ -1360,7 +1362,9 @@ button.arrow img {
     height: 100%;
 }
 
+
 /*карусель*/
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1382,6 +1386,7 @@ button.arrow img {
     z-index: 15;
     box-sizing: border-box;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1709,6 +1714,7 @@ button.arrow img {
     }
 }
 
+
 /*.form-search__items {}*/
 
 .form__items {
@@ -1726,6 +1732,7 @@ button.arrow img {
     padding: 0 0 0 0;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form-question__form {
@@ -1733,37 +1740,75 @@ button.arrow img {
 }
 
 .select {
-    margin: 0 0 0 0;
-    padding: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: 5px 5px 15px -12px #000000 inset;
+    border: 0!important;
+    background: $text__second_color;
+    background-image: none;
+    padding: 10px;
+    // flex: 1;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: $font__first;
     width: 270px;
     height: 45px;
     border-radius: 10px;
-    border: 1px transparent solid;
-    background-color: $text__second_color;
-    box-shadow: 5px 5px 15px -12px #000000 inset;
-    font-size: 16px;
-    color: $text__main_color;
-    outline: none;
-    transition: all $anim_transition_err ease-in-out;
 }
 
 .before_1 {
     position: relative;
-    &::before {
+    width: 270px;
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    transition: all $anim_transition_err ease-in-out;
+    // overflow: hidden;
+    &:before {
         content: 'Вид техники';
         position: absolute;
         top: -25px;
-        left: 80px;
+        left: 56px;
         color: $text__main_color;
         font-family: $font__second;
         font-size: 17px;
         font-weight: 600;
         line-height: 18px;
     }
+    &::after {
+        content: '\2572\2571';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 10px 10px 0;
+        background-color: $bgcolor_blue;
+        width: 29px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 8px;
+        font-weight: 800;
+        border-radius: 0 10px 10px 0;
+        color: $text__second_color;
+        background: $bgcolor_blue;
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
+    }
 }
 
 .before_2 {
     position: relative;
+    width: 270px;
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    transition: all $anim_transition_err ease-in-out;
     &::before {
         content: 'Вид неисправности';
         position: absolute;
@@ -1774,6 +1819,27 @@ button.arrow img {
         font-size: 17px;
         font-weight: 600;
         line-height: 18px;
+    }
+    &::after {
+        content: '\2572\2571';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 10px 10px 0;
+        background-color: $bgcolor_blue;
+        width: 29px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 8px;
+        font-weight: 800;
+        border-radius: 0 10px 10px 0;
+        color: $text__second_color;
+        background: $bgcolor_blue;
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
     }
 }
 
