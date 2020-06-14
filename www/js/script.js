@@ -329,6 +329,21 @@ class Mailing {
                 }
             });
         });
+
+        // проверка заполненноого селекта техники при клике по селекту дефекта
+        document.getElementById('defect_select').addEventListener('click', (e) => {
+            let parent = e.path[3];
+            let deviceBlock = parent.querySelector('.device');
+            let check = deviceBlock[deviceBlock.selectedIndex].disabled ? false : true;
+            if (!check) {
+                this._changeColorByCheck({
+                    device: {
+                        check: check,
+                        el: deviceBlock,
+                    },
+                });
+            }
+        });
     }
 
     firstCheck(check) {
