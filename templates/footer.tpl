@@ -11,11 +11,6 @@
                         ремонт&nbsp;бытовой&nbsp;техники&nbsp;в&nbsp;<span class="city__city-footer"></span>
                     </p>
                 </div>
-                <div class="footer__desc">
-                    Описание....................................... .........................................................
-                    ......................................................... .........................................................
-                    .........................................................
-                </div>
             </div>
             <div class="footer__item">
                 <p class="footer__title text_margin_1">Ремонт</p>
@@ -46,25 +41,24 @@
                             <a class="footer__menu_link text_white" href="#">Телефон</a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
-                            <a class="footer__menu_link text_white" href="#">График работы</a>
+                            <div class="footer__menu_link text_white">График работы</div>
+                            <div>Без перерывов, выходных и праздничных дней с 09:00 до 21:00</div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-  </div>
-  <!-- информационный блок -->
-  <div class="inf_data screen_off" data-city_id="{{content.cityId}}" data-city_inf="{{content.cityInf}}"></div>
+    </div>
+    <!-- информационный блок -->
+    <div class="inf_data screen_off" data-city_id="{{content.cityId}}" data-city_inf="{{content.cityInf}}"></div>
 </footer>
 <section class="plan-b-style">
     <div class="dev-planb">
         Разработано в&nbsp;
         <a href="http://plan-b.studio" style="text-decoration: none;">
             <div class="plan-b">
-                <span class="planb_p">p</span><span class="planb_l">l</span> <span class="planb_a">a</span><span class="planb_n">n</span>&nbsp;<span
-                    class="planb_b"
-                    >b</span
+                <span class="planb_p">p</span><span class="planb_l">l</span> <span class="planb_a">a</span><span class="planb_n">n</span>&nbsp;<span class="planb_b">b</span
                 >
             </div>
         </a>
