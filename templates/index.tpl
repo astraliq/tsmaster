@@ -14,15 +14,14 @@
     {% include 'header.tpl' %}
     <main class="main-style">
         <!-- modal window -->
-        {% include 'modal_substrate1.tpl' %}
-        {% include 'confirm_mailing_block.tpl' %} 
+        {% include 'modal_substrate1.tpl' %} {% include 'confirm_mailing_block.tpl' %}
         <section class="slider">
             <div class="container">
-            <!-- обманка -->
-            <div id="carousel_2" class="carousel_2 screen_off">
-                <div class="prev_2 next_2"></div>
-            </div>
-            <!-- обманка -->
+                <!-- обманка -->
+                <div id="carousel_2" class="carousel_2 screen_off">
+                    <div class="prev_2 next_2"></div>
+                </div>
+                <!-- обманка -->
                 <div id="points" class="slider__points slider__points_margin">
                     <a data-point="0" class="slider__point slider__point_active"></a>
                     <a data-point="1" class="slider__point"></a>
@@ -89,7 +88,7 @@
                     <div class="advantage__bullets-right">
                         <div class="bullets__item bullets_margin">
                             <img class="bullets__img" src="img/advantage/advantage_03.png" alt="бесплатная диагностика">
-                            <p class="bullets__text bullets__text_left">бесплатная диагностика</p>
+                            <p class="bullets__text bullets__text_left">бесплатная диагностика<sup>*</sup></p>
 
                         </div>
                         <div class="bullets__item">
@@ -134,43 +133,16 @@
                 <p class="section__text">
                     Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
                     она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.</p>
-                <p class="section__text">Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой,
-                    случается, что она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
+                <p class="section__text"><sup>*</sup>В случае принятии решения о продолжении работ, за диагностику Вы не оплачиваете.
+
                 </p>
             </div>
         </section>
-        {% include 'repair_form.tpl' %}  
+        {% include 'repair_form.tpl' %}
         <!-- Отзывы -->
         <section class="reviews">
             <div class="container2">
                 <div class="section__title section__title_margin section__title_black"><a name="reviews">отзывы</a></div>
-                <!-- <div class="reviews__slider">
-                    <a class="reviews-arrow__link" href="#">
-                        <div class="reviews__arrow">
-                            <img class="reviews__arrow_img" src="img/reviews/reviews_left.png">
-                        </div>
-                    </a>
-                    <div class="reviews__item">
-                        <div class="reviews__item-name">Анастасия Миронова</div>
-                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
-                    </div>
-                    <div class="reviews__item">
-                        <div class="reviews__item-name">Игорь Максимов</div>
-                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
-                    </div>
-                    <div class="reviews__item">
-                        <div class="reviews__item-name">Матвей Буравин</div>
-                        <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
-                    </div>
-                    <a class="reviews-arrow__link" href="#">
-                        <div class="reviews__arrow">
-                            <img class="reviews__arrow_img" src="img/reviews/reviews_right.png">
-                        </div>
-                    </a>
-                </div> -->
                 <div class="reviews__slider">
                     <div id="carousel_1" class="carousel_1">
                         <button class="arrow_1 prev_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
@@ -178,16 +150,16 @@
                             <ul class="images_1">
                                 <li>
                                     <div class="reviews__item">
-                                        <div class="reviews__item-name">Анастасия Миронова</div>
+                                        <div class="reviews__item-name">Маргарита Савельева</div>
                                         <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                        <div class="reviews__item-text">Хочу всем порекомендовать данный сервис! Машинка стиральная снова в рабочем состоянии, специалисты не опаздывают и чинят все за небольшое количество времени. Так же очень вежливые и хорошо знают свое дело!</div>
+                                        <div class="reviews__item-text">Машинка работает, мастер быстро и аккуратно всё сделал, очень довольна работой!</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="reviews__item">
-                                        <div class="reviews__item-name">Игорь Максимов</div>
+                                        <div class="reviews__item-name">Екатерина Плотникова</div>
                                         <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                        <div class="reviews__item-text">Никогда не оставлял отзывы. Но решил, что уж очень хочется, чтоб другие тоже знали. Бесплатный выезд мастера и проделанная работа за 30 минут говорят сами за себя!</div>
+                                        <div class="reviews__item-text">В другом сервисе сказали, что работы на 4 часа. Ваш мастер сделал всё гораздо быстрее, при этом качественно и адекватно. Спасибо, мы довольны.</div>
                                     </div>
                                 </li>
                                 <li>
@@ -266,7 +238,7 @@
                     </div>
                 </div>
         </section>
-        {% include 'question_form.tpl' %} 
+        {% include 'question_form.tpl' %}
         <section class="about about_margin">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>
@@ -283,18 +255,20 @@
             </div>
         </section>
     </main>
-    {% include 'footer.tpl' %}  
-    <script defer src="js/jquery-3.4.1.js"></script> 
+    {% include 'footer.tpl' %}
+    <script defer src="js/jquery-3.4.1.js"></script>
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="js/script.js"></script> 
+    <script defer src="js/script.js"></script>
     <script defer src="js/city.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script>
         jQuery(document).ready(function() {
-            jQuery("a.scroll_to").click(function () {
+            jQuery("a.scroll_to").click(function() {
                 elementClick = jQuery(this).attr("href")
                 destination = jQuery(elementClick).offset().top;
-                jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+                jQuery("html:not(:animated),body:not(:animated)").animate({
+                    scrollTop: destination
+                }, 1100);
                 return false;
             });
         });
