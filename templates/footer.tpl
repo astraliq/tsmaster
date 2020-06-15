@@ -41,8 +41,8 @@
                             <a class="footer__menu_link text_white" href="#">Телефон</a>
                         </li>
                         <li class="footer__menu_item text_margin_3">
-                            <div class="footer__menu_link text_white">График работы</div>
-                            <div>Без перерывов, выходных и праздничных дней с 09:00 до 21:00</div>
+                            <div class="text_white">График работы</div>
+                            <div class="text_white">Без перерывов, выходных<br>и праздничных дней<br>с 09:00 до 21:00</div>
                         </li>
                     </ul>
                 </div>
