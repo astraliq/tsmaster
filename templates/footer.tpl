@@ -15,11 +15,11 @@
             <div class="footer__item">
                 <p class="footer__title text_margin_1">Ремонт</p>
                 <ul class="footer__list">
-                    {% for menu,link in content.service_menu %} {% if menu != 'главная' %}
+                    {% for menu,link in content.service_menu_rodit %}
                     <li class="footer__menu_item text_margin_1">
                         <a class="footer__menu_link text_uppercase text_grey" href="{{ link }}">{{ menu | raw }}</a>
                     </li>
-                    {% endif %} {% endfor %}
+                    {% endfor %}
                 </ul>
             </div>
             <div class="footer__item">

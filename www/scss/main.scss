@@ -369,13 +369,14 @@ textarea {
 }
 
 .action {
+    position: relative;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form.png');
+    background-image: url('../img/action-form/action-form-skidka.jpg');
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     height: 446px;
     width: 283px;
     display: flex;
@@ -553,7 +554,8 @@ textarea {
 
 .banner_title-h2-1,
 .banner_title-h2-2,
-.banner_title-h2-3 {
+.banner_title-h2-3,
+.banner_title-h2-4 {
     font-size: 32px;
     text-transform: uppercase;
     font-family: $font__third;
@@ -585,6 +587,17 @@ textarea {
     & span {
         font-size: 29px;
         margin: -10px 0 -10px 0;
+    }
+}
+
+.banner_title-h2-4 {
+    font-size: 22px;
+    letter-spacing: -1px;
+    & span {
+        font-size: 25px;
+        margin: 4px 0 -8px 0;
+        line-height: 30px;
+        letter-spacing: 0;
     }
 }
 
@@ -1488,6 +1501,49 @@ button.arrow img {
     }
 }
 
+.advantage__bullets-discount2 {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 3;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // height: 185px;
+    color: white;
+    top: 103px;
+    left: -10px;
+    font-style: italic;
+    transform: rotateZ(-10deg);
+    &_title {
+        text-align: center;
+        font-family: $font__third;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    &_number {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        font-family: $font__third_bold;
+        text-transform: uppercase;
+        font-size: 55px;
+        text-shadow: #1248bd 3px 3px 0;
+        line-height: 49px;
+    }
+    &_duration {
+        text-align: center;
+        font-family: $font__third;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 35px;
+    }
+}
+
 .advantage__bullets-left {
     margin: 0 25px 0 0;
     padding: 0 0 0 0;
@@ -1807,6 +1863,9 @@ button.arrow img {
     height: 45px;
     border-radius: 10px;
     transition: all $anim_transition_err ease-in-out;
+    & option ::first-letter {
+        text-transform: uppercase;
+    }
 }
 
 .before_1 {
@@ -2165,6 +2224,9 @@ button.arrow img {
 .font_size28 {
     font-size: 28px;
 }
+.font_size22 {
+    font-size: 22px;
+}
 
 //=========== plan b studio ===============\\
 .plan-b-style {
@@ -2245,4 +2307,8 @@ button.arrow img {
 
 .bg_green {
     background-color: #4dd16a;
+}
+
+.letter_spacing_-1px {
+    letter-spacing: -1px;
 }

@@ -13,7 +13,7 @@
                         <select class="select device" type="text" id="device_select">
                             <option class="form__option" value="" selected disabled>Выберете вид техники</option>
                             {% for device in content.devices %}
-                            <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title }}</option>
+                            <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title | capitalize }}</option>
                             {% endfor %}
                         </select>
                     </div>

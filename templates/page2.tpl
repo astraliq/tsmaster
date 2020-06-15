@@ -19,6 +19,12 @@
             <section class="left-part">
                 {% include 'service_menu2.tpl' %}
                 <div class="action action_margin">
+                    <div class="advantage__bullets-discount2">
+                        <p class="advantage__bullets-discount2_title">{{content.jsonDb.skidka2.title}}</p>
+                        <span class="advantage__bullets-discount2_number">{{content.jsonDb.skidka2.number}}</span>
+                        <p class="advantage__bullets-discount2_duration">{{content.jsonDb.skidka2.duration}}</p>
+                    </div>
+                    <div class="advantage__bullets-discount2 hide" style="opacity: 0; z-index: 5; height: 120px; width: 250px; left: 5%;"></div>
                     <form class="action-form" action="#">
                         <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
                         <input class="input input_margin-20 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
@@ -133,13 +139,19 @@
                             {% elseif content.isBrand == 1 and content.defectTableId == 1 %}
                             <!--заголовок 2 страницы с брендом  -->
                             <div class="banner_title_block-1">   
-                                <h2 class="banner_title-h2-3"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
+                                <h2 class="banner_title-h2-3 {{content.TitleLetterSpacing}}"><span>ремонт</span>{{content.pageTitle|slice(7,100)}}<span>{{content.brand}}</span></h2>
+                            </div>
+                            <div class="banner_title_block-2" style="opacity: 0"></div>
+                            {% elseif content.isBrand == 1 and content.defectTableId == 2 %}
+                            <!--заголовок 3 страницы с брендом  -->
+                            <div class="banner_title_block-2">   
+                                <h2 class="banner_title-h2-4 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}} {{content.brand}}</span> {{content.pageTitle}}</h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% else %}
                             <!--заголовок 3 страницы  -->
                             <div class="banner_title_block-2">   
-                                <h2 class="banner_title-h2-2"><span class="{{content.hStyle}}">{{content.pageTitle3}}</span> {{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2-2 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}}</span><span>{{content.brand}}</span> {{content.pageTitle}}</h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% endif %} 

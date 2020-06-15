@@ -33,6 +33,13 @@ $config['service_menu'] = [
       'духовой&nbsp;шкаф' => '/oven',
       'варочная&nbsp;панель' => '/hob',
   ];
+$config['service_menu_rod_padej'] = [
+    'стиральной&nbsp;машины' => '/washing_machine',
+    'посудомоечной&nbsp;машины' => '/dishwasher',
+    'холодильника' => '/refrigerator',
+    'духового&nbsp;шкафа' => '/oven',
+    'варочной&nbsp;панели' => '/hob',
+];
 $config['services_items'] = [
       'ремонт стиральных машин' => [
         'link' => '/washing_machine',
