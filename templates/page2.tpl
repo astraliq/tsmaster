@@ -143,13 +143,13 @@
                             {% elseif content.isBrand == 1 and content.defectTableId == 2 %}
                             <!--заголовок 3 страницы с брендом  -->
                             <div class="banner_title_block-2">   
-                                <h2 class="banner_title-h2-4 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}} {{content.brand}}</span> {{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2-4 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}} {{content.brand}}</span> {{content.pageTitle}}?</h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% else %}
                             <!--заголовок 3 страницы  -->
                             <div class="banner_title_block-2">   
-                                <h2 class="banner_title-h2-2 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}}</span><span>{{content.brand}}</span> {{content.pageTitle}}</h2>
+                                <h2 class="banner_title-h2-2 {{content.TitleLetterSpacing}}"><span class="{{content.hStyle}}">{{content.pageTitle3}}</span><span>{{content.brand}}</span> {{content.pageTitle}}?</h2>
                             </div>
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% endif %} 
