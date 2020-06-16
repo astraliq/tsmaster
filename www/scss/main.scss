@@ -1,4 +1,4 @@
-@import "_param";
+@import '_param';
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -373,7 +373,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url("../img/action-form/action-form-skidka.jpg");
+    background-image: url('../img/action-form/action-form-skidka.jpg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -408,7 +408,6 @@ textarea {
 .input_margin-20 {
     margin-bottom: 20px;
 }
-
 
 /*reviews-part__item*/
 
@@ -686,7 +685,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        &+.cell-price {
+        & + .cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -766,7 +765,6 @@ textarea {
     }
 }
 
-
 /*модальные окна*/
 
 .darkback,
@@ -821,7 +819,7 @@ textarea {
 }
 
 .modal-review {
-    height: 640px;
+    height: 520px;
     top: 50px;
 }
 
@@ -986,7 +984,7 @@ textarea {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1010,7 +1008,6 @@ textarea {
         background-color: #339ef5;
     }
 }
-
 
 /*Карусель*/
 
@@ -1433,9 +1430,7 @@ button.arrow img {
     height: 100%;
 }
 
-
 /*карусель*/
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1457,7 +1452,6 @@ button.arrow img {
     z-index: 15;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1665,7 +1659,7 @@ button.arrow img {
     &__request {
         margin: 0 0 0 0;
         padding: 0 6% 0 0;
-        background-image: url("../img/form-plate/form-plate_bg.jpg");
+        background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1831,7 +1825,6 @@ button.arrow img {
     }
 }
 
-
 /*.form-search__items {}*/
 
 .form__items {
@@ -1889,7 +1882,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &:before {
-        content: "Вид техники";
+        content: 'Вид техники';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1900,7 +1893,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1933,7 +1926,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::before {
-        content: "Вид неисправности";
+        content: 'Вид неисправности';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -1944,7 +1937,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1972,7 +1965,7 @@ button.arrow img {
 .before_3 {
     position: relative;
     &::before {
-        content: "Стоимость услуги составит";
+        content: 'Стоимость услуги составит';
         position: absolute;
         top: -25px;
         left: 17px;
@@ -2253,7 +2246,7 @@ button.arrow img {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: white;
     display: flex;
@@ -2272,7 +2265,7 @@ button.arrow img {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 

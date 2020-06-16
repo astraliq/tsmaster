@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 class City {
     constructor() {
@@ -7,7 +7,7 @@ class City {
         this.nameCity = document.querySelector('.city__city');
         this.nameCityFooter = document.querySelector('.city__city-footer');
         this.nameCityFooter2 = document.querySelector('.city__city-footer2');
-        this.phoneCity = document.querySelector('.city__phone');
+        this.phoneCity = document.querySelectorAll('.city__phone');
         this.phoneCityFooter = document.querySelector('.city__city-footer-phone');
         this.block = document.querySelector('.modal_city_block');
         this.numberCity = 0; //город по умолчанию
@@ -29,19 +29,20 @@ class City {
         let blockSities = '';
         let town = '';
         for (let i = 0; i < data.length; i++) {
-
             if (data[i].town == 'Тюмен') {
-                town = data[i].town + 'ь'
+                town = data[i].town + 'ь';
             } else {
                 town = data[i].town;
             }
 
-            blockSities = blockSities + `
+            blockSities =
+                blockSities +
+                `
                 <div class="modal_city_block_content">
                     <button data-town=${i} class="btn_city">
                         ${town}
                     </button>
-                </div>`
+                </div>`;
         }
         this.block.innerHTML = blockSities;
 
@@ -109,12 +110,14 @@ class City {
         let number = this.numberCity;
 
         let town = data[number].town;
-        data[number].town == 'Тюмен' ? this.nameCityFooter2.innerHTML = (town + 'ь') : this.nameCityFooter2.innerHTML = town;
-        data[number].town == 'Тюмен' ? town = town + 'и' : town = town + 'е';
+        data[number].town == 'Тюмен' ? (this.nameCityFooter2.innerHTML = town + 'ь') : (this.nameCityFooter2.innerHTML = town);
+        data[number].town == 'Тюмен' ? (town = town + 'и') : (town = town + 'е');
 
         this.nameCity.innerHTML = town;
         this.nameCityFooter.innerHTML = town;
-        this.phoneCity.innerHTML = data[number].phone;
+        this.phoneCity.forEach((elem) => {
+            elem.innerHTML = data[number].phone;
+        });
         this.phoneCityFooter.innerHTML = data[number].phone;
 
         this.setCityId(this.numberCity, this.result);
@@ -138,19 +141,18 @@ class City {
             apiMethod: 'setCityId',
             postData: {
                 cityId: id,
-                cityInf: inf
+                cityInf: inf,
             },
         };
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    // что делать в случае успешного выполнения
-                    console.log('ALL_OK');
-                } else {
-                    // что делать в случае неудачного выполнения
-                    console.log('ERROR #1');
-                }
-            })
+        this._getJson(`/index.php`, sendData).then((data) => {
+            if (data.result === 'OK') {
+                // что делать в случае успешного выполнения
+                console.log('ALL_OK');
+            } else {
+                // что делать в случае неудачного выполнения
+                console.log('ERROR #1');
+            }
+        });
         // .catch((error) => {
         //     // что делать в случае ошибок прочих
         //     console.log('ERROR #2');
@@ -159,10 +161,10 @@ class City {
 
     init() {
         if (this.result == 0) {
-            this.checkInformation()
+            this.checkInformation();
         } else {
             this.onModalCities();
-            this.checkInformation()
+            this.checkInformation();
         }
 
         this.runChangeCity();
@@ -176,9 +178,6 @@ class City {
 }
 
 window.onload = function () {
-    let city = new City;
+    let city = new City();
     city.init();
-}
-
-
-
+};

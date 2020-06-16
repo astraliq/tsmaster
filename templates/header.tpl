@@ -76,7 +76,7 @@
                         <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
                     </div>
                     <div>Или позвоните нам</div>
-                    <div class="tel__number"><a class="tel__link" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                    <div class="tel__number"><a class="tel__link city__phone" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
                 </div>
             </div>
         </div>
