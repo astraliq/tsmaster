@@ -165,7 +165,7 @@
                                 <div class="section__title section__title_black section__title_margin section__title_padding">
                                     {% if content.defectTableId == 2 and content.cityId == 0 %} 
                                     <!-- екатеринбург --> 
-                                    <a name="advantage"></a>выезд в любой район города екатеринбурга, арамиль, березовский, в. пышму</div>
+                                    <a name="advantage"></a>выезд&nbsp;в&nbsp;любой&nbsp;район&nbsp;города екатеринбурга, арамиль, березовский, в.&nbsp;пышму</div>
                                     {% elseif content.defectTableId == 2 and content.cityId == 1 %} 
                                     <!-- челябинск -->
                                     <a name="advantage"></a>выезд в любой район города челябинска</div>
