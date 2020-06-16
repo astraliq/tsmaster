@@ -145,7 +145,7 @@ class IndexController extends Controller {
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],
-            'bg_class' => 'bg_orange',
+            'bg_class' => 'color_btn_2',
         ];
         
         return $arrayContent;
@@ -203,7 +203,7 @@ class IndexController extends Controller {
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],
-            'bg_class' => 'bg_orange',
+            'bg_class' => 'color_btn_2',
             'hStyle' => 'font_size28',
         ];
         

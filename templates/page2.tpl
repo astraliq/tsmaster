@@ -157,7 +157,7 @@
                             <img class="top-banner__img" src="{{content.banner}}" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>
-                                <div class="btn-master-block cause_btn_block color_btn_1">&#10004;</div>
+                                <div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>
                             </div>
                         </section>
                         <section class="advantage advantage_margin">
