@@ -13,7 +13,7 @@
             <div class="modal-select input_margin">
                 <select class="select device" type="text">
                     <option class="form__option" value="" data-id=""
-                        >{% if content.pageTitle3 != '' %}{{ content.pageTitle3 }}{% else %}Вид неисправности{% endif %}
+                    {% if content.pageTitle3 == '' %}selected disabled{% endif %}>{% if content.pageTitle3 != '' %}{{ content.pageTitle3 }}{% else %}Вид неисправности{% endif %}
                     </option>
                     {% for device in content.devices %} {% if content.pageTitle3 != device.title %}
                     <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title | capitalize }}</option>
