@@ -409,6 +409,7 @@ textarea {
     margin-bottom: 20px;
 }
 
+
 /*reviews-part__item*/
 
 .reviews-part {
@@ -620,7 +621,7 @@ textarea {
     padding: 0 0 0 0;
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
 }
 
 .cost-table__grid {
@@ -629,7 +630,7 @@ textarea {
     width: 100%;
     border: 1px solid black;
     display: grid;
-    grid-template-columns: auto 200px;
+    grid-template-columns: auto 250px;
     grid-template-rows: 50px;
     // grid-template-rows: repeat(9, 50px);
 }
@@ -646,7 +647,7 @@ textarea {
     justify-content: center;
     color: $text__main_color;
     font-family: $font__first;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 30px;
     text-transform: uppercase;
@@ -685,7 +686,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        & + .cell-price {
+        &+.cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -764,6 +765,7 @@ textarea {
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -1008,6 +1010,7 @@ textarea {
         background-color: #339ef5;
     }
 }
+
 
 /*Карусель*/
 
@@ -1430,7 +1433,9 @@ button.arrow img {
     height: 100%;
 }
 
+
 /*карусель*/
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1452,6 +1457,7 @@ button.arrow img {
     z-index: 15;
     box-sizing: border-box;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1824,6 +1830,7 @@ button.arrow img {
         margin-bottom: 65px;
     }
 }
+
 
 /*.form-search__items {}*/
 
