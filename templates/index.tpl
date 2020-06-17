@@ -258,8 +258,8 @@
     {% include 'footer.tpl' %}
     <script defer src="js/jquery-3.4.1.js"></script>
     <script defer src="js/jquery.maskedinput.js"></script>
-    <script defer src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script defer src="js/script.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script defer src="js/city.js"></script>
     <script>
         jQuery(document).ready(function() {
