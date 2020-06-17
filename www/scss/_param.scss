@@ -1,23 +1,22 @@
 @font-face {
-    font-family: "Oswald";
-    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "Oswald Bold";
-    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-family: 'Oswald Bold';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
     font-weight: 600;
 }
 
-$font__first: "PT Sans",
-sans-serif;
-$font__second: "Arial";
-$font__second_bold: "Arial Black";
-$font__third: "Oswald";
-$font__third_bold: "Oswald Bold";
+$font__first: "'Rubik', sans-serif";
+$font__second: 'Arial';
+$font__second_bold: 'Arial Black';
+$font__third: 'Oswald';
+$font__third_bold: 'Oswald Bold';
 $logo__text_color: #f7a900;
 $logo__text_color_gr: #fad27c;
 $bgcolor_blue: #0076d5;

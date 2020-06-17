@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Oswald";
+  font-family: 'Oswald';
   src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Oswald Bold";
+  font-family: 'Oswald Bold';
   src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
@@ -75,7 +75,7 @@ textarea {
   padding: 0 0 0 0;
   display: inline;
   color: #0076d5;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 20px;
   font-weight: 400;
 }
@@ -171,7 +171,7 @@ textarea {
   outline: none;
   cursor: pointer;
   color: #fff;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 15px;
   font-weight: 400;
 }
@@ -184,7 +184,7 @@ textarea {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 17px;
   font-weight: 700;
   line-height: 17px;
@@ -234,7 +234,7 @@ textarea {
   width: 100%;
   height: 100%;
   text-transform: uppercase;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -254,7 +254,7 @@ textarea {
   width: 100%;
   height: 100%;
   text-transform: uppercase;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -683,7 +683,7 @@ textarea {
   align-items: center;
   justify-content: center;
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 25px;
   font-weight: 600;
   line-height: 30px;
@@ -700,7 +700,7 @@ textarea {
   align-items: center;
   padding-left: 30px;
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 25px;
   font-weight: 400;
   border-top: 1px solid black;
@@ -739,7 +739,7 @@ textarea {
 
 .cell-price {
   color: #0076d5;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 30px;
   font-weight: 600;
   line-height: 30px;
@@ -755,7 +755,7 @@ textarea {
   width: 80%;
   background-color: #e4e4e4;
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -938,7 +938,7 @@ textarea {
 .modal-text {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   color: #000;
   font-size: 11px;
   font-weight: 400;
@@ -949,7 +949,7 @@ textarea {
 }
 
 .content_city {
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   color: #000;
   font-size: 36px;
   font-weight: 400;
@@ -983,7 +983,7 @@ textarea {
 .modal_city_block_content button {
   width: 70%;
   height: 50px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 30px;
   font-weight: 400;
   border-radius: 25px;
@@ -1690,7 +1690,7 @@ button.arrow img {
 }
 
 .section__subtitle {
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 21px;
   font-weight: 400;
   line-height: 24px;
@@ -1704,7 +1704,7 @@ button.arrow img {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 21px;
   font-weight: 400;
   line-height: 22px;
@@ -1831,7 +1831,7 @@ button.arrow img {
   background-color: #0076d5;
   border-radius: 15px;
   color: #fff;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 20px;
   font-weight: 400;
   line-height: 20px;
@@ -1875,7 +1875,7 @@ button.arrow img {
 
 .form-search__subtitle {
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 21px;
   font-weight: 400;
   line-height: 24px;
@@ -1922,7 +1922,7 @@ button.arrow img {
   color: #000;
   cursor: pointer;
   font-size: 16px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   width: 270px;
   height: 45px;
   border-radius: 10px;
@@ -2101,7 +2101,7 @@ button.arrow img {
 
 .reviews__item-name {
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
@@ -2115,7 +2115,7 @@ button.arrow img {
 
 .reviews__item-text {
   color: #000;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -2220,7 +2220,7 @@ button.arrow img {
 
 .footer__menu_item {
   padding: 0 0 0 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -2274,7 +2274,7 @@ button.arrow img {
   padding: 0 0 0 0;
   font-size: 20px;
   color: #f7a900;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
 }
 
 .error404-h1 {
@@ -2288,7 +2288,7 @@ button.arrow img {
 .error404__text {
   margin: 0 0 10px 0;
   padding: 0 0 0 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "'Rubik', sans-serif";
   font-size: 25px;
   font-weight: 400;
   color: #000;
