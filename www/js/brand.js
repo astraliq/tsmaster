@@ -13,7 +13,7 @@ class Brand {
         let response = await fetch(url);
         this.dataBrand = await response.json();
         this.createBlock();
-        console.log(this.dataBrand);
+        // console.log(this.dataBrand);
     }
 
     //получаем и обрабатываем URL по брендам
@@ -28,12 +28,12 @@ class Brand {
         } else {
             this.checkUrlTechnic(name);
         }
-        console.log(this.nameTechnic);
+        // console.log(this.nameTechnic);
     }
 
     checkBrandRepeat(nameTech) {
         let checkWord = nameTech.slice(0, 3);
-        console.log(checkWord);
+        // console.log(checkWord);
         if (checkWord == 'was' || checkWord == 'dis' || checkWord == 'ref' || checkWord == 'ove' || checkWord == 'hob') {
             return true;
         } else {
@@ -51,7 +51,9 @@ class Brand {
 
     createBlock() {
         for (let i = 0; i < this.dataBrand.length; i++) {
-            this.blockBrand = this.blockBrand + `
+            this.blockBrand =
+                this.blockBrand +
+                `
                 <li>
                     <a href="/${this.dataBrand[i].brandName}_${this.nameTechnic}" class="gallery_br_link" style="                    
                             background-image: url(../img/brands/${this.dataBrand[i].imgBrand}); 
@@ -83,14 +85,12 @@ setTimeout(() => {
         li.style.position = 'relative';
         li.insertAdjacentHTML('beforeend', '<span style="position:absolute;left:0;top:0">${i}</span>');
         k++;
-    };
-
+    }
 
     //конфигурация
-    let width_br = 250; //ширина картинки 
+    let width_br = 250; //ширина картинки
     let count_br = 3; //сдиг на количество картинок
     let numberImg_br = brand.dataBrand.length; //количество картинок
-
 
     let list_br = carousel_br.querySelector('ul');
     let listElems_br = carousel_br.querySelectorAll('li');
@@ -109,6 +109,6 @@ setTimeout(() => {
         position_br -= width_br * count_br;
 
         position_br = Math.max(position_br, -width_br * (listElems_br.length - count_br));
-        list_br.style.marginLeft = position_br + 'px'; //обращение у стилю тэга ul        
+        list_br.style.marginLeft = position_br + 'px'; //обращение у стилю тэга ul
     };
 }, 500);

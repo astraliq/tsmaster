@@ -21,7 +21,7 @@ class City {
     async _readData(url) {
         let response = await fetch(url);
         this.data = await response.json();
-        console.log(this.data);
+        // console.log(this.data);
         if (this.result == 1) this.showBlockSities(this.data);
     }
 
