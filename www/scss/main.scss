@@ -409,7 +409,6 @@ textarea {
     margin-bottom: 20px;
 }
 
-
 /*reviews-part__item*/
 
 .reviews-part {
@@ -596,9 +595,10 @@ textarea {
 .banner_title-h2-4 {
     font-size: 22px;
     letter-spacing: -1px;
+    line-height: 25px;
     & span {
         font-size: 25px;
-        margin: 4px 0 -8px 0;
+        margin: 4px 0 0 0;
         line-height: 30px;
         letter-spacing: 0;
     }
@@ -686,7 +686,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        &+.cell-price {
+        & + .cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -765,7 +765,6 @@ textarea {
         outline: none;
     }
 }
-
 
 /*модальные окна*/
 
@@ -1010,7 +1009,6 @@ textarea {
         background-color: #339ef5;
     }
 }
-
 
 /*Карусель*/
 
@@ -1433,9 +1431,7 @@ button.arrow img {
     height: 100%;
 }
 
-
 /*карусель*/
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1457,7 +1453,6 @@ button.arrow img {
     z-index: 15;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1830,7 +1825,6 @@ button.arrow img {
         margin-bottom: 65px;
     }
 }
-
 
 /*.form-search__items {}*/
 
