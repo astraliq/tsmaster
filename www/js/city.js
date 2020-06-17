@@ -57,8 +57,16 @@ class City {
                 console.log(event.srcElement.dataset.town);
                 this.numberCity = event.srcElement.dataset.town;
                 this.closeModalCities();
+                setTimeout(() => {
+                    this.reloadList();
+                }, 500);
             });
         });
+    }
+
+    //перезагрузка страницы
+    reloadList() {
+        window.location.reload();
     }
 
     checkInformation() {
@@ -168,6 +176,8 @@ class City {
         }
 
         this.runChangeCity();
+
+        // window.location.reload();
 
         // if (this.result) {
         //     this._readData(this.urlCity);
