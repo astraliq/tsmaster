@@ -67,7 +67,7 @@
         </section>
         <section class="advantage advantage_margin">
             <div class="container2">
-                <div class="section__title section__title_black section__title_margin"><a name="advantage">наши преимущества</a></div>
+                <div class="section__title section__title_black section__title_margin"><a name="advantage">надежно и выгодно</a></div>
                 <div class="advantage__bullets">
                     <div class="advantage__bullets-left">
                         <div class="bullets__item bullets_margin">
@@ -165,7 +165,7 @@
                                 </li>
                                 <li>
                                     <div class="reviews__item">
-                                        <div class="reviews__item-name">Матвей Буравин</div>
+                                        <div class="reviews__item-name">Мария Буравина</div>
                                         <div class="reviews__item-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                                         <div class="reviews__item-text">Очень довольна качеством ремонта. До вас вызывала мастера из другой фирмы — не приехал. А вы откликнулись на мою просьбу помочь с ремонтом посудомоечной машинки в течение 10 минут. Мастер подъехал через час.</div>
                                     </div>
