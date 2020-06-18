@@ -1,6 +1,6 @@
 <section class="form-search">
     <div class="container2">
-        <div class="form-search__plate form-search_margin">
+        <div class="form-search__plate form-search_margin" id="action">
             <div class="form-search__text">
                 <div class="section__title section__title_black">
                     <a name="action">узнайте стоимость и<br />оформите заявку на ремонт</a>

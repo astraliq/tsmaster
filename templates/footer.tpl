@@ -1,7 +1,7 @@
 <footer class="footer footer_padding">
     <div class="container">
         <div class="footer__items">
-            <div class="footer__item">
+            <div class="footer__item" id="contacts">
                 <div class="logo-name">
                     <a name="contacts"></a>
                     <div class="logo__title">
@@ -26,7 +26,7 @@
                 <ul class="footer__list">
                     {% for menu,link in content.main_menu %}
                     <li class="footer__menu_item text_margin_2">
-                        <a class="footer__menu_link text_grey" href="{{ link }}">{{ menu | raw }}</a>
+                        <a class="footer__menu_link text_grey scroll_to" href="{{ link }}">{{ menu | raw }}</a>
                     </li>
                     {% endfor %}
                 </ul>

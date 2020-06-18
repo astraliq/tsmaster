@@ -32,7 +32,7 @@
                         <button class="button button-phone button_margin" type="button">Получить скидку</button>
                     </form>
                 </div>
-                <div class="reviews-part">
+                <div class="reviews-part" id="reviews">
                     <div class="reviews-part__top reviews-part__top_margin">
                         <!--<button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>-->
                         <div class="section-part__title">отзывы</div>
@@ -161,7 +161,7 @@
                                 <div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>
                             </div>
                         </section>
-                        <section class="advantage advantage_margin">
+                        <section class="advantage advantage_margin"  id="advantage">
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin section__title_padding">
                                     {% if content.defectTableId == 2 and content.cityId == 0 %} 
@@ -283,7 +283,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="services-style">
+                        <section class="services-style" id="services">
                             <div class="container3">
                                 <div class="section__title section__title_margin">
                                     <a name="services"></a>другие услуги<br>наших мастеров
@@ -300,7 +300,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="terms terms_margin">
+                        <section class="terms terms_margin" id="terms"> 
                             <div class="container3">
                                 <div class="section__title section__title_black section__title_margin">
                                     <a name="terms"></a>условия обслуживания</div>
@@ -313,21 +313,7 @@
                             </div>
                         </section>
                         {% include 'question_form.tpl' %}
-                        <!-- <section class="about about_margin">
-                            <div class="container3">
-                                <div class="section__title section__title_margin"><a name="about"></a>о компании</div>
-                                <div class="about__text">
-                                    <p class="section__text">
-                                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
-                                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
-                                    </p>
-                                    <p class="section__text">
-                                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
-                                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
-                                    </p>
-                                </div>
-                            </div>
-                        </section> -->
+                        {% include 'about.tpl' %}
                     </div>
             </section>
             </div>
@@ -343,7 +329,7 @@
     <script defer src="js/city.js"></script>
     <script>
         jQuery(document).ready(function() {
-            jQuery("a.anchor-btn").click(function () {
+            jQuery("a.scroll_to").click(function () {
                 elementClick = jQuery(this).attr("href")
                 destination = jQuery(elementClick).offset().top;
                 jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);

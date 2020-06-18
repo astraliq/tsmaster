@@ -113,7 +113,7 @@
                 </div>
             </div>
         </section>
-        <section class="services-style">
+        <section class="services-style" id="services">
             <div class="container2">
                 <div class="section__title section__title_margin">
                     <a name="services">все услуги<br>наших мастеров</a>
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </section>
-        <section class="terms terms_margin">
+        <section class="terms terms_margin" id="terms">
             <div class="container2">
                 <div class="section__title section__title_black section__title_margin"><a name="terms">условия обслуживания</a></div>
                 <p class="section__text">
@@ -141,7 +141,7 @@
         </section>
         {% include 'repair_form.tpl' %}
         <!-- Отзывы -->
-        <section class="reviews">
+        <section class="reviews" id="reviews">
             <div class="container2">
                 <div class="section__title section__title_margin section__title_black"><a name="reviews">отзывы</a></div>
                 <div class="reviews__slider">
@@ -240,21 +240,7 @@
                 </div>
         </section>
         {% include 'question_form.tpl' %}
-        <section class="about about_margin" id="about">
-            <div class="container2">
-                <div class="section__title section__title_margin"><a name="about">о компании</a></div>
-                <div class="about__text">
-                    <p class="section__text">
-                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
-                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
-                    </p>
-                    <p class="section__text">
-                        Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
-                        она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.
-                    </p>
-                </div>
-            </div>
-        </section>
+        {% include 'about.tpl' %}
     </main>
     {% include 'footer.tpl' %}
     <script defer src="js/jquery-3.4.1.js"></script>
