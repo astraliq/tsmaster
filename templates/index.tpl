@@ -65,7 +65,7 @@
                 </div>
             </div>
         </section>
-        <section class="advantage advantage_margin">
+        <section class="advantage advantage_margin" id="advantage">
             <div class="container2">
                 <div class="section__title section__title_black section__title_margin"><a name="advantage">надежно и выгодно</a></div>
                 <div class="advantage__bullets">
@@ -240,7 +240,7 @@
                 </div>
         </section>
         {% include 'question_form.tpl' %}
-        <section class="about about_margin">
+        <section class="about about_margin" id="about">
             <div class="container2">
                 <div class="section__title section__title_margin"><a name="about">о компании</a></div>
                 <div class="about__text">
