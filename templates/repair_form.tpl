@@ -5,7 +5,7 @@
                 <div class="section__title section__title_black">
                     <a name="action">узнайте стоимость и<br />оформите заявку на ремонт</a>
                 </div>
-                <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам через 2 минуты.</p>
+                <p class="form-search__subtitle form-search__subtitle_margin">Наш оператор перезвонит Вам в течении 2-х минут.</p>
             </div>
             <form class="form__items form-search_margin">
                 <div class="form__item">
