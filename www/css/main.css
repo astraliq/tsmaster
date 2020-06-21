@@ -75,7 +75,7 @@ textarea {
 
 .menu__items {
   margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  padding: 15px 0 10px 0;
   list-style-type: none;
   display: -moz-flex;
   display: -ms-flex;
@@ -94,8 +94,12 @@ textarea {
   font-weight: 400;
 }
 
+.menu__item:not(:last-child) {
+  border-right: solid 2px #0076d5;
+}
+
 .menu__item_margin {
-  margin: 15px 10px 0 10px;
+  padding: 0 10px 0 10px;
 }
 
 .menu__link {
