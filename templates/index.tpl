@@ -65,7 +65,9 @@
                 </div>
             </div>
         </section>
-        <section class="advantage advantage_margin" id="advantage">
+        <div id="changedBlocks" style="height: 0;"></div>
+        <!-- Цены -->
+        <section class="advantage advantage_margin" id="prices" style="display: none;">
             <div class="container2">
                 <div class="section__title section__title_black section__title_margin"><a name="advantage">надежно и выгодно</a></div>
                 <div class="advantage__bullets">
@@ -101,47 +103,8 @@
                 </div>
             </div>
         </section>
-        <section class="form-plate form-plate_margin">
-            <div class="container">
-                <div class="form-plate__request">&nbsp;
-                    <form class="form-plate__form" action="#">
-                        <div class="section__title section__title_white form-plate__title">оставьте заявку</div>
-                        <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                        <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
-                        <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <section class="services-style" id="services">
-            <div class="container2">
-                <div class="section__title section__title_margin">
-                    <a name="services">все услуги<br>наших мастеров</a>
-                </div>
-                <div class="services-items services-items_margin">
-                    {% for menu,data in content.serviceItems %}
-                    <div class="services-item">
-                        <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}" title="{{menu}}">
-                        <a class="services__btn" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <section class="terms terms_margin" id="terms">
-            <div class="container2">
-                <div class="section__title section__title_black section__title_margin"><a name="terms">условия обслуживания</a></div>
-                <p class="section__text">
-                    Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
-                    она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.</p>
-                <p class="section__text"><sup>*</sup>В случае принятии решения о продолжении работ, за диагностику Вы не оплачиваете.
-
-                </p>
-            </div>
-        </section>
-        {% include 'repair_form.tpl' %}
         <!-- Отзывы -->
-        <section class="reviews" id="reviews">
+        <section class="reviews" id="reviews" style="display: none;">
             <div class="container2">
                 <div class="section__title section__title_margin section__title_black"><a name="reviews">отзывы</a></div>
                 <div class="reviews__slider">
@@ -241,8 +204,48 @@
                     </div>
                 </div>
         </section>
-        {% include 'question_form.tpl' %}
+        <!-- О компании -->
         {% include 'about.tpl' %}
+        <section class="form-plate form-plate_margin">
+            <div class="container">
+                <div class="form-plate__request">&nbsp;
+                    <form class="form-plate__form" action="#">
+                        <div class="section__title section__title_white form-plate__title">оставьте заявку</div>
+                        <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
+                        <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="services-style" id="services">
+            <div class="container2">
+                <div class="section__title section__title_margin">
+                    <a name="services">все услуги<br>наших мастеров</a>
+                </div>
+                <div class="services-items services-items_margin">
+                    {% for menu,data in content.serviceItems %}
+                    <div class="services-item">
+                        <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}" title="{{menu}}">
+                        <a class="services__btn" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="terms terms_margin" id="terms">
+            <div class="container2">
+                <div class="section__title section__title_black section__title_margin"><a name="terms">условия обслуживания</a></div>
+                <p class="section__text">
+                    Бытовая техника создана для того, чтобы облегчить повседневную жизнь. Но для того, чтобы сохранить радость от обладания ею на годы вперед, необходимо заботиться о ее состоянии. Тем не менее, даже при самом тщательном уходе за техникой, случается, что
+                    она выходит из строя. Однако даже незначительная поломка требует профессионального анализа причины, поэтому в случае неприятности следует обратиться к специалистам.</p>
+                <p class="section__text"><sup>*</sup>В случае принятии решения о продолжении работ, за диагностику Вы не оплачиваете.
+
+                </p>
+            </div>
+        </section>
+        {% include 'repair_form.tpl' %}
+        {% include 'question_form.tpl' %}
     </main>
     {% include 'footer.tpl' %}
     <script defer src="js/jquery-3.4.1.js"></script>

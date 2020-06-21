@@ -363,6 +363,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
+    position: relative;
 }
 
 .main-blocks {
@@ -1818,6 +1819,7 @@ button.arrow img {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        transition: all $anim_transition2 ease-in-out;
     }
     &__form {
         margin: 0 0 0 0;

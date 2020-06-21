@@ -16,9 +16,9 @@
         <!-- модальное окно выбора города -->
             <nav class="menu__company">
                 <ul class="menu__items">
-                    {% for menu,link in content.main_menu %}
+                    {% for menu,data in content.main_menu %}
                     <li class="menu__item menu__item_margin">
-                        <a class="menu__link scroll_to" href="{{link}}">{{menu|raw}}</a>
+                        <a class="menu__link scroll_to" href="{{data.link}}" data-type="{{data.dataset}}">{{menu|raw}}</a>
                     </li>
                     {% endfor %}
                 </ul>
