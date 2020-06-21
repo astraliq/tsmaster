@@ -162,7 +162,7 @@
                             </div>
                         </section>
                         <section class="advantage advantage_margin"  id="advantage">
-                            <div class="container3">
+                            <div class="container4">
                                 <div class="section__title section__title_black section__title_margin section__title_padding">
                                     {% if content.defectTableId == 2 and content.cityId == 0 %} 
                                     <!-- екатеринбург --> 
@@ -180,11 +180,11 @@
                                     <div class="advantage__bullets-left">
                                         <div class="bullets__item bullets_margin">
                                             <p class="bullets__text bullets__text_right bullets__text-part">Работаем ежедневно</p>
-                                            <img class="bullets__img" src="../img/advantage/advantage_01.png" alt="Работаем ежедневно" width="100" height="100">
+                                            <img class="bullets__img" src="../img/advantage/advantage_01.png" alt="Работаем ежедневно" width="90" height="90">
                                         </div>
                                         <div class="bullets__item">
                                             <p class="bullets__text bullets__text_right bullets__text-part">бесплатный выезд</p>
-                                            <img class="bullets__img" src="../img/advantage/advantage_02.png" alt="бесплатный выезд" width="100" height="100">
+                                            <img class="bullets__img" src="../img/advantage/advantage_02.png" alt="бесплатный выезд" width="90" height="90">
                                         </div>
                                     </div>
                                     {% if content.defectTableId == 2 and content.cityId == 0 %} 
@@ -201,12 +201,12 @@
                                     {% endif %} 
                                     <div class="advantage__bullets-right">
                                         <div class="bullets__item bullets_margin">
-                                            <img class="bullets__img" src="../img/advantage/advantage_03.png" alt="бесплатная диагностика" width="100" height="100">
+                                            <img class="bullets__img" src="../img/advantage/advantage_03.png" alt="бесплатная диагностика" width="90" height="90">
                                             <p class="bullets__text bullets__text_left bullets__text-part">бесплатная диагностика</p>
 
                                         </div>
                                         <div class="bullets__item">
-                                            <img class="bullets__img" src="../img/advantage/advantage_04.png" alt="гарантия на наши услуги" width="100" height="100">
+                                            <img class="bullets__img" src="../img/advantage/advantage_04.png" alt="гарантия на наши услуги" width="90" height="90">
                                             <p class="bullets__text bullets__text_left bullets__text-part">гарантия на наши услуги</p>
 
                                         </div>
@@ -223,7 +223,7 @@
                         </section>
                         {% include 'repair_form.tpl' %}
                         <section class="brand brand_margin">
-                            <div class="container3">
+                            <div class="container4">
                                 <div class="section__title section__title_black section__title_margin">ремонт {{content.otherBrandSectionTitle}} брендов</div>
                                 <!--<div class="brand-items">
                                     <div class="brand-arrow">
@@ -284,7 +284,7 @@
                             </div>
                         </section>
                         <section class="services-style" id="services">
-                            <div class="container3">
+                            <div class="container4">
                                 <div class="section__title section__title_margin">
                                     <a name="services"></a>другие услуги<br>наших мастеров
                                 </div>
@@ -301,7 +301,7 @@
                             </div>
                         </section>
                         <section class="terms terms_margin" id="terms"> 
-                            <div class="container3">
+                            <div class="container4">
                                 <div class="section__title section__title_black section__title_margin">
                                     <a name="terms"></a>условия обслуживания</div>
                                 <p class="section__text">

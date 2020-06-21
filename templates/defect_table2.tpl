@@ -1,4 +1,4 @@
-<div class="container3">
+<div class="container5">
     <div class="section__title section__title_black section__title_margin">
         для устранения неисправностей может потребоваться:
     </div>
