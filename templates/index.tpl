@@ -119,10 +119,10 @@
                     <a name="services">все услуги<br>наших мастеров</a>
                 </div>
                 <div class="services-items services-items_margin">
-                    {% for data in content.serviceItems %}
+                    {% for menu,data in content.serviceItems %}
                     <div class="services-item">
-                        <img class="services__img_margin" src="{{data.img}}" alt="">
-                        <a class="services__btn" href="{{data.link}}">Узнать подробнее</a>
+                        <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}" title="{{menu}}">
+                        <a class="services__btn" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
                     </div>
                     {% endfor %}
                 </div>
