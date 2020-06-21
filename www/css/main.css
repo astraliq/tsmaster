@@ -2143,8 +2143,16 @@ button.arrow img {
 .button__reviews_margin {
   margin: 0 0 55px 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
+  align-items: center;
+}
+
+.button__reviews_margin p {
+  margin: 15px 0 0 0;
+  width: 40%;
+  text-align: center;
 }
 
 .form-question {

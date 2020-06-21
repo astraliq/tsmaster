@@ -218,14 +218,16 @@
                     </div>
                 </div>
                 <div class="button__reviews_margin">
-                    <button class="btn-review">Оставить отзыв</button>
+                    <button class="btn-review">Оставить сообщение</button>
+                    <p>Мы ежедневно контролируем качество работы наших мастеров. Если у Вас остались вопросы по поводу проведенных работ, Вы можете обратиться к руководству</p>
                 </div>
+
                 <!-- modal window оставить отзыв-->
                 <div class="darkback darkback-review screen_off modal_off">
                     <div class="modal-window modal-review screen_off">
                         <div class="close-review">&#10006;</div>
                         <div class="modal-content" id="review">
-                            <div class="section__title section__title_black section__title_margin">Оставить отзыв</div>
+                            <div class="section__title section__title_black section__title_margin">Оставить сообщение</div>
                             <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
                             <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
                             <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
