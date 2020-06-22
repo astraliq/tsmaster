@@ -325,6 +325,7 @@
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
+    <script defer src="js/menu_2.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script defer src="js/city.js"></script>
     <script>

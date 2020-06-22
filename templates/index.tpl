@@ -251,6 +251,7 @@
     <script defer src="js/jquery-3.4.1.js"></script>
     <script defer src="js/jquery.maskedinput.js"></script>
     <script defer src="js/script.js"></script>
+    <script defer src="js/menu_1.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
     <script defer src="js/city.js"></script>
     <script>
@@ -261,6 +262,7 @@
                 jQuery("html:not(:animated),body:not(:animated)").animate({
                     scrollTop: destination
                 }, 1100);
+                window.location.hash = elementClick;
                 return false;
             });
         });
