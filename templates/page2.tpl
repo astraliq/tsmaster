@@ -32,7 +32,7 @@
                         <button class="button button-phone button_margin" type="button">Получить скидку</button>
                     </form>
                 </div>
-                <div class="reviews-part" id="reviews">
+                <div class="reviews-part" id="reviews_small">
                     <div class="reviews-part__top reviews-part__top_margin">
                         <!--<button class="arrow_part prev_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_left.png"></button>-->
                         <div class="section-part__title">отзывы</div>
@@ -161,6 +161,7 @@
                                 <div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>
                             </div>
                         </section>
+                        <div id="changedBlocks" style="height: 0;"></div>
                         <section class="advantage advantage_margin"  id="advantage">
                             <div class="container4">
                                 <div class="section__title section__title_black section__title_margin section__title_padding">
@@ -214,6 +215,10 @@
                                 </div>
                             </div>
                         </section>
+                        <!-- О компании -->
+                        {% include 'about.tpl' %}
+                        <!-- Отзывы -->
+                        {% include 'reviews_slider.tpl' %}
                         <section class="cost-table">
                             {% if content.defectTableId == 1 %}           
                                 {% include 'defect_table1.tpl' %}
@@ -313,7 +318,6 @@
                             </div>
                         </section>
                         {% include 'question_form.tpl' %}
-                        {% include 'about.tpl' %}
                     </div>
             </section>
             </div>

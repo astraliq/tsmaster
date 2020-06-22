@@ -12,25 +12,46 @@ class MenuHandler {
     }
 
     init() {
+        if (window.location.hash) {
+            this.hideAll();
+            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, 500);
+        }
         this.menuItems.forEach((item) => {
             if (item.dataset.type !== 'contacts') {
                 item.addEventListener('click', (e) => {
                     this.dataType = item.dataset.type;
-                    this.section = $('#' + this.dataType);
-                    if (this.section.css('display') == 'none') {
+                    this.section = '#' + this.dataType;
+                    if ($(this.section).css('display') == 'none') {
                         this.hideAll();
+                        if (item.dataset.type === 'reviews') {
+                            $('#reviews_small').animate({ height: 'hide', easing: 'swing' }, 500);
+                        } else if ($('#reviews_small').css('display') == 'none') {
+                            $('#reviews_small').animate({ height: 'show', easing: 'swing' }, 500);
+                        }
                         $(this.section).animate({ height: 'show', easing: 'swing' }, 500);
                     }
+                    this.scrollTo('changedBlocks');
+                    window.location.hash = this.dataType;
                 });
             }
         });
     }
 
+    scrollTo(id) {
+        jQuery('html:not(:animated),body:not(:animated)').animate(
+            {
+                scrollTop: $('#' + id).offset().top,
+            },
+            1200
+        );
+    }
+
     hideAll() {
         this.menuItems.forEach((item) => {
+            let dataType = item.dataset.type;
             if (item.dataset.type !== 'contacts') {
-                let dataType = item.dataset.type;
                 $('#' + dataType).animate({ height: 'hide', easing: 'swing' }, 500);
+                $('#advantage').animate({ height: 'hide', easing: 'swing' }, 500);
             }
         });
     }
