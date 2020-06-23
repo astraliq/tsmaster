@@ -38,17 +38,6 @@
                         <div class="section-part__title">отзывы</div>
                         <!--<button class="arrow_part next_1"><img class="reviews__arrow_img" src="../img/reviews/reviews_right.png"></button>-->
                     </div>
-                    <!-- обманка для JS-->
-                    <div id="carousel" class="carousel screen_off">
-                        <div id="points" class="prev next"></div>
-                        <div id="carousel_1" class="carousel_1">
-                            <div class="prev_1 next_1"></div>
-                            <div class="button-reviews"></div>
-                            <div class="substrate2"></div>
-                            <div class="cross2"></div>
-                            <div class="modal_rewiew"></div>
-                        </div>
-                    </div>
                     <!-- карусель малая -->
                     <div id="carousel_2" class="carousel_2">
                         <button class="arrow_2 prev_2"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>

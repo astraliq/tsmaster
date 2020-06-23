@@ -14,12 +14,14 @@ class MenuHandler {
     init() {
         if (window.location.hash) {
             this.hideAll();
+            console.log(window.location.hash);
             $(window.location.hash).animate({ height: 'show', easing: 'swing' }, 500);
             if (window.location.hash === '#reviews') {
                 $('#reviews_small').animate({ height: 'hide', easing: 'swing' }, 500);
             } else if ($('#reviews_small').css('display') == 'none') {
                 $('#reviews_small').animate({ height: 'show', easing: 'swing' }, 500);
             }
+            $('#advantage_bullets_small').animate({ height: 'show', easing: 'swing' }, 500);
         }
         this.menuItems.forEach((item) => {
             if (item.dataset.type !== 'contacts') {
