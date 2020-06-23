@@ -9,6 +9,7 @@ class Controller {
         $this->serviceMenuRodit = Config::get('service_menu_rod_padej');
         $this->serviceItems = Config::get('services_items');
         $this->model = new Model();
+        $this->actionMonth = Config::get('months')[date('n')-1];
     }
 
 

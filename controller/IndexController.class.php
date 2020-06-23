@@ -13,6 +13,8 @@ class IndexController extends Controller {
     public $cityInf;
     public $isBrand = 0; // определитель брендованой страницы
     public $pageName = 'ТехСервис Мастер';
+    public $actionMonthCSS;
+    public $actionMonthCSS_2;
 
     public function __construct() {
         parent::__construct();
@@ -23,6 +25,8 @@ class IndexController extends Controller {
         $this->jsonDb = $this->json->getArrayFromFile('/../db.json');
         $this->cityId = isset($_SESSION['cityId']) ? $_SESSION['cityId'] : 0;
         $this->cityInf = isset($_SESSION['cityInf']) ? $_SESSION['cityInf'] : 1;
+        $this->actionMonthCSS = (mb_strlen($this->actionMonth) > 4 && mb_strlen($this->actionMonth) <= 6) ? 'letter_spacing_-1px' : ((mb_strlen($this->actionMonth) > 6) ? 'letter_spacing_-2px' : '');
+        $this->actionMonthCSS_2 = (mb_strlen($this->actionMonth) > 4) ? 'letter_spacing_-1px' : '';
     } 
 
     // public function addBd($data) {
@@ -51,7 +55,7 @@ class IndexController extends Controller {
         $this->pageId = 1;
 
         // echo '<pre>';
-        // print_r( $data['brands']);
+        // print_r();
         // echo '</pre>';
         // exit();
 
@@ -67,6 +71,8 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems,
             'devices' => $this->devices->getAllDevices(),
             'bg_class' => '',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS,
         ];
         return $arrayContent;
 	}
@@ -90,6 +96,8 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => '',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS,
         ];
         return $arrayContent;
     }
@@ -146,6 +154,8 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => 'color_btn_2',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS_2,
         ];
         
         return $arrayContent;
@@ -205,6 +215,8 @@ class IndexController extends Controller {
             'brand' => $data['brand'],
             'bg_class' => 'color_btn_2',
             'hStyle' => 'font_size28',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS_2,
         ];
         
         return $arrayContent;
@@ -262,6 +274,8 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => '',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS_2,
         ];
         
         return $arrayContent;
@@ -319,6 +333,8 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => '',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS_2,
         ];
         
         return $arrayContent;
@@ -376,12 +392,13 @@ class IndexController extends Controller {
             'brands' => $data['brands'],
             'brand' => $data['brand'],
             'bg_class' => '',
+            'actionMonth' => $this->actionMonth,
+            'actionMonthCSS' => $this->actionMonthCSS_2,
         ];
         
         return $arrayContent;
     }
     
-
 	
 }
 ?>

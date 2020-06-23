@@ -72,7 +72,7 @@ $config['services_items'] = [
     ],
   ];
 
-  $config['brands'] = [
+$config['brands'] = [
     'atlant',
     'beko',
     'braun',
@@ -91,3 +91,17 @@ $config['services_items'] = [
     'xiaomi', 'mijia', 'bork', 'aeg', 'candy', 'gaggenau', 'indesit', 'kenwwod', 'korting', 'supra', 'kitfort', 'redmond', 'elenberg', 'rolsen', 'vitek', 'scarlett', 'sitronics',
 ];
 
+$config['months'] = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];

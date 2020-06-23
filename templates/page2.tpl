@@ -23,7 +23,7 @@
                     <div class="advantage__bullets-discount2">
                         <p class="advantage__bullets-discount2_title">{{content.jsonDb.skidka2.title}}</p>
                         <span class="advantage__bullets-discount2_number">{{content.jsonDb.skidka2.number}}</span>
-                        <p class="advantage__bullets-discount2_duration">{{content.jsonDb.skidka2.duration}}</p>
+                        <p class="advantage__bullets-discount2_duration {{ content.actionMonthCSS }}">{{content.jsonDb.skidka2.duration}} {{ content.actionMonth }}!</p>
                     </div>
                     <div class="advantage__bullets-discount2 hide" style="opacity: 0; z-index: 5; height: 120px; width: 250px; left: 5%;"></div>
                     <form class="action-form" action="#">
