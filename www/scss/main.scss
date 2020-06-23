@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: $bg-main_color;
+}
+
 button,
 input,
 optgroup,
