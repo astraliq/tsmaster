@@ -124,6 +124,27 @@
                         <button class="arrow_2 next_2"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
                         </!---->
                     </div>
+                </div> 
+                <div class="advantage_bullets_small" id="advantage_bullets_small" style="display: none;">
+                    <div class="advantage__bullets-right">
+                        <div class="bullets__item bullets_margin">
+                            <img class="bullets__img" src="../img/advantage/advantage_01.png" alt="Работаем ежедневно" width="90" height="90">
+                            <p class="bullets__text bullets__text_left bullets__text-part">Работаем ежедневно</p>
+                        </div>
+                        <div class="bullets__item bullets_margin">
+                            <img class="bullets__img" src="../img/advantage/advantage_02.png" alt="бесплатный выезд" width="90" height="90">
+                            <p class="bullets__text bullets__text_left bullets__text-part">бесплатный выезд</p>
+                        </div>
+                        <div class="bullets__item bullets_margin">
+                            <img class="bullets__img" src="../img/advantage/advantage_03.png" alt="бесплатная диагностика" width="90" height="90">
+                            <p class="bullets__text bullets__text_left bullets__text-part">бесплатная диагностика</p>
+                        </div>
+                        <div class="bullets__item">
+                            <img class="bullets__img" src="../img/advantage/advantage_04.png" alt="гарантия на наши услуги" width="90" height="90">
+                            <p class="bullets__text bullets__text_left bullets__text-part">гарантия на наши услуги</p>
+                        </div>
+                    </div>
+                </div>   
             </section>
             <section class="right-part">
                 <div class="container3">

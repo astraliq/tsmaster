@@ -96,7 +96,9 @@ if (carousel) {
 //курусель отзывов
 /*******************************************************************************/
 let carousel_1 = document.getElementById('carousel_1');
+
 if (carousel_1) {
+    console.log(carousel_1);
     let j = 1;
     for (let li of carousel_1.querySelectorAll('li')) {
         li.style.position = 'relative';
