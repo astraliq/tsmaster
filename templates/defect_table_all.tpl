@@ -2,32 +2,21 @@
     <div class="section__title section__title_black section__title_margin">
         цены на услуги:
     </div>
-    <div class="cost-table_position">
-        {% for menu,data in content.serviceItems %}
-        {% if content.serviceTitle != menu %}           
-        <div class="services-item">
-            <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}" title="{{menu}}">
-            <a class="services__btn" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
-        </div>
-        {% endif %} 
-        {% endfor %}
-        <ul>
-            <li></li>
-        </ul>
-
-
-        <div class="cost-table__grid cost-table_margin">
-            <div class="cell-title">вид работ</div>
-            <div class="cell-title">стоимость, от<sup>*</sup></div>
-            {% for repType in content.repTypes %}
-            <div class="cell-name">
-                <a class="cell-name__link" href="{{ repType.link }}">{{ repType.title }}</a>
+    <div class="cost_table_all">
+        {% set ctaId = 1 %} {% for device in content.devices %} {% set dev = device.title %} <input id="cta-{{ ctaId }}" class="hide_input" type="checkbox" {%
+        if content.pageTitle3 == device.title %}checked {%endif%}/>
+        <label for="cta-{{ ctaId }}" class="cost_table_all-device">{{ device.title | capitalize }}</label>
+        <div class="cost_table_all-device_defect">
+            {% for defect in content.defectsAll[dev] %}
+            <div class="cost_table_all-row">
+                <div class="cost_table_all-row-name">
+                    <a class="cost_table_all-row-name__link" href="{{ content.mainLink ~ defect.link }}">{{ defect.title }}</a>
+                </div>
+                <div class="cost_table_all-row-price">{{ defect.price }} {% if defect.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             </div>
-            <div class="cell-price">{{ repType.price }} {% if repType.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             {% endfor %}
         </div>
+        {% set ctaId = ctaId + 1 %} {% endfor %}
     </div>
-    <div class="table-footnote table-footnote_margin">
-        <sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br />
-    </div>
+    <div class="table-footnote table-footnote_margin"><sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br /></div>
 </div>

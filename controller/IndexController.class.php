@@ -29,11 +29,11 @@ class IndexController extends Controller {
         $this->actionMonthCSS = (mb_strlen($this->actionMonth) > 4 && mb_strlen($this->actionMonth) <= 6) ? 'letter_spacing_-1px' : ((mb_strlen($this->actionMonth) > 6) ? 'letter_spacing_-2px' : '');
         $this->actionMonthCSS_2 = (mb_strlen($this->actionMonth) > 4) ? 'letter_spacing_-1px' : '';
         $this->defectsAll = [
-            'washing_machine' => $this->defects->getByDeviceId(1),
-            'dishwasher' => $this->defects->getByDeviceId(2),
-            'refrigerator' => $this->defects->getByDeviceId(3),
-            'oven' => $this->defects->getByDeviceId(4),
-            'hob' => $this->defects->getByDeviceId(5),
+            'стиральная машина' => $this->defects->getByDeviceId(1),
+            'посудомоечная машина' => $this->defects->getByDeviceId(2),
+            'холодильник' => $this->defects->getByDeviceId(3),
+            'духовой шкаф' => $this->defects->getByDeviceId(4),
+            'варочная панель' => $this->defects->getByDeviceId(5),
         ];
     } 
 
@@ -114,7 +114,7 @@ class IndexController extends Controller {
         $this->view = 'page2';
         $this->pageId = 2;
         $deviceId = 1;      // заменять на id из базы device
-        $defects = $this->defectsAll['washing_machine'];
+        $defects = $this->defectsAll['стиральная машина'];
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/washing_machine'; // заменять ссылку
         $defectTableId = 1;
@@ -149,7 +149,7 @@ class IndexController extends Controller {
             'pageTitle2' => $pageTitle2, // название страницы в родит. падеже
             'pageTitle3' => $pageTitle3, // название страницы в именит. падеже
             'defects' => $defects, // данные дефектов из БД по технике
-            'defectsAll' => $this->defectsAll, // данные дефектов из БД по всех видов техник
+            'defectsAll' => $this->defectsAll, // данные дефектов из БД всех видов техник
             'repTypes' => $repTypes, // данные по видам работ в зависимости от дефектов
             'otherBrandSectionTitle' => $otherBrandSectionTitle,
             'banner' => $banner, // баннер в названии страницы
@@ -174,7 +174,7 @@ class IndexController extends Controller {
         $this->view = 'page2';
         $this->pageId = 2;
         $deviceId = 2;      // заменять на id из базы device
-        $defects = $this->defectsAll['dishwasher'];
+        $defects = $this->defectsAll['посудомоечная машина'];
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/dishwasher'; // заменять ссылку
         $defectTableId = 1;
@@ -236,7 +236,7 @@ class IndexController extends Controller {
         $this->view = 'page2';
         $this->pageId = 2;
         $deviceId = 3;      // заменять на id из базы device
-        $defects = $this->defectsAll['refrigerator'];
+        $defects = $this->defectsAll['холодильник'];
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/refrigerator'; // заменять ссылку
         $defectTableId = 1;
@@ -296,7 +296,7 @@ class IndexController extends Controller {
         $this->view = 'page2';
         $this->pageId = 2;
         $deviceId = 4;      // заменять на id из базы device
-        $defects = $this->defectsAll['oven'];
+        $defects = $this->defectsAll['духовой шкаф'];
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/oven'; // заменять ссылку
         $defectTableId = 1;
@@ -356,7 +356,7 @@ class IndexController extends Controller {
         $this->view = 'page2';
         $this->pageId = 2;
         $deviceId = 5;      // заменять на id из базы device
-        $defects = $this->defectsAll['hob'];
+        $defects = $this->defectsAll['варочная панель'];
         $otherBrandSectionTitle = 'любых';
         $mainLink = '/hob'; // заменять ссылку
         $defectTableId = 1;

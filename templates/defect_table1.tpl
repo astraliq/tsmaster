@@ -1,4 +1,4 @@
-<div class="container5" id="prices" style="display: none;">
+<div class="container3">
     <div class="section__title section__title_black section__title_margin">стоимость ремонта {{ content.pageTitle2 }}, от<sup>*</sup></div>
     <div class="cost-table_position">
         <div class="cost-table__grid cost-table_margin">

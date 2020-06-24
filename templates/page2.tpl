@@ -231,7 +231,7 @@
                         {% include 'reviews_slider.tpl' %}
                         <section class="cost-table">
                             {% if content.defectTableId == 1 %}           
-                                {% include 'defect_table1.tpl' %}
+                                {% include 'defect_table_all.tpl' %}
                             {% elseif content.defectTableId == 2 %}                      
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 

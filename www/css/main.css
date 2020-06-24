@@ -839,6 +839,7 @@ textarea {
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
+  border-radius: 5px;
 }
 
 .table-footnote_margin {
@@ -2585,4 +2586,168 @@ button.arrow img {
 
 .letter_spacing_-2px {
   letter-spacing: -2px;
+}
+
+.hide_input {
+  height: 0;
+  opacity: 0;
+  left: -9999px;
+}
+
+.hide_input + label {
+  height: 50px;
+  width: 900px;
+}
+
+.hide_input + label::after {
+  content: '+';
+  position: absolute;
+  transition: all 0.5s ease;
+  right: 50px;
+  top: 0px;
+  color: transparent;
+}
+
+.hide_input + label:hover::after {
+  top: 0px;
+  color: #333;
+}
+
+.hide_input + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.hide_input + label ~ .cost_table_all-device_defect .cost_table_all-row {
+  position: relative;
+  transition: all 0.5s ease;
+  opacity: 0;
+  height: 0;
+}
+
+.hide_input + label ~ .cost_table_all-device_defect .cost_table_all-row a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.hide_input + label ~ .cost_table_all-device_defect .cost_table_all-row div {
+  cursor: default;
+}
+
+.hide_input:checked + label::after {
+  content: '\2013';
+  top: -1px;
+  right: 50px;
+  color: #00a3c6;
+}
+
+.hide_input:checked + label + .cost_table_all-device_defect .cost_table_all-row {
+  opacity: 1;
+  height: 50px;
+}
+
+.hide_input:checked + label + .cost_table_all-device_defect .cost_table_all-row a {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.hide_input:checked + label + .cost_table_all-device_defect .cost_table_all-row div {
+  cursor: pointer;
+}
+
+.hide_input:checked + label {
+  color: #00a3c6;
+}
+
+.cost_table_all {
+  position: relative;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cost_table_all-device_defect {
+  margin: 5px 0 10px 0;
+}
+
+.cost_table_all-row {
+  transition: all 0.5s ease;
+}
+
+.cost_table_all-device {
+  padding-left: 50px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: #e4e4e4;
+  line-height: 50px;
+  font-family: "'Rubik', sans-serif";
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cost_table_all-row {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cost_table_all-row div {
+  border: 1px gray solid;
+}
+
+.cost_table_all-row-name {
+  width: 700px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  color: #000;
+  font-family: "'Rubik', sans-serif";
+  font-size: 23px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.cost_table_all-row-name a,
+.cost_table_all-row-name a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+.cost_table_all-row-name:hover {
+  background-color: #66a7c5;
+}
+
+.cost_table_all-row-name:hover .cost_table_all-row-name__link {
+  color: whitesmoke;
+}
+
+.cost_table_all-row-name:hover + .cost_table_all-row-price {
+  background-color: #66a7c5;
+  color: whitesmoke;
+}
+
+.cost_table_all-row-price {
+  width: 200px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0076d5;
+  font-family: "'Rubik', sans-serif";
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
 }
