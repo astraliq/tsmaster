@@ -77,6 +77,7 @@ class IndexController extends Controller {
             'cityId' => $this->cityId,
             'cityInf' => $this->cityInf,
             'serviceItems' => $this->serviceItems,
+            'defectsAll' => $this->defectsAll,
             'devices' => $this->devices->getAllDevices(),
             'bg_class' => '',
             'actionMonth' => $this->actionMonth,

@@ -830,9 +830,8 @@ textarea {
 }
 
 .table-footnote {
-  margin: 0 0 0 55px;
   padding: 15px;
-  width: 80%;
+  width: 700px;
   background-color: #e4e4e4;
   color: #000;
   font-family: "'Rubik', sans-serif";
@@ -2663,7 +2662,7 @@ button.arrow img {
 }
 
 .cost_table_all-device_defect {
-  margin: 5px 0 10px 0;
+  margin: 5px 0 25px 0;
 }
 
 .cost_table_all-row {
@@ -2748,4 +2747,31 @@ button.arrow img {
   font-size: 25px;
   font-weight: 600;
   line-height: 30px;
+}
+
+.contacts-container {
+  width: 100%;
+  max-width: 1225px;
+  margin: 0 auto;
+}
+
+.contacts_text {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 70px 0;
+  background-color: #d5ecff;
+}
+
+.contacts_text-data {
+  width: 550px;
+  margin: 0;
+  padding: 0 25px;
+}
+
+.contacts_text-data a {
+  font-weight: 700;
 }

@@ -229,6 +229,9 @@
                         {% include 'about.tpl' %}
                         <!-- Отзывы -->
                         {% include 'reviews_slider.tpl' %}
+                        <!-- Контакты -->
+                        {% include 'contacts.tpl' %}
+                        <!-- Цены -->
                         <section class="cost-table">
                             {% if content.defectTableId == 1 %}           
                                 {% include 'defect_table_all.tpl' %}

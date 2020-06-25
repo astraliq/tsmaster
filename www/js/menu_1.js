@@ -5,6 +5,7 @@ class MenuHandler {
         this.menuItems = document.querySelectorAll(menuItemsClass);
         this.dataType;
         this.section;
+        this.animDuration = 500;
         this.sectionHeight;
         this.sectionHeights = {
             prices: 376,
@@ -13,21 +14,20 @@ class MenuHandler {
 
     init() {
         if (window.location.hash) {
-            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, 500);
+            this.hideAll();
+            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, this.animDuration);
         }
         this.menuItems.forEach((item) => {
-            if (item.dataset.type !== 'contacts') {
-                item.addEventListener('click', (e) => {
-                    this.dataType = item.dataset.type;
-                    this.section = '#' + this.dataType;
-                    if ($(this.section).css('display') == 'none') {
-                        this.hideAll();
-                        $(this.section).animate({ height: 'show', easing: 'swing' }, 500);
-                    }
-                    this.scrollTo('changedBlocks');
-                    window.location.hash = this.dataType;
-                });
-            }
+            item.addEventListener('click', (e) => {
+                this.dataType = item.dataset.type;
+                this.section = '#' + this.dataType;
+                if ($(this.section).css('display') == 'none') {
+                    this.hideAll();
+                    $(this.section).animate({ height: 'show', easing: 'swing' }, this.animDuration);
+                }
+                this.scrollTo('changedBlocks');
+                window.location.hash = this.dataType;
+            });
         });
     }
 
@@ -42,10 +42,9 @@ class MenuHandler {
 
     hideAll() {
         this.menuItems.forEach((item) => {
-            if (item.dataset.type !== 'contacts') {
-                let dataType = item.dataset.type;
-                $('#' + dataType).animate({ height: 'hide', easing: 'swing' }, 500);
-            }
+            let dataType = item.dataset.type;
+            $('#' + dataType).animate({ height: 'hide', easing: 'swing' }, this.animDuration);
+            $('#advantage').animate({ height: 'hide', easing: 'swing' }, this.animDuration);
         });
     }
 }

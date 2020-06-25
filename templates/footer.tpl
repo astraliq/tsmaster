@@ -1,7 +1,7 @@
 <footer class="footer footer_padding">
     <div class="container">
         <div class="footer__items">
-            <div class="footer__item" id="contacts">
+            <div class="footer__item" id="contacts_footer">
                 <div class="logo-name">
                     <a name="contacts"></a>
                     <div class="logo__title">

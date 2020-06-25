@@ -59,8 +59,7 @@
                 </div>
             </section>
             <div id="changedBlocks" style="height: 0;"></div>
-            <!-- Цены -->
-            <section class="advantage advantage_margin" id="prices" style="display: none;">
+            <section class="advantage advantage_margin" id="advantage">
                 <div class="container2">
                     <div class="section__title section__title_black section__title_margin"><a name="advantage">надежно и выгодно</a></div>
                     <div class="advantage__bullets">
@@ -96,10 +95,14 @@
                     </div>
                 </div>
             </section>
+            <!-- Цены -->
+            {% include 'defect_table_all.tpl' %}
             <!-- Отзывы -->
             {% include 'reviews_slider.tpl' %}
             <!-- О компании -->
             {% include 'about.tpl' %}
+            <!-- Контакты -->
+            {% include 'contacts.tpl' %}
             <section class="form-plate form-plate_margin">
                 <div class="container">
                     <div class="form-plate__request">
