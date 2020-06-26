@@ -6,10 +6,6 @@ class MenuHandler {
         this.dataType;
         this.section;
         this.animDuration = 500;
-        this.sectionHeight;
-        this.sectionHeights = {
-            prices: 376,
-        };
     }
 
     init() {

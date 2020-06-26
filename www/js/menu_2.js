@@ -5,10 +5,6 @@ class MenuHandler {
         this.menuItems = document.querySelectorAll(menuItemsClass);
         this.dataType;
         this.section;
-        this.sectionHeight;
-        this.sectionHeights = {
-            prices: 376,
-        };
     }
 
     init() {

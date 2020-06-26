@@ -15,7 +15,15 @@
         <main class="main-style">
             <!-- modal window -->
             {% include 'modal_substrate1.tpl' %} {% include 'confirm_mailing_block.tpl' %}
-            <section class="slider">
+            <!-- баннер 1 -->
+            {% include 'banner_1.tpl' %}
+            <!-- баннер 2 -->
+            {% include 'banner_2.tpl' %}
+            <!-- баннер 3 -->
+            {% include 'banner_3.tpl' %}
+            <!-- баннер 4 -->
+            {% include 'banner_4.tpl' %}
+            <section class="slider" id="main_slider">
                 <div class="container">
                     <!-- обманка -->
                     <div id="carousel_2" class="carousel_2 screen_off">

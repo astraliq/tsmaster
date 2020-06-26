@@ -342,6 +342,7 @@ textarea {
     display: -o-flex;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .bullet__img {
@@ -1575,7 +1576,7 @@ button.arrow img {
     text-align: center;
     color: #fff;
     border-radius: 50%;
-    z-index: 15;
+    z-index: 1000000;
     box-sizing: border-box;
 }
 
@@ -1795,6 +1796,8 @@ button.arrow img {
         font-size: 21px;
         font-weight: 400;
         line-height: 22px;
+        text-indent: 50px;
+        text-align: justify;
     }
 }
 
@@ -2732,5 +2735,48 @@ button.arrow img {
         & a {
             font-weight: 700;
         }
+    }
+}
+
+.banner {
+    position: absolute;
+    margin: 0 0 0 0;
+    height: 400px;
+    z-index: 15;
+    left: 0;
+    right: 0;
+    background-color: $bg_color_main;
+    & .container2 {
+        border-bottom: 3px solid $text__main_color;
+        max-width: 1225px;
+        padding: 0 80px 50px 80px;
+        height: 340px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &-header {
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        margin: 0 0 10px 0;
+        color: $text__main_color;
+        font-family: $font__first;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    &-info-text {
+        color: $text__main_color;
+        font-family: $font__first;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0;
+        text-indent: 50px;
+        text-align: justify;
     }
 }

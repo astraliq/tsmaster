@@ -138,7 +138,15 @@
             <section class="right-part">
                 <div class="container3">
                     <div class="main-style">
-                        <section class="top-banner_margin">
+                        <!-- баннер 1 -->
+                        {% include 'banner_1.tpl' %}
+                        <!-- баннер 2 -->
+                        {% include 'banner_2.tpl' %}
+                        <!-- баннер 3 -->
+                        {% include 'banner_3.tpl' %}
+                        <!-- баннер 4 -->
+                        {% include 'banner_4.tpl' %}
+                        <section class="top-banner_margin" id="top_banner">
                             {% if content.isBrand != 1 and content.defectTableId == 1 %} 
                              <!--заголовок 2 страницы  -->
                             <div class="banner_title_block-1">       

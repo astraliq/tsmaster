@@ -40,23 +40,23 @@
             {% include 'service_menu.tpl' %}                           
         {% endif %}
         {% if content.pageId == 1 %}           
-             <div class="bullet__items bullet__items_margin">
+             <div class="bullet__items bullet__items_margin" id="bullet__items">
         {% elseif content.pageId != 1 %}                      
-             <div class="bullet__items bullet__items_margin bullet__items_top">                        
+             <div class="bullet__items bullet__items_margin bullet__items_top" id="bullet__items">                        
         {% endif %}            
-                <div class="bullet__item">
+                <div class="bullet__item" data-type="banner1">
                     <img class="bullet__img" src="img/bullets/01.jpg" alt="Работаем ежедневно">
                     <div class="bullet__text">Работаем ежедневно</div>
                 </div>
-                <div class="bullet__item">
+                <div class="bullet__item" data-type="banner2">
                     <img class="bullet__img" src="img/bullets/02.jpg" alt="бесплатный выезд">
                     <div class="bullet__text">бесплатный выезд</div>
                 </div>
-                <div class="bullet__item">
+                <div class="bullet__item" data-type="banner3">
                     <img class="bullet__img" src="img/bullets/03.jpg" alt="бесплатная диагностика">
                     <div class="bullet__text">бесплатная диагностика</div>
                 </div>
-                <div class="bullet__item">
+                <div class="bullet__item" data-type="banner4">
                     <img class="bullet__img" src="img/bullets/04.jpg" alt="гарантия на наши услуги">
                     <div class="bullet__text">гарантия<br>на наши услуги</div>
                 </div>

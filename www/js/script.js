@@ -98,7 +98,6 @@ if (carousel) {
 let carousel_1 = document.getElementById('carousel_1');
 
 if (carousel_1) {
-    console.log(carousel_1);
     let j = 1;
     for (let li of carousel_1.querySelectorAll('li')) {
         li.style.position = 'relative';
@@ -861,3 +860,69 @@ class DefectPrices {
 let prices = new DefectPrices();
 
 prices.init();
+
+class BannerMenuHandler {
+    constructor(menuItemsClass, hideBlockId) {
+        this.menuItems = document.querySelectorAll(menuItemsClass);
+        this.hideBlockId = hideBlockId;
+        this.dataType;
+        this.section;
+        this.animDuration = 500;
+        this.counter = 15;
+    }
+
+    init() {
+        if (window.location.hash) {
+            this.hideAll();
+            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, this.animDuration);
+        }
+        this.menuItems.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                this.dataType = item.dataset.type;
+                this.section = '#' + this.dataType;
+                if ($(this.section).css('display') == 'none') {
+                    $(this.section).css('z-index', this.counter);
+                    this.counter++;
+                    $(this.section).slideDown(this.animDuration, 'swing');
+                    this.hideAll(this.section);
+                } else {
+                    this.hideAll();
+                }
+                // this.scrollTo('bullet__items');
+                // window.location.hash = this.dataType;
+            });
+        });
+    }
+    // плавный скроллинг к элементу с id
+    scrollTo(id) {
+        jQuery('html:not(:animated),body:not(:animated)').animate(
+            {
+                scrollTop: $('#' + id).offset().top,
+            },
+            1200
+        );
+    }
+
+    hideAll(exepElem) {
+        this.menuItems.forEach((item) => {
+            let elemId = '#' + item.dataset.type;
+            if (exepElem === elemId) {
+                return;
+            }
+            $(elemId).slideUp(this.animDuration, 'swing');
+            // setTimeout($(this.section).css('display', 'none'), this.animDuration);
+            // $(this.hideBlockId).animate({ height: 'hide', easing: 'swing' }, this.animDuration);
+        });
+    }
+}
+
+let bannerMenu;
+
+if (document.getElementById('main_slider')) {
+    bannerMenu = new BannerMenuHandler('.bullet__item', '#main_slider');
+}
+if (document.getElementById('top_banner')) {
+    bannerMenu = new BannerMenuHandler('.bullet__item', '#top_banner');
+}
+
+bannerMenu.init();
