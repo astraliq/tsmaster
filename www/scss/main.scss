@@ -918,7 +918,8 @@ textarea {
     width: 400px;
     height: 570px;
     top: 100px;
-    right: 500px;
+    left: auto;
+    right: auto;
     border: 5px solid $text__second_color;
     background-color: $bg-form__plate_color;
     z-index: 12;
@@ -2741,11 +2742,14 @@ button.arrow img {
 .banner {
     position: absolute;
     margin: 0 0 0 0;
-    height: 400px;
+    height: 360px;
     z-index: 15;
     left: 0;
     right: 0;
     background-color: $bg_color_main;
+    &-page2 {
+        height: 300px;
+    }
     & .container2 {
         border-bottom: 3px solid $text__main_color;
         max-width: 1225px;
@@ -2759,6 +2763,10 @@ button.arrow img {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        &-page2 {
+            padding: 0 30px 40px 30px;
+            height: 300px;
+        }
     }
     &-header {
         text-transform: uppercase;

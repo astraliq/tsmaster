@@ -1,5 +1,6 @@
-<section class="banner" id="banner4" style="display: none;">
-    <div class="container2">
+{% if content.pageId == 2 %} {% set bp2 = 'banner-page2' %} {% set cp2 = 'container2-page2' %} {% else %} {% set bp2 = '' %} {% set cp2 = '' %} {% endif %}
+<section class="banner {{ bp2 }}" id="banner4" style="display: none;">
+    <div class="container2  {{ cp2 }}">
         <h3 class="banner-header">гарантия на наши услуги</h3>
         <div class="banner-info">
             <p class="banner-info-text">

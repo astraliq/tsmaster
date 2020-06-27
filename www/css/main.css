@@ -938,7 +938,8 @@ textarea {
   width: 400px;
   height: 570px;
   top: 100px;
-  right: 500px;
+  left: auto;
+  right: auto;
   border: 5px solid #fff;
   background-color: #d5ecff;
   z-index: 12;
@@ -2782,11 +2783,15 @@ button.arrow img {
 .banner {
   position: absolute;
   margin: 0 0 0 0;
-  height: 400px;
+  height: 360px;
   z-index: 15;
   left: 0;
   right: 0;
   background-color: #fafdff;
+}
+
+.banner-page2 {
+  height: 300px;
 }
 
 .banner .container2 {
@@ -2801,6 +2806,11 @@ button.arrow img {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.banner .container2-page2 {
+  padding: 0 30px 40px 30px;
+  height: 300px;
 }
 
 .banner-header {
