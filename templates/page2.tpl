@@ -251,59 +251,17 @@
                         <section class="brand brand_margin">
                             <div class="container4">
                                 <div class="section__title section__title_black section__title_margin">ремонт {{content.otherBrandSectionTitle}} брендов</div>
-                                <!--<div class="brand-items">
-                                    <div class="brand-arrow">
-                                        <button class="brand-btn"><</button>
-                                    </div>
-                                    <div class="brand-item">
-                                        <img class="brand-item__img" src="../img/brands/bosch.jpg" alt="Bosch">
-                                    </div>
-                                    <div class="brand-item">
-                                        <img class="brand-item__img" src="../img/brands/indesit.jpg" alt="Indesit">
-                                    </div>
-                                    <div class="brand-item">
-                                        <img class="brand-item__img" src="../img/brands/electrolux.jpg" alt="Electrolux">
-                                    </div>
-                                    <div class="brand-arrow">
-                                        <button class="brand-btn">></button>
-                                    </div>
-                                </div>-->
+                            
                                 <!-- Карусель брендов -->
                                 <div class="brand-items">
                                     <div id="carousel_br" class="carousel_br">
-                                        <button class="arrow_br prev_br"><img src="img/reviews/reviews_left.png"></button>
+                                        <!--<button class="arrow_br prev_br"><img src="img/reviews/reviews_left.png"></button>-->
                                         <div class="gallery_br">
-                                            <ul class="image_br">
-                                                <!--<li>
-                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/bosch.jpg" alt="Bosch"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/indesit.jpg" alt="Indesit"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="../img/brands/electrolux.jpg" alt="Electrolux"></a>
-                                                </li>-->
-                                            </ul>
+                                            <div class="image_br">
+                                                
+                                            </div>
                                         </div>
-                                        <button class="arrow_br next_br"><img src="img/reviews/reviews_right.png"></button>
+                                        <button id="btn_brand_all" class="arrow_br">показать все бренды</button>
                                     </div>
                                     <!-- Карусель брендов -->
                                 </div>

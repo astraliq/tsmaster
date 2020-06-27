@@ -152,5 +152,50 @@
         "id": 30,
         "brandName": "zanussi",
         "imgBrand": "31_zanussi.png"
+    },
+    {
+        "id": 31,
+        "brandName": "ariston",
+        "imgBrand": "32_ariston.png"
+    },
+    {
+        "id": 32,
+        "brandName": "hansa",
+        "imgBrand": "33_hansa.png"
+    },
+    {
+        "id": 33,
+        "brandName": "miele",
+        "imgBrand": "34_miele.png"
+    },
+    {
+        "id": 34,
+        "brandName": "stinol",
+        "imgBrand": "35_stinol.png"
+    },
+    {
+        "id": 35,
+        "brandName": "vestel",
+        "imgBrand": "36_vestel.png"
+    },
+    {
+        "id": 36,
+        "brandName": "asko",
+        "imgBrand": "37_asko.png"
+    },
+    {
+        "id": 37,
+        "brandName": "brandt",
+        "imgBrand": "38_brandt.png"
+    },
+    {
+        "id": 38,
+        "brandName": "ardo",
+        "imgBrand": "39_ardo.png"
+    },
+    {
+        "id": 39,
+        "brandName": "kaiser",
+        "imgBrand": "40_kaiser.png"
     }
 ]
