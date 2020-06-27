@@ -877,17 +877,18 @@ class BannerMenuHandler {
             $(window.location.hash).animate({ height: 'show', easing: 'easy' }, this.animDuration);
         }
         this.menuItems.forEach((item) => {
-            item.addEventListener('click', (e) => {
+            item.addEventListener('click', async (e) => {
                 this.dataType = item.dataset.type;
                 this.section = '#' + this.dataType;
                 if ($(this.section).css('display') == 'none') {
                     $(this.section).css('z-index', this.counter);
                     this.counter++;
-                    $(this.section).slideDown(this.animDuration, 'swing');
+                    $(this.section).slideDown(this.animDuration);
                     this.hideAll(this.section);
                 } else {
-                    this.hideAll();
+                    $(this.section).slideUp(this.animDuration, 'swing');
                 }
+
                 // this.scrollTo('bullet__items');
                 // window.location.hash = this.dataType;
             });
@@ -906,12 +907,13 @@ class BannerMenuHandler {
     hideAll(exepElem) {
         this.menuItems.forEach((item) => {
             let elemId = '#' + item.dataset.type;
-            if (exepElem === elemId) {
-                return;
+            if (exepElem !== elemId && $(elemId).css('display') != 'none') {
+                // $(elemId).css('display', 'none');
+                setTimeout(() => {
+                    $(elemId).css('display', 'none');
+                }, this.animDuration);
             }
-            $(elemId).slideUp(this.animDuration, 'swing');
             // setTimeout($(this.section).css('display', 'none'), this.animDuration);
-            // $(this.hideBlockId).animate({ height: 'hide', easing: 'swing' }, this.animDuration);
         });
     }
 }

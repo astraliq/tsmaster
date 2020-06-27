@@ -4,9 +4,7 @@
         <div class="banner-info">
             <p class="banner-info-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere explicabo veritatis deleniti sed voluptate, iste nesciunt laudantium,
-                dicta unde architecto vitae, accusantium totam ratione nisi optio sunt perspiciatis obcaecati modi dolorum itaque velit aliquid numquam. Sequi
-                provident quae, eos quo praesentium nesciunt expedita sapiente officiis consectetur, ab impedit explicabo excepturi aperiam eaque dicta ipsam
-                sint, dolorum minus distinctio! Quidem quia veniam, ab ad earum officia, culpa ipsa adipisci soluta ratione quis fugiat at ex quibusdam debitis
+                dicuidem quia veniam, ab ad earum officia, culpa ipsa adipisci soluta ratione quis fugiat at ex quibusdam debitis
                 mollitia odio nesciunt cum! Atque officia nemo, et eveniet tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque
                 nostrum earum alias.
             </p>

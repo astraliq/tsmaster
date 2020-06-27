@@ -4,14 +4,16 @@
         <div class="banner-info">
             <p class="banner-info-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere explicabo veritatis deleniti sed voluptate, iste nesciunt laudantium,
-                dicta unde architecto vitae, accusantium totam ratione nisi optio sunt perspiciatis obcaecati modi dolorum itaque velit aliquid numquam. Sequi
-                provident quae, eos quo praesentium nesciunt expedita sapiente officiis consectetur, ab impedit explicabo excepturi aperiam eaque dicta ipsam
-                sint, dolorum minus distinctio! Quidem quia veniam, ab ad earum officia, culpa ipsa adipisci soluta ratione quis fugiat at ex quibusdam debitis
-                mollitia odio nesciunt cum! Atque officia nemo, et eveniet tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque
-                nostrum earum alias.
+                dicta unde architecto vitae, accusantium totam ratione nisi optio sunt perspiciatis obcaecati modi dolorum i! Atque officia nemo, et eveniet
+                tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque nostrum earum alias.
             </p>
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque qui dolor odio alias iure dignissimos laboriosam delectus, rem minima facere?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sint quisquam modi repellendus sit fugit consequatur qui ipsum necessitatibus
+                pariatur? Illo consequuntur voluptatem fugit omnis reiciendis dolore fuga debitis, unde accusamus, natus quod excepturi eligendi magnam
+                dignissimos totam n reprehenderit id perferendis accusantium laudantium nam, hic maxime consequuntur rerum quaerat ducimus? Nesciunt cupiditate
+                atque explicabo, fugit ipsam repellendus cum, facilis animi numquam nihil esse id laudantium culpa porro consequatur tempora eaque iste est,
+                illum ipsa possimus repellat? Fugit earum et a harum quisquam distinctio fuga, natus ipsa ab perspiciatis placeat mollitia est voluptatibus
+                eaque quidem.
             </p>
         </div>
     </div>
