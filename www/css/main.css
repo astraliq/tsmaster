@@ -1275,22 +1275,6 @@ button.arrow img {
   display: block;
 }
 
-.arrow_br {
-  width: 45px;
-  height: 45px;
-  position: absolute;
-  top: 35%;
-  padding: 0;
-  background-color: #0076d5;
-  border-radius: 2px;
-  border: 1px solid #0076d5;
-  box-shadow: 3px 3px 5px #000;
-  font-size: 24px;
-  line-height: 24px;
-  color: #fff;
-  display: block;
-}
-
 .cause {
   width: 350px;
   height: 70px;
@@ -1509,12 +1493,6 @@ button.arrow img {
   overflow: hidden;
 }
 
-.gallery_br {
-  width: 81.6%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 .gallery ul {
   width: 9999px;
   margin: 0;
@@ -1536,16 +1514,6 @@ button.arrow img {
 }
 
 .gallery_2 ul {
-  width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: margin-left 1000ms;
-  /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
-  font-size: 0;
-}
-
-.gallery_br ul {
   width: 9999px;
   margin: 0;
   padding: 0;
@@ -1584,6 +1552,58 @@ button.arrow img {
 }
 
 /*карусель*/
+/*таблица брендов*/
+.gallery_br {
+  width: 100%;
+  height: 300px;
+  /*меняет видимость таблицы брендов*/
+  margin: 0 auto;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+.image_br {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.table_brand {
+  width: 100%;
+  height: 600px;
+  border-collapse: collapse;
+}
+
+.table_cell_brand {
+  width: 20%;
+  padding: 5px;
+  border: 1px solid #000;
+  /*filter: grayscale(100%);*/
+}
+
+.gallery_br_link {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arrow_br {
+  width: 250px;
+  height: 40px;
+  position: absolute;
+  top: 102%;
+  left: 36%;
+  padding: 0;
+  background-color: #0076d5;
+  border-radius: 2px;
+  border: 1px solid #0076d5;
+  box-shadow: 3px 3px 5px #000;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  display: block;
+}
+
 /*стрелка якорь переход на верх*/
 .anchor-btn {
   position: absolute;
