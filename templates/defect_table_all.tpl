@@ -10,7 +10,11 @@
             {% for defect in content.defectsAll[dev] %}
             <div class="cost_table_all-row">
                 <div class="cost_table_all-row-name">
-                    <a class="cost_table_all-row-name__link" href="{{ device.link ~ defect.link }}">{{ defect.title }}</a>
+                    <a
+                        class="cost_table_all-row-name__link"
+                        href="/{% if content.isBrand == 1 and content.defectTableId == 1 %}{{ content.brand }}_{%endif%}{{ device.link ~ defect.link }}"
+                        >{{ defect.title }}</a
+                    >
                 </div>
                 <div class="cost_table_all-row-price">{{ defect.price }} {% if defect.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             </div>
