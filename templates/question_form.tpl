@@ -6,7 +6,7 @@
             <form class="form-question__form">
                 <input class="input input_margin-lr10 client_name" type="text" placeholder="Ваше имя" maxlength="30" />
                 <input class="input input_margin-lr10 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона" />
-                <button class="button button-phone input_margin-l">Перезвоните мне</button>
+                <button class="button button-phone input_margin-l color_btn_2">Перезвоните мне</button>
             </form>
         </div>
     </div>

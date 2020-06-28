@@ -31,7 +31,7 @@
                     <div class="before_3">
                         <input class="input input_margin" id="defect_price" disabled type="text" placeholder="от ______ рублей" />
                     </div>
-                    <button class="button button-repair">Отправить!</button>
+                    <button class="button button-repair color_btn_1">Отправить!</button>
                 </div>
             </form>
         </div>

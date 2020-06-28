@@ -1,4 +1,4 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -439,7 +439,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form-skidka.jpg');
+    background-image: url("../img/action-form/action-form-skidka.jpg");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -482,6 +482,7 @@ textarea {
 .input_margin-20 {
     margin-bottom: 20px;
 }
+
 
 /*reviews-part__item*/
 
@@ -784,7 +785,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        & + .cell-price {
+        &+.cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -875,6 +876,7 @@ textarea {
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -1108,7 +1110,7 @@ textarea {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -1136,6 +1138,7 @@ textarea {
         background-color: #339ef5;
     }
 }
+
 
 /*Карусель*/
 
@@ -1240,13 +1243,13 @@ button.arrow img {
     position: absolute;
     top: -14%;
     padding: 0;
-    background-color: $bgcolor_blue;
+    /*background-color: $bgcolor_blue;
     border-radius: 2px;
     border: 1px solid $bgcolor_blue;
     box-shadow: 3px 3px 5px #000;
+    color: $text__second_color;*/
     font-size: 24px;
     line-height: 24px;
-    color: $text__second_color;
     display: block;
 }
 
@@ -1257,10 +1260,15 @@ button.arrow img {
     top: 63%;
     left: 15%;
     font-family: $font__second;
-    background-color: $bgcolor_blue;
+    /*background-color: $bgcolor_blue;*/
     color: $text__second_color;
-    border-radius: 15px;
-    box-shadow: 7px 7px 3px #888;
+    /*border-radius: 15px;*/
+    /*box-shadow: 7px 7px 3px #888;*/
+    /****/
+    background-image: linear-gradient(to right, $btn_new_color_b1 0%, $btn_new_color_b2 100%);
+    box-shadow: 3px 3px 5px $btn_new_color_bsh;
+    border-radius: 5px;
+    /*****/
     font-size: 34px;
     line-height: 34px;
     text-align: center;
@@ -1275,7 +1283,7 @@ button.arrow img {
     top: 0;
     left: 0;
     font-family: $font__second;
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 34px;
     line-height: 34px;
     text-align: center;
@@ -1285,15 +1293,21 @@ button.arrow img {
 }
 
 .color_btn_1 {
-    /*background-color: $bgcolor_blue;*/
-    color: $text__second_color;
-    background-image: linear-gradient(to right, $bgcolor_blue 0%, $bgcolor_blue_gr 100%);
+    color: $bg_color_main;
+    background-image: linear-gradient(to right, $btn_new_color_b1 0%, $btn_new_color_b2 100%);
+    box-shadow: 5px 5px 5px $btn_new_color_bsh;
+    border-radius: 5px;
+    border: none;
+    font-family: $font__second;
 }
 
 .color_btn_2 {
-    background-color: $bg__stars_color;
-    color: $text__main_color;
-    background-image: linear-gradient(to right, $bg__stars_color 0%, $bg__stars_color_gr 100%);
+    color: $bg_color_main;
+    background-image: linear-gradient(to right, $btn_new_color_y1 0%, $btn_new_color_y2 100%);
+    box-shadow: 5px 5px 5px $btn_new_color_ysh;
+    border-radius: 5px;
+    border: none;
+    font-family: $font__second;
 }
 
 .cause_btn_block {
@@ -1319,22 +1333,20 @@ button.arrow img {
 }
 
 .cause:hover .color_btn_1 {
-    /*background: $btn_color;*/
-    background-image: linear-gradient(to right, $btn_color 0%, $btn_color_gr 100%);
+    color: $bg_color_main;
+    background-image: linear-gradient(to right, $btn_new_color_y1 0%, $btn_new_color_y2 100%);
+    box-shadow: 5px 5px 5px $btn_new_color_ysh;
+    border-radius: 5px;
     cursor: pointer;
-    color: $text__main_color;
-    border: 5px solid $text__second_color;
-    padding: 10px;
     box-sizing: border-box;
 }
 
 .cause:hover .color_btn_2 {
-    /*background: $logo__text_color;*/
-    background-image: linear-gradient(to right, $logo__text_color 0%, $logo__text_color_gr 100%);
+    color: $bg_color_main;
+    background-image: linear-gradient(to right, $btn_new_color_b1 0%, $btn_new_color_b2 100%);
+    box-shadow: 5px 5px 5px $btn_new_color_bsh;
+    border-radius: 5px;
     cursor: pointer;
-    color: $text__second_color;
-    border: 5px solid $text__second_color;
-    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -1367,26 +1379,32 @@ button.arrow img {
 }
 
 .arrow:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
+    /*background: #ccc;
+    border: 1px solid #ccc;*/
+    color: $bg_color_main;
+    background-image: linear-gradient(to right, $btn_new_color_y1 0%, $btn_new_color_y2 100%);
+    box-shadow: 5px 5px 5px $btn_new_color_ysh;
+    border-radius: 5px;
+    box-sizing: border-box;
     cursor: pointer;
 }
 
 .arrow_1:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
+    /*background: #ccc;
+    border: 1px solid #ccc;*/
+    opacity: (0.8);
     cursor: pointer;
 }
 
 .arrow_2:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
+    opacity: (0.8);
     cursor: pointer;
 }
 
 .arrow_br:hover {
-    background: #ccc;
-    border: 1px solid #ccc;
+    /*background: #ccc;
+    border: 1px solid #ccc;*/
+    opacity: (0.8);
     cursor: pointer;
 }
 
@@ -1526,7 +1544,9 @@ button.arrow img {
     height: 100%;
 }
 
+
 /*карусель*/
+
 
 /*таблица брендов*/
 
@@ -1571,15 +1591,16 @@ button.arrow img {
     top: 102%;
     left: 36%;
     padding: 0;
-    background-color: $bgcolor_blue;
+    /*background-color: $bgcolor_blue;
     border-radius: 2px;
-    border: 1px solid $bgcolor_blue;
-    box-shadow: 3px 3px 5px #000;
-    font-size: 24px;
-    line-height: 24px;
     color: $text__second_color;
+    border: 1px solid $bgcolor_blue;
+    box-shadow: 3px 3px 5px #000;*/
+    font-size: 20px;
+    line-height: 24px;
     display: block;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1601,6 +1622,7 @@ button.arrow img {
     z-index: 1000000;
     box-sizing: border-box;
 }
+
 
 /*стрелка якорь переход на верх*/
 
@@ -1837,7 +1859,7 @@ button.arrow img {
     &__request {
         margin: 0 0 0 0;
         padding: 0 6% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1894,16 +1916,21 @@ button.arrow img {
 .button {
     width: 220px;
     height: 45px;
-    background-color: $btn_color;
+    /*background-color: $btn_color;
     border-radius: 20px;
+    color: $text__main_color;*/
     outline: none;
-    color: $text__main_color;
     font-size: 20px;
     font-family: $font__second;
     font-weight: 600;
     &:hover {
-        background-color: $btn_hover_color;
+        /*background-color: $btn_hover_color;*/
         cursor: pointer;
+        opacity: (0.8);
+        /*color: $bg_color_main;
+        background-image: linear-gradient(to right, $btn_new_color_b1 0%, $btn_new_color_b2 100%);
+        box-shadow: 5px 5px 5px $btn_new_color_bsh;
+        border-radius: 5px;*/
     }
 }
 
@@ -1960,12 +1987,12 @@ button.arrow img {
 .services__btn {
     margin: 0 0 0 0;
     padding: 0 0 3px 0;
-    width: 195px;
+    width: 200px;
     height: 45px;
-    background-color: $bgcolor_blue;
+    /*background-color: $bgcolor_blue;
     border-radius: 15px;
-    color: $text__second_color;
-    font-family: $font__first;
+    color: $text__second_color;*/
+    /*font-family: $font__first;*/
     font-size: 18px;
     font-weight: 400;
     line-height: 20px;
@@ -2024,6 +2051,7 @@ button.arrow img {
         margin-bottom: 65px;
     }
 }
+
 
 /*.form-search__items {}*/
 
@@ -2090,7 +2118,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &:before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2101,7 +2129,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2138,7 +2166,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2149,7 +2177,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2181,7 +2209,7 @@ button.arrow img {
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -2284,13 +2312,13 @@ button.arrow img {
 .btn-review {
     width: 220px;
     height: 45px;
-    background-color: $bgcolor_blue;
+    /*background-color: $bgcolor_blue;
     color: $text__second_color;
     font-family: $font__second;
+    border-radius: 20px;*/
     font-size: 20px;
     font-weight: 500;
     line-height: 20px;
-    border-radius: 20px;
     outline: none;
     &:hover {
         cursor: pointer;
@@ -2497,7 +2525,7 @@ button.arrow img {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: -webkit-flex;
@@ -2524,7 +2552,7 @@ button.arrow img {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
@@ -2588,54 +2616,53 @@ button.arrow img {
     height: 0;
     opacity: 0;
     left: -9999px;
-    & + label {
+    &+label {
         height: 50px;
         width: 900px;
     }
-    & + label::after {
-        content: '+';
+    &+label::after {
+        content: "+";
         position: absolute;
         right: 50px;
         top: 0px;
         color: #333;
     }
-    & + label:hover::after {
+    &+label:hover::after {
         top: 0px;
         font-weight: 700;
     }
-    & + label {
+    &+label {
         position: relative;
         display: block;
         cursor: pointer;
     }
-
-    & + label ~ .cost_table_all-device_defect .cost_table_all-row {
+    &+label~.cost_table_all-device_defect .cost_table_all-row {
         position: relative;
         transition: all $anim_transition_defect_table ease;
         opacity: 0;
         height: 0;
     }
-    & + label ~ .cost_table_all-device_defect .cost_table_all-row a {
+    &+label~.cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: none;
         cursor: default;
     }
-    &:checked + label::after {
-        content: '\2013';
+    &:checked+label::after {
+        content: "\2013";
         top: -1.5px;
         right: 50px;
         color: #00a3c6;
         // transform: rotateX(-60deg);
         transition: all $anim_transition_defect_table ease;
     }
-    &:checked + label + .cost_table_all-device_defect .cost_table_all-row {
+    &:checked+label+.cost_table_all-device_defect .cost_table_all-row {
         opacity: 1;
         height: 50px;
     }
-    &:checked + label + .cost_table_all-device_defect .cost_table_all-row a {
+    &:checked+label+.cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: all;
         cursor: pointer;
     }
-    &:checked + label {
+    &:checked+label {
         color: #00a3c6;
     }
 }
@@ -2693,7 +2720,6 @@ button.arrow img {
         font-family: $font__first;
         font-size: 23px;
         font-weight: 400;
-
         & a,
         a:visited {
             text-decoration: none;
@@ -2710,7 +2736,7 @@ button.arrow img {
             & .cost_table_all-row-name__link {
                 color: whitesmoke;
             }
-            & + .cost_table_all-row-price {
+            &+.cost_table_all-row-price {
                 background-color: #66a7c5;
                 color: whitesmoke;
             }
@@ -2732,6 +2758,7 @@ button.arrow img {
         line-height: 30px;
     }
 }
+
 .contacts-container {
     width: 100%;
     max-width: 1225px;

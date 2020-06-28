@@ -43,10 +43,10 @@
                     </div> -->
                         <div class="slider__item">
                             <div id="carousel" class="carousel">
-                                <button class="arrow prev"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png" /></button>
+                                <button class="arrow prev color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png" /></button>
                                 <div class="cause">
                                     <div class="btn-master cause_btn color_btn_2 {{ content.bg_class }}">Вызвать мастера!</div>
-                                    <div class="btn-master-block cause_btn_block color_btn_2">&#10004;</div>
+                                    <!--<div class="btn-master-block cause_btn_block color_btn_2">&#10004;</div>-->
                                 </div>
                                 <div class="gallery">
                                     <ul class="images">
@@ -57,7 +57,7 @@
                                         <li><img src="./img/top-slider/banner_cooking_surface.jpg" /></li>
                                     </ul>
                                 </div>
-                                <button class="arrow next"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png" /></button>
+                                <button class="arrow next color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png" /></button>
                             </div>
                         </div>
                         <div class="slider__item"></div>
@@ -107,6 +107,7 @@
             {% include 'defect_table_all.tpl' %}
             <!-- Отзывы -->
             {% include 'reviews_slider.tpl' %}
+             <style class="data_width" data-width="3"></style>
             <!-- О компании -->
             {% include 'about.tpl' %}
             <!-- Контакты -->
@@ -119,7 +120,7 @@
                             <div class="section__title section__title_white form-plate__title">оставьте заявку</div>
                             <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30" />
                             <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона" />
-                            <button class="button button-phone section__title_margin" type="button">Получить скидку!</button>
+                            <button class="button button-phone section__title_margin color_btn_2" type="button">Получить скидку!</button>
                         </form>
                     </div>
                 </div>
@@ -133,7 +134,7 @@
                         {% for menu,data in content.serviceItems %}
                         <div class="services-item">
                             <img class="services__img_margin" src="{{ data.img }}" alt="{{ menu }}" title="{{ menu }}" />
-                            <a class="services__btn" href="{{ data.link }}">Ремонт<br />{{menu|slice(7,100)}}</a>
+                            <a class="services__btn color_btn_1" href="{{ data.link }}">Ремонт<br />{{menu|slice(7,100)}}</a>
                         </div>
                         {% endfor %}
                     </div>
