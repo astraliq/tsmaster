@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 11 2020 г., 19:23
+-- Время создания: Июн 28 2020 г., 12:30
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.2.22
 
@@ -99,8 +99,8 @@ INSERT INTO `defect2device` (`id`, `device_id`, `defect_id`, `price`) VALUES
 (34, 5, 48, '650'),
 (35, 5, 49, '450'),
 (36, 5, 50, '450'),
-(37, 5, 51, '550'),
-(38, 5, 52, '300'),
+(37, 5, 36, '550'),
+(38, 5, 69, '300'),
 (39, 5, 53, '250'),
 (40, 5, 54, '700'),
 (41, 4, 70, '600'),
@@ -170,15 +170,13 @@ INSERT INTO `defects` (`id`, `title`, `link`) VALUES
 (48, 'Не работает модуль управления', '/ne_rabotaet_modul_upravleniya'),
 (49, 'Не работает сенсор', '/ne_rabotaet_sensor'),
 (50, 'Не работает таймер', '/ne_rabotaet_taimer'),
-(51, 'Плита бьёт током', '/plita_byot_tokom'),
-(52, 'Плита выдаёт ошибку', '/plita_vydayot_oshibku'),
 (53, 'Сломался переключатель', '/slomalsia_perecliuchatel'),
-(54, 'Треснула поверхность', '/tresnula_poverkhnost'),
-(69, 'Духовка выдаёт ошибку', '/duhovka_vidayot_oshibku'),
-(70, 'Духовка не греет', '/duhovka_ne_greet'),
-(71, 'Духовой шкаф не закрывается', '/duhovoi_shkaf_ne_zakryvaetsia'),
-(72, 'Не горит лампочка в духовке', '/ne_gorit_lampochka_v_duhovke'),
-(74, 'Треснуло стекло духового шкафа', '/tresnulo_steclo_duhovogo_shkafa');
+(54, 'Треснула', '/tresnula_poverkhnost'),
+(69, 'Выдаёт ошибку', '/vidayot_oshibku'),
+(70, 'Не греет', '/ne_greet'),
+(71, 'Не закрывается', '/ne_zakryvaetsia'),
+(72, 'Не горит лампочка', '/ne_gorit_lampochka'),
+(74, 'Треснуло стекло', '/tresnulo_steclo');
 
 -- --------------------------------------------------------
 
@@ -199,19 +197,20 @@ CREATE TABLE `defect_groups` (
 
 CREATE TABLE `devices` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `devices`
 --
 
-INSERT INTO `devices` (`id`, `title`) VALUES
-(1, 'стиральная машина'),
-(2, 'посудомоечная машина'),
-(3, 'холодильник'),
-(4, 'духовой шкаф'),
-(5, 'варочная панель');
+INSERT INTO `devices` (`id`, `title`, `link`) VALUES
+(1, 'стиральная машина', '/washing_machine'),
+(2, 'посудомоечная машина', '/dishwasher'),
+(3, 'холодильник', '/refrigerator'),
+(4, 'духовой шкаф', '/oven'),
+(5, 'варочная панель', '/hob');
 
 -- --------------------------------------------------------
 
@@ -374,28 +373,28 @@ INSERT INTO `work2defect2device` (`id`, `device_id`, `defect_id`, `defect_link`,
 (105, 3, 40, '/ne_rabotaet', 278, '950'),
 (106, 3, 36, '/byot_tokom', 288, '-'),
 (107, 3, 36, '/byot_tokom', 286, '-'),
-(108, 4, 70, '/duhovka_ne_greet', 303, '600'),
-(109, 4, 70, '/duhovka_ne_greet', 2, '900'),
-(110, 4, 70, '/duhovka_ne_greet', 295, '750'),
-(111, 4, 70, '/duhovka_ne_greet', 294, '650'),
+(108, 4, 70, '/ne_greet', 303, '600'),
+(109, 4, 70, '/ne_greet', 2, '900'),
+(110, 4, 70, '/ne_greet', 295, '750'),
+(111, 4, 70, '/ne_greet', 294, '650'),
 (112, 4, 50, '/ne_rabotaet_taimer', 293, '450'),
 (113, 4, 50, '/ne_rabotaet_taimer', 294, '450'),
-(114, 4, 71, '/duhovoi_shkaf_ne_zakryvaetsia', 309, '400'),
-(115, 4, 71, '/duhovoi_shkaf_ne_zakryvaetsia', 310, '400'),
-(116, 4, 71, '/duhovoi_shkaf_ne_zakryvaetsia', 311, '400'),
+(114, 4, 71, '/ne_zakryvaetsia', 309, '400'),
+(115, 4, 71, '/ne_zakryvaetsia', 310, '400'),
+(116, 4, 71, '/ne_zakryvaetsia', 311, '400'),
 (117, 4, 48, '/ne_rabotaet_modul_upravleniya', 294, '650'),
 (118, 4, 48, '/ne_rabotaet_modul_upravleniya', 299, '650'),
-(119, 4, 69, '/duhovka_vidayot_oshibku', 294, '650'),
-(120, 4, 69, '/duhovka_vidayot_oshibku', 297, '600'),
-(121, 4, 69, '/duhovka_vidayot_oshibku', 290, '450'),
-(122, 4, 69, '/duhovka_vidayot_oshibku', 303, '350'),
-(123, 4, 69, '/duhovka_vidayot_oshibku', 304, '300'),
-(124, 4, 72, '/ne_gorit_lampochka_v_duhovke', 312, '650'),
-(125, 4, 72, '/ne_gorit_lampochka_v_duhovke', 291, '700'),
-(126, 4, 72, '/ne_gorit_lampochka_v_duhovke', 307, '700'),
-(127, 4, 72, '/ne_gorit_lampochka_v_duhovke', 303, '350'),
-(128, 4, 74, '/tresnulo_steclo_duhovogo_shkafa', 305, '750'),
-(129, 4, 74, '/tresnulo_steclo_duhovogo_shkafa', 306, '900'),
+(119, 4, 69, '/vidayot_oshibku', 294, '650'),
+(120, 4, 69, '/vidayot_oshibku', 297, '600'),
+(121, 4, 69, '/vidayot_oshibku', 290, '450'),
+(122, 4, 69, '/vidayot_oshibku', 303, '350'),
+(123, 4, 69, '/vidayot_oshibku', 304, '300'),
+(124, 4, 72, '/ne_gorit_lampochka', 312, '650'),
+(125, 4, 72, '/ne_gorit_lampochka', 291, '700'),
+(126, 4, 72, '/ne_gorit_lampochka', 307, '700'),
+(127, 4, 72, '/ne_gorit_lampochka', 303, '350'),
+(128, 4, 74, '/tresnulo_steclo', 305, '750'),
+(129, 4, 74, '/tresnulo_steclo', 306, '900'),
 (130, 5, 47, '/ne_rabotaet_komforka', 289, '650'),
 (131, 5, 47, '/ne_rabotaet_komforka', 290, '950'),
 (132, 5, 47, '/ne_rabotaet_komforka', 291, '650'),
@@ -415,18 +414,18 @@ INSERT INTO `work2defect2device` (`id`, `device_id`, `defect_id`, `defect_link`,
 (146, 5, 49, '/ne_rabotaet_sensor', 301, '800'),
 (147, 5, 49, '/ne_rabotaet_sensor', 302, '550'),
 (148, 5, 49, '/ne_rabotaet_sensor', 297, '650'),
-(149, 5, 52, '/plita_vydayot_oshibku', 294, '650'),
-(150, 5, 52, '/plita_vydayot_oshibku', 297, '650'),
-(151, 5, 52, '/plita_vydayot_oshibku', 290, '450'),
-(152, 5, 52, '/plita_vydayot_oshibku', 303, '600'),
-(153, 5, 52, '/plita_vydayot_oshibku', 304, '350'),
+(149, 5, 69, '/vidayot_oshibku', 294, '650'),
+(150, 5, 69, '/vidayot_oshibku', 297, '650'),
+(151, 5, 69, '/vidayot_oshibku', 290, '450'),
+(152, 5, 69, '/vidayot_oshibku', 303, '600'),
+(153, 5, 69, '/vidayot_oshibku', 304, '350'),
 (154, 5, 54, '/tresnula_poverkhnost', 305, '1200'),
 (155, 5, 54, '/tresnula_poverkhnost', 306, '900'),
-(156, 5, 51, '/plita_byot_tokom', 291, '1500'),
-(157, 5, 51, '/plita_byot_tokom', 307, '550'),
-(158, 5, 51, '/plita_byot_tokom', 2, '900'),
-(159, 5, 51, '/plita_byot_tokom', 290, '950'),
-(160, 5, 51, '/plita_byot_tokom', 308, '750');
+(156, 5, 36, '/byot_tokom', 291, '1500'),
+(157, 5, 36, '/byot_tokom', 307, '550'),
+(158, 5, 36, '/byot_tokom', 2, '900'),
+(159, 5, 36, '/byot_tokom', 290, '950'),
+(160, 5, 36, '/byot_tokom', 308, '750');
 
 -- --------------------------------------------------------
 
