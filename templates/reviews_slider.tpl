@@ -3,7 +3,7 @@
           <div class="section__title section__title_margin section__title_black"><a name="reviews">отзывы</a></div>
           <div class="reviews__slider">
               <div id="carousel_1" class="carousel_1">
-                  <button class="arrow_1 prev_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                  <button class="arrow_1 prev_1 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
                   <div class="gallery_1">
                       <ul class="images_1">
                           <li>
@@ -71,11 +71,11 @@
                           </li>
                       </ul>
                   </div>
-                  <button class="arrow_1 next_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
+                  <button class="arrow_1 next_1 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
               </div>
           </div>
           <div class="button__reviews_margin">
-              <button class="btn-review">Оставить сообщение</button>
+              <button class="btn-review color_btn_1">Оставить сообщение</button>
               <p>Мы ежедневно контролируем качество работы наших мастеров. Если у Вас остались вопросы по поводу проведенных работ, Вы можете обратиться к руководству</p>
           </div>
 

@@ -29,7 +29,7 @@
                     <form class="action-form" action="#">
                         <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
                         <input class="input input_margin-20 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
-                        <button class="button button-phone button_margin" type="button">Получить скидку</button>
+                        <button class="button button-phone button_margin color_btn_1" type="button">Получить скидку</button>
                     </form>
                 </div>
                 <div class="reviews-part" id="reviews_small">
@@ -40,7 +40,7 @@
                     </div>
                     <!-- карусель малая -->
                     <div id="carousel_2" class="carousel_2">
-                        <button class="arrow_2 prev_2"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                        <button class="arrow_2 prev_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
                         <div class="gallery_2">
                             <a name="reviews"></a>
                             <ul class="images_2">
@@ -110,7 +110,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="arrow_2 next_2"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
+                        <button class="arrow_2 next_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
                         </!---->
                     </div>
                 </div> 
@@ -176,7 +176,7 @@
                             <img class="top-banner__img" src="{{content.banner}}" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>
-                                <div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>
+                                <!--<div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>-->
                             </div>
                         </section>
                         <div id="changedBlocks" style="height: 0;"></div>
@@ -237,6 +237,12 @@
                         {% include 'about.tpl' %}
                         <!-- Отзывы -->
                         {% include 'reviews_slider.tpl' %}
+                        <style class="data_width" data-width="2">
+                            .carousel_1{
+                                width: 80%;
+                                margin: 0 auto;
+                            }
+                        </style>
                         <!-- Контакты -->
                         {% include 'contacts.tpl' %}
                         <!-- Цены -->
@@ -261,7 +267,7 @@
                                                 
                                             </div>
                                         </div>
-                                        <button id="btn_brand_all" class="arrow_br">показать все бренды</button>
+                                        <button id="btn_brand_all" class="arrow_br color_btn_1">показать все бренды</button>
                                     </div>
                                     <!-- Карусель брендов -->
                                 </div>
@@ -277,7 +283,7 @@
                                     {% if content.serviceTitle != menu %}           
                                     <div class="services-item">
                                         <img class="services__img_margin" src="{{data.img}}" alt="{{menu}}" title="{{menu}}">
-                                        <a class="services__btn" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
+                                        <a class="services__btn color_btn_1" href="{{data.link}}">Ремонт<br>{{menu|slice(7,100)}}</a>
                                     </div>
                                     {% endif %} 
                                     {% endfor %}

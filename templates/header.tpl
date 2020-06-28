@@ -1,8 +1,8 @@
 <header class="header-style">
-    <!-- стрелка перехода на верх -->
+    <!-- стрелка перехода на верх 
     <div id="anchor-arrow" class="anchor-arrow"></div>
     <a href="#anchor-arrow" class="anchor-btn scroll_to">&#8679;</a>
-    <!-- стрелка перехода на верх -->
+     стрелка перехода на верх -->
         <div class="container">
         <!-- модальное окно выбора города -->
         <div class="darkback darkback_sities screen_off modal_off"><!--screen_off modal_off-->
@@ -33,7 +33,7 @@
                 <div class="tel">
                     <div class="tel__icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-cellphone-iphone" width="30" height="35" viewBox="0 0 24 24"><path d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" /></svg></div>
                     <div class="tel__number"><a class="tel__link" href="tel:+73432435451"><span class="city__phone"></span></a></div>
-                    <button class="btn-phone tel__btn">Заказать звонок</button>
+                    <button class="btn-phone tel__btn color_btn_1">Заказать звонок</button>
                 </div>
             </div>
         {% if content.pageId == 1 %}           

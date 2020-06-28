@@ -77,18 +77,18 @@ if (carousel) {
     //подмена стилей у кнопки вызова
     function changeColorButton(numberImage) {
         let buttonCall = document.querySelector('.btn-master');
-        let buttonDop = document.querySelector('.btn-master-block');
+        // let buttonDop = document.querySelector('.btn-master-block');
 
         if (numberImage == 0 || numberImage == 1) {
             buttonCall.classList.remove('color_btn_1');
-            buttonDop.classList.remove('color_btn_1');
+            // buttonDop.classList.remove('color_btn_1');
             buttonCall.classList.add('color_btn_2');
-            buttonDop.classList.add('color_btn_2');
+            // buttonDop.classList.add('color_btn_2');
         } else {
             buttonCall.classList.remove('color_btn_2');
-            buttonDop.classList.remove('color_btn_2');
+            // buttonDop.classList.remove('color_btn_2');
             buttonCall.classList.add('color_btn_1');
-            buttonDop.classList.add('color_btn_1');
+            // buttonDop.classList.add('color_btn_1');
         }
     }
 }
@@ -96,6 +96,9 @@ if (carousel) {
 //курусель отзывов
 /*******************************************************************************/
 let carousel_1 = document.getElementById('carousel_1');
+//let pointData = number.srcElement.dataset.point;
+let countImage = document.querySelector('.data_width');
+
 
 if (carousel_1) {
     let j = 1;
@@ -106,7 +109,7 @@ if (carousel_1) {
     }
 
     let width_1 = 330; //ишрина картинки
-    let count_1 = 3; //видимое количество картинок
+    let count_1 = countImage.dataset.width; //видимое количество картинок
     let numberImg_1 = 9; //количество картинок
     let numPoint_1 = 0; // текущаяя картинка
 
