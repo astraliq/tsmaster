@@ -9,10 +9,6 @@ class MenuHandler {
     }
 
     init() {
-        if (window.location.hash) {
-            this.hideAll();
-            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, this.animDuration);
-        }
         this.menuItems.forEach((item) => {
             item.addEventListener('click', (e) => {
                 this.dataType = item.dataset.type;
@@ -25,6 +21,14 @@ class MenuHandler {
                 window.location.hash = this.dataType;
             });
         });
+    }
+
+    // запускаем замену блоков, если есть хеш в урл
+    checkUrlHash() {
+        if (window.location.hash) {
+            this.hideAll();
+            $(window.location.hash).animate({ height: 'show', easing: 'easy' }, this.animDuration);
+        }
     }
 
     scrollTo(id) {
@@ -48,4 +52,5 @@ let upperMenu = new MenuHandler('.menu__items a');
 let footerMenu = new MenuHandler('.footer__list a');
 
 upperMenu.init();
+upperMenu.checkUrlHash();
 footerMenu.init();

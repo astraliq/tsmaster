@@ -1,4 +1,4 @@
-<div class="container5" id="prices" style="display: none;">
+<div class="container5" id="prices_min">
     <div class="section__title section__title_black section__title_margin">
         для устранения неисправностей может потребоваться:
     </div>
@@ -14,8 +14,5 @@
             {% endfor %}
         </div>
     </div>
-    <div class="table-footnote table-footnote_margin">
-        <sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br />
-        <sup>**</sup> Диагностика бесплатная в случае осуществления ремонта.
-    </div>
+    <div class="table-footnote table-footnote_margin"><sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br /></div>
 </div>

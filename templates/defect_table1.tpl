@@ -1,4 +1,4 @@
-<div class="container3">
+<div class="container3" id="prices_min">
     <div class="section__title section__title_black section__title_margin">стоимость ремонта {{ content.pageTitle2 }}, от<sup>*</sup></div>
     <div class="cost-table_position">
         <div class="cost-table__grid cost-table_margin">
@@ -12,8 +12,5 @@
             {% endfor %}
         </div>
     </div>
-    <div class="table-footnote table-footnote_margin">
-        <sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br />
-        <sup>**</sup> Диагностика бесплатная в случае осуществления ремонта.
-    </div>
+    <div class="table-footnote table-footnote_margin"><sup>*</sup> Точную стоимость работ инженер определит после диагностики.<br /></div>
 </div>

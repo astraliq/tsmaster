@@ -249,7 +249,10 @@
                         <section class="cost-table">
                             {% if content.defectTableId == 1 %}           
                                 {% include 'defect_table_all.tpl' %}
-                            {% elseif content.defectTableId == 2 %}                      
+                                {% include 'defect_table1.tpl' %}
+
+                            {% elseif content.defectTableId == 2 %} 
+                                {% include 'defect_table_all.tpl' %}                     
                                 {% include 'defect_table2.tpl' %}           
                             {% endif %} 
                         </section>

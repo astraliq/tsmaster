@@ -16,7 +16,9 @@
                         >{{ defect.title }}</a
                     >
                 </div>
-                <div class="cost_table_all-row-price">{{ defect.price }} {% if defect.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
+                <div class="cost_table_all-row-price">
+                    {% if defect.price matches '/^\\d+$/' %} ОТ {% endif %}{{ defect.price }} {% if defect.price matches '/^\\d+$/' %} ₽ {% endif %}
+                </div>
             </div>
             {% endfor %}
         </div>
