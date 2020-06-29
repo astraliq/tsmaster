@@ -89,7 +89,10 @@ class IndexController extends Controller {
     public function page404($data) {
         $this->view = '404';
         $this->pageId = 1;
-        
+        // echo '<pre>';
+        // print_r($this->serviceMenuRodit);
+        // echo '</pre>';
+        // exit();
         $arrayContent = [
             'jsonDb' => $this->jsonDb,
             'main_menu' => $this->mainMenu,
@@ -124,14 +127,13 @@ class IndexController extends Controller {
         $pageTitle2 = 'стиральной машины'; // заменять на название
         $pageTitle3 = 'стиральная машина'; // заменять на название
         $banner = 'img/repair_banners/repair_washing_machine.jpg';     // заменять баннер
-
+        
         if ($data['id']) {
             $defectTableId = 2;
             $banner = 'img/defect_banners/defect_washing_machine.jpg';
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
-                $this->view = '404';
-                $this->pageId = 1;
+                $this->page404($data);
             }
             $pageTitle = $repTypes[0]['pageTitle'];
         }
@@ -194,8 +196,7 @@ class IndexController extends Controller {
             $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
-                $this->view = '404';
-                $this->pageId = 1;
+                $this->page404($data);
             }
             $pageTitle = $repTypes[0]['pageTitle'];
         }
@@ -260,8 +261,7 @@ class IndexController extends Controller {
             $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
-                $this->view = '404';
-                $this->pageId = 1;
+                $this->page404($data);
             }
             $pageTitle = $repTypes[0]['pageTitle'];
         }
@@ -324,8 +324,7 @@ class IndexController extends Controller {
             $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
-                $this->view = '404';
-                $this->pageId = 1;
+                $this->page404($data);
             }
             $pageTitle = $repTypes[0]['pageTitle'];
         }
@@ -388,8 +387,7 @@ class IndexController extends Controller {
             $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
-                $this->view = '404';
-                $this->pageId = 1;
+                $this->page404($data);
             }
             $pageTitle = $repTypes[0]['pageTitle'];
         }

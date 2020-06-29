@@ -20,6 +20,7 @@ class MenuHandler {
             $('#advantage_bullets_small').animate({ height: 'show', easing: 'swing' }, 500);
         }
         this.menuItems.forEach((item) => {
+            console.log(item);
             item.addEventListener('click', (e) => {
                 this.dataType = item.dataset.type;
                 this.section = '#' + this.dataType;
@@ -57,5 +58,7 @@ class MenuHandler {
     }
 }
 let upperMenu = new MenuHandler('.menu__items a');
+let footerMenu = new MenuHandler('.footer__list a');
 
 upperMenu.init();
+footerMenu.init();

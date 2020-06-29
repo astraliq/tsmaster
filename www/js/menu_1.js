@@ -45,5 +45,7 @@ class MenuHandler {
     }
 }
 let upperMenu = new MenuHandler('.menu__items a');
+let footerMenu = new MenuHandler('.footer__list a');
 
 upperMenu.init();
+footerMenu.init();

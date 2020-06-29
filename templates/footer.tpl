@@ -24,9 +24,9 @@
             </div>
             <div class="footer__item">
                 <ul class="footer__list">
-                    {% for menu,link in content.main_menu %}
+                    {% for menu,data in content.main_menu %}
                     <li class="footer__menu_item text_margin_2">
-                        <a class="footer__menu_link text_grey scroll_to" href="{{ link }}">{{ menu | raw }}</a>
+                        <a class="footer__menu_link text_grey scroll_to" href="{{data.link}}" data-type="{{data.dataset}}">{{ menu | raw }}</a>
                     </li>
                     {% endfor %}
                 </ul>
