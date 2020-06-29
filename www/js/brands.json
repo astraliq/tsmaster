@@ -1,0 +1,201 @@
+[{
+        "id": 0,
+        "brandName": "atlant",
+        "imgBrand": "01_atlant.png"
+    },
+    {
+        "id": 1,
+        "brandName": "beko",
+        "imgBrand": "02_beko.png"
+    },
+    {
+        "id": 2,
+        "brandName": "braun",
+        "imgBrand": "03_braun.png"
+    },
+    {
+        "id": 3,
+        "brandName": "bosch",
+        "imgBrand": "04_bosch.png"
+    },
+    {
+        "id": 4,
+        "brandName": "siemens",
+        "imgBrand": "05_siemens.png"
+    },
+    {
+        "id": 5,
+        "brandName": "electrolux",
+        "imgBrand": "06_electrolux.png"
+    },
+    {
+        "id": 6,
+        "brandName": "gorenje",
+        "imgBrand": "07_gorenje.png"
+    },
+    {
+        "id": 7,
+        "brandName": "delonghi",
+        "imgBrand": "08_delonghi.png"
+    },
+    {
+        "id": 8,
+        "brandName": "haier",
+        "imgBrand": "09_haier.png"
+    },
+    {
+        "id": 9,
+        "brandName": "krups",
+        "imgBrand": "10_krups.png"
+    },
+    {
+        "id": 10,
+        "brandName": "moulinex",
+        "imgBrand": "11_moulinex.png"
+    },
+    {
+        "id": 11,
+        "brandName": "rowenta",
+        "imgBrand": "12_rowenta.png"
+    },
+    {
+        "id": 12,
+        "brandName": "tefal",
+        "imgBrand": "13_tefal.png"
+    },
+    {
+        "id": 13,
+        "brandName": "midea",
+        "imgBrand": "14_midea.png"
+    },
+    {
+        "id": 14,
+        "brandName": "lg",
+        "imgBrand": "15_lg.png"
+    },
+    {
+        "id": 15,
+        "brandName": "panasonic",
+        "imgBrand": "16_panasonic.png"
+    },
+    {
+        "id": 16,
+        "brandName": "philips",
+        "imgBrand": "17_philips.png"
+    },
+    {
+        "id": 17,
+        "brandName": "samsung",
+        "imgBrand": "18_samsung.png"
+    },
+    {
+        "id": 18,
+        "brandName": "whirlpool",
+        "imgBrand": "19_whirlpool.png"
+    },
+    {
+        "id": 19,
+        "brandName": "xiaomi",
+        "imgBrand": "20_xiaomi.png"
+    },
+    {
+        "id": 20,
+        "brandName": "bork",
+        "imgBrand": "21_bork.png"
+    },
+    {
+        "id": 21,
+        "brandName": "aeg",
+        "imgBrand": "22_aeg.png"
+    },
+    {
+        "id": 22,
+        "brandName": "candy",
+        "imgBrand": "23_candy.png"
+    },
+    {
+        "id": 23,
+        "brandName": "gaggenau",
+        "imgBrand": "24_gaggenau.png"
+    },
+    {
+        "id": 24,
+        "brandName": "indesit",
+        "imgBrand": "25_indesit.png"
+    },
+    {
+        "id": 25,
+        "brandName": "kenwwod",
+        "imgBrand": "26_kenwwod.png"
+    },
+    {
+        "id": 26,
+        "brandName": "korting",
+        "imgBrand": "27_korting.png"
+    },
+    {
+        "id": 27,
+        "brandName": "kuppersberg",
+        "imgBrand": "28_kuppersberg.png"
+    },
+    {
+        "id": 28,
+        "brandName": "supra",
+        "imgBrand": "29_supra.png"
+    },
+    {
+        "id": 29,
+        "brandName": "redmond",
+        "imgBrand": "30_redmond.png"
+    },
+    {
+        "id": 30,
+        "brandName": "zanussi",
+        "imgBrand": "31_zanussi.png"
+    },
+    {
+        "id": 31,
+        "brandName": "ariston",
+        "imgBrand": "32_ariston.png"
+    },
+    {
+        "id": 32,
+        "brandName": "hansa",
+        "imgBrand": "33_hansa.png"
+    },
+    {
+        "id": 33,
+        "brandName": "miele",
+        "imgBrand": "34_miele.png"
+    },
+    {
+        "id": 34,
+        "brandName": "stinol",
+        "imgBrand": "35_stinol.png"
+    },
+    {
+        "id": 35,
+        "brandName": "vestel",
+        "imgBrand": "36_vestel.png"
+    },
+    {
+        "id": 36,
+        "brandName": "asko",
+        "imgBrand": "37_asko.png"
+    },
+    {
+        "id": 37,
+        "brandName": "brandt",
+        "imgBrand": "38_brandt.png"
+    },
+    {
+        "id": 38,
+        "brandName": "ardo",
+        "imgBrand": "39_ardo.png"
+    },
+    {
+        "id": 39,
+        "brandName": "kaiser",
+        "imgBrand": "40_kaiser.png"
+    }
+]

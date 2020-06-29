@@ -1,16 +1,49 @@
+@font-face {
+    font-family: "Oswald";
+    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Oswald Bold";
+    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+$bg_color_main: #fafdff;
 $font__first: 'PT Sans',
 sans-serif;
 $font__second: 'Arial';
 $font__second_bold: 'Arial Black';
+$font__third: "Oswald";
+$font__third_bold: "Oswald Bold";
 $logo__text_color: #f7a900;
+$logo__text_color_gr: #fad27c;
+$btn_new_color_y1: #fea700;
+$btn_new_color_y2: #f9c001;
+$btn_new_color_ysh: rgba(247,
+169,
+0,
+0.6);
+$btn_new_color_b1: #0069f8;
+$btn_new_color_b2: #00a2ff;
+$btn_new_color_bsh: rgba(0,
+134,
+252,
+0.6);
 $bgcolor_blue: #0076d5;
+$bgcolor_blue_gr: #84c4f8;
 $btn_color: #ffc123;
+$btn_color_gr: #f8dd99;
 $btn_hover_color: #e0a101;
 $bg-menu__plate_color: #2c2c2c;
 $bg-menu__plate_hover: #4d4b4b;
 $bg-form__plate_color: #d5ecff;
 $bg-cell-cost: #eaf5ff;
 $bg__stars_color: #fe8f00;
+$bg__stars_color_gr: #f8c481;
 $bg__footer_color: #434955;
 $bg-main_color: #f9fbfd;
 $container__width: 1520px;
@@ -22,3 +55,6 @@ $text__second_color: #fff;
 $text__subtitle_color: #999999;
 $anim_transition: 0.5s;
 $anim_transition_err: 1s;
+$anim_transition2: 0.4s;
+$anim_transition_err: 1s;
+$anim_transition_defect_table: 0.5s;

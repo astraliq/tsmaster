@@ -1,38 +1,105 @@
 'use strict';
 
-//карусель брендов
-let k = 1;
-for (let li of carousel_br.querySelectorAll('li')) {
-    li.style.position = 'relative';
-    li.insertAdjacentHTML('beforeend', '<span style="position:absolute;left:0;top:0">${i}</span>'
-    );
-    k++;
-};
+class Brand {
+    constructor() {
+        this.dataBrand = [];
+        this.urlDataBrand = '../js/brands.json';
+        this.blockBrand = '';
+        this.ulBrand = document.querySelector('.image_br');
+        this.nameTechnic = '';
+        this.btnBrandAll = document.getElementById('btn_brand_all'); //кнопка талибцы брендов
+        this.btnBrandCondition = true; //состояние кнопки таблицы брендов
+    }
 
-//конфигурация
-let width_br = 349; //ширина картинки 
-let count_br = 3; //сдиг на количество картинок
-let numberImg_br = 9; //количество картинок
+    async _getDataBrand(url) {
+        let response = await fetch(url);
+        this.dataBrand = await response.json();
+        setTimeout(() => {
+            this.createBlock()
+        }, 100);
+    }
 
+    //получаем и обрабатываем URL по брендам
+    getUrlTechnic() {
+        let url = new URL(document.URL);
+        let arrUrl = [...url.pathname];
+        let removElem = arrUrl.splice(0, 1);
+        let name = arrUrl.join('');
 
-let list_br = carousel_br.querySelector('ul');
-let listElems_br = carousel_br.querySelectorAll('li');
+        if (this.checkBrandRepeat(name)) {
+            this.nameTechnic = name;
+        } else {
+            this.checkUrlTechnic(name);
+        }
+        // console.log(this.nameTechnic);
+    }
 
-let position_br = 0; //положение прокрутки
+    checkBrandRepeat(nameTech) {
+        let checkWord = nameTech.slice(0, 3);
+        // console.log(checkWord);
+        if (checkWord == 'was' || checkWord == 'dis' || checkWord == 'ref' || checkWord == 'ove' || checkWord == 'hob') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-//в левую сторону
-carousel_br.querySelector('.prev_br').onclick = function () {
-    position_br += width_br * count_br;
+    //убираем повторный бренд в URL
+    checkUrlTechnic(nameUrl) {
+        let numberElement = nameUrl.indexOf('_');
+        let arrRemove = [...nameUrl];
+        let removeEl = arrRemove.splice(0, numberElement + 1);
+        this.nameTechnic = arrRemove.join('');
+    }
 
-    position_br = Math.min(position_br, 0);
-    list_br.style.marginLeft = position_br + 'px'; //обращение у стилю тэга ul
-    console.log(position_br);
-};
-//в правую сторону
-carousel_br.querySelector('.next_br').onclick = function () {
-    position_br -= width_br * count_br;
+    createBlock() {
+        this.blockBrand = `<table class="table_brand">`;
+        for (let i = 0; i < this.dataBrand.length;) {
 
-    position_br = Math.max(position_br, -width_br * (listElems_br.length - count_br));
-    list_br.style.marginLeft = position_br + 'px'; //обращение у стилю тэга ul
-    console.log(position_br);
-};
+            for (let j = 0; j < (this.dataBrand.length / 5); j++) {
+                this.blockBrand = this.blockBrand + `<tr class="table_line_brand">`
+
+                for (let k = 0; k < 5; k++) {
+                    this.blockBrand = this.blockBrand + `
+                    <td class="table_cell_brand">
+                        <a href="/${this.dataBrand[i].brandName}_${this.nameTechnic}" class="gallery_br_link" 
+                            style="background-image: url(../img/brands/${this.dataBrand[i].imgBrand});">                    
+                        </a>
+                    </td>`;
+                    i++;
+
+                    if (i == this.dataBrand.length) break;
+                }
+                this.blockBrand = this.blockBrand + `</tr>`;
+            }
+            this.blockBrand = this.blockBrand + `</table>`;
+        }
+        this.ulBrand.innerHTML = this.blockBrand;
+    }
+
+    checkClickBtnBrandAll() {
+        this.btnBrandAll.addEventListener('click', () => {
+            let galleryBr = document.querySelector('.gallery_br');
+
+            if (this.btnBrandCondition) {
+                galleryBr.style.height = '100%';
+                this.btnBrandAll.innerHTML = 'убрать';
+                this.btnBrandCondition = false;
+            } else {
+                galleryBr.style.height = '300px';
+                this.btnBrandAll.innerHTML = 'показать все бренды';
+                this.btnBrandCondition = true;
+            }
+        })
+    }
+
+    init() {
+        this._getDataBrand(this.urlDataBrand);
+        this.getUrlTechnic();
+        this.checkClickBtnBrandAll();
+    }
+}
+
+let brand = new Brand();
+brand.init();
+

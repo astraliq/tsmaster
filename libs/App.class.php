@@ -41,10 +41,30 @@ class App {
 		/*поиск контролера*/
 		if (isset($_GET['page'])) {
 			$controllerName = ucfirst($_GET['page']) . 'Controller';
+			$jsonParser = new JsonFileParse();
+			$brandsArr = $jsonParser->getArrayFromFile('/../www/js/brands.json');
+			$brandsFromArr = array_column($brandsArr, 'brandName');
+			$brandsFromArr = array_map('strtolower', $brandsFromArr);
+			$brandsImgs = array_column($brandsArr, 'imgBrand');
+			array_unshift($brandsFromArr, '#заглушка#');
 			
+
+			
+
 		//	echo ($controllerName)."<br>";
 			$methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
 		//	echo ($methodName)."<br>";
+			
+									// определяем страницу с брендом
+			$brand = explode("_",$_GET['action'])[0];
+			if (array_search($brand, $brandsFromArr)) {
+				$_GET['brand'] = $brand;
+				$methodName = explode($brand . "_", $_GET['action'])[1];
+			}
+									// ------------------------------
+			
+			array_shift($brandsFromArr);
+			$_GET['brands'] = array_combine($brandsFromArr, $brandsImgs);
 
 			$controller = new $controllerName(); //создаем контролер класса с указанным именем
 		/*поиск контролера*/	
