@@ -62,50 +62,31 @@
             </div>
         </div>
         <!-- modal window -->
-        <!-- <div class="darkback darkback-phone screen_off modal_off">
+        <div class="darkback darkback-phone screen_off modal_off">
             <div class="modal-window modal-phone screen_off">
-                <div class="close-phone">&#10006;</div>
+                <div class="close-phone"></div>
                 <div class="modal-content" id="phone">
-                    <div class="section__title section__title_black section__title_margin">Заказать звонок</div>
-                    <input class="input input_margin client_name" type="text" placeholder="Ваше имя" maxlength="30">
-                    <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
-                    <button class="button button-phone section__title_margin" type="button">Заказать звонок</button>
-                    <div class="modal-text modal-text_margin">
+                    <div class="modal-title modal-title_margin">Заказать звонок</div>
+                    <div class="modal_align">
+                        <label class="modal-input-label__name modal-input-label_margin">Имя</label>
+                        <input class="modal-input client_name" type="text">
+                        <label class="modal-input-label__name modal-input-label_margin">Номер телефона</label>
+                        <input class="modal-input client_phone" type="text" name="phone" maxlength="16">
+                        <button class="modal-btn" type="button">Заказать звонок</button>
+                    </div>
+                    <div class="modal-politics">
                         <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
-                        <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
+                        <a class="modal-politics__link" href="https://best-service.pro/politics.pdf">политикой конфиденциальности и обработки персональных данных</a>
                     </div>
-                    <div>Или позвоните нам</div>
-                    <div class="tel__number"><a class="tel__link city__phone" href="tel:+73432435451">+7 (343) 243-54-51</a></div>
+                    <div class="modul-remark">
+                        Наш оператор перезвонит вам в течение 10 минут
+                    </div>
+                    <div class="attention_text">Или позвоните нам
+                        <span class="dbfire" data-dbfire="Phone1">
+                        <a class="callibri_phone" href="tel:+7 (343) 243-54-51">+7 (343) 243–54–51</a>
+                    </span>
+                    </div>
                 </div>
-            </div>
-        </div> -->
-        <div class="box-modal callBack" id="callBack">
-            <div class="modal_header">
-                <p class="title">Заказать звонок</p>
-                <div class="box-modal_close arcticmodal-close"></div>
-            </div>
-            <div class="modal_body">
-                <form>
-                    <input name="page" style="display: none;" type="text" value="Стиральные машины">
-                    <div>
-                        <label>имя</label>
-                        <input name="name" type="text">
-                    </div>
-                    <div>
-                        <label>номер телефона</label>
-                        <input name="phone" class="phone" type="text" required>
-                    </div>
-                    <div>
-                        <button onclick="roistat.event.send('btn_1')" id="btn_1" type="submit" class="btn btn_simple_yellow">Заказать звонок</button>
-                    </div>
-                    <p class="politics" style="text-align: center; font-size: 12px; margin-top: 10px;">Нажимая на кнопку, вы подтверждаете согласие с нашей <a href="politics.pdf">политикой о конфиденциальности, и обработки персональных
-                    данных</a></p>
-                </form>
-                <div class="remark">
-                    Наш оператор перезвонит вам в течение 10 минут
-                </div>
-                <div class="attention_text">Или позвоните нам <span class="dbfire" data-dbfire="Phone1"><a class="callibri_phone" href="tel:+73432435451">+7 (343)
-                243-54-51</a></span></div>
             </div>
         </div>
 </header>

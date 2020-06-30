@@ -12,6 +12,14 @@
     font-weight: 600;
 }
 
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot");
+    src: url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff") format("woff"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 $bg_color_main: #fafdff;
 $font__first: 'PT Sans',
 sans-serif;
@@ -19,6 +27,7 @@ $font__second: 'Arial';
 $font__second_bold: 'Arial Black';
 $font__third: "Oswald";
 $font__third_bold: "Oswald Bold";
+$font-modal: 'HelveticaNeueCyr';
 $logo__text_color: #f7a900;
 $logo__text_color_gr: #fad27c;
 $btn_new_color_y1: #fea700;
@@ -46,6 +55,7 @@ $bg__stars_color: #fe8f00;
 $bg__stars_color_gr: #f8c481;
 $bg__footer_color: #434955;
 $bg-main_color: #f9fbfd;
+$bg-modal_color: #e4ecf1;
 $container__width: 1520px;
 $container2__width: 1140px;
 // $container2__width: 900px;
