@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: $bg-main_color;
-}
-
 button,
 input,
 optgroup,
@@ -487,7 +483,6 @@ textarea {
     margin-bottom: 20px;
 }
 
-
 /*reviews-part__item*/
 
 .reviews-part {
@@ -789,7 +784,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        &+.cell-price {
+        & + .cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -882,7 +877,6 @@ textarea {
         outline: none;
     }
 }
-
 
 /*модальные окна*/
 
@@ -1144,7 +1138,6 @@ textarea {
         background-color: #339ef5;
     }
 }
-
 
 /*Карусель*/
 
@@ -1550,9 +1543,7 @@ button.arrow img {
     height: 100%;
 }
 
-
 /*карусель*/
-
 
 /*таблица брендов*/
 
@@ -1607,7 +1598,6 @@ button.arrow img {
     display: block;
 }
 
-
 /*стрелка якорь переход на верх*/
 
 .anchor-btn {
@@ -1628,7 +1618,6 @@ button.arrow img {
     z-index: 1000000;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -2057,7 +2046,6 @@ button.arrow img {
         margin-bottom: 65px;
     }
 }
-
 
 /*.form-search__items {}*/
 
@@ -2622,37 +2610,37 @@ button.arrow img {
     height: 0;
     opacity: 0;
     left: -9999px;
-    &+label {
+    & + label {
         height: 50px;
         width: 900px;
     }
-    &+label::after {
+    & + label::after {
         content: '+';
         position: absolute;
         right: 50px;
         top: 0px;
         color: #333;
     }
-    &+label:hover::after {
+    & + label:hover::after {
         top: 0px;
         font-weight: 700;
     }
-    &+label {
+    & + label {
         position: relative;
         display: block;
         cursor: pointer;
     }
-    &+label~.cost_table_all-device_defect .cost_table_all-row {
+    & + label ~ .cost_table_all-device_defect .cost_table_all-row {
         position: relative;
         transition: all $anim_transition_defect_table ease;
         opacity: 0;
         height: 0;
     }
-    &+label~.cost_table_all-device_defect .cost_table_all-row a {
+    & + label ~ .cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: none;
         cursor: default;
     }
-    &:checked+label::after {
+    &:checked + label::after {
         content: '\2013';
         top: -1.5px;
         right: 50px;
@@ -2660,15 +2648,15 @@ button.arrow img {
         // transform: rotateX(-60deg);
         transition: all $anim_transition_defect_table ease;
     }
-    &:checked+label+.cost_table_all-device_defect .cost_table_all-row {
+    &:checked + label + .cost_table_all-device_defect .cost_table_all-row {
         opacity: 1;
         height: 50px;
     }
-    &:checked+label+.cost_table_all-device_defect .cost_table_all-row a {
+    &:checked + label + .cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: all;
         cursor: pointer;
     }
-    &:checked+label {
+    &:checked + label {
         color: #00a3c6;
     }
 }
@@ -2742,7 +2730,7 @@ button.arrow img {
             & .cost_table_all-row-name__link {
                 color: whitesmoke;
             }
-            &+.cost_table_all-row-price {
+            & + .cost_table_all-row-price {
                 background-color: #66a7c5;
                 color: whitesmoke;
             }
@@ -2840,320 +2828,3 @@ button.arrow img {
         text-align: justify;
     }
 }
-
-
-/* --- Новое модальное окно. Стили --- */
-
-.box-modal {
-    background-color: #fff;
-    -webkit-background-clip: border-box;
-    -moz-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.consultModal,
-.masterModal,
-.callBack,
-.thanks {
-    width: 450px;
-}
-
-.docsModal .modal_header {
-    background: #eaeff5;
-}
-
-.docsModal .modal_header .title {
-    font-size: 30px;
-}
-
-.modal_header {
-    background: #e4ecf1;
-    padding-top: 54px;
-    padding-left: 76px;
-    padding-right: 76px;
-}
-
-.modal_header .title {
-    font-size: 20px;
-    color: #484b4d;
-    font-weight: bold;
-    text-align: center;
-}
-
-.modal_header .subtitle {
-    text-align: center;
-    font-weight: bold;
-    color: #484b4d;
-}
-
-.arcticmodal-close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-    background: url("images/icons/close_modal.png") no-repeat;
-    background-position: center;
-}
-
-.thanks .modal_body {
-    text-align: center;
-    padding-top: 0px;
-}
-
-.docsModal .modal_body {
-    background: #eaeff5;
-    padding: 0;
-    padding-top: 38px;
-}
-
-.brandModal .modal_body {
-    padding: 0;
-}
-
-.modal_body {
-    background: #e4ecf1;
-    padding-top: 38px;
-    padding-bottom: 44px;
-    padding-left: 76px;
-    padding-right: 76px;
-}
-
-.modal_body .title {
-    font-size: 20px;
-    color: #484b4d;
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 37px;
-}
-
-.modal_body .contact_grid {
-    font-size: 0;
-}
-
-.modal_body .contact_grid form>div {
-    font-size: 14px;
-    display: inline-block;
-    width: 48%;
-}
-
-.modal_body .contact_grid form>div:nth-of-type(2n-1) {
-    margin-right: 4%;
-}
-
-.modal_body .price_list {
-    padding: 0;
-}
-
-.modal_body .price_list p {
-    display: inline-block;
-    padding-bottom: 0;
-    padding-right: 10px;
-    background: #e4ecf1;
-    position: relative;
-}
-
-.modal_body .price_list span {
-    font-weight: bold;
-    float: right;
-    padding-left: 10px;
-    position: relative;
-    background: #e4ecf1;
-}
-
-.modal_body .price_list li {
-    padding-left: 0;
-    color: #484b4d;
-    position: relative;
-}
-
-.modal_body .price_list li:before {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 10%;
-    height: 1px;
-    width: 90%;
-    background: #000;
-}
-
-.modal_body .price_list+.remark {
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.modal_body input,
-.modal_body textarea,
-.modal_body select {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.modal_body textarea {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.modal_body select {
-    cursor: pointer;
-}
-
-.modal_body label {
-    display: block;
-    color: #484b4d;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-bottom: 7px;
-}
-
-.modal_body .btn_simple_yellow {
-    width: 100%;
-    margin-top: 18px;
-}
-
-.modal_body .remark {
-    color: #8b8f92;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.modal_body .remark_2 {
-    padding-top: 20px;
-    margin-bottom: 40px;
-    border-top: 1px solid #ccc;
-    text-align: center;
-}
-
-.modal_body .remark_2 p {
-    font-size: 20px;
-    color: #484b4d;
-    font-weight: bold;
-    padding-bottom: 10px;
-}
-
-.modal_body .attention_text {
-    text-align: center;
-    font-size: 20px;
-    color: #484b4d;
-    font-weight: bold;
-    padding-top: 20px;
-}
-
-.modal_body .attention_text a {
-    color: #484b4d;
-    text-decoration: none;
-}
-
-.btn,
-a.btn {
-    padding-top: 17px;
-    padding-right: 72px;
-    padding-bottom: 16px;
-    padding-left: 21px;
-    border-radius: 7px;
-    border: none;
-    line-height: 1.4;
-    /* transition: all 0.2s; */
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    background: #ccc;
-    color: #fff;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-.btn:hover,
-a.btn:hover {
-    /* background: lighten(@button_def_color, 10%); */
-}
-
-.btn:active,
-a.btn:active {
-    /* background: darken(@button_def_color, 10%); */
-}
-
-.btn.btn_simple_yellow,
-a.btn.btn_simple_yellow {
-    font-size: 16px;
-    color: #FFFFFF;
-    font-weight: bold;
-    text-align: left;
-    background: #fea700;
-    background: -moz-linear-gradient(left, #fea700 0%, #f9c001 100%);
-    background: -webkit-linear-gradient(left, #fea700 0%, #f9c001 100%);
-    background: linear-gradient(to right, #fea700 0%, #f9c001 100%);
-    // filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fea700', endColorstr='#f9c001', GradientType=1);
-    box-shadow: 0px 10px 25px rgba(247, 169, 0, 0.6);
-    position: relative;
-}
-
-.btn.btn_simple_yellow:after,
-a.btn.btn_simple_yellow:after {
-    content: "";
-    position: absolute;
-    right: 17px;
-    top: 50%;
-    margin-top: -7px;
-    height: 15px;
-    width: 15px;
-    background: url("images/icons/arrow.png") no-repeat;
-}
-
-.btn.btn_simple_yellow,
-a.btn.btn_simple_yellow {
-    font-size: 16px;
-    color: #FFFFFF;
-    font-weight: bold;
-    text-align: left;
-    background: #fea700;
-    background: -moz-linear-gradient(left, #fea700 0%, #f9c001 100%);
-    background: -webkit-linear-gradient(left, #fea700 0%, #f9c001 100%);
-    background: linear-gradient(to right, #fea700 0%, #f9c001 100%);
-    // filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fea700', endColorstr='#f9c001', GradientType=1);
-    box-shadow: 0px 10px 25px rgba(247, 169, 0, 0.6);
-    position: relative;
-}
-
-.btn.btn_simple_yellow:after,
-a.btn.btn_simple_yellow:after {
-    content: "";
-    position: absolute;
-    right: 17px;
-    top: 50%;
-    margin-top: -7px;
-    height: 15px;
-    width: 15px;
-    background: url("images/icons/arrow.png") no-repeat;
-}
-
-.modal_body .price_list+.remark {
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.modal_body .attention_text {
-    text-align: center;
-    font-size: 20px;
-    color: #484b4d;
-    font-weight: bold;
-    padding-top: 20px;
-}
-
-.modal_body .attention_text a {
-    color: #484b4d;
-    text-decoration: none;
-}
-
-
-/* --- Новое модальное окно. Конец --- */

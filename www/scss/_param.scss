@@ -13,10 +13,9 @@
 }
 
 $bg_color_main: #fafdff;
-$font__first: 'PT Sans',
-sans-serif;
-$font__second: 'Arial';
-$font__second_bold: 'Arial Black';
+$font__first: "'Rubik', sans-serif";
+$font__second: "Arial";
+$font__second_bold: "Arial Black";
 $font__third: "Oswald";
 $font__third_bold: "Oswald Bold";
 $logo__text_color: #f7a900;
@@ -45,7 +44,6 @@ $bg-cell-cost: #eaf5ff;
 $bg__stars_color: #fe8f00;
 $bg__stars_color_gr: #f8c481;
 $bg__footer_color: #434955;
-$bg-main_color: #f9fbfd;
 $container__width: 1520px;
 $container2__width: 1140px;
 // $container2__width: 900px;
@@ -54,7 +52,6 @@ $text__main_color: #000;
 $text__second_color: #fff;
 $text__subtitle_color: #999999;
 $anim_transition: 0.5s;
-$anim_transition_err: 1s;
 $anim_transition2: 0.4s;
 $anim_transition_err: 1s;
 $anim_transition_defect_table: 0.5s;
