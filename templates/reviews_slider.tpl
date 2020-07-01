@@ -82,18 +82,25 @@
           <!-- modal window оставить отзыв-->
           <div class="darkback darkback-review screen_off modal_off">
               <div class="modal-window modal-review screen_off">
-                  <div class="close-review">&#10006;</div>
+                  <div class="close-review"></div>
                   <div class="modal-content" id="review">
-                      <div class="section__title section__title_black section__title_margin">Оставить сообщение</div>
-                      <input class="input input_margin client_name" type="text" placeholder="Ваше имя и фамилия" maxlength="30">
-                      <input class="input input_margin client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
-                      <input class="input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
-                      <textarea class="text-block input_margin review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
-                      <button class="button button-review section__title_margin" type="button">Отправить</button>
-                      <div class="modal-text modal-text_margin">
-                          <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
-                          <a class="modal-link" href="#">политикой конфиденциальности и обработки персональных данных</a>
-                      </div>
+                      <div class="modal-title modal-title_margin">Оставить сообщение</div>
+                      <label class="modal-input-label__name modal-input-label_margin">Имя</label>
+                        <input class="modal-input client_name" type="text">
+                        <label class="modal-input-label__name modal-input-label_margin">Номер телефона</label>
+                        <input class="modal-input client_phone" type="text" name="phone" maxlength="16">
+                      <input class="modal-input input_margin rate" type="number" placeholder="Ваша оценка (от 1 до 5)" min="1" max="5">
+                      <textarea class="modal-textarea review" rows="10" cols="29" placeholder="Ваш отзыв"></textarea>
+                      <button class="modal-btn button-review section__title_margin" type="button">Отправить</button>
+                      <div class="modal-politics">
+                        <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
+                        <a class="modal-politics__link" href="/politics.pdf">политикой конфиденциальности и обработки персональных данных</a>
+                    </div>
+                    <div class="attention_text">Или позвоните нам
+                        <span class="dbfire" data-dbfire="Phone1">
+                        <a class="callibri_phone"> <span class="city__city-footer-phone"></span></a>
+                    </span>
+                    </div>
                   </div>
               </div>
           </div>

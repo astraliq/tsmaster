@@ -8,7 +8,7 @@ class City {
         this.nameCityFooter = document.querySelector('.city__city-footer');
         this.nameCityFooter2 = document.querySelector('.city__city-footer2');
         this.phoneCity = document.querySelectorAll('.city__phone');
-        this.phoneCityFooter = document.querySelector('.city__city-footer-phone');
+        this.phoneCityFooter = document.querySelectorAll('.city__city-footer-phone');
         this.block = document.querySelector('.modal_city_block');
         this.numberCity = 0; //город по умолчанию
         this.darkBack = document.querySelector('.darkback_sities');
@@ -126,7 +126,10 @@ class City {
         this.phoneCity.forEach((elem) => {
             elem.innerHTML = data[number].phone;
         });
-        this.phoneCityFooter.innerHTML = data[number].phone;
+
+        this.phoneCityFooter.forEach((elem) => {
+            elem.innerHTML = data[number].phone;
+        });
 
         this.setCityId(this.numberCity, this.result);
     }

@@ -956,8 +956,7 @@ textarea {
 }
 
 .modal-review {
-    height: 520px;
-    // top: 50px;
+    height: 630px;
 }
 
 .modal-content,
@@ -1137,7 +1136,7 @@ textarea {
         border-radius: 0 10px 10px 0;
         background-color: $bgcolor_blue;
         width: 29px;
-        height: 45px;
+        height: 50px;
         position: absolute;
         top: 0;
         right: 0;
@@ -2109,7 +2108,7 @@ button.arrow img {
     color: #000;
     cursor: pointer;
     font-size: 16px;
-    font-family: $font__first;
+    font-family: $font-modal;
     width: 270px;
     height: 45px;
     border-radius: 10px;
@@ -2149,7 +2148,7 @@ button.arrow img {
         border-radius: 0 10px 10px 0;
         background-color: $bgcolor_blue;
         width: 29px;
-        height: 45px;
+        height: 50px;
         position: absolute;
         top: 0;
         right: 0;
@@ -2197,7 +2196,7 @@ button.arrow img {
         border-radius: 0 10px 10px 0;
         background-color: $bgcolor_blue;
         width: 29px;
-        height: 45px;
+        height: 50px;
         position: absolute;
         top: 0;
         right: 0;
@@ -2858,6 +2857,7 @@ button.arrow img {
     font-weight: bold;
     text-transform: uppercase;
     color: #484b4d;
+    width: 100%;
 }
 
 .modal-input-label_margin {
@@ -3034,6 +3034,8 @@ button.arrow img {
 /* Стили_модального_окна__конец*/
 
 .device,
+.review,
+.rate,
 .device + .select_cover_arrow,
 .defect,
 .client_name,
