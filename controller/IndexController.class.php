@@ -129,12 +129,14 @@ class IndexController extends Controller {
         $banner = 'img/repair_banners/repair_washing_machine.jpg';     // заменять баннер
         
         if ($data['id']) {
-            $defectTableId = 2;
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
                 $this->page404($data);
             }
+            $defectTableId = 2;
+            $defect = $this->defects->getByLink('/' . $data['id']);
+            $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';
             $pageTitle = $repTypes[0]['pageTitle'];
         }
 
@@ -166,6 +168,9 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems, // список блока с адресами картинок и названиями видов ремонта
             'serviceTitle' => $serviceTitle, // название текущей страницы
             'devices' => $this->devices->getAllDevices(), // все виды техник из БД
+            'deviceId' => $deviceId, // id техники из БД
+            'defect' => $defect, // id дефекта из БД
+            'defectPrice' => $defectPrice, // стоимость ремонта дефекта из БД
             'isBrand' => $this->isBrand, // маркер для определения брендованой страницы - 1/0
             'brands' => $data['brands'], // список доступных брендов
             'brand' => $data['brand'], // выбранный бренд
@@ -192,12 +197,14 @@ class IndexController extends Controller {
         $banner = 'img/repair_banners/repair_dishwasher.jpg';     // заменять баннер
 
         if ($data['id']) {
-            $defectTableId = 2;
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
                 $this->page404($data);
             }
+            $defectTableId = 2;
+            $defect = $this->defects->getByLink('/' . $data['id']);
+            $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -230,6 +237,9 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
+            'deviceId' => $deviceId, // id техники из БД
+            'defect' => $defect, // id дефекта из БД
+            'defectPrice' => $defectPrice, // стоимость ремонта дефекта из БД
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],
@@ -257,12 +267,14 @@ class IndexController extends Controller {
         $banner = 'img/repair_banners/repair_refrigerator.jpg';     // заменять баннер
 
         if ($data['id']) {
-            $defectTableId = 2;
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
                 $this->page404($data);
             }
+            $defectTableId = 2;
+            $defect = $this->defects->getByLink('/' . $data['id']);
+            $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -294,6 +306,9 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
+            'deviceId' => $deviceId, // id техники из БД
+            'defect' => $defect, // id дефекта из БД
+            'defectPrice' => $defectPrice, // стоимость ремонта дефекта из БД
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],
@@ -320,12 +335,14 @@ class IndexController extends Controller {
         $banner = 'img/repair_banners/repair_oven.jpg';     // заменять баннер
 
         if ($data['id']) {
-            $defectTableId = 2;
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
                 $this->page404($data);
             }
+            $defectTableId = 2;
+            $defect = $this->defects->getByLink('/' . $data['id']);
+            $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -357,6 +374,9 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
+            'deviceId' => $deviceId, // id техники из БД
+            'defect' => $defect, // id дефекта из БД
+            'defectPrice' => $defectPrice, // стоимость ремонта дефекта из БД
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],
@@ -383,12 +403,14 @@ class IndexController extends Controller {
         $banner = 'img/repair_banners/repair_hob.jpg';     // заменять баннер
 
         if ($data['id']) {
-            $defectTableId = 2;
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $repTypes = $this->repairTypes->getByDeviceLink($deviceId, '/' . $data['id']);
             if (!$repTypes) { // переброс на страницу 404, если поломка не совпадает с техникой
                 $this->page404($data);
             }
+            $defectTableId = 2;
+            $defect = $this->defects->getByLink('/' . $data['id']);
+            $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
+            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -420,6 +442,9 @@ class IndexController extends Controller {
             'serviceItems' => $this->serviceItems,
             'serviceTitle' => $serviceTitle,
             'devices' => $this->devices->getAllDevices(),
+            'deviceId' => $deviceId, // id техники из БД
+            'defect' => $defect, // id дефекта из БД
+            'defectPrice' => $defectPrice, // стоимость ремонта дефекта из БД
             'isBrand' => $this->isBrand,
             'brands' => $data['brands'],
             'brand' => $data['brand'],

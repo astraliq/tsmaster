@@ -787,7 +787,7 @@ class DefectPrices {
             this.deviceId = this.deviceSelect[this.deviceSelect.selectedIndex].dataset.id;
             if (this.deviceId !== '' && !!this.deviceId) {
                 let defects = await this.getDefects(this.deviceId);
-                let options = '<option class="form__option" value="" selected disabled>Вид неисправности</option>';
+                let options = '<option class="form__option" value="" selected disabled>Выберете вид неисправности</option>';
                 defects.forEach((defect) => {
                     options += `<option class="form__option" value="" data-id="${defect.id}">${defect.title}</option>`;
                 });

@@ -29,6 +29,13 @@ class Defects extends Model {
 		return $this->dataBase->uniSelect($this->defectsTable, $whereObject);
 	}
 
+	public function getByLink($link) {
+		$whereObject = [
+			'link' => $link
+		];
+		return $this->dataBase->uniSelect($this->defectsTable, $whereObject);
+	}
+
 	public function getDefectPriceByDevice($deviceId, $defectId) {
 		$whereObject = [
 			'device_id' => $deviceId,

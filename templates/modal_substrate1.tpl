@@ -3,7 +3,7 @@
                 <div class="close-master"></div>
                 <div class="modal-content" id="master">
                     <div class="modal-title modal-title_margin">
-                        Консультация мастера по ремонту стиральных машин
+                        Консультация мастера по ремонту {{content.pageTitle|slice(7,100)}}
                     </div>
                     <div class="modal_align">
                         <textarea class="modal-textarea defect" name="text" placeholder="Опишите, что случилось с вашей стиральной машиной">{% if content.defectTableId == 2 %}{{ content.pageTitle }}{% endif %}</textarea>
@@ -11,7 +11,7 @@
                         <div class="select_cover">
                             <div class="select_cover_arrow"></div>
                             <select class="modal-select__style device" name="device">
-                            <option class="form__option" value="" data-id=""
+                            <option class="form__option" value="" data-id="{{content.deviceId}}"
                     {% if content.pageTitle3 == '' %}selected disabled{% endif %}>{% if content.pageTitle3 != '' %}{{ content.pageTitle3 | capitalize }}{% else %}Вид техники{% endif %}</option>
                     {% for device in content.devices %} {% if content.pageTitle3 != device.title %}
                     <option class="form__option" value="" data-id="{{ device.id }}">{{ device.title | capitalize }}</option>
