@@ -1,6 +1,6 @@
 <section class="contacts" id="contacts" style="display: none;">
     <div class="contacts-container">
-        <div class="section__title section__title_margin"><a name="about">Контакты</a></div>
+        <h3 class="section__title section__title_margin">Контакты</h3>
         <div class="contacts_text">
             <div class="contacts_text-map">
                 {% if content.cityId == 0 %}

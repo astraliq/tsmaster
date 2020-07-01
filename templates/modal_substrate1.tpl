@@ -33,7 +33,7 @@
                     </div>
                     <div class="attention_text">Или позвоните нам
                         <span class="dbfire" data-dbfire="Phone1">
-                        <a class="callibri_phone"> <span class="city__city-footer-phone"></span></a>
+                        <a class="callibri_phone tel__link"> <span class="city__city-footer-phone"></span></a>
                     </span>
                     </div>
                 </div>

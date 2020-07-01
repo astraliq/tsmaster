@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>{{ content.siteName|raw }}</title>
+    <style class="data_width" data-width="2">
+        .carousel_1{
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,7 +47,7 @@
                     </div>
                     <!-- карусель малая -->
                     <div id="carousel_2" class="carousel_2">
-                        <button class="arrow_2 prev_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png"></button>
+                        <button class="arrow_2 prev_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png" alt="left"></button>
                         <div class="gallery_2">
                             <a name="reviews"></a>
                             <ul class="images_2">
@@ -111,8 +117,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="arrow_2 next_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png"></button>
-                        </!---->
+                        <button class="arrow_2 next_2 color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png" alt="right"></button>
                     </div>
                 </div> 
                 <div class="advantage_bullets_small" id="advantage_bullets_small" style="display: none;">
@@ -174,7 +179,7 @@
                             <div class="banner_title_block-2" style="opacity: 0"></div>
                             {% endif %} 
                             
-                            <img class="top-banner__img" src="{{content.banner}}" height="auto" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
+                            <img class="top-banner__img" src="{{content.banner}}" alt="{{content.pageTitle}}" title="{{content.pageTitle}}">
                             <div class="cause">
                                 <div class="btn-master cause_btn color_btn_1 {{ content.bg_class }}">Вызвать мастера!</div>
                                 <!--<div class="btn-master-block cause_btn_block color_btn_1 {{ content.bg_class }}">&#10004;</div>-->
@@ -217,7 +222,7 @@
                                     <!-- тюмень -->
                                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b5a8115f94a9a742a335834e12ac517d3803d32ef23abb18a2586cc6e9545b1&amp;width=400&amp;height=320&amp;lang=ru_RU&amp;scroll=true"></script>
                                     {% else %} 
-                                    <img class="advantage__img" src="img/banners/banner-info.jpg" width="400" height="auto" alt="Наши примущества">
+                                    <img class="advantage__img" src="img/banners/banner-info.jpg" width="400" alt="Наши примущества">
                                     {% endif %} 
                                     <div class="advantage__bullets-right">
                                         <div class="bullets__item bullets_margin">
@@ -238,12 +243,6 @@
                         {% include 'about.tpl' %}
                         <!-- Отзывы -->
                         {% include 'reviews_slider.tpl' %}
-                        <style class="data_width" data-width="2">
-                            .carousel_1{
-                                width: 80%;
-                                margin: 0 auto;
-                            }
-                        </style>
                         <!-- Контакты -->
                         {% include 'contacts.tpl' %}
                         <!-- Цены -->
@@ -308,8 +307,7 @@
                         </section>
                         {% include 'question_form.tpl' %}
                     </div>
-            </section>
-            </div>
+                </div>
             </section>
         </main>
     </div>
@@ -319,7 +317,7 @@
     <script defer src="js/brand.js"></script>
     <script defer src="js/script.js"></script>
     <script defer src="js/menu_2.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script defer src="js/city.js"></script>
     <script>
         jQuery(document).ready(function() {

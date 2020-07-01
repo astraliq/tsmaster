@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@200;300;400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>{{ content.siteName | raw }}</title>
+        <style class="data_width" data-width="3"></style>
     </head>
 
     <body>
@@ -43,21 +44,23 @@
                     </div> -->
                         <div class="slider__item">
                             <div id="carousel" class="carousel">
-                                <button class="arrow prev color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png" /></button>
+                                <button class="arrow prev color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_left.png" alt="left" /></button>
                                 <div class="cause">
                                     <div class="btn-master cause_btn color_btn_2 {{ content.bg_class }}">Вызвать мастера!</div>
                                     <!--<div class="btn-master-block cause_btn_block color_btn_2">&#10004;</div>-->
                                 </div>
                                 <div class="gallery">
                                     <ul class="images">
-                                        <li><img src="./img/top-slider/banner_washing_machine.jpg" /></li>
-                                        <li><img src="./img/top-slider/banner_dishwasher.jpg" /></li>
-                                        <li><img src="./img/top-slider/banner_fridge.jpg" /></li>
-                                        <li><img src="./img/top-slider/banner_oven.jpg" /></li>
-                                        <li><img src="./img/top-slider/banner_cooking_surface.jpg" /></li>
+                                        <li><img src="./img/top-slider/banner_washing_machine.jpg" alt="banner_washing_machine" /></li>
+                                        <li><img src="./img/top-slider/banner_dishwasher.jpg" alt="banner_dishwasher" /></li>
+                                        <li><img src="./img/top-slider/banner_fridge.jpg" alt="banner_fridge" /></li>
+                                        <li><img src="./img/top-slider/banner_oven.jpg" alt="banner_oven" /></li>
+                                        <li><img src="./img/top-slider/banner_cooking_surface.jpg" alt="banner_cooking_surface" /></li>
                                     </ul>
                                 </div>
-                                <button class="arrow next color_btn_1"><img class="reviews__arrow_img" src="img/reviews/reviews_right.png" /></button>
+                                <button class="arrow next color_btn_1">
+                                    <img class="reviews__arrow_img" src="img/reviews/reviews_right.png" alt="right" />
+                                </button>
                             </div>
                         </div>
                         <div class="slider__item"></div>
@@ -89,7 +92,7 @@
                                 {{content.jsonDb.skidka.до}} {{ content.actionMonth }}!
                             </p>
                         </div>
-                        <img class="advantage__img" src="img/banners/banner-skidka.jpg" width="424" height="341" />
+                        <img class="advantage__img" src="img/banners/banner-skidka.jpg" width="424" height="341" alt="skidka.jpg" />
                         <div class="advantage__bullets-right">
                             <div class="bullets__item bullets_margin">
                                 <img class="bullets__img" src="img/advantage/advantage_03.png" alt="бесплатная диагностика" />
@@ -107,7 +110,6 @@
             {% include 'defect_table_all.tpl' %}
             <!-- Отзывы -->
             {% include 'reviews_slider.tpl' %}
-             <style class="data_width" data-width="3"></style>
             <!-- О компании -->
             {% include 'about.tpl' %}
             <!-- Контакты -->
@@ -159,7 +161,7 @@
         <script defer src="js/jquery.maskedinput.js"></script>
         <script defer src="js/script.js"></script>
         <script defer src="js/menu_1.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script defer src="js/city.js"></script>
         <script>
             jQuery(document).ready(function () {

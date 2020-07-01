@@ -2347,7 +2347,7 @@ button.arrow img {
     align-items: center;
     & p {
         margin: 15px 0 0 0;
-        width: 600px;
+        width: 700px;
         text-align: center;
     }
 }
@@ -2502,6 +2502,7 @@ button.arrow img {
         border: 5px solid $text__second_color;
         background-color: $bg-form__plate_color;
         border-radius: 20px;
+        width: 500px;
     }
     &_tel {
         font-size: 35px;
@@ -2968,12 +2969,6 @@ button.arrow img {
     outline: none;
 }
 
-.callibri_phone {
-    color: #484b4d;
-    text-decoration: none;
-    display: inline-block;
-}
-
 .modal-textarea {
     font-family: $font-modal;
     font-size: 12px;
@@ -3059,4 +3054,16 @@ button.arrow img {
 }
 .select_cover_arrow {
     border: none;
+}
+
+.service__hr {
+    border-style: solid;
+    color: #1b1b1b;
+}
+
+.callibri_phone {
+    color: #484b4d;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
 }

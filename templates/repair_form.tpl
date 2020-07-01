@@ -10,7 +10,7 @@
             <form class="form__items form-search_margin">
                 <div class="form__item">
                     <div class="before_1 input_margin">
-                        <select class="select device" type="text" id="device_select">
+                        <select class="select device" id="device_select">
                             <option class="form__option" value="" data-id="{{content.deviceId}}"
                     {% if content.pageTitle3 == '' %}selected disabled{% endif %}>{% if content.pageTitle3 != '' %}{{ content.pageTitle3 | capitalize }}{% else %}Выберете вид техники{% endif %}</option>
                     {% for device in content.devices %} {% if content.pageTitle3 != device.title %}
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form__item">
                     <div class="before_2 input_margin">
-                        <select class="select defect" type="text" id="defect_select">
+                        <select class="select defect" id="defect_select">
                             <option class="form__option" value="" data-id="{{content.defect.id}}"
                     {% if content.defect.title == '' %}selected disabled{% endif %}>{% if content.defect.title != '' %}{{ content.defect.title | capitalize }}{% else %}Выберете вид неисправности{% endif %}</option>
                     {% for defect in content.defects %} {% if content.defect.title  != defect.title %}
