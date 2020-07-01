@@ -34,7 +34,7 @@
                     </div>
                     <div class="advantage__bullets-discount2 hide" style="opacity: 0; z-index: 5; height: 120px; width: 250px; left: 5%;"></div>
                     <form class="action-form" action="#">
-                        <input class="input input_margin-8 client_name" type="text" placeholder="Ваше имя" maxlength="30">
+                        <input class="input input_margin-8 client_name screen_off" type="text" placeholder="Ваше имя" maxlength="30" value="noname">
                         <input class="input input_margin-20 client_phone" type="text" name="phone" maxlength="16" placeholder="Номер телефона">
                         <button class="button button-phone button_margin color_btn_1" type="button">Получить скидку</button>
                     </form>

@@ -9,11 +9,6 @@
         "imgBrand": "02_beko.png"
     },
     {
-        "id": 2,
-        "brandName": "braun",
-        "imgBrand": "03_braun.png"
-    },
-    {
         "id": 3,
         "brandName": "bosch",
         "imgBrand": "04_bosch.png"
@@ -44,19 +39,9 @@
         "imgBrand": "09_haier.png"
     },
     {
-        "id": 9,
-        "brandName": "krups",
-        "imgBrand": "10_krups.png"
-    },
-    {
         "id": 10,
         "brandName": "moulinex",
         "imgBrand": "11_moulinex.png"
-    },
-    {
-        "id": 11,
-        "brandName": "rowenta",
-        "imgBrand": "12_rowenta.png"
     },
     {
         "id": 12,
@@ -197,5 +182,20 @@
         "id": 39,
         "brandName": "kaiser",
         "imgBrand": "40_kaiser.png"
+    },
+    {
+        "id": 40,
+        "brandName": "graude",
+        "imgBrand": "41_graude.png"
+    },
+    {
+        "id": 41,
+        "brandName": "leran",
+        "imgBrand": "42_leran.png"
+    },
+    {
+        "id": 42,
+        "brandName": "maunfeld",
+        "imgBrand": "43_maunfeld.png"
     }
 ]

@@ -267,6 +267,7 @@ class Mailing {
                 let nameBlock = parent.querySelector('.client_name');
                 let phoneBlock = parent.querySelector('.client_phone');
                 this.name = nameBlock.value;
+                // console.log(this.name); // Убираем ввод имени с верстки формы
                 this.phone = phoneBlock.value;
                 let check = this._checkRecall(nameBlock, phoneBlock);
                 this.city = document.querySelector('.city__city').innerText;
