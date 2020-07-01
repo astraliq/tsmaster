@@ -1,46 +1,43 @@
 @font-face {
-    font-family: "Oswald";
-    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "Oswald Bold";
-    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+    font-family: 'Oswald Bold';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
     font-weight: 600;
 }
 
 @font-face {
-    font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot");
-    src: url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff") format("woff"), url("../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.ttf") format("truetype");
+    font-family: 'HelveticaNeueCyr';
+    src: url('../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot');
+    src: url('../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff2') format('woff2'),
+        url('../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.woff') format('woff'),
+        url('../fonts/HelveticaNeueCyr/helvetica-neue-cyr-medium.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 $bg_color_main: #fafdff;
 $font__first: "'Rubik', sans-serif";
-$font__second: "Arial";
-$font__second_bold: "Arial Black";
-$font__third: "Oswald";
-$font__third_bold: "Oswald Bold";
+$font__second: 'Arial';
+$font__second_bold: 'Arial Black';
+$font__third: 'Oswald';
+$font__third_bold: 'Oswald Bold';
 $font-modal: 'HelveticaNeueCyr';
 $logo__text_color: #f7a900;
 $logo__text_color_gr: #fad27c;
 $btn_new_color_y1: #fea700;
 $btn_new_color_y2: #f9c001;
-$btn_new_color_ysh: rgba(247,
-169,
-0,
-0.6);
+$btn_new_color_ysh: rgba(247, 169, 0, 0.6);
 $btn_new_color_b1: #0069f8;
 $btn_new_color_b2: #00a2ff;
-$btn_new_color_bsh: rgba(0,
-134,
-252,
-0.6);
+$btn_new_color_bsh: rgba(0, 134, 252, 0.6);
 $bgcolor_blue: #0076d5;
 $bgcolor_blue_gr: #84c4f8;
 $btn_color: #ffc123;

@@ -73,11 +73,11 @@
                         <input class="modal-input client_name" type="text">
                         <label class="modal-input-label__name modal-input-label_margin">Номер телефона</label>
                         <input class="modal-input client_phone" type="text" name="phone" maxlength="16">
-                        <button class="modal-btn" type="button">Заказать звонок</button>
+                        <button class="modal-btn button-phone" type="button">Заказать звонок</button>
                     </div>
                     <div class="modal-politics">
                         <p>Нажимая на кнопку, вы подтверждаете своё согласие с нашей</p>
-                        <a class="modal-politics__link" href="https://best-service.pro/politics.pdf">политикой конфиденциальности и обработки персональных данных</a>
+                        <a class="modal-politics__link" href="/politics.pdf">политикой конфиденциальности и обработки персональных данных</a>
                     </div>
                     <div class="modul-remark">
                         Наш оператор перезвонит вам в течение 10 минут

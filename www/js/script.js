@@ -99,7 +99,6 @@ let carousel_1 = document.getElementById('carousel_1');
 //let pointData = number.srcElement.dataset.point;
 let countImage = document.querySelector('.data_width');
 
-
 if (carousel_1) {
     let j = 1;
     for (let li of carousel_1.querySelectorAll('li')) {
@@ -436,8 +435,8 @@ class Mailing {
             setTimeout(function () {
                 renderDiv.classList.add('screen_off');
                 renderDiv.classList.remove('modal_off');
-            }, 2500);
-        }, 2500);
+            }, 3000);
+        }, 3000);
     }
 
     closeModal(dBack, mType) {
@@ -701,11 +700,16 @@ class Mailing {
                 check: false,
                 el: device,
             },
+            device_arrow: {
+                check: false,
+                el: document.querySelector('.select_cover_arrow'),
+            },
         };
         checkArr.name.check = name.value === '' ? false : true;
         checkArr.phone.check = phone.value.length !== 16 ? false : true;
         checkArr.defect.check = defect.value === '' ? false : true;
-        checkArr.device.check = device[device.selectedIndex].text === '' ? false : true;
+        checkArr.device.check = device[device.selectedIndex].disabled ? false : true;
+        checkArr.device_arrow.check = device[device.selectedIndex].disabled ? false : true;
         if (checkArr.name.check && checkArr.phone.check && checkArr.defect.check && checkArr.device.check) {
             this._changeColorByCheck(checkArr);
             return true;
