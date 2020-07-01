@@ -39,7 +39,7 @@ class City {
                 blockSities +
                 `
                 <div class="modal_city_block_content">
-                    <button data-town=${i} class="btn_city">
+                    <button data-town=${i} class="btn_city color_btn_1">
                         ${town}
                     </button>
                 </div>`;

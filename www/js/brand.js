@@ -83,7 +83,7 @@ class Brand {
 
             if (this.btnBrandCondition) {
                 galleryBr.style.height = '100%';
-                this.btnBrandAll.innerHTML = 'убрать';
+                this.btnBrandAll.innerHTML = 'скрыть';
                 this.btnBrandCondition = false;
             } else {
                 galleryBr.style.height = '300px';
