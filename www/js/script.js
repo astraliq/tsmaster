@@ -545,24 +545,23 @@ class Mailing {
                 city: this.city,
             },
         };
-        this._getJson(`/index.php`, sendData)
-            .then((data) => {
-                if (data.result === 'OK') {
-                    console.log('mail send!');
-                    if (modal.classList.contains('form-question__form')) {
-                        this.clearInputs(modal);
-                    } else {
-                        this.closeModal('darkback-phone', 'modal-phone');
-                        this.clearInputs(modal);
-                    }
-                    this.renderOk('phone');
+        this._getJson(`/index.php`, sendData).then((data) => {
+            if (data.result === 'OK') {
+                console.log('mail send!');
+                if (modal.classList.contains('form-question__form')) {
+                    this.clearInputs(modal);
                 } else {
-                    console.log('ERROR_SENDING');
+                    this.closeModal('darkback-phone', 'modal-phone');
+                    this.clearInputs(modal);
                 }
-            })
-            .catch((error) => {
-                console.log('fetch error');
-            });
+                this.renderOk('phone');
+            } else {
+                console.log('ERROR_SENDING');
+            }
+        });
+        // .catch((error) => {
+        //     console.log('fetch error');
+        // });
     }
 
     sendMailReview(modal) {

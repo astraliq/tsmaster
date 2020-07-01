@@ -17,6 +17,7 @@
         <main class="main-blocks">
             <!-- modal window -->
             {% include 'modal_substrate1.tpl' %}
+            {% include 'confirm_mailing_block.tpl' %}
             <section class="left-part">
                 {% include 'service_menu2.tpl' %}
                 <div class="action action_margin">
