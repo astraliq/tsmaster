@@ -1964,7 +1964,7 @@ button.arrow img {
 .button:hover {
   /*background-color: $btn_hover_color;*/
   cursor: pointer;
-  opacity: 0.8;
+  filter: brightness(1.15);
   /*color: $bg_color_main;
         background-image: linear-gradient(to right, $btn_new_color_b1 0%, $btn_new_color_b2 100%);
         box-shadow: 5px 5px 5px $btn_new_color_bsh;
