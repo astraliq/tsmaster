@@ -45,19 +45,19 @@
              <div class="bullet__items bullet__items_margin bullet__items_top" id="bullet__items">                        
         {% endif %}            
                 <div class="bullet__item" data-type="banner1">
-                    <img class="bullet__img" src="img/bullets/01.jpg" alt="Работаем ежедневно">
+                    <img class="bullet__img" src="img/bullets/01.png" alt="Работаем ежедневно">
                     <div class="bullet__text">Работаем ежедневно</div>
                 </div>
                 <div class="bullet__item" data-type="banner2">
-                    <img class="bullet__img" src="img/bullets/02.jpg" alt="бесплатный выезд">
+                    <img class="bullet__img" src="img/bullets/02.png" alt="бесплатный выезд">
                     <div class="bullet__text">бесплатный выезд</div>
                 </div>
                 <div class="bullet__item" data-type="banner3">
-                    <img class="bullet__img" src="img/bullets/03.jpg" alt="бесплатная диагностика">
+                    <img class="bullet__img" src="img/bullets/03.png" alt="бесплатная диагностика">
                     <div class="bullet__text">бесплатная диагностика</div>
                 </div>
                 <div class="bullet__item" data-type="banner4">
-                    <img class="bullet__img" src="img/bullets/04.jpg" alt="гарантия на наши услуги">
+                    <img class="bullet__img" src="img/bullets/04.png" alt="гарантия на наши услуги">
                     <div class="bullet__text">гарантия<br>на наши услуги</div>
                 </div>
             </div>
