@@ -756,7 +756,7 @@ textarea {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #84c4f8;
   display: grid;
   grid-template-columns: auto 250px;
   grid-template-rows: 50px;
@@ -768,7 +768,7 @@ textarea {
 
 .cell-title {
   background-color: #eaf5ff;
-  border-right: 1px solid black;
+  border-right: 1px solid #84c4f8;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
@@ -799,8 +799,8 @@ textarea {
   font-family: '"PT Sans", sans-serif';
   font-size: 25px;
   font-weight: 400;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid #84c4f8;
+  border-right: 1px solid #84c4f8;
   cursor: pointer;
 }
 
@@ -845,7 +845,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid black;
+  border-top: 1px solid #84c4f8;
 }
 
 .table-footnote {
@@ -2752,7 +2752,14 @@ button.arrow img {
 }
 
 .cost_table_all-row div {
-  border: 1px gray solid;
+  box-sizing: border-box;
+  border-top: 1px #84c4f8 solid;
+  border-right: 1px #84c4f8 solid;
+  border-left: 1px #84c4f8 solid;
+}
+
+.cost_table_all-row:last-child div {
+  border-bottom: 1px #84c4f8 solid;
 }
 
 .cost_table_all-row-name {

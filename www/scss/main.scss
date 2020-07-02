@@ -728,7 +728,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid $bgcolor_blue_gr;
     display: grid;
     grid-template-columns: auto 250px;
     grid-template-rows: 50px;
@@ -741,7 +741,7 @@ textarea {
 
 .cell-title {
     background-color: $bg-cell-cost;
-    border-right: 1px solid black;
+    border-right: 1px solid $bgcolor_blue_gr;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -773,8 +773,8 @@ textarea {
     font-family: $font__first;
     font-size: 25px;
     font-weight: 400;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 1px solid $bgcolor_blue_gr;
+    border-right: 1px solid $bgcolor_blue_gr;
     cursor: pointer;
     &__link {
         text-decoration: none;
@@ -814,7 +814,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid black;
+    border-top: 1px solid $bgcolor_blue_gr;
 }
 
 .table-footnote {
@@ -2711,7 +2711,13 @@ button.arrow img {
     flex-direction: row;
     justify-content: center;
     & div {
-        border: 1px gray solid;
+        box-sizing: border-box;
+        border-top: 1px $bgcolor_blue_gr solid;
+        border-right: 1px $bgcolor_blue_gr solid;
+        border-left: 1px $bgcolor_blue_gr solid;
+    }
+    &:last-child div {
+        border-bottom: 1px $bgcolor_blue_gr solid;
     }
     &-name {
         width: 700px;

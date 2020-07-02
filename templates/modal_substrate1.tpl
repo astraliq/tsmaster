@@ -3,7 +3,7 @@
                 <div class="close-master"></div>
                 <div class="modal-content" id="master">
                     <div class="modal-title modal-title_margin">
-                        Консультация мастера по ремонту {{content.pageTitle|slice(7,100)}}
+                        Консультация мастера по ремонту {{content.pageTitle5}}
                     </div>
                     <div class="modal_align">
                         <textarea class="modal-textarea defect" name="text" placeholder="Опишите, что случилось с вашей {{content.pageTitle4}}">{% if content.defectTableId == 2 %}{{ content.pageTitle }}{% endif %}</textarea>
