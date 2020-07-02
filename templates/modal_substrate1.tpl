@@ -6,7 +6,7 @@
                         Консультация мастера по ремонту {{content.pageTitle|slice(7,100)}}
                     </div>
                     <div class="modal_align">
-                        <textarea class="modal-textarea defect" name="text" placeholder="Опишите, что случилось с вашей стиральной машиной">{% if content.defectTableId == 2 %}{{ content.pageTitle }}{% endif %}</textarea>
+                        <textarea class="modal-textarea defect" name="text" placeholder="Опишите, что случилось с вашей {{content.pageTitle4}}">{% if content.defectTableId == 2 %}{{ content.pageTitle }}{% endif %}</textarea>
                         <label class="modal-input-label__name modal-input-label_margin">выберите технику</label>
                         <div class="select_cover">
                             <div class="select_cover_arrow"></div>

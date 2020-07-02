@@ -126,6 +126,7 @@ class IndexController extends Controller {
         $serviceTitle = $pageTitle;
         $pageTitle2 = 'стиральной машины'; // заменять на название
         $pageTitle3 = 'стиральная машина'; // заменять на название
+        $pageTitle4 = 'стиральной машиной'; // заменять на название
         $banner = 'img/repair_banners/repair_washing_machine.jpg';     // заменять баннер
         
         if ($data['id']) {
@@ -157,6 +158,7 @@ class IndexController extends Controller {
             'pageTitle' => $pageTitle, // название страницы
             'pageTitle2' => $pageTitle2, // название страницы в родит. падеже
             'pageTitle3' => $pageTitle3, // название страницы в именит. падеже
+            'pageTitle4' => $pageTitle4, // название страницы в творит. падеже
             'defects' => $defects, // данные дефектов из БД по технике
             'defectsAll' => $this->defectsAll, // данные дефектов из БД всех видов техник
             'repTypes' => $repTypes, // данные по видам работ в зависимости от дефектов
@@ -194,6 +196,7 @@ class IndexController extends Controller {
         $serviceTitle = $pageTitle;
         $pageTitle2 = 'посудомоечной машины'; // заменять на название
         $pageTitle3 = 'посудомоечная машина'; // заменять на название
+        $pageTitle4 = 'посудомоечной машиной'; // заменять на название
         $banner = 'img/repair_banners/repair_dishwasher.jpg';     // заменять баннер
 
         if ($data['id']) {
@@ -225,6 +228,7 @@ class IndexController extends Controller {
             'pageTitle' => $pageTitle,
             'pageTitle2' => $pageTitle2,
             'pageTitle3' => $pageTitle3,
+            'pageTitle4' => $pageTitle4, // название страницы в творит. падеже
             'TitleLetterSpacing' => '',
             'defects' => $defects,
             'defectsAll' => $this->defectsAll,
@@ -264,6 +268,7 @@ class IndexController extends Controller {
         $serviceTitle = $pageTitle;
         $pageTitle2 = 'холодильника'; // заменять на название
         $pageTitle3 = 'холодильник'; // заменять на название
+        $pageTitle4 = 'холодильником'; // заменять на название
         $banner = 'img/repair_banners/repair_refrigerator.jpg';     // заменять баннер
 
         if ($data['id']) {
@@ -295,6 +300,7 @@ class IndexController extends Controller {
             'pageTitle' => $pageTitle,
             'pageTitle2' => $pageTitle2,
             'pageTitle3' => $pageTitle3,
+            'pageTitle4' => $pageTitle4, // название страницы в творит. падеже
             'defects' => $defects,
             'defectsAll' => $this->defectsAll,
             'repTypes' => $repTypes,
@@ -332,6 +338,7 @@ class IndexController extends Controller {
         $serviceTitle = $pageTitle;
         $pageTitle2 = 'духового шкафа'; // заменять на название
         $pageTitle3 = 'духовой шкаф'; // заменять на название
+        $pageTitle4 = 'духовым шкафом'; // заменять на название
         $banner = 'img/repair_banners/repair_oven.jpg';     // заменять баннер
 
         if ($data['id']) {
@@ -363,6 +370,7 @@ class IndexController extends Controller {
             'pageTitle' => $pageTitle,
             'pageTitle2' => $pageTitle2,
             'pageTitle3' => $pageTitle3,
+            'pageTitle4' => $pageTitle4, // название страницы в творит. падеже
             'defects' => $defects,
             'defectsAll' => $this->defectsAll,
             'repTypes' => $repTypes,
@@ -400,6 +408,7 @@ class IndexController extends Controller {
         $serviceTitle = $pageTitle;
         $pageTitle2 = 'варочной панели'; // заменять на название
         $pageTitle3 = 'варочная панель'; // заменять на название
+        $pageTitle4 = 'варочной панелью'; // заменять на название
         $banner = 'img/repair_banners/repair_hob.jpg';     // заменять баннер
 
         if ($data['id']) {
@@ -431,6 +440,7 @@ class IndexController extends Controller {
             'pageTitle' => $pageTitle,
             'pageTitle2' => $pageTitle2,
             'pageTitle3' => $pageTitle3,
+            'pageTitle4' => $pageTitle4, // название страницы в творит. падеже
             'defects' => $defects,
             'defectsAll' => $this->defectsAll,
             'repTypes' => $repTypes,
