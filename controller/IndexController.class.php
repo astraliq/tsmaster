@@ -138,7 +138,7 @@ class IndexController extends Controller {
             $defectTableId = 2;
             $defect = $this->defects->getByLink('/' . $data['id']);
             $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';
+            // $banner = 'img/defect_banners/defect_washing_machine.jpg';
             $pageTitle = $repTypes[0]['pageTitle'];
         }
 
@@ -210,7 +210,7 @@ class IndexController extends Controller {
             $defectTableId = 2;
             $defect = $this->defects->getByLink('/' . $data['id']);
             $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
+            // $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -284,7 +284,7 @@ class IndexController extends Controller {
             $defectTableId = 2;
             $defect = $this->defects->getByLink('/' . $data['id']);
             $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
+            // $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -356,7 +356,7 @@ class IndexController extends Controller {
             $defectTableId = 2;
             $defect = $this->defects->getByLink('/' . $data['id']);
             $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
+            // $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
@@ -428,7 +428,7 @@ class IndexController extends Controller {
             $defectTableId = 2;
             $defect = $this->defects->getByLink('/' . $data['id']);
             $defectPrice = $this->defects->getDefectPriceByDevice($deviceId,$defect['id']);
-            $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
+            // $banner = 'img/defect_banners/defect_washing_machine.jpg';                          // ЗАМЕНИТЬ!
             $pageTitle = $repTypes[0]['pageTitle'];
         }
         
