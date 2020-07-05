@@ -20,8 +20,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/PTSans/ptsans-regular.eot');
+    src: url('../fonts/PTSans/ptsans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PTSans/ptsans-regular.woff2') format('woff2'), url('../fonts/PTSans/ptsans-regular.woff') format('woff'), url('../fonts/PTSans/ptsans-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/PTSans/ptsans-bold.eot');
+    src: url('../fonts/PTSans/ptsans-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/PTSans/ptsans-bold.woff2') format('woff2'), url('../fonts/PTSans/ptsans-bold.woff') format('woff'), url('../fonts/PTSans/ptsans-bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
 $bg_color_main: #fafdff;
-$font__first: 'PT Sans, sans-serif';
+$font__first: 'PT Sans';
 $font__second: 'Arial';
 $font__second_bold: 'Arial Black';
 $font__third: 'Oswald';
