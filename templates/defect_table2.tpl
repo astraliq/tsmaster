@@ -8,7 +8,7 @@
             <div class="cell-title">стоимость, от<sup>*</sup></div>
             {% for repType in content.repTypes %}
             <div class="cell-name">
-                <a class="cell-name__link" href="{{ repType.link }}">{{ repType.title }}</a>
+                <a class="cell-name__link btn-master" href="{{ repType.link }}">{{ repType.title }}</a>
             </div>
             <div class="cell-price">{{ repType.price }} {% if repType.price matches '/^\\d+$/' %} ₽ {% endif %}</div>
             {% endfor %}

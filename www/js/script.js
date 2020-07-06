@@ -236,7 +236,7 @@ class Mailing {
 
     init() {
         let btnPhone = document.querySelector('.btn-phone');
-        let btnMaster = document.querySelector('.btn-master');
+        let btnMaster = document.querySelectorAll('.btn-master');
         let btnReview = document.querySelector('.btn-review');
 
         if (btnPhone) {
@@ -247,10 +247,12 @@ class Mailing {
         }
 
         if (btnMaster) {
-            btnMaster.onclick = (e) => {
-                e.preventDefault();
-                this.firstCheck('master');
-            };
+            btnMaster.forEach((btn) => {
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    this.firstCheck('master');
+                };
+            });
         }
 
         if (btnReview) {

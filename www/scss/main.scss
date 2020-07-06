@@ -1,4 +1,4 @@
-@import "_param";
+@import '_param';
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -457,7 +457,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url("../img/action-form/action-form-skidka.jpg");
+    background-image: url('../img/action-form/action-form-skidka.jpg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -500,7 +500,6 @@ textarea {
 .input_margin-20 {
     margin-bottom: 20px;
 }
-
 
 /*reviews-part__item*/
 
@@ -657,6 +656,10 @@ textarea {
 
 .banner_title_block-2 {
     padding: 0 20px;
+    top: 59px;
+    left: 70px;
+    width: 324px;
+    height: 100px;
 }
 
 .banner_title-h2-1,
@@ -678,12 +681,12 @@ textarea {
 }
 
 .banner_title-h2-2 {
-    font-size: 27px;
+    font-size: 26px;
     letter-spacing: -1px;
     margin: 0;
     line-height: 30px;
     & span {
-        font-size: 32px;
+        font-size: 31px;
         margin: 0 0 5px 0;
         letter-spacing: -3px;
     }
@@ -803,7 +806,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        &+.cell-price {
+        & + .cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -896,7 +899,6 @@ textarea {
         outline: none;
     }
 }
-
 
 /*модальные окна*/
 
@@ -996,7 +998,7 @@ textarea {
 .close-review {
     position: absolute;
     box-sizing: border-box;
-    background: url("https://best-service.pro/images/icons/close_modal.png") no-repeat;
+    background: url('https://best-service.pro/images/icons/close_modal.png') no-repeat;
     background-position: center;
     width: 20px;
     height: 20px;
@@ -1139,7 +1141,7 @@ textarea {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -1167,7 +1169,6 @@ textarea {
         background-color: #339ef5;
     }
 }
-
 
 /*Карусель*/
 
@@ -1574,9 +1575,7 @@ button.arrow img {
     height: 100%;
 }
 
-
 /*карусель*/
-
 
 /*таблица брендов*/
 
@@ -1631,7 +1630,6 @@ button.arrow img {
     display: block;
 }
 
-
 /*стрелка якорь переход на верх*/
 
 .anchor-btn {
@@ -1652,7 +1650,6 @@ button.arrow img {
     z-index: 1000000;
     box-sizing: border-box;
 }
-
 
 /*стрелка якорь переход на верх*/
 
@@ -1889,7 +1886,7 @@ button.arrow img {
     &__request {
         margin: 0 0 0 0;
         padding: 0 6% 0 0;
-        background-image: url("../img/form-plate/form-plate_bg.jpg");
+        background-image: url('../img/form-plate/form-plate_bg.jpg');
         background-position: left center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -2082,7 +2079,6 @@ button.arrow img {
     }
 }
 
-
 /*.form-search__items {}*/
 
 .form__items {
@@ -2147,7 +2143,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &:before {
-        content: "Вид техники";
+        content: 'Вид техники';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2158,7 +2154,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2195,7 +2191,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::before {
-        content: "Вид неисправности";
+        content: 'Вид неисправности';
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2206,7 +2202,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: "\2572\2571";
+        content: '\2572\2571';
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2238,7 +2234,7 @@ button.arrow img {
 .before_3 {
     position: relative;
     &::before {
-        content: "Стоимость услуги составит";
+        content: 'Стоимость услуги составит';
         position: absolute;
         top: -25px;
         left: 17px;
@@ -2549,7 +2545,7 @@ button.arrow img {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     color: white;
     display: -webkit-flex;
@@ -2576,7 +2572,7 @@ button.arrow img {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
@@ -2640,53 +2636,53 @@ button.arrow img {
     height: 0;
     opacity: 0;
     left: -9999px;
-    &+label {
+    & + label {
         height: 50px;
         width: 900px;
     }
-    &+label::after {
-        content: "+";
+    & + label::after {
+        content: '+';
         position: absolute;
         right: 50px;
         top: 0px;
         color: #333;
     }
-    &+label:hover::after {
+    & + label:hover::after {
         top: 0px;
         font-weight: 700;
     }
-    &+label {
+    & + label {
         position: relative;
         display: block;
         cursor: pointer;
     }
-    &+label~.cost_table_all-device_defect .cost_table_all-row {
+    & + label ~ .cost_table_all-device_defect .cost_table_all-row {
         position: relative;
         transition: all $anim_transition_defect_table ease;
         opacity: 0;
         height: 0;
     }
-    &+label~.cost_table_all-device_defect .cost_table_all-row a {
+    & + label ~ .cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: none;
         cursor: default;
     }
-    &:checked+label::after {
-        content: "\2013";
+    &:checked + label::after {
+        content: '\2013';
         top: -1.5px;
         right: 50px;
         color: #00a3c6;
         // transform: rotateX(-60deg);
         transition: all $anim_transition_defect_table ease;
     }
-    &:checked+label+.cost_table_all-device_defect .cost_table_all-row {
+    &:checked + label + .cost_table_all-device_defect .cost_table_all-row {
         opacity: 1;
         height: 50px;
     }
-    &:checked+label+.cost_table_all-device_defect .cost_table_all-row a {
+    &:checked + label + .cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: all;
         cursor: pointer;
     }
-    &:checked+label {
+    &:checked + label {
         color: #00a3c6;
     }
 }
@@ -2766,7 +2762,7 @@ button.arrow img {
             & .cost_table_all-row-name__link {
                 color: whitesmoke;
             }
-            &+.cost_table_all-row-price {
+            & + .cost_table_all-row-price {
                 background-color: #66a7c5;
                 color: whitesmoke;
             }
@@ -2872,6 +2868,7 @@ button.arrow img {
         margin: 5px 0;
         text-indent: 50px;
         text-align: justify;
+        line-height: 25px;
     }
     &-info-text-1 {
         color: $text__main_color;
@@ -2883,7 +2880,6 @@ button.arrow img {
         text-align: center;
     }
 }
-
 
 /* Стили_модального_окна__начало.*/
 
@@ -2968,14 +2964,14 @@ button.arrow img {
     text-decoration: none;
     outline: none;
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         right: 17px;
         top: 50%;
         margin-top: -7px;
         height: 15px;
         width: 15px;
-        background: url("https://best-service.pro/images/icons/arrow.png") no-repeat;
+        background: url('https://best-service.pro/images/icons/arrow.png') no-repeat;
     }
 }
 
@@ -3049,7 +3045,7 @@ button.arrow img {
     right: 1px;
     box-shadow: inset 0 0 0 2px #d9e3ea;
     border-radius: 0 7px 7px 0;
-    background: url("https://best-service.pro/images/icons/select_arrow.png") no-repeat, #ffffff;
+    background: url('https://best-service.pro/images/icons/select_arrow.png') no-repeat, #ffffff;
     background-position: center;
     pointer-events: none;
     transition: all $anim_transition_err ease-in-out;
@@ -3073,13 +3069,12 @@ button.arrow img {
     box-shadow: inset 0 0 0 2px #d9e3ea, 0px 4px 16px #d9e3ea;
 }
 
-
 /* Стили_модального_окна__конец*/
 
 .device,
 .review,
 .rate,
-.device+.select_cover_arrow,
+.device + .select_cover_arrow,
 .defect,
 .client_name,
 .client_phone {
