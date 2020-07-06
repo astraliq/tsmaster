@@ -1,16 +1,17 @@
 {% if content.pageId == 2 %} {% set bp2 = 'banner-page2' %} {% set cp2 = 'container2-page2' %} {% else %} {% set bp2 = '' %} {% set cp2 = '' %} {% endif %}
 <section class="banner {{ bp2 }}" id="banner2" style="display: none;">
     <div class="container2 {{ cp2 }}">
-        <h3 class="banner-header">бесплатный выезд</h3>
+        <h1 class="banner-header">выезд за 30 минут</h1>
+        <h2 class="banner-header-h2">быстро и вовремя</h2>
         <div class="banner-info">
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere explicabo veritatis deleniti sed voluptate, iste nesciunt laudantium,
-                dicuidem quia veniam, ab ad earum officia, culpa ipsa adipisci soluta ratione quis fugiat at ex quibusdam debitis
-                mollitia odio nesciunt cum! Atque officia nemo, et eveniet tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque
-                nostrum earum alias.
+                Если у вас вышла из строя техника позвоните нам по тел. 8 (343 ) 1000-00-00 или оставьте заявку на выезд мастера. Наш мастер может быть у вас уже в течение 30 минут или в другое удобное для вас время.
             </p>
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque qui dolor odio alias iure dignissimos laboriosam delectus, rem minima facere?
+                Мастер имеет при себе все необходимое оборудование и комплект наиболее часто используемых запчастей, что позволяет в кратчайшие сроки произвести все необходимые работы.
+            </p>
+            <p class="banner-info-text-1">
+            СКИДКА 20% ПРИ ЗАКАЗЕ НА САЙТЕ
             </p>
         </div>
     </div>

@@ -1,17 +1,19 @@
 {% if content.pageId == 2 %} {% set bp2 = 'banner-page2' %} {% set cp2 = 'container2-page2' %} {% else %} {% set bp2 = '' %} {% set cp2 = '' %} {% endif %}
 <section class="banner {{ bp2 }}" id="banner3" style="display: none;">
     <div class="container2 {{ cp2 }}">
-        <h3 class="banner-header">бесплатная диагностика</h3>
+        <h3 class="banner-header">диагностика</h3>
         <div class="banner-info">
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere explicabo veritatis deleniti sed voluptate, iste nesciunt laudantium,
-                dicta unde architecto vitae, accusantium totam ratione nisi optio sunt perspiciatis obcaecati modi dolorum i! Atque officia nemo, et eveniet
-                tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque nostrum earum alias.
+                Диагностика неисправности является неотъемлемой процедурой перед началом ремонта и осуществляется для того, чтобы понять, в каком техническом состоянии находится техника.
             </p>
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sint quisquam modi repellendus sit fugit consequatur qui ipsum necessitatibus
-                pariatur? ugit ipsam repellendus cum, facilis animi numquam nihil esse id laudantium culpa porro consequatur tempora eaque iste est, illum ipsa
-                possimus repellat? Fugit earum et a harum quisquam distinctio fuga, natus ipsa ab perspiciatis placeat mollitia est voluptatibus eaque quidem.
+                Наши мастера, используя профессиональное оборудование, проводят диагностику у вас на дому. По ее результатам они озвучивают вам стоимость ремонта и запчастей. Если вас все устраивает, приступают к работе.
+            </p>
+            <p class="banner-info-text">
+               Диагностика оплачивается только в случае отказа от ремонта.
+            </p>
+            <p class="banner-info-text">
+             На конечную стоимость услуг и комплектующих, помимо самой неисправности, влияют также марка техники, комплектация, тип управления (электронное, механическое) и доступность расположения (встраиваемая, отдельно стоящая).
             </p>
         </div>
     </div>

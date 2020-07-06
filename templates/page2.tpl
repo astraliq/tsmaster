@@ -17,7 +17,12 @@
 </head>
 
 <body>
-    <div class="top-line"></div>
+    <div class="top-line">
+        <div class="top-line-text">
+            Внимание! Для противодействия коронавирусной инфекции мы ввели ежедневную проверку всех наших сотрудников и обеспечиваем их медицинскими масками и антисептиком.
+            Работаем без выходных, в том числе во время ограничений.
+        </div>
+    </div>
     {% include 'header.tpl' %}
     <div class="container">
         <main class="main-blocks">

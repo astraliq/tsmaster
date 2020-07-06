@@ -1,18 +1,14 @@
 {% if content.pageId == 2 %} {% set bp2 = 'banner-page2' %} {% set cp2 = 'container2-page2' %} {% else %} {% set bp2 = '' %} {% set cp2 = '' %} {% endif %}
 <section class="banner {{ bp2 }}" id="banner4" style="display: none;">
     <div class="container2  {{ cp2 }}">
-        <h3 class="banner-header">гарантия на наши услуги</h3>
+        <h1 class="banner-header">гарантия</h1>
+        <h2 class="banner-header-h2">100% уверенность</h2>
         <div class="banner-info">
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere explicabo veritatis deleniti sed voluptate, iste nesciunt laudantium,
-                dicta unde architecto vitae, accusantium totam ratione nisi optio sunt perspiciatis obcaecati modi dolorum itaque velit aliquid numquam. Sequi
-                provident quae, eos quo praesentium nesciunt expedita sapiente officiis consectetur, ab impedit explicabo excepturi aperiam eaque dicta ipsam
-                sint, dolorum minus distinctio! Quidem quia veniam, ab ad earum officia, culpa ipsa adipisci soluta ratione quis fugiat at ex quibusdam debitis
-                mollitia odio nesciunt cum! Atque officia nemo, et eveniet tempore explicabo iste ipsum quo suscipit illo voluptatem. Distinctio nam itaque
-                nostrum earum alias.
+                Вы можете быть уверены в качестве оказываемых услуг. Все оказанные услуги и комплектующие обеспечиваются соответствующей гарантией. Срок гарантии варьируется и составляет до 3 лет.
             </p>
             <p class="banner-info-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque qui dolor odio alias iure dignissimos laboriosam delectus, rem minima facere?
+                После проведения работ, вы получаете не только исправную технику, но и бланк строгой отчетности БСО-1, на основании которого можете обратиться к нам, в случае возникновения гарантийного случая.
             </p>
         </div>
     </div>
