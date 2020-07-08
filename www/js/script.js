@@ -873,6 +873,7 @@ prices.init();
 
 class BannerMenuHandler {
     constructor(menuItemsClass, hideBlockId) {
+        this.menuItemsClass = menuItemsClass;
         this.menuItems = document.querySelectorAll(menuItemsClass);
         this.hideBlockId = hideBlockId;
         this.dataType;
@@ -897,6 +898,9 @@ class BannerMenuHandler {
                     this.hideAll(this.section);
                 } else {
                     $(this.section).slideUp(this.animDuration, 'swing');
+                }
+                if (this.menuItemsClass === '.bullets__item') {
+                    this.scrollTo('top_banner');
                 }
 
                 // this.scrollTo('bullet__items');
