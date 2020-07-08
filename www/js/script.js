@@ -938,3 +938,9 @@ if (document.getElementById('top_banner')) {
 }
 
 bannerMenu.init();
+
+let sideMenu;
+if (document.getElementById('top_banner')) {
+    sideMenu = new BannerMenuHandler('.bullets__item', '#top_banner');
+}
+sideMenu.init();

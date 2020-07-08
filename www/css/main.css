@@ -1815,6 +1815,7 @@ button.arrow img {
   display: -o-flex;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .bullets_margin {
