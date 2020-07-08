@@ -478,6 +478,10 @@ textarea {
   cursor: pointer;
 }
 
+.bullet__item:hover {
+  opacity: 0.5;
+}
+
 .bullet__img {
   width: 20%;
   margin: 0 12px;
@@ -1362,6 +1366,12 @@ textarea {
   color: #0076d5;
 }
 
+.no_offerta {
+  color: 000;
+  margin: 15px 0 0 0;
+  padding: 20px 40px 20px 0;
+}
+
 .modal_off {
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -1447,7 +1457,7 @@ textarea {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 0 0 30px 0;
+  margin: 0 0 50px 0;
 }
 
 .carousel img {
@@ -2189,7 +2199,8 @@ button.arrow img {
 .section__text {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  color: #000;
+  /*color: $text__main_color;*/
+  color: #999999;
   font-family: "PT Sans";
   font-size: 21px;
   font-weight: 400;
@@ -2836,7 +2847,7 @@ button.arrow img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #434955;
-  height: 350px;
+  height: 300px;
 }
 
 .footer__items {

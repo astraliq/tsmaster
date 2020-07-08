@@ -80,7 +80,7 @@
                     <div class="section__title section__title_black section__title_margin"><a name="advantage">надежно и выгодно</a></div>
                     <div class="advantage__bullets">
                         <div class="advantage__bullets-left">
-                            <div class="bullets__item bullets_margin">
+                            <div class="bullets__item bullets_margin" data-type="banner1">
                                 <p class="bullets__text bullets__text_right">Работаем ежедневно</p>
                                 <img class="bullets__img" src="img/advantage/advantage_01.png" alt="Работаем ежедневно" />
                             </div>
