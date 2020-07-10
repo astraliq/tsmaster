@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 0,
         "brandName": "atlant",
         "imgBrand": "01_atlant.png"
@@ -110,7 +111,7 @@
     },
     {
         "id": 25,
-        "brandName": "kenwwod",
+        "brandName": "kenwood",
         "imgBrand": "26_kenwwod.png"
     },
     {
