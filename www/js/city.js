@@ -59,7 +59,7 @@ class City {
                 this.closeModalCities();
                 setTimeout(() => {
                     this.reloadList();
-                }, 500);
+                }, 50);
             });
         });
     }
@@ -109,7 +109,7 @@ class City {
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
 
-        setTimeout(() => this.showCity(this.data), 100);
+        setTimeout(() => this.showCity(this.data), 50);
 
         this.result = 0;
     }

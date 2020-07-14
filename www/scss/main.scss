@@ -1,4 +1,4 @@
-@import '_param';
+@import "_param";
 * {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -53,7 +53,12 @@ textarea {
 .container2 {
     max-width: $container2__width;
     width: 100%;
-    margin: 0 auto;
+    margin: -30px auto 0 auto;
+}
+
+.services-style {
+    margin: 0 0 45px 0;
+    padding: 30px 0 0 0;
 }
 
 .container3 {
@@ -80,7 +85,8 @@ textarea {
 
 .menu__items {
     margin: 0 0 0 0;
-    padding: 15px 0 10px 0;
+    padding: 5px 0 5px 0;
+    /*padding: 15px 0 10px 0;*/
     list-style-type: none;
     display: -webkit-flex;
     display: -moz-flex;
@@ -129,7 +135,8 @@ textarea {
     display: flex;
     justify-content: space-between;
     &_margin {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
+        /*margin-bottom: 20px;*/
     }
 }
 
@@ -337,11 +344,13 @@ textarea {
     justify-content: space-evenly;
     align-items: center;
     // width: 100%;
-    height: 100px;
+    height: 80px;
+    /*height: 100px;*/
     align-items: center;
     border-bottom: 3px solid $text__main_color;
     &_margin {
-        margin-bottom: 40px;
+        margin-bottom: 10px;
+        /*margin-bottom: 40px;*/
     }
 }
 
@@ -461,7 +470,7 @@ textarea {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
-    background-image: url('../img/action-form/action-form-skidka.jpg');
+    background-image: url("../img/action-form/action-form-skidka.jpg");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -475,7 +484,8 @@ textarea {
     align-items: flex-end;
     justify-content: center;
     &_margin {
-        margin-bottom: 45px;
+        margin-top: -15px;
+        margin-bottom: 20px;
     }
 }
 
@@ -505,10 +515,11 @@ textarea {
     margin-bottom: 20px;
 }
 
+
 /*reviews-part__item*/
 
 .reviews-part {
-    margin: 0 0 0 0;
+    margin: 0 0 -25px 0;
     padding: 20px;
     box-sizing: border-box;
     display: -webkit-flex;
@@ -620,7 +631,7 @@ textarea {
 }
 
 .top-banner_margin {
-    margin: 0 0 75px auto;
+    margin: 0 0 15px auto;
     position: relative;
 }
 
@@ -810,7 +821,7 @@ textarea {
         & .cell-name__link {
             color: whitesmoke;
         }
-        & + .cell-price {
+        &+.cell-price {
             background-color: #66a7c5;
             color: whitesmoke;
         }
@@ -834,13 +845,12 @@ textarea {
 }
 
 .table-footnote {
-    margin: 0 200px 0 0;
-    margin: 0 200px 0 0;
+    margin: -25px 200px 0 0;
     padding: 15px;
     width: 700px;
-    background-color: #e4e4e4;
+    /*background-color: #e4e4e4;*/
     // height: 70px;
-    color: $text__main_color;
+    color: $text__subtitle_color;
     font-family: $font__first;
     font-size: 18px;
     font-weight: 400;
@@ -852,7 +862,7 @@ textarea {
 }
 
 .brand-items {
-    margin: 0 0 0 0;
+    margin: 0 0 -60px 0;
     padding: 0 0 0 0;
     display: -webkit-flex;
     display: -moz-flex;
@@ -903,6 +913,7 @@ textarea {
         outline: none;
     }
 }
+
 
 /*модальные окна*/
 
@@ -1002,7 +1013,7 @@ textarea {
 .close-review {
     position: absolute;
     box-sizing: border-box;
-    background: url('https://best-service.pro/images/icons/close_modal.png') no-repeat;
+    background: url("https://best-service.pro/images/icons/close_modal.png") no-repeat;
     background-position: center;
     width: 20px;
     height: 20px;
@@ -1129,7 +1140,7 @@ textarea {
 }
 
 .no_offerta {
-    color: 000;
+    color: $text__subtitle_color;
     margin: 15px 0 0 0;
     padding: 20px 40px 20px 0;
 }
@@ -1151,7 +1162,7 @@ textarea {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -1179,6 +1190,7 @@ textarea {
         background-color: #339ef5;
     }
 }
+
 
 /*Карусель*/
 
@@ -1585,7 +1597,9 @@ button.arrow img {
     height: 100%;
 }
 
+
 /*карусель*/
+
 
 /*таблица брендов*/
 
@@ -1640,6 +1654,7 @@ button.arrow img {
     display: block;
 }
 
+
 /*стрелка якорь переход на верх*/
 
 .anchor-btn {
@@ -1661,14 +1676,17 @@ button.arrow img {
     box-sizing: border-box;
 }
 
+
 /*стрелка якорь переход на верх*/
 
 .advantage_margin {
-    margin-bottom: 86px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    /*margin-bottom: 86px;*/
 }
 
 .advantage__bullets {
-    margin: 0 0 0 0;
+    margin: 0 0 45px 0;
     padding: 0 0 0 0;
     box-sizing: border-box;
     display: -webkit-flex;
@@ -1852,7 +1870,7 @@ button.arrow img {
             color: $text__second_color;
         }
         &_margin {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             font-size: 23px;
         }
         &_padding {
@@ -1898,7 +1916,7 @@ button.arrow img {
     &__request {
         margin: 0 0 0 0;
         padding: 0 6% 0 0;
-        background-image: url('../img/form-plate/form-plate_bg.jpg');
+        background-image: url("../img/form-plate/form-plate_bg.jpg");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -1933,7 +1951,7 @@ button.arrow img {
         margin: 25px auto;
     }
     &_margin {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
     }
 }
 
@@ -2003,7 +2021,7 @@ button.arrow img {
 }
 
 .services-items_margin {
-    margin-bottom: 75px;
+    margin-bottom: 35px;
 }
 
 .services-item {
@@ -2057,6 +2075,7 @@ button.arrow img {
     padding: 0 0 0 0;
     &_margin {
         margin-bottom: 55px;
+        margin-top: -20px;
     }
 }
 
@@ -2067,7 +2086,8 @@ button.arrow img {
 }
 
 .form-search_margin {
-    margin-bottom: 70px;
+    margin-bottom: 15px;
+    /*margin-top: 15px;*/
     border: 1px solid $bg-form__plate_color;
 }
 
@@ -2090,6 +2110,7 @@ button.arrow img {
         margin-bottom: 65px;
     }
 }
+
 
 /*.form-search__items {}*/
 
@@ -2155,7 +2176,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &:before {
-        content: 'Вид техники';
+        content: "Вид техники";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2166,7 +2187,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2203,7 +2224,7 @@ button.arrow img {
     outline: none;
     transition: all $anim_transition_err ease-in-out;
     &::before {
-        content: 'Вид неисправности';
+        content: "Вид неисправности";
         position: absolute;
         top: -25px;
         left: 56px;
@@ -2214,7 +2235,7 @@ button.arrow img {
         line-height: 18px;
     }
     &::after {
-        content: '\2572\2571';
+        content: "\2572\2571";
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -2246,7 +2267,7 @@ button.arrow img {
 .before_3 {
     position: relative;
     &::before {
-        content: 'Стоимость услуги составит';
+        content: "Стоимость услуги составит";
         position: absolute;
         top: -25px;
         left: 17px;
@@ -2382,7 +2403,8 @@ button.arrow img {
 }
 
 .form-question {
-    padding: 0 0 40px 0;
+    /*margin: 0 0 -40px 0;*/
+    /*padding: 0 0 40px 0;*/
 }
 
 .form-question__plate {
@@ -2397,6 +2419,7 @@ button.arrow img {
     &_margin {
         padding-top: 38px;
         margin-bottom: 14px;
+        margin-top: 45px;
     }
 }
 
@@ -2557,7 +2580,7 @@ button.arrow img {
 
 .dev-planb {
     padding: 0 15px 0 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     color: white;
     display: -webkit-flex;
@@ -2584,7 +2607,7 @@ button.arrow img {
     justify-content: flex-end;
     opacity: 0.5;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
@@ -2648,53 +2671,53 @@ button.arrow img {
     height: 0;
     opacity: 0;
     left: -9999px;
-    & + label {
+    &+label {
         height: 50px;
         width: 900px;
     }
-    & + label::after {
-        content: '+';
+    &+label::after {
+        content: "+";
         position: absolute;
         right: 50px;
         top: 0px;
         color: #333;
     }
-    & + label:hover::after {
+    &+label:hover::after {
         top: 0px;
         font-weight: 700;
     }
-    & + label {
+    &+label {
         position: relative;
         display: block;
         cursor: pointer;
     }
-    & + label ~ .cost_table_all-device_defect .cost_table_all-row {
+    &+label~.cost_table_all-device_defect .cost_table_all-row {
         position: relative;
         transition: all $anim_transition_defect_table ease;
         opacity: 0;
         height: 0;
     }
-    & + label ~ .cost_table_all-device_defect .cost_table_all-row a {
+    &+label~.cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: none;
         cursor: default;
     }
-    &:checked + label::after {
-        content: '\2013';
+    &:checked+label::after {
+        content: "\2013";
         top: -1.5px;
         right: 50px;
         color: #00a3c6;
         // transform: rotateX(-60deg);
         transition: all $anim_transition_defect_table ease;
     }
-    &:checked + label + .cost_table_all-device_defect .cost_table_all-row {
+    &:checked+label+.cost_table_all-device_defect .cost_table_all-row {
         opacity: 1;
         height: 50px;
     }
-    &:checked + label + .cost_table_all-device_defect .cost_table_all-row a {
+    &:checked+label+.cost_table_all-device_defect .cost_table_all-row a {
         pointer-events: all;
         cursor: pointer;
     }
-    &:checked + label {
+    &:checked+label {
         color: #00a3c6;
     }
 }
@@ -2774,7 +2797,7 @@ button.arrow img {
             & .cost_table_all-row-name__link {
                 color: whitesmoke;
             }
-            & + .cost_table_all-row-price {
+            &+.cost_table_all-row-price {
                 background-color: #66a7c5;
                 color: whitesmoke;
             }
@@ -2800,7 +2823,7 @@ button.arrow img {
 .contacts-container {
     width: 100%;
     max-width: 1225px;
-    margin: 0 auto;
+    margin: -40px auto 0 auto;
 }
 
 .contacts_text {
@@ -2811,7 +2834,7 @@ button.arrow img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 0 70px 0;
+    margin: 0 0 50px 0;
     background-color: $bg-form__plate_color;
     &-data {
         width: 550px;
@@ -2892,6 +2915,7 @@ button.arrow img {
         text-align: center;
     }
 }
+
 
 /* Стили_модального_окна__начало.*/
 
@@ -2976,14 +3000,14 @@ button.arrow img {
     text-decoration: none;
     outline: none;
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         right: 17px;
         top: 50%;
         margin-top: -7px;
         height: 15px;
         width: 15px;
-        background: url('https://best-service.pro/images/icons/arrow.png') no-repeat;
+        background: url("https://best-service.pro/images/icons/arrow.png") no-repeat;
     }
 }
 
@@ -3057,7 +3081,7 @@ button.arrow img {
     right: 1px;
     box-shadow: inset 0 0 0 2px #d9e3ea;
     border-radius: 0 7px 7px 0;
-    background: url('https://best-service.pro/images/icons/select_arrow.png') no-repeat, #ffffff;
+    background: url("https://best-service.pro/images/icons/select_arrow.png") no-repeat, #ffffff;
     background-position: center;
     pointer-events: none;
     transition: all $anim_transition_err ease-in-out;
@@ -3081,12 +3105,13 @@ button.arrow img {
     box-shadow: inset 0 0 0 2px #d9e3ea, 0px 4px 16px #d9e3ea;
 }
 
+
 /* Стили_модального_окна__конец*/
 
 .device,
 .review,
 .rate,
-.device + .select_cover_arrow,
+.device+.select_cover_arrow,
 .defect,
 .client_name,
 .client_phone {

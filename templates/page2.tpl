@@ -191,6 +191,30 @@
                             </div>
                         </section>
                         <div id="changedBlocks" style="height: 0;"></div>
+                        <!-- почему нам доверяют блок -->
+                       
+                        <!-- перенос блоков от сюда -->
+                        
+                        <!-- Цены -->
+                        <section class="cost-table">
+                            {% if content.defectTableId == 1 %}           
+                                {% include 'defect_table_all.tpl' %}
+                                {% include 'defect_table1.tpl' %}
+
+                            {% elseif content.defectTableId == 2 %} 
+                                {% include 'defect_table_all.tpl' %}                     
+                                {% include 'defect_table2.tpl' %}           
+                            {% endif %} 
+                        </section>
+                        <!-- перенос блоков сюда-->
+                        <!-- О компании -->
+                        {% include 'about.tpl' %}
+                        <!-- Отзывы -->
+                        {% include 'reviews_slider.tpl' %}
+                        <!-- Контакты -->
+                        {% include 'contacts.tpl' %}
+
+                        <!-- advantage -->
                         <section class="advantage advantage_margin"  id="advantage">
                             <div class="container4">
                                 <div class="section__title section__title_black section__title_margin section__title_padding">
@@ -244,23 +268,9 @@
                                 </div>
                             </div>
                         </section>
-                        <!-- О компании -->
-                        {% include 'about.tpl' %}
-                        <!-- Отзывы -->
-                        {% include 'reviews_slider.tpl' %}
-                        <!-- Контакты -->
-                        {% include 'contacts.tpl' %}
-                        <!-- Цены -->
-                        <section class="cost-table">
-                            {% if content.defectTableId == 1 %}           
-                                {% include 'defect_table_all.tpl' %}
-                                {% include 'defect_table1.tpl' %}
 
-                            {% elseif content.defectTableId == 2 %} 
-                                {% include 'defect_table_all.tpl' %}                     
-                                {% include 'defect_table2.tpl' %}           
-                            {% endif %} 
-                        </section>
+
+                        <!-- конец переноса -->
                         {% include 'repair_form.tpl' %}
                         <section class="brand brand_margin">
                             <div class="container4">
