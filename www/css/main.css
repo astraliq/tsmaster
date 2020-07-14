@@ -3382,7 +3382,8 @@ button.arrow img {
 .banner .container2 {
   border-bottom: 3px solid #000;
   max-width: 1225px;
-  padding: 0 80px 50px 80px;
+  /*margin: 15px 0 0 0;*/
+  padding: 30px 80px 10px 80px;
   height: 340px;
   display: -moz-flex;
   display: -ms-flex;
