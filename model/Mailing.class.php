@@ -8,7 +8,7 @@ class Mailing extends Model {
 
 	public function __construct() {
 		parent::__construct();
-		$this->serviceMenu = Config::get('main_email');
+		$this->mainMail = Config::get('main_email');
 		// $this->mainMail = new SendMailSmtp(Config::get('mail'), Config::get('mail_pass'), 'ssl://smtp.yandex.ru', Config::get('mail_name'), 465);
 		// $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя');
     }
