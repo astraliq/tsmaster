@@ -16,6 +16,7 @@ $config['path_templates'] = $config['path_root'] . '/../templates';
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
 $config['sitename'] = 'ТехСервис&nbsp;Мастер';
+$config['main_email'] = 'astral457@mail.ru'; // почта для отправки всех уведомлений
 $config['main_menu'] = [
       'О&nbsp;Компании' => [
         'link' => '#about',

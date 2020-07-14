@@ -2,13 +2,14 @@
 declare(strict_types=1);
 class Mailing extends Model {
 	public $mailingTable = 'mailing';
-	public $mainMail = 'astral457@mail.ru';
+	public $mainMail;
 	private $mailSMTP;
 	// имена ключей должны быть одинаковыми
 
 	public function __construct() {
 		parent::__construct();
-		// $this->mailSMTP = new SendMailSmtp(Config::get('mail'), Config::get('mail_pass'), 'ssl://smtp.yandex.ru', Config::get('mail_name'), 465);
+		$this->serviceMenu = Config::get('main_email');
+		// $this->mainMail = new SendMailSmtp(Config::get('mail'), Config::get('mail_pass'), 'ssl://smtp.yandex.ru', Config::get('mail_name'), 465);
 		// $mailSMTP = new SendMailSmtpClass('логин', 'пароль', 'хост', 'имя отправителя');
     }
 
