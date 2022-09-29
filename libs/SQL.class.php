@@ -21,7 +21,7 @@
 				$this->dataBase->exec('SET NAMES UTF8');
 				$this->dataBase->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 			} catch (PDOException $e) {
-			    echo 'Ошибка: ' . $e->getMessage();
+			    echo 'Ошибка PDO: ' . $e->getMessage();
 			    exit();
 			}
 		}

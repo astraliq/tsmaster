@@ -22,7 +22,7 @@ class City {
         let response = await fetch(url);
         this.data = await response.json();
         // console.log(this.data);
-        if (this.result == 1) this.showBlockSities(this.data);
+        // this.showBlockSities(this.data);
     }
 
     showBlockSities(data) {
@@ -51,15 +51,15 @@ class City {
     }
 
     checkClickButtonCity(btn) {
-        console.log(btn);
+        // console.log(btn);
         btn.forEach((elem) => {
             elem.addEventListener('click', (event) => {
-                console.log(event.srcElement.dataset.town);
+                // console.log(event.srcElement.dataset.town);
                 this.numberCity = event.srcElement.dataset.town;
                 this.closeModalCities();
-                setTimeout(() => {
-                    this.reloadList();
-                }, 50);
+                // setTimeout(() => {
+                //     this.reloadList();
+                // }, 50);
             });
         });
     }
@@ -69,15 +69,17 @@ class City {
         window.location.reload();
     }
 
-    checkInformation() {
+    async checkInformation() {
         this.informationCity = this.informationBlock.dataset.city_id;
         this.numberCity = this.informationCity;
         this.result = this.informationBlock.dataset.city_inf;
+        await this._readData(this.urlCity);
 
         if (this.result == 1) {
-            this._readData(this.urlCity);
+            this.onModalCities();
+            this.showBlockSities(this.data);
         } else {
-            this._readData(this.urlCity);
+            // this._readData(this.urlCity);
             this.closeModalCities();
         }
     }
@@ -109,9 +111,10 @@ class City {
         this.darkBack.classList.add('screen_off');
         this.modalBlockSities.classList.add('screen_off');
 
-        setTimeout(() => this.showCity(this.data), 50);
-
+        // setTimeout(() => this.showCity(this.data), 150);
         this.result = 0;
+        this.showCity(this.data)
+
     }
 
     showCity(data) {
@@ -171,12 +174,7 @@ class City {
     }
 
     init() {
-        if (this.result == 0) {
-            this.checkInformation();
-        } else {
-            this.onModalCities();
-            this.checkInformation();
-        }
+        this.checkInformation();
 
         this.runChangeCity();
 
